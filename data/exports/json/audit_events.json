@@ -1,0 +1,22 @@
+[
+  {
+    "actor": "DATA_GENERATOR",
+    "entity_id": "GENERATOR",
+    "entity_type": "SYSTEM",
+    "event_id": "AUD-2026-000001",
+    "event_type": "SYNTHESIS_STARTED",
+    "notes": "Starting synthetic freight dataset generation",
+    "payload_json": "{\"profile\": \"starter\", \"seed\": 20261022}",
+    "timestamp": "2026-01-01T08:00:00"
+  },
+  {
+    "actor": "DATA_GENERATOR",
+    "entity_id": "GENERATOR",
+    "entity_type": "SYSTEM",
+    "event_id": "AUD-2026-000002",
+    "event_type": "SYNTHESIS_COMPLETED",
+    "notes": "Dataset synthesis finished successfully",
+    "payload_json": "{\"carriers\": 20, \"shipments\": 250, \"invoices\": 200, \"exceptions\": 60, \"credit_notes\": 18}",
+    "timestamp": "2027-01-01T08:00:00"
+  }
+]

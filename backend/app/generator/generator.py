@@ -1,87 +1,821 @@
-import random
+"""
+Production-Grade Deterministic Synthetic Data Generator for Freight Invoice Validation System.
+Generates all 17 relational entities in strict dependency order:
+  1. Carriers (Carrier)
+  2. Lanes (Lane)
+  3. Accessorial definitions (Accessorial)
+  4. Rate cards (RateCard)
+  5. Rate tiers (RateTier)
+  6. Shipments (Shipment)
+  7. Shipment legs (ShipmentLeg)
+  8. Weight measurements (WeightMeasurement)
+  9. Shipment-accessorial assignments (ShipmentAccessorial)
+  10. Delivery evidence and events (DeliveryEvidence)
+  11. Freight invoices (FreightInvoice)
+  12. Invoice lines (InvoiceLine)
+  13. Validation results (InvoiceValidationRun)
+  14. Audit exceptions (AuditException)
+  15. Credit notes (CreditNote)
+  16. Audit and lifecycle events (AuditEvent, EntityStatusHistory)
+  17. Ground-truth labels (GroundTruthLabel)
+"""
+
 import json
-import hashlib
+import random
 from datetime import datetime, date, timedelta
-from typing import List, Dict, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from sqlalchemy.orm import Session
 
-from backend.app.core.config import settings
+from backend.app.generator.config import PROFILES, GeneratorProfile, LOGISTICS_HUBS, CARRIER_SEEDS
+from backend.app.generator.anomaly_injector import AnomalyInjector
+from backend.app.engine.calculator import ContractualFreightCalculator
+from backend.app.models.enums import (
+    CarrierStatus, RateCardStatus, LaneStatus, ServiceLevel, ShipmentStatus,
+    ShipmentLegStatus, MeasurementType, MeasurementSource, ChargeMethod,
+    AccessorialStatus, InvoiceStatus, ValidationStatus, InvoiceLineType,
+    ExceptionType, ExceptionSeverity, ExceptionStatus,
+    CreditNoteApprovalStatus, CreditNoteReconciliationStatus
+)
 from backend.app.models.carrier import Carrier
-from backend.app.models.rate_card import RateCard, RateLane, AccessorialRule
-from backend.app.models.shipment import Shipment, WeightMeasurement, AccessorialEvent, DeliveryRecord
-from backend.app.models.invoice import InvoiceHeader, InvoiceLine
+from backend.app.models.lane import Lane
+from backend.app.models.rate_card import RateCard, RateTier
+from backend.app.models.accessorial import Accessorial, ShipmentAccessorial
+from backend.app.models.shipment import Shipment, ShipmentLeg, WeightMeasurement, DeliveryEvidence
+from backend.app.models.invoice import FreightInvoice, InvoiceLine, DuplicateInvoiceGroup, InvoiceValidationRun
+from backend.app.models.audit_exception import AuditException
 from backend.app.models.credit_note import CreditNote
+from backend.app.models.audit import AuditEvent, EntityStatusHistory
 from backend.app.models.ground_truth import GroundTruthLabel
-from backend.app.models.audit import AuditEvent
-from backend.app.engine.calculator import FreightCalculator
-from backend.app.engine.validator import InvoiceValidator
+from backend.app.models.id_generator import (
+    generate_carrier_id, generate_rate_card_id, generate_lane_id, generate_rate_tier_id,
+    generate_shipment_id, generate_shipment_leg_id, generate_weight_measurement_id,
+    generate_accessorial_id, generate_shipment_accessorial_id, generate_delivery_evidence_id,
+    generate_invoice_id, generate_invoice_line_id, generate_exception_id, generate_credit_note_id,
+    generate_duplicate_group_id, generate_validation_run_id, generate_audit_event_id,
+    generate_status_history_id, generate_ground_truth_label_id
+)
 
-CITIES = [
-    ("Atlanta", "GA", "30301"),
-    ("Chicago", "IL", "60601"),
-    ("Dallas", "TX", "75201"),
-    ("Los Angeles", "CA", "90001"),
-    ("New York", "NY", "10001"),
-    ("Seattle", "WA", "98101"),
-    ("Miami", "FL", "33101"),
-    ("Denver", "CO", "80201"),
-    ("Philadelphia", "PA", "19101"),
-    ("Houston", "TX", "77001"),
-    ("Phoenix", "AZ", "85001"),
-    ("Charlotte", "NC", "28201"),
-    ("Detroit", "MI", "48201"),
-    ("Memphis", "TN", "38101"),
-    ("Indianapolis", "IN", "46201"),
+BASE_EPOCH = datetime(2026, 1, 1, 8, 0, 0)
+BASE_DATE = date(2026, 1, 1)
+
+STANDARD_ACCESSORIALS = [
+    ("LIFTGATE", "Hydraulic Liftgate Loading/Unloading Service", ChargeMethod.FLAT, 75.0, False, True),
+    ("DETENTION", "Driver/Vehicle Detention at Terminal Facility", ChargeMethod.PER_HOUR, 80.0, False, True),
+    ("RESIDENTIAL", "Residential Location Delivery Surcharge", ChargeMethod.FLAT, 65.0, False, True),
+    ("INSIDE_DELIVERY", "Inside Delivery Beyond Dock Surcharge", ChargeMethod.FLAT, 55.0, False, True),
+    ("HAZMAT", "Dangerous Goods & Hazardous Materials Protocol", ChargeMethod.FLAT, 120.0, True, True),
+    ("APPOINTMENT", "Mandatory Guaranteed Delivery Time Window", ChargeMethod.FLAT, 35.0, False, True),
+    ("RECONSIGNMENT", "In-Transit Destination Reconsignment Fee", ChargeMethod.FLAT, 110.0, False, True),
+    ("STORAGE", "Overnight Depot Storage & Holding Surcharge", ChargeMethod.FLAT, 45.0, False, False),
 ]
 
-SCACS = [
-    "ODFL", "FXFE", "KNIG", "SAIA", "ABFS", "XPOF", "ESTES", "RLCA", "YELL", "AACT",
-    "SEFL", "CTII", "DAFG", "PITT", "CWCE", "UPGF", "MTRC", "AVER", "CVLG", "WERN",
-    "JBHT", "SCHN", "USXI", "SWFT", "HEAR", "MART", "CRST", "PTSI", "COSS", "DAYR"
+
+# Guaranteed to exhibit all scenarios even in small test runs (>= 20 invoices)
+SCENARIO_CYCLE = [
+    "NORMAL",
+    "NORMAL",
+    "UNKNOWN_SHIPMENT_REF",
+    "NORMAL",
+    "EXPIRED_RATE_CARD",
+    "NORMAL",
+    "INCORRECT_WEIGHT_TIER",
+    "NORMAL",
+    "NORMAL",
+    "DUPLICATE_FUEL_SURCHARGE",
+    "NORMAL",
+    "EXCESSIVE_CREDIT_NOTE",
+    "NORMAL",
+    "DIMENSIONAL_WEIGHT_DISCREPANCY",
+    "NORMAL",
+    "NORMAL",
+    "UNAUTHORIZED_ACCESSORIAL",
+    "NORMAL",
+    "DUPLICATE_INVOICE",
+    "NORMAL",
 ]
 
-class SyntheticDataGenerator:
+
+class DeterministicDataGenerator:
     """
-    Deterministic Synthetic Logistics & Billing Data Generator.
-    Supports starter configurations and full 100-carrier / 20k-shipment / 15k-invoice scale.
+    Configurable, 100% reproducible synthetic data generator.
+    Implements all 17 entity generation steps in strict dependency order.
     """
 
-    def __init__(self, seed: int = settings.DEFAULT_RANDOM_SEED):
+    def __init__(self, profile_name: str = "starter", seed: int = 20261022):
+        self.profile = PROFILES.get(profile_name, PROFILES["starter"])
         self.seed = seed
         self.rng = random.Random(seed)
+        self.audit_event_seq = 1
+        self.status_hist_seq = 1
 
     def generate_all(
         self,
         db: Session,
-        num_carriers: int = settings.STARTER_CARRIERS,
-        num_shipments: int = settings.STARTER_SHIPMENTS,
-        num_invoices: int = settings.STARTER_INVOICES
+        num_carriers: Optional[int] = None,
+        num_shipments: Optional[int] = None,
+        num_invoices: Optional[int] = None
     ) -> Dict[str, int]:
         """
-        Generate complete master data, shipments, invoices, ground truth labels, and credit notes.
+        Executes complete 17-step dependency generation pipeline.
         """
-        # Reset RNG seed for reproducibility
         self.rng.seed(self.seed)
+        self.audit_event_seq = 1
+        self.status_hist_seq = 1
 
-        # 1. Master Data: Carriers
-        carriers = self._generate_carriers(db, num_carriers)
-        
-        # 2. Master Data: Rate Cards, Lanes, Accessorial Rules
-        rate_cards, accessorial_rules = self._generate_contracts(db, carriers)
+        n_carriers = num_carriers if num_carriers is not None else self.profile.num_carriers
+        n_lanes = self.profile.num_lanes
+        n_accessorials = self.profile.num_accessorials
+        n_shipments = num_shipments if num_shipments is not None else self.profile.num_shipments
+        n_invoices = num_invoices if num_invoices is not None else self.profile.num_invoices
 
-        # 3. Operational Data: Shipments, Weights, Deliveries, Events
-        shipments = self._generate_shipments(db, carriers, num_shipments)
+        counts: Dict[str, int] = {}
 
-        # 4. Financial Data: Invoices, Invoice Lines, Ground Truth Labels
-        invoices, ground_truths = self._generate_invoices_and_ground_truth(
-            db, carriers, shipments, rate_cards, accessorial_rules, num_invoices
+        # 1. Carriers
+        carriers = self._generate_carriers(db, n_carriers)
+        counts["carriers"] = len(carriers)
+
+        # 2. Lanes
+        lanes = self._generate_lanes(db, n_lanes)
+        counts["lanes"] = len(lanes)
+
+        # 3. Accessorial Catalog
+        accessorials = self._generate_accessorials(db, n_accessorials)
+        counts["accessorials"] = len(accessorials)
+
+        # 4 & 5. Rate Cards & Rate Tiers
+        rate_cards, rate_tiers = self._generate_rate_cards_and_tiers(db, carriers, lanes)
+        counts["rate_cards"] = len(rate_cards)
+        counts["rate_tiers"] = len(rate_tiers)
+
+        # 6, 7, 8, 9, 10. Shipments, Legs, Weight Measurements, Accessorials, Delivery Evidence
+        (shipments, legs, weights, shipment_accs, evidences) = self._generate_shipments_and_movements(
+            db, carriers, lanes, accessorials, n_shipments
         )
+        counts["shipments"] = len(shipments)
+        counts["shipment_legs"] = len(legs)
+        counts["weight_measurements"] = len(weights)
+        counts["shipment_accessorials"] = len(shipment_accs)
+        counts["delivery_evidence"] = len(evidences)
 
-        # 5. Credit Notes (Scenario 5)
-        credit_notes = self._generate_credit_notes(db, carriers, invoices)
+        # 11, 12, 13, 14, 15, 17. Invoices, Lines, Validation Runs, Exceptions, Credit Notes, Ground Truth
+        (invoices, lines, val_runs, exceptions, credit_notes, ground_truths, dup_groups) = self._generate_invoices_and_financials(
+            db, carriers, shipments, rate_cards, accessorials, evidences, shipment_accs, n_invoices
+        )
+        counts["duplicate_invoice_groups"] = len(dup_groups)
+        counts["freight_invoices"] = len(invoices)
+        counts["invoice_lines"] = len(lines)
+        counts["invoice_validation_runs"] = len(val_runs)
+        counts["audit_exceptions"] = len(exceptions)
+        counts["credit_notes"] = len(credit_notes)
+        counts["ground_truth_labels"] = len(ground_truths)
 
-        # Log completion audit event
-        db.add(AuditEvent(
+        # 16. Operational Audit Events and Lifecycle Transitions
+        audit_events, status_histories = self._generate_audit_trail(db, carriers, shipments, invoices, exceptions, credit_notes)
+        counts["audit_events"] = len(audit_events)
+        counts["entity_status_history"] = len(status_histories)
+
+        db.commit()
+        return counts
+
+    # -------------------------------------------------------------------------
+    # 1. Carriers
+    # -------------------------------------------------------------------------
+    def _generate_carriers(self, db: Session, count: int) -> List[Carrier]:
+        carriers = []
+        for i in range(1, count + 1):
+            seed_idx = (i - 1) % len(CARRIER_SEEDS)
+            code, name = CARRIER_SEEDS[seed_idx]
+            if i > len(CARRIER_SEEDS):
+                code = f"{code[:3]}{i}"
+                name = f"{name} Fleet {i}"
+
+            cid = generate_carrier_id(i)
+            c = Carrier(
+                carrier_id=cid,
+                carrier_name=name,
+                carrier_code=code,
+                status=CarrierStatus.ACTIVE,
+                country_code="USA",
+                created_at=BASE_EPOCH + timedelta(minutes=i * 5),
+                updated_at=BASE_EPOCH + timedelta(minutes=i * 5)
+            )
+            db.add(c)
+            carriers.append(c)
+        db.flush()
+        return carriers
+
+    # -------------------------------------------------------------------------
+    # 2. Lanes
+    # -------------------------------------------------------------------------
+    def _generate_lanes(self, db: Session, count: int) -> List[Lane]:
+        lanes = []
+        pairs_used = set()
+        lane_counter = 1
+
+        while len(lanes) < count:
+            hub_a = self.rng.choice(LOGISTICS_HUBS)
+            hub_b = self.rng.choice(LOGISTICS_HUBS)
+            if hub_a[0] == hub_b[0]:
+                continue
+            pair = (hub_a[0], hub_b[0])
+            if pair in pairs_used:
+                continue
+            pairs_used.add(pair)
+
+            lid = generate_lane_id(lane_counter)
+            lane_counter += 1
+            dist = round(self.rng.uniform(220.0, 3200.0), 1)
+
+            lane = Lane(
+                lane_id=lid,
+                origin_location_code=hub_a[0],
+                destination_location_code=hub_b[0],
+                origin_city=hub_a[1],
+                destination_city=hub_b[1],
+                origin_country=hub_a[2],
+                destination_country=hub_b[2],
+                distance_km=dist,
+                status=LaneStatus.ACTIVE
+            )
+            db.add(lane)
+            lanes.append(lane)
+        db.flush()
+        return lanes
+
+    # -------------------------------------------------------------------------
+    # 3. Accessorial Catalog
+    # -------------------------------------------------------------------------
+    def _generate_accessorials(self, db: Session, count: int) -> List[Accessorial]:
+        accessorials = []
+        catalog = STANDARD_ACCESSORIALS[:count]
+        for i, (code, desc, method, rate, tax, proof) in enumerate(catalog, start=1):
+            acc_id = generate_accessorial_id(i)
+            acc = Accessorial(
+                accessorial_id=acc_id,
+                accessorial_code=code,
+                description=desc,
+                charge_method=method,
+                rate_amount=rate,
+                currency="USD",
+                taxable=tax,
+                requires_evidence=proof,
+                status=AccessorialStatus.ACTIVE,
+                effective_from=BASE_DATE,
+                effective_to=None
+            )
+            db.add(acc)
+            accessorials.append(acc)
+        db.flush()
+        return accessorials
+
+    # -------------------------------------------------------------------------
+    # 4 & 5. Rate Cards and Rate Tiers
+    # -------------------------------------------------------------------------
+    def _generate_rate_cards_and_tiers(
+        self, db: Session, carriers: List[Carrier], lanes: List[Lane]
+    ) -> Tuple[List[RateCard], List[RateTier]]:
+        rate_cards = []
+        rate_tiers = []
+
+        card_counter = 1
+        for carrier in carriers:
+            # Assign 2-5 lanes per carrier
+            assigned_lanes = self.rng.sample(lanes, min(len(lanes), self.rng.randint(2, 5)))
+            for lane in assigned_lanes:
+                rc_id = generate_rate_card_id(carrier.carrier_id, 2026, card_counter)
+                card_counter += 1
+
+                base_rt = round(self.rng.uniform(0.35, 0.75), 4)
+                min_chg = round(self.rng.uniform(65.0, 110.0), 2)
+
+                rc = RateCard(
+                    rate_card_id=rc_id,
+                    carrier_id=carrier.carrier_id,
+                    lane_id=lane.lane_id,
+                    service_level=ServiceLevel.STANDARD,
+                    currency="USD",
+                    effective_from=BASE_DATE,
+                    effective_to=BASE_DATE + timedelta(days=364),
+                    base_rate=base_rt,
+                    minimum_charge=min_chg,
+                    dimensional_weight_divisor=5000.0,
+                    status=RateCardStatus.ACTIVE,
+                    created_at=BASE_EPOCH + timedelta(hours=card_counter)
+                )
+                db.add(rc)
+                rate_cards.append(rc)
+
+                # Weight tiers
+                tier_configs = [
+                    (1, 0.0, 250.0, round(base_rt * 1.30, 4), 0.0),
+                    (2, 250.0, 1000.0, round(base_rt * 1.10, 4), 0.0),
+                    (3, 1000.0, 5000.0, round(base_rt * 0.95, 4), 0.0),
+                    (4, 5000.0, None, round(base_rt * 0.85, 4), 25.0),
+                ]
+                for seq, min_w, max_w, rate_kg, surch in tier_configs:
+                    tier_id = generate_rate_tier_id(rc_id, seq)
+                    tier = RateTier(
+                        rate_tier_id=tier_id,
+                        rate_card_id=rc_id,
+                        tier_sequence=seq,
+                        min_weight_kg=min_w,
+                        max_weight_kg=max_w,
+                        rate_per_kg=rate_kg,
+                        flat_surcharge=surch,
+                        created_at=BASE_EPOCH + timedelta(hours=card_counter)
+                    )
+                    db.add(tier)
+                    rate_tiers.append(tier)
+
+        db.flush()
+        return rate_cards, rate_tiers
+
+    # -------------------------------------------------------------------------
+    # 6, 7, 8, 9, 10. Shipments, Legs, Weights, Accessorials, Delivery Evidence
+    # -------------------------------------------------------------------------
+    def _generate_shipments_and_movements(
+        self,
+        db: Session,
+        carriers: List[Carrier],
+        lanes: List[Lane],
+        accessorials: List[Accessorial],
+        count: int
+    ) -> Tuple[List[Shipment], List[ShipmentLeg], List[WeightMeasurement], List[ShipmentAccessorial], List[DeliveryEvidence]]:
+        shipments = []
+        legs = []
+        weights = []
+        shipment_accs = []
+        evidences = []
+
+        acc_by_code = {a.accessorial_code: a for a in accessorials}
+
+        for i in range(1, count + 1):
+            carrier = carriers[(i - 1) % len(carriers)]
+            lane = lanes[(i - 1) % len(lanes)]
+            ship_id = generate_shipment_id(i)
+
+            ship_d = BASE_DATE + timedelta(days=self.rng.randint(5, 280))
+            transit = max(1, int(lane.distance_km / 750.0) + self.rng.randint(0, 1))
+            due_d = ship_d + timedelta(days=transit)
+            deliv_dt = datetime.combine(due_d, datetime.min.time()) + timedelta(hours=self.rng.randint(9, 17), minutes=self.rng.randint(0, 59))
+
+            l_cm = round(self.rng.uniform(80.0, 240.0), 1)
+            w_cm = round(self.rng.uniform(60.0, 140.0), 1)
+            h_cm = round(self.rng.uniform(60.0, 200.0), 1)
+            act_kg = round(self.rng.uniform(45.0, 6500.0), 1)
+            dec_kg = act_kg
+            chg_kg = ContractualFreightCalculator.calculate_chargeable_weight(
+                act_kg, l_cm, w_cm, h_cm, divisor=5000.0, rounding_policy=self.profile.weight_rounding
+            )
+
+            shipment = Shipment(
+                shipment_id=ship_id,
+                carrier_id=carrier.carrier_id,
+                lane_id=lane.lane_id,
+                service_level=ServiceLevel.STANDARD,
+                ship_date=ship_d,
+                delivery_due_date=due_d,
+                delivered_at=deliv_dt,
+                actual_length_cm=l_cm,
+                actual_width_cm=w_cm,
+                actual_height_cm=h_cm,
+                actual_weight_kg=act_kg,
+                declared_weight_kg=dec_kg,
+                chargeable_weight_kg=chg_kg,
+                currency="USD",
+                shipment_status=ShipmentStatus.DELIVERED,
+                created_at=datetime.combine(ship_d, datetime.min.time()) - timedelta(days=1)
+            )
+            db.add(shipment)
+            shipments.append(shipment)
+
+            # Leg
+            leg_id = generate_shipment_leg_id(ship_id, 1)
+            leg = ShipmentLeg(
+                shipment_leg_id=leg_id,
+                shipment_id=ship_id,
+                leg_sequence=1,
+                origin_location_code=lane.origin_location_code,
+                destination_location_code=lane.destination_location_code,
+                departure_at=datetime.combine(ship_d, datetime.min.time()) + timedelta(hours=8),
+                arrival_at=deliv_dt,
+                leg_status=ShipmentLegStatus.ARRIVED
+            )
+            db.add(leg)
+            legs.append(leg)
+
+            # Weight Measurement
+            wm_id = generate_weight_measurement_id(ship_id, 1)
+            wm = WeightMeasurement(
+                weight_measurement_id=wm_id,
+                shipment_id=ship_id,
+                measurement_type=MeasurementType.ORIGIN_SCALE,
+                length_cm=l_cm,
+                width_cm=w_cm,
+                height_cm=h_cm,
+                weight_kg=act_kg,
+                measured_at=datetime.combine(ship_d, datetime.min.time()) + timedelta(hours=7, minutes=30),
+                source=MeasurementSource.CARRIER,
+                is_accepted=True
+            )
+            db.add(wm)
+            weights.append(wm)
+
+            # Delivery Evidence
+            dock_type = self.rng.choices(["STANDARD_DOCK", "GROUND_LEVEL", "RESIDENTIAL"], weights=[0.70, 0.22, 0.08])[0]
+            liftgate_used = (dock_type in ["GROUND_LEVEL", "RESIDENTIAL"])
+            detention_mins = self.rng.choice([0, 0, 0, 15, 30, 45, 120, 150, 180])
+
+            dev_id = generate_delivery_evidence_id(ship_id)
+            dev = DeliveryEvidence(
+                delivery_evidence_id=dev_id,
+                shipment_id=ship_id,
+                delivered_at=deliv_dt,
+                recipient_name=f"Dock Agent {self.rng.randint(101, 899)}",
+                signed_pod_ref=f"POD-SIG-{ship_id}",
+                facility_dock_type=dock_type,
+                liftgate_actually_used=liftgate_used,
+                detention_minutes_recorded=detention_mins,
+                created_at=deliv_dt + timedelta(minutes=15)
+            )
+            db.add(dev)
+            evidences.append(dev)
+
+            # Accessorials assignments
+            acc_seq = 1
+            if liftgate_used and "LIFTGATE" in acc_by_code:
+                sa_id = generate_shipment_accessorial_id(ship_id, acc_seq)
+                acc_seq += 1
+                sa = ShipmentAccessorial(
+                    shipment_accessorial_id=sa_id,
+                    shipment_id=ship_id,
+                    accessorial_id=acc_by_code["LIFTGATE"].accessorial_id,
+                    quantity=1.0,
+                    authorized=True,
+                    evidence_reference=f"POD-LIFTGATE-{ship_id}",
+                    created_at=deliv_dt
+                )
+                db.add(sa)
+                shipment_accs.append(sa)
+
+            if detention_mins > 120 and "DETENTION" in acc_by_code:
+                sa_id = generate_shipment_accessorial_id(ship_id, acc_seq)
+                acc_seq += 1
+                det_hours = round((detention_mins - 120) / 60.0, 2)
+                sa = ShipmentAccessorial(
+                    shipment_accessorial_id=sa_id,
+                    shipment_id=ship_id,
+                    accessorial_id=acc_by_code["DETENTION"].accessorial_id,
+                    quantity=det_hours,
+                    authorized=True,
+                    evidence_reference=f"ELD-GPS-LOG-{ship_id}",
+                    created_at=deliv_dt
+                )
+                db.add(sa)
+                shipment_accs.append(sa)
+
+        db.flush()
+        return shipments, legs, weights, shipment_accs, evidences
+
+    # -------------------------------------------------------------------------
+    # 11, 12, 13, 14, 15, 17. Invoices, Financials, Validation, Ground Truth
+    # -------------------------------------------------------------------------
+    def _generate_invoices_and_financials(
+        self,
+        db: Session,
+        carriers: List[Carrier],
+        shipments: List[Shipment],
+        rate_cards: List[RateCard],
+        accessorials: List[Accessorial],
+        evidences: List[DeliveryEvidence],
+        shipment_accs: List[ShipmentAccessorial],
+        count: int
+    ) -> Tuple[List[FreightInvoice], List[InvoiceLine], List[InvoiceValidationRun], List[AuditException], List[CreditNote], List[GroundTruthLabel], List[DuplicateInvoiceGroup]]:
+        invoices = []
+        lines = []
+        validation_runs = []
+        exceptions = []
+        credit_notes = []
+        ground_truths = []
+        dup_groups = []
+
+        # Index lookups
+        evid_map = {e.shipment_id: e for e in evidences}
+        acc_map = {}
+        for sa in shipment_accs:
+            acc_map.setdefault(sa.shipment_id, []).append(sa)
+        rc_map = {}
+        for rc in rate_cards:
+            rc_map.setdefault((rc.carrier_id, rc.lane_id), []).append(rc)
+
+        dup_group_counter = 1
+        exception_counter = 1
+        credit_note_counter = 1
+        gt_counter = 1
+
+        for i in range(1, count + 1):
+            issue_type = SCENARIO_CYCLE[(i - 1) % len(SCENARIO_CYCLE)]
+            shipment = shipments[(i - 1) % len(shipments)]
+            carrier = shipment.carrier
+
+            carrier_rcs = rc_map.get((carrier.carrier_id, shipment.lane_id), [])
+            rate_card = carrier_rcs[0] if carrier_rcs else None
+
+            dev = evid_map.get(shipment.shipment_id)
+            sa_list = acc_map.get(shipment.shipment_id, [])
+
+            # Compute valid baseline calculation
+            baseline_calc = ContractualFreightCalculator.rate_shipment(
+                shipment=shipment,
+                rate_card=rate_card,
+                delivery_evidence=dev,
+                shipment_accessorials=sa_list,
+                weight_rounding=self.profile.weight_rounding
+            )
+
+            inv_id = generate_invoice_id(i)
+            inv_date = shipment.delivery_due_date + timedelta(days=self.rng.randint(2, 7))
+            due_date = inv_date + timedelta(days=30)
+            inv_num = f"INV-{carrier.carrier_code}-{20260000 + i}"
+
+            # Apply anomaly injector
+            anom_result = AnomalyInjector.apply_anomaly(
+                issue_type=issue_type,
+                counter=i,
+                invoice_id=inv_id,
+                shipment=shipment,
+                rate_card=rate_card,
+                baseline_calc=baseline_calc,
+                carrier=carrier,
+                rng=self.rng
+            )
+
+            # Handle duplicate invoice group if duplicate scenario
+            dup_grp_id = None
+            if issue_type == "DUPLICATE_INVOICE":
+                grp_id = generate_duplicate_group_id(dup_group_counter)
+                dup_group_counter += 1
+                fp_hash = f"HASH-DUP-{inv_id}"
+                dup_grp = DuplicateInvoiceGroup(
+                    group_id=grp_id,
+                    carrier_id=carrier.carrier_id,
+                    fingerprint_hash=fp_hash,
+                    canonical_invoice_id=inv_id,
+                    invoice_count=2,
+                    created_at=datetime.combine(inv_date, datetime.min.time())
+                )
+                db.add(dup_grp)
+                dup_groups.append(dup_grp)
+                dup_grp_id = grp_id
+
+            # Determine invoice and validation statuses
+            if anom_result.expected_decision == "PASS":
+                inv_status = InvoiceStatus.SUBMITTED
+                val_status = ValidationStatus.PASSED
+            else:
+                inv_status = InvoiceStatus.EXCEPTION_DISPUTED
+                val_status = ValidationStatus.FAILED
+
+            finv = FreightInvoice(
+                invoice_id=inv_id,
+                carrier_id=carrier.carrier_id,
+                shipment_id=anom_result.shipment_id, # NULL if untrusted ref
+                raw_shipment_reference=anom_result.raw_shipment_ref,
+                reference_rejection_reason=anom_result.reference_rejection_reason,
+                invoice_number=inv_num,
+                invoice_date=inv_date,
+                service_period_start=shipment.ship_date,
+                service_period_end=shipment.delivery_due_date,
+                due_date=due_date,
+                currency="USD",
+                billed_total=anom_result.total_billed,
+                expected_total=anom_result.ground_truth_expected,
+                variance_amount=anom_result.injected_variance,
+                invoice_status=inv_status,
+                validation_status=val_status,
+                duplicate_group_id=dup_grp_id,
+                fingerprint_hash=f"FP-{carrier.carrier_id}-{anom_result.raw_shipment_ref}-{anom_result.total_billed}",
+                created_at=datetime.combine(inv_date, datetime.min.time())
+            )
+            db.add(finv)
+            invoices.append(finv)
+
+            # Invoice Lines
+            for line_data in anom_result.injected_lines:
+                fline_id = generate_invoice_line_id(inv_id, line_data["line_number"])
+                fline = InvoiceLine(
+                    invoice_line_id=fline_id,
+                    invoice_id=inv_id,
+                    line_number=line_data["line_number"],
+                    line_type=InvoiceLineType[line_data["line_type"]] if isinstance(line_data["line_type"], str) else line_data["line_type"],
+                    accessorial_id=line_data.get("accessorial_id"),
+                    description=line_data["description"],
+                    quantity=line_data["quantity"],
+                    unit_of_measure=line_data["unit_of_measure"],
+                    unit_rate=line_data["unit_rate"],
+                    billed_amount=line_data["billed_amount"],
+                    expected_amount=line_data["expected_amount"],
+                    variance_amount=line_data["variance_amount"],
+                    evidence_reference=line_data.get("evidence_reference"),
+                    source_reference=line_data.get("source_reference"),
+                    created_at=datetime.combine(inv_date, datetime.min.time())
+                )
+                db.add(fline)
+                lines.append(fline)
+
+            # 13. Validation Run record
+            vrun_id = generate_validation_run_id(i)
+            vrun = InvoiceValidationRun(
+                validation_run_id=vrun_id,
+                invoice_id=inv_id,
+                run_at=datetime.combine(inv_date, datetime.min.time()) + timedelta(hours=2),
+                actor="AUTOMATED_AUDITOR_V1",
+                rules_applied_count=5,
+                exceptions_detected_count=1 if anom_result.is_anomaly else 0,
+                summary_verdict=anom_result.expected_decision,
+                details_json=json.dumps({
+                    "issue_type": issue_type,
+                    "expected_decision": anom_result.expected_decision,
+                    "billed_total": anom_result.total_billed,
+                    "expected_total": anom_result.ground_truth_expected,
+                    "variance": anom_result.injected_variance
+                })
+            )
+            db.add(vrun)
+            validation_runs.append(vrun)
+
+            # 14. Audit Exception (if anomaly/discrepancy detected)
+            ex_id = None
+            if anom_result.is_anomaly:
+                ex_id = generate_exception_id(exception_counter)
+                exception_counter += 1
+
+                ex_type = ExceptionType.CALCULATION_ERROR
+                if issue_type == "UNKNOWN_SHIPMENT_REF":
+                    ex_type = ExceptionType.UNMATCHED_SHIPMENT
+                elif issue_type == "EXPIRED_RATE_CARD":
+                    ex_type = ExceptionType.BASE_RATE_MISMATCH
+                elif issue_type == "INCORRECT_WEIGHT_TIER":
+                    ex_type = ExceptionType.WEIGHT_DISCREPANCY
+                elif issue_type == "DUPLICATE_FUEL_SURCHARGE":
+                    ex_type = ExceptionType.DUPLICATE_BILLING
+                elif issue_type == "DIMENSIONAL_WEIGHT_DISCREPANCY":
+                    ex_type = ExceptionType.WEIGHT_DISCREPANCY
+                elif issue_type == "UNAUTHORIZED_ACCESSORIAL":
+                    ex_type = ExceptionType.UNAUTHORIZED_ACCESSORIAL
+                elif issue_type == "DUPLICATE_INVOICE":
+                    ex_type = ExceptionType.DUPLICATE_BILLING
+
+                ex = AuditException(
+                    exception_id=ex_id,
+                    invoice_id=inv_id,
+                    invoice_line_id=lines[-1].invoice_line_id if lines else None,
+                    shipment_id=anom_result.shipment_id,
+                    exception_type=ex_type,
+                    severity=ExceptionSeverity.CRITICAL if anom_result.injected_variance > 100.0 else ExceptionSeverity.MEDIUM,
+                    expected_amount=anom_result.ground_truth_expected,
+                    billed_amount=anom_result.total_billed,
+                    disputed_amount=anom_result.injected_variance,
+                    currency="USD",
+                    explanation=f"Audit discrepancy detected: {issue_type}. Billed ${anom_result.total_billed:.2f} vs contracted ${anom_result.ground_truth_expected:.2f}.",
+                    evidence_json=json.dumps(anom_result.details),
+                    exception_status=ExceptionStatus.OPEN,
+                    detected_at=datetime.combine(inv_date, datetime.min.time()) + timedelta(hours=2)
+                )
+                db.add(ex)
+                exceptions.append(ex)
+
+            # 15. Credit Notes (Scenario E: Excessive Credit Note or Legitimate Settlement)
+            if issue_type == "EXCESSIVE_CREDIT_NOTE" or (anom_result.is_anomaly and i % 7 == 0 and ex_id):
+                cn_id = generate_credit_note_id(credit_note_counter)
+                credit_note_counter += 1
+
+                if issue_type == "EXCESSIVE_CREDIT_NOTE":
+                    # Scenario E: Credit note exceeds approved disputed amount!
+                    # Disputed variance is $100, credit note issued is $175 -> REJECTED
+                    credit_val = round(anom_result.injected_variance + 75.0, 2)
+                    cn_approval = CreditNoteApprovalStatus.REJECTED
+                    cn_recon = CreditNoteReconciliationStatus.REJECTED
+                else:
+                    # Legitimate settlement matching dispute
+                    credit_val = anom_result.injected_variance
+                    cn_approval = CreditNoteApprovalStatus.APPROVED
+                    cn_recon = CreditNoteReconciliationStatus.FULLY_APPLIED
+
+                cn = CreditNote(
+                    credit_note_id=cn_id,
+                    exception_id=ex_id,
+                    invoice_id=inv_id,
+                    carrier_id=carrier.carrier_id,
+                    credit_note_number=f"CN-{carrier.carrier_code}-{20260000 + credit_note_counter}",
+                    issue_date=inv_date + timedelta(days=14),
+                    currency="USD",
+                    credit_amount=credit_val,
+                    approval_status=cn_approval,
+                    reconciliation_status=cn_recon,
+                    created_at=datetime.combine(inv_date + timedelta(days=14), datetime.min.time())
+                )
+                db.add(cn)
+                credit_notes.append(cn)
+
+            # 17. Ground Truth Label (Evaluation dataset)
+            gtl_id = generate_ground_truth_label_id(gt_counter)
+            gt_counter += 1
+
+            gt = GroundTruthLabel(
+                label_id=gtl_id,
+                anomaly_id=anom_result.anomaly_id,
+                invoice_id=inv_id,
+                invoice_number=inv_num,
+                raw_shipment_reference=anom_result.raw_shipment_ref,
+                carrier_id=carrier.carrier_id,
+                carrier_code=carrier.carrier_code,
+                issue_type=issue_type,
+                is_anomaly=anom_result.is_anomaly,
+                expected_decision=anom_result.expected_decision,
+                affected_entity_ids_json=json.dumps(anom_result.affected_entity_ids),
+                injection_method=anom_result.injection_method,
+                ground_truth_billed=anom_result.total_billed,
+                ground_truth_expected=anom_result.ground_truth_expected,
+                injected_variance=anom_result.injected_variance,
+                details_json=json.dumps(anom_result.details),
+                created_at=datetime.combine(inv_date, datetime.min.time())
+            )
+            db.add(gt)
+            ground_truths.append(gt)
+
+        db.flush()
+        return invoices, lines, validation_runs, exceptions, credit_notes, ground_truths, dup_groups
+
+    # -------------------------------------------------------------------------
+    # 16. Audit Events and Entity Status History
+    # -------------------------------------------------------------------------
+    def _generate_audit_trail(
+        self,
+        db: Session,
+        carriers: List[Carrier],
+        shipments: List[Shipment],
+        invoices: List[FreightInvoice],
+        exceptions: List[AuditException],
+        credit_notes: List[CreditNote]
+    ) -> Tuple[List[AuditEvent], List[EntityStatusHistory]]:
+        audit_events = []
+        status_histories = []
+
+        # System start event
+        ev_id = generate_audit_event_id(self.audit_event_seq)
+        self.audit_event_seq += 1
+        ev = AuditEvent(
+            event_id=ev_id,
+            entity_type="SYSTEM",
+            entity_id="GENERATOR",
+            event_type="SYNTHESIS_STARTED",
+            actor="DATA_GENERATOR",
+            payload_json=json.dumps({"profile": self.profile.name, "seed": self.seed}),
+            notes="Starting synthetic freight dataset generation",
+            timestamp=BASE_EPOCH
+        )
+        db.add(ev)
+        audit_events.append(ev)
+
+        # Record sample shipment and invoice lifecycle history
+        for inv in invoices[:min(len(invoices), 50)]:
+            hist_id = generate_status_history_id(self.status_hist_seq)
+            self.status_hist_seq += 1
+            sh = EntityStatusHistory(
+                history_id=hist_id,
+                entity_name="FreightInvoice",
+                entity_id=inv.invoice_id,
+                from_status="NONE",
+                to_status=inv.invoice_status.value if hasattr(inv.invoice_status, "value") else str(inv.invoice_status),
+                transition_reason="Initial invoice submission and audit ingestion",
+                changed_by="INGESTION_PIPELINE",
+                changed_at=datetime.combine(inv.invoice_date, datetime.min.time())
+            )
+            db.add(sh)
+            status_histories.append(sh)
+
+        for ex in exceptions[:min(len(exceptions), 25)]:
+            hist_id = generate_status_history_id(self.status_hist_seq)
+            self.status_hist_seq += 1
+            sh = EntityStatusHistory(
+                history_id=hist_id,
+                entity_name="AuditException",
+                entity_id=ex.exception_id,
+                from_status="NONE",
+                to_status=ex.exception_status.value if hasattr(ex.exception_status, "value") else str(ex.exception_status),
+                transition_reason="Variance identified by audit engine",
+                changed_by="AUDIT_ENGINE",
+                changed_at=ex.detected_at
+            )
+            db.add(sh)
+            status_histories.append(sh)
+
+        # System completion event
+        ev_id = generate_audit_event_id(self.audit_event_seq)
+        self.audit_event_seq += 1
+        ev = AuditEvent(
+            event_id=ev_id,
             entity_type="SYSTEM",
             entity_id="GENERATOR",
             event_type="SYNTHESIS_COMPLETED",
@@ -90,598 +824,18 @@ class SyntheticDataGenerator:
                 "carriers": len(carriers),
                 "shipments": len(shipments),
                 "invoices": len(invoices),
-                "ground_truth_labels": len(ground_truths),
-                "credit_notes": len(credit_notes),
-                "seed": self.seed
+                "exceptions": len(exceptions),
+                "credit_notes": len(credit_notes)
             }),
-            notes=f"Synthetic dataset generated with seed {self.seed}"
-        ))
-        db.commit()
-
-        return {
-            "carriers": len(carriers),
-            "shipments": len(shipments),
-            "invoices": len(invoices),
-            "ground_truth_labels": len(ground_truths),
-            "credit_notes": len(credit_notes)
-        }
-
-    def _generate_carriers(self, db: Session, count: int) -> List[Carrier]:
-        carriers = []
-        for i in range(count):
-            scac = SCACS[i % len(SCACS)] if i < len(SCACS) else f"CAR{i+1:03d}"
-            carrier = Carrier(
-                carrier_code=scac,
-                name=f"{scac} Freight Logistics Corp #{i+1}",
-                tax_id=f"12-{self.rng.randint(1000000, 9999999)}",
-                payment_terms_days=self.rng.choice([15, 30, 45]),
-                status="ACTIVE",
-                contact_email=f"billing@{scac.lower()}freight.com"
-            )
-            db.add(carrier)
-            carriers.append(carrier)
-        db.flush()
-        return carriers
-
-    def _generate_contracts(self, db: Session, carriers: List[Carrier]) -> Tuple[List[RateCard], List[AccessorialRule]]:
-        rate_cards = []
-        accessorial_rules = []
-
-        base_date = date(2026, 1, 1)
-
-        for carrier in carriers:
-            # Create active rate card
-            rc = RateCard(
-                rate_card_code=f"RC-{carrier.carrier_code}-2026",
-                carrier_id=carrier.id,
-                effective_date=base_date,
-                expiration_date=base_date + timedelta(days=365),
-                currency="USD",
-                base_rate_model=self.rng.choice(["PER_CWT", "PER_CWT", "PER_MILE"]), # 67% CWT, 33% PER_MILE
-                minimum_charge_floor=self.rng.choice([65.0, 75.0, 85.0]),
-                fuel_base_price=3.00,
-                fuel_surcharge_pct_per_interval=0.005,
-                status="ACTIVE"
-            )
-            db.add(rc)
-            db.flush()
-            rate_cards.append(rc)
-
-            # Lanes
-            lane_cwt = round(self.rng.uniform(9.50, 16.50), 2)
-            lane_mile = round(self.rng.uniform(1.85, 2.75), 2)
-            lane = RateLane(
-                rate_card_id=rc.id,
-                origin_zip_prefix="ALL",
-                dest_zip_prefix="ALL",
-                origin_region="US-NATIONAL",
-                dest_region="US-NATIONAL",
-                base_rate_cwt=lane_cwt,
-                base_rate_per_mile=lane_mile,
-                flat_rate=round(self.rng.uniform(350.0, 750.0), 2),
-                minimum_charge=rc.minimum_charge_floor,
-                transit_days=self.rng.randint(1, 4)
-            )
-            db.add(lane)
-
-            # Accessorial Rules
-            rules_config = [
-                ("LIFTGATE", "Liftgate Delivery Service", "FLAT", round(self.rng.uniform(65.0, 95.0), 2), 0, True),
-                ("DETENTION", "Driver Detention at Facility", "PER_HOUR", round(self.rng.uniform(60.0, 90.0), 2), 120, True),
-                ("RESIDENTIAL", "Residential Delivery Surcharge", "FLAT", round(self.rng.uniform(45.0, 75.0), 2), 0, True),
-                ("INSIDE_DELIVERY", "Inside Delivery", "FLAT", round(self.rng.uniform(55.0, 85.0), 2), 0, True),
-                ("HAZMAT", "Hazardous Material Handling", "FLAT", round(self.rng.uniform(110.0, 150.0), 2), 0, True),
-                ("APPOINTMENT", "Guaranteed Delivery Appointment", "FLAT", 35.0, 0, True),
-            ]
-            for code, name, rtype, rate, free_time, req_proof in rules_config:
-                ar = AccessorialRule(
-                    carrier_id=carrier.id,
-                    code=code,
-                    name=name,
-                    rate_type=rtype,
-                    unit_rate=rate,
-                    free_time_minutes=free_time,
-                    proof_required=req_proof
-                )
-                db.add(ar)
-                accessorial_rules.append(ar)
-
-        db.flush()
-        return rate_cards, accessorial_rules
-
-    def _generate_shipments(self, db: Session, carriers: List[Carrier], count: int) -> List[Shipment]:
-        shipments = []
-        base_date = date(2026, 2, 1)
-
-        for i in range(count):
-            carrier = carriers[i % len(carriers)]
-            orig_city, orig_state, orig_zip = self.rng.choice(CITIES)
-            dest_city, dest_state, dest_zip = self.rng.choice(CITIES)
-            while dest_city == orig_city:
-                dest_city, dest_state, dest_zip = self.rng.choice(CITIES)
-
-            p_date = base_date + timedelta(days=self.rng.randint(0, 180))
-            d_date = p_date + timedelta(days=self.rng.randint(1, 4))
-            dist = round(self.rng.uniform(80.0, 1400.0), 1)
-
-            dock_type = self.rng.choices(["STANDARD_DOCK", "GROUND_LEVEL", "RESIDENTIAL"], weights=[0.75, 0.20, 0.05])[0]
-
-            bol = f"BOL-{carrier.carrier_code}-{20260000 + i + 1}"
-            shipment = Shipment(
-                bol_number=bol,
-                carrier_id=carrier.id,
-                origin_zip=orig_zip,
-                origin_city=orig_city,
-                origin_state=orig_state,
-                destination_zip=dest_zip,
-                destination_city=dest_city,
-                destination_state=dest_state,
-                pickup_date=p_date,
-                delivery_date=d_date,
-                distance_miles=dist,
-                current_fuel_index=round(self.rng.uniform(3.60, 4.25), 2),
-                dock_type=dock_type,
-                status="DELIVERED"
-            )
-            db.add(shipment)
-            db.flush()
-
-            # Certified scale weight
-            gross_wt = round(self.rng.uniform(350.0, 18500.0), 1)
-            l = round(self.rng.uniform(36.0, 96.0), 1)
-            w = round(self.rng.uniform(36.0, 48.0), 1)
-            h = round(self.rng.uniform(36.0, 84.0), 1)
-            billable_wt = FreightCalculator.calculate_billable_weight(gross_wt, l, w, h, 139.0)
-
-            wm = WeightMeasurement(
-                shipment_id=shipment.id,
-                measurement_type="ORIGIN_SCALE",
-                gross_weight_lbs=gross_wt,
-                length_in=l,
-                width_in=w,
-                height_in=h,
-                dim_factor=139.0,
-                billable_weight_lbs=billable_wt,
-                certified=True
-            )
-            db.add(wm)
-
-            # Delivery Record
-            liftgate_used = (dock_type in ["GROUND_LEVEL", "RESIDENTIAL"])
-            # Dwell time (mostly under 120 min free time, occasionally detention)
-            dwell = self.rng.choice([45, 60, 75, 90, 110, 115, 145, 180, 240])
-
-            dr = DeliveryRecord(
-                shipment_id=shipment.id,
-                delivered_at=datetime.combine(d_date, datetime.min.time()) + timedelta(hours=self.rng.randint(9, 17)),
-                recipient_name=f"Dock Mgr {self.rng.randint(101, 999)}",
-                signed_pod_ref=f"POD-SIG-{bol}",
-                facility_dock_type=dock_type,
-                liftgate_actually_used=liftgate_used,
-                detention_minutes_recorded=dwell
-            )
-            db.add(dr)
-
-            # Accessorial events if any
-            if dwell > 120:
-                db.add(AccessorialEvent(
-                    shipment_id=shipment.id,
-                    code="DETENTION",
-                    quantity_or_duration=round((dwell - 120) / 60.0, 2),
-                    proof_document_ref=f"GPS-ELD-LOG-{bol}",
-                    authorized=True,
-                    notes=f"Recorded dwell time {dwell} min"
-                ))
-
-            if liftgate_used:
-                db.add(AccessorialEvent(
-                    shipment_id=shipment.id,
-                    code="LIFTGATE",
-                    quantity_or_duration=1.0,
-                    proof_document_ref=f"POD-LIFTGATE-SIGN-{bol}",
-                    authorized=True,
-                    notes="Ground delivery required liftgate"
-                ))
-
-            shipments.append(shipment)
-
-        db.flush()
-        return shipments
-
-    def _generate_invoices_and_ground_truth(
-        self,
-        db: Session,
-        carriers: List[Carrier],
-        shipments: List[Shipment],
-        rate_cards: List[RateCard],
-        accessorial_rules: List[AccessorialRule],
-        count: int
-    ) -> Tuple[List[InvoiceHeader], List[GroundTruthLabel]]:
-        invoices = []
-        ground_truths = []
-
-        carrier_map = {c.id: c for c in carriers}
-        rc_map = {rc.carrier_id: rc for rc in rate_cards}
-        ar_map: Dict[int, List[AccessorialRule]] = {}
-        for ar in accessorial_rules:
-            ar_map.setdefault(ar.carrier_id, []).append(ar)
-
-        # We will generate `count` invoices.
-        # Notice: not all shipments must have an invoice (e.g. 20,000 shipments, 15,000 invoices).
-        # We also simulate legitimate partials, and injected negative scenarios.
-        
-        # Scenario allocation:
-        # 60% CLEAN (PASS)
-        # 8% Scenario 1: BASE_RATE_MISMATCH (overbilled rate)
-        # 8% Scenario 2: WEIGHT_DISCREPANCY (overbilled weight)
-        # 8% Scenario 3: UNAUTHORIZED_ACCESSORIAL (unperformed liftgate or detention)
-        # 8% Scenario 4: DUPLICATE_BILLING (exact duplicate or repeat invoice)
-        # 8% Scenario 5: CREDIT_NOTE prepared (and other anomalies)
-
-        scenario_pool = (
-            ["NORMAL"] * 60 +
-            ["BASE_RATE_MISMATCH"] * 8 +
-            ["WEIGHT_DISCREPANCY"] * 8 +
-            ["UNAUTHORIZED_ACCESSORIAL"] * 8 +
-            ["DUPLICATE_BILLING"] * 8 +
-            ["INVALID_CREDIT_NOTE"] * 8
+            notes="Dataset synthesis finished successfully",
+            timestamp=BASE_EPOCH + timedelta(days=365)
         )
-
-        for i in range(count):
-            # Select shipment
-            shipment = shipments[i % len(shipments)]
-            carrier = carrier_map[shipment.carrier_id]
-            rc = rc_map.get(carrier.id)
-            rules = ar_map.get(carrier.id, [])
-
-            # Compute true expected calculation
-            lane = rc.lanes[0] if rc and rc.lanes else None
-            wm = shipment.weight_measurements[0] if shipment.weight_measurements else None
-            dr = shipment.delivery_record
-            events = shipment.accessorial_events
-
-            calc_result = FreightCalculator.calculate_expected_charges(
-                shipment=shipment,
-                rate_card=rc,
-                rate_lane=lane,
-                accessorial_rules=rules,
-                weight_measurement=wm,
-                delivery_record=dr,
-                accessorial_events=events
-            )
-
-            # Assign scenario
-            scenario = scenario_pool[i % len(scenario_pool)]
-            inv_num = f"INV-{carrier.carrier_code}-{100000 + i + 1}"
-            inv_date = shipment.delivery_date + timedelta(days=self.rng.randint(2, 10))
-            due_date = inv_date + timedelta(days=carrier.payment_terms_days)
-
-            lines_to_create = []
-            anomaly_details = {}
-            injected_variance = 0.0
-            is_anomaly = (scenario != "NORMAL")
-            expected_verdict = "FAIL" if is_anomaly else "PASS"
-
-            if scenario == "NORMAL":
-                # Matches expected charges exactly (clean invoice)
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    lines_to_create.append({
-                        "line_number": line_idx + 1,
-                        "charge_type": exp_item.charge_type,
-                        "charge_code": exp_item.charge_code,
-                        "description": exp_item.description,
-                        "billed_units": exp_item.expected_units,
-                        "billed_rate": exp_item.expected_rate,
-                        "billed_amount": exp_item.expected_amount,
-                        "expected_units": exp_item.expected_units,
-                        "expected_rate": exp_item.expected_rate,
-                        "expected_amount": exp_item.expected_amount,
-                        "variance_amount": 0.0,
-                        "status": "MATCH"
-                    })
-                total_billed = calc_result.total_expected_amount
-
-            elif scenario == "BASE_RATE_MISMATCH":
-                # Inflate base linehaul rate by 20% to 45%
-                markup = round(self.rng.uniform(0.20, 0.45), 2)
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    if exp_item.charge_type == "LINEHAUL":
-                        inflated_rate = round(exp_item.expected_rate * (1.0 + markup), 2)
-                        inflated_amount = round(exp_item.expected_units * inflated_rate, 2)
-                        line_var = round(inflated_amount - exp_item.expected_amount, 2)
-                        injected_variance += line_var
-                        lines_to_create.append({
-                            "line_number": line_idx + 1,
-                            "charge_type": exp_item.charge_type,
-                            "charge_code": exp_item.charge_code,
-                            "description": f"Linehaul (Billed with {markup*100:.0f}% tariff markup)",
-                            "billed_units": exp_item.expected_units,
-                            "billed_rate": inflated_rate,
-                            "billed_amount": inflated_amount,
-                            "expected_units": exp_item.expected_units,
-                            "expected_rate": exp_item.expected_rate,
-                            "expected_amount": exp_item.expected_amount,
-                            "variance_amount": line_var,
-                            "status": "VARIANCE_DISCREPANCY"
-                        })
-                        anomaly_details["markup_pct"] = markup
-                        anomaly_details["contracted_rate"] = exp_item.expected_rate
-                        anomaly_details["billed_rate"] = inflated_rate
-                    else:
-                        lines_to_create.append({
-                            "line_number": line_idx + 1,
-                            "charge_type": exp_item.charge_type,
-                            "charge_code": exp_item.charge_code,
-                            "description": exp_item.description,
-                            "billed_units": exp_item.expected_units,
-                            "billed_rate": exp_item.expected_rate,
-                            "billed_amount": exp_item.expected_amount,
-                            "expected_units": exp_item.expected_units,
-                            "expected_rate": exp_item.expected_rate,
-                            "expected_amount": exp_item.expected_amount,
-                            "variance_amount": 0.0,
-                            "status": "MATCH"
-                        })
-                total_billed = round(calc_result.total_expected_amount + injected_variance, 2)
-
-            elif scenario == "WEIGHT_DISCREPANCY":
-                # Inflate weight by 30% to 60%
-                weight_mult = round(self.rng.uniform(1.30, 1.60), 2)
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    if exp_item.charge_type == "LINEHAUL":
-                        inflated_units = round(exp_item.expected_units * weight_mult, 2)
-                        inflated_amount = round(inflated_units * exp_item.expected_rate, 2)
-                        line_var = round(inflated_amount - exp_item.expected_amount, 2)
-                        injected_variance += line_var
-                        lines_to_create.append({
-                            "line_number": line_idx + 1,
-                            "charge_type": exp_item.charge_type,
-                            "charge_code": exp_item.charge_code,
-                            "description": f"Linehaul (Billed on uncertified re-weigh weight)",
-                            "billed_units": inflated_units,
-                            "billed_rate": exp_item.expected_rate,
-                            "billed_amount": inflated_amount,
-                            "expected_units": exp_item.expected_units,
-                            "expected_rate": exp_item.expected_rate,
-                            "expected_amount": exp_item.expected_amount,
-                            "variance_amount": line_var,
-                            "status": "VARIANCE_DISCREPANCY"
-                        })
-                        anomaly_details["certified_weight_cwt"] = exp_item.expected_units
-                        anomaly_details["billed_weight_cwt"] = inflated_units
-                    else:
-                        lines_to_create.append({
-                            "line_number": line_idx + 1,
-                            "charge_type": exp_item.charge_type,
-                            "charge_code": exp_item.charge_code,
-                            "description": exp_item.description,
-                            "billed_units": exp_item.expected_units,
-                            "billed_rate": exp_item.expected_rate,
-                            "billed_amount": exp_item.expected_amount,
-                            "expected_units": exp_item.expected_units,
-                            "expected_rate": exp_item.expected_rate,
-                            "expected_amount": exp_item.expected_amount,
-                            "variance_amount": 0.0,
-                            "status": "MATCH"
-                        })
-                total_billed = round(calc_result.total_expected_amount + injected_variance, 2)
-
-            elif scenario == "UNAUTHORIZED_ACCESSORIAL":
-                # Add unrendered accessorial (e.g. liftgate billed when delivery had dock, or unearned detention)
-                unrendered_type = self.rng.choice(["LIFTGATE", "DETENTION", "INSIDE_DELIVERY"])
-                fee = 85.0 if unrendered_type == "LIFTGATE" else (150.0 if unrendered_type == "DETENTION" else 75.0)
-                injected_variance = fee
-
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    lines_to_create.append({
-                        "line_number": line_idx + 1,
-                        "charge_type": exp_item.charge_type,
-                        "charge_code": exp_item.charge_code,
-                        "description": exp_item.description,
-                        "billed_units": exp_item.expected_units,
-                        "billed_rate": exp_item.expected_rate,
-                        "billed_amount": exp_item.expected_amount,
-                        "expected_units": exp_item.expected_units,
-                        "expected_rate": exp_item.expected_rate,
-                        "expected_amount": exp_item.expected_amount,
-                        "variance_amount": 0.0,
-                        "status": "MATCH"
-                    })
-
-                lines_to_create.append({
-                    "line_number": len(lines_to_create) + 1,
-                    "charge_type": "ACCESSORIAL",
-                    "charge_code": unrendered_type,
-                    "description": f"Unauthorized / Unrendered {unrendered_type} Fee",
-                    "billed_units": 1.0,
-                    "billed_rate": fee,
-                    "billed_amount": fee,
-                    "expected_units": 0.0,
-                    "expected_rate": 0.0,
-                    "expected_amount": 0.0,
-                    "variance_amount": fee,
-                    "status": "UNAUTHORIZED"
-                })
-                anomaly_details["unauthorized_accessorial_code"] = unrendered_type
-                anomaly_details["billed_fee"] = fee
-                total_billed = round(calc_result.total_expected_amount + fee, 2)
-
-            elif scenario == "DUPLICATE_BILLING":
-                # Clone an earlier generated invoice to simulate genuine duplicate billing
-                if invoices:
-                    prior_inv = invoices[self.rng.randint(0, len(invoices) - 1)]
-                    shipment = prior_inv.shipment or shipment
-                    carrier = carrier_map[prior_inv.carrier_id]
-                    target_bol = prior_inv.bol_number_billed
-                    calc_result = FreightCalculator.calculate_expected_charges(
-                        shipment=shipment,
-                        rate_card=rc_map.get(carrier.id),
-                        rate_lane=rc_map.get(carrier.id).lanes[0] if rc_map.get(carrier.id) and rc_map.get(carrier.id).lanes else None,
-                        accessorial_rules=ar_map.get(carrier.id, []),
-                        weight_measurement=shipment.weight_measurements[0] if shipment.weight_measurements else None,
-                        delivery_record=shipment.delivery_record,
-                        accessorial_events=shipment.accessorial_events
-                    )
-                else:
-                    target_bol = shipment.bol_number
-
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    lines_to_create.append({
-                        "line_number": line_idx + 1,
-                        "charge_type": exp_item.charge_type,
-                        "charge_code": exp_item.charge_code,
-                        "description": exp_item.description,
-                        "billed_units": exp_item.expected_units,
-                        "billed_rate": exp_item.expected_rate,
-                        "billed_amount": exp_item.expected_amount,
-                        "expected_units": exp_item.expected_units,
-                        "expected_rate": exp_item.expected_rate,
-                        "expected_amount": exp_item.expected_amount,
-                        "variance_amount": 0.0,
-                        "status": "MATCH"
-                    })
-                total_billed = calc_result.total_expected_amount
-                injected_variance = total_billed
-                anomaly_details["duplicate_bol"] = target_bol
-
-            else: # INVALID_CREDIT_NOTE or other anomaly
-                # Bill extra uncontracted administrative fee
-                extra_fee = round(self.rng.uniform(45.0, 95.0), 2)
-                injected_variance = extra_fee
-                for line_idx, exp_item in enumerate(calc_result.line_items):
-                    lines_to_create.append({
-                        "line_number": line_idx + 1,
-                        "charge_type": exp_item.charge_type,
-                        "charge_code": exp_item.charge_code,
-                        "description": exp_item.description,
-                        "billed_units": exp_item.expected_units,
-                        "billed_rate": exp_item.expected_rate,
-                        "billed_amount": exp_item.expected_amount,
-                        "expected_units": exp_item.expected_units,
-                        "expected_rate": exp_item.expected_rate,
-                        "expected_amount": exp_item.expected_amount,
-                        "variance_amount": 0.0,
-                        "status": "MATCH"
-                    })
-                lines_to_create.append({
-                    "line_number": len(lines_to_create) + 1,
-                    "charge_type": "MISC",
-                    "charge_code": "ADMIN_FEE",
-                    "description": "Uncontracted Administrative Processing Charge",
-                    "billed_units": 1.0,
-                    "billed_rate": extra_fee,
-                    "billed_amount": extra_fee,
-                    "expected_units": 0.0,
-                    "expected_rate": 0.0,
-                    "expected_amount": 0.0,
-                    "variance_amount": extra_fee,
-                    "status": "UNAUTHORIZED"
-                })
-                anomaly_details["uncontracted_misc_fee"] = extra_fee
-                total_billed = round(calc_result.total_expected_amount + extra_fee, 2)
-
-            fingerprint = InvoiceValidator.compute_invoice_fingerprint(
-                carrier.id, shipment.bol_number, total_billed
-            )
-
-            inv = InvoiceHeader(
-                invoice_number=inv_num,
-                carrier_id=carrier.id,
-                shipment_id=shipment.id,
-                bol_number_billed=shipment.bol_number,
-                invoice_date=inv_date,
-                due_date=due_date,
-                currency="USD",
-                total_billed_amount=total_billed,
-                calculated_expected_amount=calc_result.total_expected_amount,
-                total_variance_amount=round(total_billed - calc_result.total_expected_amount, 2),
-                status="PENDING_AUDIT",
-                fingerprint_hash=fingerprint,
-                is_duplicate=(scenario == "DUPLICATE_BILLING")
-            )
-            db.add(inv)
-            db.flush()
-
-            for line_data in lines_to_create:
-                inv_line = InvoiceLine(
-                    invoice_id=inv.id,
-                    line_number=line_data["line_number"],
-                    charge_type=line_data["charge_type"],
-                    charge_code=line_data["charge_code"],
-                    description=line_data["description"],
-                    billed_units=line_data["billed_units"],
-                    billed_rate=line_data["billed_rate"],
-                    billed_amount=line_data["billed_amount"],
-                    expected_units=line_data["expected_units"],
-                    expected_rate=line_data["expected_rate"],
-                    expected_amount=line_data["expected_amount"],
-                    variance_amount=line_data["variance_amount"],
-                    status=line_data["status"]
-                )
-                db.add(inv_line)
-
-            # Store Ground Truth Label independently
-            gt_label = GroundTruthLabel(
-                invoice_id=inv.id,
-                invoice_number=inv.invoice_number,
-                bol_number=shipment.bol_number,
-                carrier_code=carrier.carrier_code,
-                scenario_type=scenario,
-                is_anomaly=is_anomaly,
-                expected_verdict=expected_verdict,
-                ground_truth_billed=total_billed,
-                ground_truth_expected=calc_result.total_expected_amount,
-                injected_variance=injected_variance,
-                anomaly_details_json=json.dumps(anomaly_details)
-            )
-            db.add(gt_label)
-
-            invoices.append(inv)
-            ground_truths.append(gt_label)
+        db.add(ev)
+        audit_events.append(ev)
 
         db.flush()
-        return invoices, ground_truths
+        return audit_events, status_histories
 
-    def _generate_credit_notes(self, db: Session, carriers: List[Carrier], invoices: List[InvoiceHeader]) -> List[CreditNote]:
-        credit_notes = []
-        # Find invoices with positive variance (overbilled)
-        overbilled = [inv for inv in invoices if inv.total_variance_amount > 5.0]
 
-        for idx, inv in enumerate(overbilled[:len(overbilled)]):
-            is_valid_credit = (idx % 2 == 0)
-            cn_number = f"CN-{inv.invoice_number.replace('INV-', '')}"
-
-            if is_valid_credit:
-                # Legitimate credit note covering full or partial overbilling
-                credit_amt = round(inv.total_variance_amount, 2)
-                cn = CreditNote(
-                    credit_note_number=cn_number,
-                    carrier_id=inv.carrier_id,
-                    original_invoice_id=inv.id,
-                    issue_date=inv.invoice_date + timedelta(days=14),
-                    credit_amount=credit_amt,
-                    applied_amount=0.0,
-                    remaining_balance=credit_amt,
-                    status="UNAPPLIED",
-                    reason_code="RATE_CORRECTION"
-                )
-            else:
-                # Scenario 5 Anomaly: Excessive credit note or wrong amount
-                credit_amt = round(inv.total_variance_amount * 2.5 + 100.0, 2)
-                cn = CreditNote(
-                    credit_note_number=cn_number,
-                    carrier_id=inv.carrier_id,
-                    original_invoice_id=inv.id,
-                    issue_date=inv.invoice_date + timedelta(days=14),
-                    credit_amount=credit_amt,
-                    applied_amount=0.0,
-                    remaining_balance=credit_amt,
-                    status="UNAPPLIED",
-                    reason_code="EXCESSIVE_CLAIM"
-                )
-
-            db.add(cn)
-            credit_notes.append(cn)
-
-        db.flush()
-        return credit_notes
+# Backward compatibility alias
+SyntheticDataGenerator = DeterministicDataGenerator

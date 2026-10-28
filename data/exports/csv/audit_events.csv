@@ -1,0 +1,3 @@
+event_id,entity_type,entity_id,event_type,actor,payload_json,notes,timestamp
+AUD-2026-000001,SYSTEM,GENERATOR,SYNTHESIS_STARTED,DATA_GENERATOR,"{""profile"": ""starter"", ""seed"": 20261022}",Starting synthetic freight dataset generation,2026-01-01T08:00:00
+AUD-2026-000002,SYSTEM,GENERATOR,SYNTHESIS_COMPLETED,DATA_GENERATOR,"{""carriers"": 20, ""shipments"": 250, ""invoices"": 200, ""exceptions"": 60, ""credit_notes"": 18}",Dataset synthesis finished successfully,2027-01-01T08:00:00

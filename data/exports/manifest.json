@@ -1,0 +1,482 @@
+{
+  "entities": {
+    "csv/accessorials.csv": {
+      "columns": [
+        "accessorial_id",
+        "accessorial_code",
+        "description",
+        "charge_method",
+        "rate_amount",
+        "currency",
+        "taxable",
+        "requires_evidence",
+        "status",
+        "effective_from",
+        "effective_to"
+      ],
+      "entity": "accessorials",
+      "format": "csv",
+      "row_count": 6,
+      "sha256": "9e90dc586824ff7ce98986ecd1bd560ac1b17297c6e31b8cbbded1223a8c28c6"
+    },
+    "csv/audit_events.csv": {
+      "columns": [
+        "event_id",
+        "entity_type",
+        "entity_id",
+        "event_type",
+        "actor",
+        "payload_json",
+        "notes",
+        "timestamp"
+      ],
+      "entity": "audit_events",
+      "format": "csv",
+      "row_count": 2,
+      "sha256": "7ff8b4255b9918f706c34d93ca22fc409dea459b0ffa5d8f1b54673418277036"
+    },
+    "csv/audit_exceptions.csv": {
+      "columns": [
+        "exception_id",
+        "invoice_id",
+        "invoice_line_id",
+        "shipment_id",
+        "exception_type",
+        "severity",
+        "expected_amount",
+        "billed_amount",
+        "disputed_amount",
+        "currency",
+        "explanation",
+        "evidence_json",
+        "exception_status",
+        "detected_at",
+        "resolved_at"
+      ],
+      "entity": "audit_exceptions",
+      "format": "csv",
+      "row_count": 60,
+      "sha256": "0d96409653b70257c207c627368d73c85fff3485d7f514dd2a6ce8c4b676241e"
+    },
+    "csv/carriers.csv": {
+      "columns": [
+        "carrier_id",
+        "carrier_name",
+        "carrier_code",
+        "status",
+        "country_code",
+        "created_at",
+        "updated_at"
+      ],
+      "entity": "carriers",
+      "format": "csv",
+      "row_count": 20,
+      "sha256": "49932ec2631c24e14a5685e921c5600562e390f0fcd858d5c00dabe67e537cae"
+    },
+    "csv/credit_notes.csv": {
+      "columns": [
+        "credit_note_id",
+        "exception_id",
+        "invoice_id",
+        "carrier_id",
+        "credit_note_number",
+        "issue_date",
+        "currency",
+        "credit_amount",
+        "approval_status",
+        "reconciliation_status",
+        "created_at"
+      ],
+      "entity": "credit_notes",
+      "format": "csv",
+      "row_count": 18,
+      "sha256": "f3d9f8f8897918184c22dcf6575a05339fb2de1ea68f767717b0e55aac7bbb23"
+    },
+    "csv/delivery_evidence.csv": {
+      "columns": [
+        "delivery_evidence_id",
+        "shipment_id",
+        "delivered_at",
+        "recipient_name",
+        "signed_pod_ref",
+        "facility_dock_type",
+        "liftgate_actually_used",
+        "detention_minutes_recorded",
+        "created_at"
+      ],
+      "entity": "delivery_evidence",
+      "format": "csv",
+      "row_count": 250,
+      "sha256": "aaca54d796cffbae60b814d21a510165aedcdcd7c29dd1fff8c85ce28d4f3bf4"
+    },
+    "csv/duplicate_invoice_groups.csv": {
+      "columns": [
+        "group_id",
+        "carrier_id",
+        "fingerprint_hash",
+        "canonical_invoice_id",
+        "invoice_count",
+        "created_at"
+      ],
+      "entity": "duplicate_invoice_groups",
+      "format": "csv",
+      "row_count": 10,
+      "sha256": "bb1916b5dd4cad88af551806cb35908e1af18b32f6faf56759eafafc84701752"
+    },
+    "csv/entity_status_history.csv": {
+      "columns": [
+        "history_id",
+        "entity_name",
+        "entity_id",
+        "from_status",
+        "to_status",
+        "transition_reason",
+        "changed_by",
+        "changed_at"
+      ],
+      "entity": "entity_status_history",
+      "format": "csv",
+      "row_count": 75,
+      "sha256": "a31b8f3480848c620d107b6397d81a75086e0efd2d66c6321fb8519a83d2d929"
+    },
+    "csv/freight_invoices.csv": {
+      "columns": [
+        "invoice_id",
+        "carrier_id",
+        "shipment_id",
+        "raw_shipment_reference",
+        "reference_rejection_reason",
+        "invoice_number",
+        "invoice_date",
+        "service_period_start",
+        "service_period_end",
+        "due_date",
+        "currency",
+        "billed_total",
+        "expected_total",
+        "variance_amount",
+        "invoice_status",
+        "validation_status",
+        "duplicate_group_id",
+        "fingerprint_hash",
+        "created_at"
+      ],
+      "entity": "freight_invoices",
+      "format": "csv",
+      "row_count": 200,
+      "sha256": "832cae2e752dd656cb71e5ca59876de1cfeee31f29afd129b28aa986f89f5ef6"
+    },
+    "csv/ground_truth_labels.csv": {
+      "columns": [
+        "label_id",
+        "anomaly_id",
+        "invoice_id",
+        "invoice_number",
+        "raw_shipment_reference",
+        "carrier_id",
+        "carrier_code",
+        "issue_type",
+        "is_anomaly",
+        "expected_decision",
+        "affected_entity_ids_json",
+        "injection_method",
+        "ground_truth_billed",
+        "ground_truth_expected",
+        "injected_variance",
+        "details_json",
+        "created_at"
+      ],
+      "entity": "ground_truth_labels",
+      "format": "csv",
+      "row_count": 200,
+      "sha256": "fc3b2dc58f3bce281b9b524dfe73da57a9c83395aac935c00f9f1f06bb9886b5"
+    },
+    "csv/invoice_lines.csv": {
+      "columns": [
+        "invoice_line_id",
+        "invoice_id",
+        "line_number",
+        "line_type",
+        "accessorial_id",
+        "description",
+        "quantity",
+        "unit_of_measure",
+        "unit_rate",
+        "billed_amount",
+        "expected_amount",
+        "variance_amount",
+        "evidence_reference",
+        "source_reference",
+        "created_at"
+      ],
+      "entity": "invoice_lines",
+      "format": "csv",
+      "row_count": 516,
+      "sha256": "d12a844303ca3b839ac9720cf662d55d8e644a6d751cb40a4b708fce5a3f5bf0"
+    },
+    "csv/invoice_validation_runs.csv": {
+      "columns": [
+        "validation_run_id",
+        "invoice_id",
+        "run_at",
+        "actor",
+        "rules_applied_count",
+        "exceptions_detected_count",
+        "summary_verdict",
+        "details_json"
+      ],
+      "entity": "invoice_validation_runs",
+      "format": "csv",
+      "row_count": 200,
+      "sha256": "69d2acf2a550f19ae46d2aae7c26a807528a4eb59dbda4492a5855815e1b14a8"
+    },
+    "csv/lanes.csv": {
+      "columns": [
+        "lane_id",
+        "origin_location_code",
+        "destination_location_code",
+        "origin_city",
+        "destination_city",
+        "origin_country",
+        "destination_country",
+        "distance_km",
+        "status"
+      ],
+      "entity": "lanes",
+      "format": "csv",
+      "row_count": 45,
+      "sha256": "5054523363aa017466f1401a552b002c3253c93ad414505999230d0a21cfe47e"
+    },
+    "csv/rate_cards.csv": {
+      "columns": [
+        "rate_card_id",
+        "carrier_id",
+        "lane_id",
+        "service_level",
+        "currency",
+        "effective_from",
+        "effective_to",
+        "base_rate",
+        "minimum_charge",
+        "dimensional_weight_divisor",
+        "status",
+        "created_at"
+      ],
+      "entity": "rate_cards",
+      "format": "csv",
+      "row_count": 66,
+      "sha256": "fd2d6889b661961493b029881c458b1bd0be90de2bc13510aa1c218f8257cf16"
+    },
+    "csv/rate_tiers.csv": {
+      "columns": [
+        "rate_tier_id",
+        "rate_card_id",
+        "tier_sequence",
+        "min_weight_kg",
+        "max_weight_kg",
+        "rate_per_kg",
+        "flat_surcharge",
+        "created_at"
+      ],
+      "entity": "rate_tiers",
+      "format": "csv",
+      "row_count": 264,
+      "sha256": "cddc14108da35ab5c13a14cf4c10b8e04e065c59cc3a7583b9d8c40bc0d9a454"
+    },
+    "csv/shipment_accessorials.csv": {
+      "columns": [
+        "shipment_accessorial_id",
+        "shipment_id",
+        "accessorial_id",
+        "quantity",
+        "authorized",
+        "evidence_reference",
+        "created_at"
+      ],
+      "entity": "shipment_accessorials",
+      "format": "csv",
+      "row_count": 127,
+      "sha256": "bf7d3ef64cfc431b7d835b465af1af4d334a4d76ec2559588aa401a49292d3b4"
+    },
+    "csv/shipment_legs.csv": {
+      "columns": [
+        "shipment_leg_id",
+        "shipment_id",
+        "leg_sequence",
+        "origin_location_code",
+        "destination_location_code",
+        "departure_at",
+        "arrival_at",
+        "leg_status"
+      ],
+      "entity": "shipment_legs",
+      "format": "csv",
+      "row_count": 250,
+      "sha256": "6464de2abb68c740fce3af97463c9b396ed8e3b453a5f944d8f40c92f383b554"
+    },
+    "csv/shipments.csv": {
+      "columns": [
+        "shipment_id",
+        "carrier_id",
+        "lane_id",
+        "service_level",
+        "ship_date",
+        "delivery_due_date",
+        "delivered_at",
+        "actual_length_cm",
+        "actual_width_cm",
+        "actual_height_cm",
+        "actual_weight_kg",
+        "declared_weight_kg",
+        "chargeable_weight_kg",
+        "currency",
+        "shipment_status",
+        "created_at"
+      ],
+      "entity": "shipments",
+      "format": "csv",
+      "row_count": 250,
+      "sha256": "3cbbf9f489a6fd31fa9a44fa665215f94f4a211abca6e9448ab900f6aca31f31"
+    },
+    "csv/weight_measurements.csv": {
+      "columns": [
+        "weight_measurement_id",
+        "shipment_id",
+        "measurement_type",
+        "length_cm",
+        "width_cm",
+        "height_cm",
+        "weight_kg",
+        "measured_at",
+        "source",
+        "is_accepted"
+      ],
+      "entity": "weight_measurements",
+      "format": "csv",
+      "row_count": 250,
+      "sha256": "9651259540f73a61401f10b61fe980b4b45db1dcf5f36cc1bfbdea829dc6181e"
+    },
+    "json/accessorials.json": {
+      "entity": "accessorials",
+      "format": "json",
+      "row_count": 6,
+      "sha256": "36ed9fc0d3306179c639ac3d2fd2d862469567c22c871d43363602b69e8a6fa2"
+    },
+    "json/audit_events.json": {
+      "entity": "audit_events",
+      "format": "json",
+      "row_count": 2,
+      "sha256": "11a4a905f7a48462a9c9a12108094d7fd709bccb76c79c6da24d51347515e027"
+    },
+    "json/audit_exceptions.json": {
+      "entity": "audit_exceptions",
+      "format": "json",
+      "row_count": 60,
+      "sha256": "2cb91badf232df731f68443a9a676508abe387fbdfcd98c7c22f39984802be6b"
+    },
+    "json/carriers.json": {
+      "entity": "carriers",
+      "format": "json",
+      "row_count": 20,
+      "sha256": "01b03f1c1859fc10c6de8c493c587cfe035a70931d6c13914301fd3ba797dffb"
+    },
+    "json/credit_notes.json": {
+      "entity": "credit_notes",
+      "format": "json",
+      "row_count": 18,
+      "sha256": "20841b0a8ac0270c8d35a0685a3a744b6699b7d941703003ff263679d9f80fa5"
+    },
+    "json/delivery_evidence.json": {
+      "entity": "delivery_evidence",
+      "format": "json",
+      "row_count": 250,
+      "sha256": "8dcf1dc773cad0234b83a38f57dd2c13cf9a8723c5908b0ee78584b15a9f7c05"
+    },
+    "json/duplicate_invoice_groups.json": {
+      "entity": "duplicate_invoice_groups",
+      "format": "json",
+      "row_count": 10,
+      "sha256": "9492b0871528f3d04ba9fdb9676f956542005f7f94b631f38258d9189883c5c3"
+    },
+    "json/entity_status_history.json": {
+      "entity": "entity_status_history",
+      "format": "json",
+      "row_count": 75,
+      "sha256": "704b30b918a0fd8bdad5152011febf9b7e2d3f8905ca3a923fc4d4e06248e929"
+    },
+    "json/freight_invoices.json": {
+      "entity": "freight_invoices",
+      "format": "json",
+      "row_count": 200,
+      "sha256": "4f9c35ec4c29b939910d00f9146d869bb0fdfd475aa8cc9cec7deb4996f29306"
+    },
+    "json/ground_truth_labels.json": {
+      "entity": "ground_truth_labels",
+      "format": "json",
+      "row_count": 200,
+      "sha256": "319a4babcf00ff0497e68320b6c21769ecbbaa7231150f5e81c2a314be832fca"
+    },
+    "json/invoice_lines.json": {
+      "entity": "invoice_lines",
+      "format": "json",
+      "row_count": 516,
+      "sha256": "bc8f0c7ee696bcf1cf89dd6c652ab2335ff0099269c4a2092688e21896caa370"
+    },
+    "json/invoice_validation_runs.json": {
+      "entity": "invoice_validation_runs",
+      "format": "json",
+      "row_count": 200,
+      "sha256": "ff070a05bed4577249ea33d0698751bb733e0887c3b9b751140902422cc6fdb1"
+    },
+    "json/lanes.json": {
+      "entity": "lanes",
+      "format": "json",
+      "row_count": 45,
+      "sha256": "42a3de1f999191508151e41ba488bb41e95a681e20e18108f5279d35acf3ac09"
+    },
+    "json/rate_cards.json": {
+      "entity": "rate_cards",
+      "format": "json",
+      "row_count": 66,
+      "sha256": "454344b027971beae6cb51ea44da3ef610364d694e412127543a9bd0dad5f8d5"
+    },
+    "json/rate_tiers.json": {
+      "entity": "rate_tiers",
+      "format": "json",
+      "row_count": 264,
+      "sha256": "27b9f045e4f461094db73b3939c956c61fe6cc897f49c4fdcfc2d1172d8186b7"
+    },
+    "json/shipment_accessorials.json": {
+      "entity": "shipment_accessorials",
+      "format": "json",
+      "row_count": 127,
+      "sha256": "98a179cc7670fa825f864e7e93df338beedfb5cb0cbca646f598cc659f99b302"
+    },
+    "json/shipment_legs.json": {
+      "entity": "shipment_legs",
+      "format": "json",
+      "row_count": 250,
+      "sha256": "df3611f7818b729f41551ae25543013aebe4d396f6b2c08deccb901610ef3b03"
+    },
+    "json/shipments.json": {
+      "entity": "shipments",
+      "format": "json",
+      "row_count": 250,
+      "sha256": "5dd6585e86878da5b5415f5ba5a18ad22e8e4254c1ce1a05e747bd5a6360d039"
+    },
+    "json/weight_measurements.json": {
+      "entity": "weight_measurements",
+      "format": "json",
+      "row_count": 250,
+      "sha256": "0016e0c80ba848e427cc9644c32e176e0d94810adda83b5b2ab373de2d9c949a"
+    },
+    "sql/seed_data.sql": {
+      "entity": "ALL",
+      "format": "sql",
+      "sha256": "05de2d33cb94f9df5911c14a57b96911f0dec4dd5b212f2d85eb65b305b76ba9"
+    }
+  },
+  "exported_at": "2026-01-01T08:00:00Z",
+  "seed": 20261022,
+  "total_files": 39
+}

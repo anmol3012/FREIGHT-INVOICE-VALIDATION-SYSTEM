@@ -1,35 +1,33 @@
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, Float, DateTime, Text, Boolean
+from sqlalchemy import Column, String, Float, DateTime, Text, Boolean
 from backend.app.core.database import Base
 
 class GroundTruthLabel(Base):
     """
-    Independently stored ground-truth labels.
+    Independently stored ground-truth labels for audit accuracy benchmarking.
     Never consumed by operational calculation or validation routines.
-    Only queried by the evaluation module to measure audit precision, recall, and detection accuracy.
+    PK format: GTL-2026-000001
     """
     __tablename__ = "ground_truth_labels"
 
-    id = Column(Integer, primary_key=True, index=True)
-    invoice_id = Column(Integer, index=True, nullable=True)
+    label_id = Column(String(40), primary_key=True, index=True)
+    anomaly_id = Column(String(40), index=True, nullable=True) # e.g. ANOM-2026-000001 or None for NORMAL
+    invoice_id = Column(String(40), index=True, nullable=False)
     invoice_number = Column(String(50), index=True, nullable=False)
-    bol_number = Column(String(50), index=True, nullable=False)
+    raw_shipment_reference = Column(String(50), index=True, nullable=False)
+    carrier_id = Column(String(30), index=True, nullable=False)
     carrier_code = Column(String(10), index=True, nullable=False)
-    
-    # Negative scenario category or NORMAL:
-    # 1. BASE_RATE_MISMATCH
-    # 2. WEIGHT_DISCREPANCY
-    # 3. UNAUTHORIZED_ACCESSORIAL
-    # 4. DUPLICATE_BILLING
-    # 5. INVALID_CREDIT_NOTE
-    # or NORMAL
-    scenario_type = Column(String(50), nullable=False, index=True)
+
+    issue_type = Column(String(50), nullable=False, index=True)
     is_anomaly = Column(Boolean, nullable=False, default=False)
-    expected_verdict = Column(String(20), nullable=False) # PASS, FAIL
-    
+    expected_decision = Column(String(20), nullable=False) # PASS, FAIL
+
+    affected_entity_ids_json = Column(Text, nullable=True)
+    injection_method = Column(Text, nullable=True)
+
     ground_truth_billed = Column(Float, nullable=False)
     ground_truth_expected = Column(Float, nullable=False)
     injected_variance = Column(Float, nullable=False, default=0.0)
-    
-    anomaly_details_json = Column(Text, nullable=True) # Full metadata of what was manipulated
-    created_at = Column(DateTime, default=datetime.utcnow)
+
+    details_json = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)

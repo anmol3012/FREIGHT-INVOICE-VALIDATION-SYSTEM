@@ -1,0 +1,7 @@
+accessorial_id,accessorial_code,description,charge_method,rate_amount,currency,taxable,requires_evidence,status,effective_from,effective_to
+ACC-000001,LIFTGATE,Hydraulic Liftgate Loading/Unloading Service,FLAT,75.0,USD,False,True,ACTIVE,2026-01-01,
+ACC-000002,DETENTION,Driver/Vehicle Detention at Terminal Facility,PER_HOUR,80.0,USD,False,True,ACTIVE,2026-01-01,
+ACC-000003,RESIDENTIAL,Residential Location Delivery Surcharge,FLAT,65.0,USD,False,True,ACTIVE,2026-01-01,
+ACC-000004,INSIDE_DELIVERY,Inside Delivery Beyond Dock Surcharge,FLAT,55.0,USD,False,True,ACTIVE,2026-01-01,
+ACC-000005,HAZMAT,Dangerous Goods & Hazardous Materials Protocol,FLAT,120.0,USD,True,True,ACTIVE,2026-01-01,
+ACC-000006,APPOINTMENT,Mandatory Guaranteed Delivery Time Window,FLAT,35.0,USD,False,True,ACTIVE,2026-01-01,

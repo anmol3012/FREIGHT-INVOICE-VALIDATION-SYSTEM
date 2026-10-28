@@ -1,0 +1,2002 @@
+[
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000001",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000001"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000002",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-28T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000002"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000003",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-08T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000003"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 3749.73, \"expected_total\": 3749.73, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000004",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000004"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 197.4, \"expected_total\": 171.9, \"variance\": 25.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000005",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-07T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000005"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000006",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000006"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 110.5, \"expected_total\": 96.9, \"variance\": 13.6}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000007",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-19T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000007"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000008",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-05T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000008"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000009",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000009"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000010",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-13T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000010"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000011",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-09T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000011"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000012",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-10T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000012"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000013",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000013"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 130.9, \"expected_total\": 96.9, \"variance\": 34.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000014",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-08T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000014"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 1438.98, \"expected_total\": 1438.98, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000015",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000015"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000016",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000016"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 256.9, \"expected_total\": 171.9, \"variance\": 85.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000017",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-19T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000017"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000018",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-10T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000018"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000019",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000019"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000020",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-06T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000020"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 3519.3, \"expected_total\": 3519.3, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000021",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-10T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000021"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000022",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-02T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000022"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000023",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-21T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000023"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 3208.62, \"expected_total\": 3208.62, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000024",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-25T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000024"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 193.15, \"expected_total\": 171.9, \"variance\": 21.25}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000025",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-09T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000025"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000026",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000026"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 116.45, \"expected_total\": 96.9, \"variance\": 19.55}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000027",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-18T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000027"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000028",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-03T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000028"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000029",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000029"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 183.8, \"expected_total\": 171.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000030",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-06T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000030"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000031",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000031"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000032",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-06T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000032"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000033",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-14T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000033"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 187.9, \"expected_total\": 136.9, \"variance\": 51.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000034",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-12T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000034"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000035",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-08T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000035"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000036",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-11T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000036"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 181.9, \"expected_total\": 96.9, \"variance\": 85.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000037",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-12T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000037"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000038",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-06T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000038"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000039",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-25T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000039"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000040",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-09T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000040"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000041",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-16T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000041"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000042",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-14T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000042"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000043",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-31T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000043"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000044",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000044"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 162.4, \"expected_total\": 136.9, \"variance\": 25.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000045",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-26T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000045"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000046",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-04T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000046"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 275.7, \"expected_total\": 251.9, \"variance\": 23.8}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000047",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-17T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000047"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000048",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000048"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000049",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-16T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000049"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000050",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-04T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000050"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000051",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-03T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000051"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000052",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000052"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000053",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-05T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000053"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 210.9, \"expected_total\": 176.9, \"variance\": 34.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000054",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-24T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000054"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000055",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000055"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000056",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-25T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000056"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 246.9, \"expected_total\": 96.9, \"variance\": 150.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000057",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-10T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000057"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000058",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-08T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000058"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000059",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000059"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000060",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000060"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000061",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000061"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000062",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-21T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000062"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000063",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-07T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000063"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000064",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-25T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000064"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 193.15, \"expected_total\": 171.9, \"variance\": 21.25}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000065",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-26T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000065"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000066",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-18T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000066"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 119.85, \"expected_total\": 96.9, \"variance\": 22.95}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000067",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-08T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000067"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000068",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000068"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000069",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000069"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000070",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-15T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000070"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000071",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-28T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000071"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000072",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000072"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000073",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000073"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 205.9, \"expected_total\": 171.9, \"variance\": 34.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000074",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-08T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000074"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000075",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000075"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 251.9, \"expected_total\": 251.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000076",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-09T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000076"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 171.9, \"expected_total\": 96.9, \"variance\": 75.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000077",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-19T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000077"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000078",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000078"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000079",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-08T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000079"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000080",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-29T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000080"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000081",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000081"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000082",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-29T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000082"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000083",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-19T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000083"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000084",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000084"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 122.4, \"expected_total\": 96.9, \"variance\": 25.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000085",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-16T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000085"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000086",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000086"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 115.6, \"expected_total\": 96.9, \"variance\": 18.7}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000087",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-11T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000087"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000088",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000088"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000089",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-02T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000089"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000090",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-16T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000090"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000091",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000091"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000092",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-13T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000092"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000093",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000093"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 130.9, \"expected_total\": 96.9, \"variance\": 34.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000094",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-18T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000094"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000095",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-09T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000095"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000096",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-05T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000096"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 181.9, \"expected_total\": 96.9, \"variance\": 85.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000097",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-20T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000097"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000098",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-28T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000098"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000099",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000099"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000100",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000100"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000101",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000101"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000102",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-02T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000102"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 171.9, \"expected_total\": 0.0, \"variance\": 171.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000103",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-07T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000103"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000104",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-10T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000104"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 199.0, \"expected_total\": 176.9, \"variance\": 22.1}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000105",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-26T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000105"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000106",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000106"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 190.6, \"expected_total\": 171.9, \"variance\": 18.7}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000107",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-05T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000107"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000108",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-21T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000108"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000109",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-20T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000109"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000110",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-05T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000110"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000111",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000111"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000112",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-05T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000112"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 745.38, \"expected_total\": 745.38, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000113",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-13T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000113"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 222.9, \"expected_total\": 171.9, \"variance\": 51.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000114",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-14T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000114"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000115",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-20T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000115"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000116",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-20T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000116"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 211.9, \"expected_total\": 136.9, \"variance\": 75.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000117",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-16T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000117"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000118",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000118"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000119",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-11T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000119"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000120",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000120"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000121",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000121"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000122",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-09T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000122"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 96.9, \"expected_total\": 0.0, \"variance\": 96.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000123",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-15T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000123"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000124",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000124"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 121.55, \"expected_total\": 96.9, \"variance\": 24.65}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000125",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-02T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000125"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 644.5, \"expected_total\": 644.5, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000126",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000126"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 111.35, \"expected_total\": 96.9, \"variance\": 14.45}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000127",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-28T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000127"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000128",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-18T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000128"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000129",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-12T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000129"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 183.8, \"expected_total\": 171.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000130",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-31T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000130"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000131",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-14T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000131"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000132",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000132"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000133",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-21T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000133"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 179.4, \"expected_total\": 136.9, \"variance\": 42.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000134",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-24T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000134"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000135",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000135"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 923.66, \"expected_total\": 923.66, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000136",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000136"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 321.9, \"expected_total\": 171.9, \"variance\": 150.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000137",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-28T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000137"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000138",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-21T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000138"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000139",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000139"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000140",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000140"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000141",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-06T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000141"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000142",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000142"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 211.9, \"expected_total\": 0.0, \"variance\": 211.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000143",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-29T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000143"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000144",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000144"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 124.1, \"expected_total\": 96.9, \"variance\": 27.2}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000145",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-12T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000145"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000146",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000146"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 120.7, \"expected_total\": 96.9, \"variance\": 23.8}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000147",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-17T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000147"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000148",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-20T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000148"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000149",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-02T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000149"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 188.8, \"expected_total\": 176.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000150",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-16T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000150"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000151",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000151"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000152",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-10T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000152"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000153",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-01T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000153"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 139.4, \"expected_total\": 96.9, \"variance\": 42.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000154",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-19T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000154"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000155",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000155"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000156",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-14T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000156"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 286.9, \"expected_total\": 136.9, \"variance\": 150.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000157",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-23T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000157"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 211.9, \"expected_total\": 211.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000158",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000158"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000159",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-23T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000159"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000160",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-04T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000160"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000161",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-29T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000161"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000162",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000162"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 3079.36, \"expected_total\": 0.0, \"variance\": 3079.36}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000163",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-30T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000163"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000164",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000164"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 200.8, \"expected_total\": 171.9, \"variance\": 28.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000165",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-24T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000165"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000166",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000166"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 195.7, \"expected_total\": 171.9, \"variance\": 23.8}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000167",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-02T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000167"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000168",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-06T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000168"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000169",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-04T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000169"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 183.8, \"expected_total\": 171.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000170",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-22T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000170"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000171",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-28T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000171"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000172",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000172"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000173",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-24T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000173"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 130.9, \"expected_total\": 96.9, \"variance\": 34.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000174",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-21T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000174"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000175",
+    "rules_applied_count": 5,
+    "run_at": "2026-10-08T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000175"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000176",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-11T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000176"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 246.9, \"expected_total\": 96.9, \"variance\": 150.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000177",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-21T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000177"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000178",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000178"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000179",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-12T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000179"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000180",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000180"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 136.9, \"expected_total\": 136.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000181",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-11T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000181"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000182",
+    "rules_applied_count": 5,
+    "run_at": "2026-03-17T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000182"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNKNOWN_SHIPMENT_REF\", \"expected_decision\": \"FAIL\", \"billed_total\": 176.9, \"expected_total\": 0.0, \"variance\": 176.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000183",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-23T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000183"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 3524.1, \"expected_total\": 3524.1, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000184",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-03T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000184"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXPIRED_RATE_CARD\", \"expected_decision\": \"FAIL\", \"billed_total\": 114.75, \"expected_total\": 96.9, \"variance\": 17.85}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000185",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-26T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000185"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000186",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-27T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000186"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"INCORRECT_WEIGHT_TIER\", \"expected_decision\": \"FAIL\", \"billed_total\": 195.7, \"expected_total\": 171.9, \"variance\": 23.8}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000187",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-04T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000187"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 171.9, \"expected_total\": 171.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000188",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000188"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000189",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-30T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000189"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_FUEL_SURCHARGE\", \"expected_decision\": \"FAIL\", \"billed_total\": 108.8, \"expected_total\": 96.9, \"variance\": 11.9}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000190",
+    "rules_applied_count": 5,
+    "run_at": "2026-08-10T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000190"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 176.9, \"expected_total\": 176.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000191",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-07T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000191"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"EXCESSIVE_CREDIT_NOTE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000192",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-16T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000192"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000193",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-22T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000193"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DIMENSIONAL_WEIGHT_DISCREPANCY\", \"expected_decision\": \"FAIL\", \"billed_total\": 139.4, \"expected_total\": 96.9, \"variance\": 42.5}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000194",
+    "rules_applied_count": 5,
+    "run_at": "2026-09-15T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000194"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 886.62, \"expected_total\": 886.62, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000195",
+    "rules_applied_count": 5,
+    "run_at": "2026-07-08T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000195"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000196",
+    "rules_applied_count": 5,
+    "run_at": "2026-05-20T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000196"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"UNAUTHORIZED_ACCESSORIAL\", \"expected_decision\": \"FAIL\", \"billed_total\": 171.9, \"expected_total\": 96.9, \"variance\": 75.0}",
+    "exceptions_detected_count": 1,
+    "invoice_id": "FINV-2026-000197",
+    "rules_applied_count": 5,
+    "run_at": "2026-01-26T02:00:00",
+    "summary_verdict": "FAIL",
+    "validation_run_id": "VRUN-2026-000197"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000198",
+    "rules_applied_count": 5,
+    "run_at": "2026-04-15T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000198"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"DUPLICATE_INVOICE\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000199",
+    "rules_applied_count": 5,
+    "run_at": "2026-02-12T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000199"
+  },
+  {
+    "actor": "AUTOMATED_AUDITOR_V1",
+    "details_json": "{\"issue_type\": \"NORMAL\", \"expected_decision\": \"PASS\", \"billed_total\": 96.9, \"expected_total\": 96.9, \"variance\": 0.0}",
+    "exceptions_detected_count": 0,
+    "invoice_id": "FINV-2026-000200",
+    "rules_applied_count": 5,
+    "run_at": "2026-06-19T02:00:00",
+    "summary_verdict": "PASS",
+    "validation_run_id": "VRUN-2026-000200"
+  }
+]

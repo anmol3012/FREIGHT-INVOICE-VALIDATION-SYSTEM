@@ -1,0 +1,82 @@
+[
+  {
+    "canonical_invoice_id": "FINV-2026-000019",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-01-19T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000019",
+    "group_id": "DUP-000001",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000039",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-01-25T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000039",
+    "group_id": "DUP-000002",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000059",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-04-23T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000059",
+    "group_id": "DUP-000003",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000079",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-06-08T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000079",
+    "group_id": "DUP-000004",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000099",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-03-24T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000099",
+    "group_id": "DUP-000005",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000119",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-08-11T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000119",
+    "group_id": "DUP-000006",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000139",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-05-30T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000139",
+    "group_id": "DUP-000007",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000159",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-01-23T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000159",
+    "group_id": "DUP-000008",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000179",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-05-12T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000179",
+    "group_id": "DUP-000009",
+    "invoice_count": 2
+  },
+  {
+    "canonical_invoice_id": "FINV-2026-000199",
+    "carrier_id": "CAR-000019",
+    "created_at": "2026-02-12T00:00:00",
+    "fingerprint_hash": "HASH-DUP-FINV-2026-000199",
+    "group_id": "DUP-000010",
+    "invoice_count": 2
+  }
+]

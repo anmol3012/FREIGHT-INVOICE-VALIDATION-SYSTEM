@@ -1,0 +1,80 @@
+[
+  {
+    "accessorial_code": "LIFTGATE",
+    "accessorial_id": "ACC-000001",
+    "charge_method": "FLAT",
+    "currency": "USD",
+    "description": "Hydraulic Liftgate Loading/Unloading Service",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 75.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": false
+  },
+  {
+    "accessorial_code": "DETENTION",
+    "accessorial_id": "ACC-000002",
+    "charge_method": "PER_HOUR",
+    "currency": "USD",
+    "description": "Driver/Vehicle Detention at Terminal Facility",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 80.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": false
+  },
+  {
+    "accessorial_code": "RESIDENTIAL",
+    "accessorial_id": "ACC-000003",
+    "charge_method": "FLAT",
+    "currency": "USD",
+    "description": "Residential Location Delivery Surcharge",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 65.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": false
+  },
+  {
+    "accessorial_code": "INSIDE_DELIVERY",
+    "accessorial_id": "ACC-000004",
+    "charge_method": "FLAT",
+    "currency": "USD",
+    "description": "Inside Delivery Beyond Dock Surcharge",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 55.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": false
+  },
+  {
+    "accessorial_code": "HAZMAT",
+    "accessorial_id": "ACC-000005",
+    "charge_method": "FLAT",
+    "currency": "USD",
+    "description": "Dangerous Goods & Hazardous Materials Protocol",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 120.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": true
+  },
+  {
+    "accessorial_code": "APPOINTMENT",
+    "accessorial_id": "ACC-000006",
+    "charge_method": "FLAT",
+    "currency": "USD",
+    "description": "Mandatory Guaranteed Delivery Time Window",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "rate_amount": 35.0,
+    "requires_evidence": true,
+    "status": "ACTIVE",
+    "taxable": false
+  }
+]

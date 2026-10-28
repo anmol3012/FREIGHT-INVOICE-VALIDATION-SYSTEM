@@ -57,3 +57,9 @@ def generate_audit_event_id(counter: int, year: int = 2026) -> str:
 
 def generate_status_history_id(counter: int, year: int = 2026) -> str:
     return f"HIST-{year}-{counter:06d}"
+
+def generate_ground_truth_label_id(counter: int, year: int = 2026) -> str:
+    return f"GTL-{year}-{counter:06d}"
+
+def generate_anomaly_id(counter: int, year: int = 2026) -> str:
+    return f"ANOM-{year}-{counter:06d}"
