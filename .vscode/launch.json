@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Full Stack Server (API + Dashboard)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "backend.app.cli",
+      "args": [
+        "serve",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "jinja": true,
+      "justMyCode": false
+    },
+    {
+      "name": "CLI: Seed Starter Dataset",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "backend.app.cli",
+      "args": [
+        "seed",
+        "--scale",
+        "starter",
+        "--reset"
+      ]
+    },
+    {
+      "name": "CLI: Run Contractual Validation",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "backend.app.cli",
+      "args": [
+        "validate",
+        "--all"
+      ]
+    },
+    {
+      "name": "CLI: Evaluate Against Ground Truth",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "backend.app.cli",
+      "args": [
+        "evaluate"
+      ]
+    },
+    {
+      "name": "Run All Tests (pytest)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-v"
+      ]
+    }
+  ]
+}

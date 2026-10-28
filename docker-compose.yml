@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: freight-validation-system
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///freight_validation.db
+      - DEFAULT_RANDOM_SEED=20261022
+      - ABSOLUTE_TOLERANCE_USD=1.00
+      - PERCENTAGE_TOLERANCE=0.01
+    volumes:
+      - app_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  app_data:

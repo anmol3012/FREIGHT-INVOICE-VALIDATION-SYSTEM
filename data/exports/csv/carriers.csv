@@ -1,0 +1,21 @@
+id,carrier_code,name,tax_id,payment_terms_days,status,contact_email
+1,ODFL,ODFL Freight Logistics Corp #1,12-6915839,45,ACTIVE,billing@odflfreight.com
+2,FXFE,FXFE Freight Logistics Corp #2,12-5747202,15,ACTIVE,billing@fxfefreight.com
+3,KNIG,KNIG Freight Logistics Corp #3,12-1813959,15,ACTIVE,billing@knigfreight.com
+4,SAIA,SAIA Freight Logistics Corp #4,12-4866262,15,ACTIVE,billing@saiafreight.com
+5,ABFS,ABFS Freight Logistics Corp #5,12-1049086,45,ACTIVE,billing@abfsfreight.com
+6,XPOF,XPOF Freight Logistics Corp #6,12-3209056,15,ACTIVE,billing@xpoffreight.com
+7,ESTES,ESTES Freight Logistics Corp #7,12-4336180,15,ACTIVE,billing@estesfreight.com
+8,RLCA,RLCA Freight Logistics Corp #8,12-6176345,45,ACTIVE,billing@rlcafreight.com
+9,YELL,YELL Freight Logistics Corp #9,12-2788433,45,ACTIVE,billing@yellfreight.com
+10,AACT,AACT Freight Logistics Corp #10,12-4245300,15,ACTIVE,billing@aactfreight.com
+11,SEFL,SEFL Freight Logistics Corp #11,12-9524491,15,ACTIVE,billing@seflfreight.com
+12,CTII,CTII Freight Logistics Corp #12,12-4632361,45,ACTIVE,billing@ctiifreight.com
+13,DAFG,DAFG Freight Logistics Corp #13,12-8566304,15,ACTIVE,billing@dafgfreight.com
+14,PITT,PITT Freight Logistics Corp #14,12-2927969,30,ACTIVE,billing@pittfreight.com
+15,CWCE,CWCE Freight Logistics Corp #15,12-3364443,45,ACTIVE,billing@cwcefreight.com
+16,UPGF,UPGF Freight Logistics Corp #16,12-6833512,30,ACTIVE,billing@upgffreight.com
+17,MTRC,MTRC Freight Logistics Corp #17,12-1957158,15,ACTIVE,billing@mtrcfreight.com
+18,AVER,AVER Freight Logistics Corp #18,12-3488671,15,ACTIVE,billing@averfreight.com
+19,CVLG,CVLG Freight Logistics Corp #19,12-8674270,15,ACTIVE,billing@cvlgfreight.com
+20,WERN,WERN Freight Logistics Corp #20,12-2815836,45,ACTIVE,billing@wernfreight.com

@@ -1,0 +1,1162 @@
+[
+  {
+    "carrier_code": "ODFL",
+    "name": "ODFL Freight Logistics Corp #1",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-ODFL-2026",
+        "model": "PER_CWT",
+        "min_charge": 85.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 15.94,
+            "mile": 2.15
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 83.46,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 72.49,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 47.67,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 68.71,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 140.61,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "FXFE",
+    "name": "FXFE Freight Logistics Corp #2",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-FXFE-2026",
+        "model": "PER_CWT",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 15.48,
+            "mile": 2.68
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 91.07,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 71.13,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 53.93,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 60.75,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 114.03,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "KNIG",
+    "name": "KNIG Freight Logistics Corp #3",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-KNIG-2026",
+        "model": "PER_CWT",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 13.48,
+            "mile": 2.29
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 75.97,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 83.14,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 62.79,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 84.73,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 110.21,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "SAIA",
+    "name": "SAIA Freight Logistics Corp #4",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-SAIA-2026",
+        "model": "PER_CWT",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 11.17,
+            "mile": 1.88
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 90.74,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 75.07,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 60.51,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 66.09,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 111.69,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "ABFS",
+    "name": "ABFS Freight Logistics Corp #5",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-ABFS-2026",
+        "model": "PER_CWT",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 9.6,
+            "mile": 2.72
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 82.45,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 61.51,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 46.35,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 70.15,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 110.56,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "XPOF",
+    "name": "XPOF Freight Logistics Corp #6",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-XPOF-2026",
+        "model": "PER_MILE",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 12.52,
+            "mile": 2.26
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 85.64,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 69.49,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 71.5,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 71.75,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 137.57,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "ESTES",
+    "name": "ESTES Freight Logistics Corp #7",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-ESTES-2026",
+        "model": "PER_MILE",
+        "min_charge": 85.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 13.2,
+            "mile": 2.29
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 74.47,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 88.44,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 70.12,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 71.65,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 132.78,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "RLCA",
+    "name": "RLCA Freight Logistics Corp #8",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-RLCA-2026",
+        "model": "PER_MILE",
+        "min_charge": 85.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 15.1,
+            "mile": 2.17
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 78.97,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 68.76,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 49.56,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 84.92,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 111.53,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "YELL",
+    "name": "YELL Freight Logistics Corp #9",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-YELL-2026",
+        "model": "PER_MILE",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 14.35,
+            "mile": 2.09
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 90.03,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 63.7,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 67.49,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 83.44,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 127.28,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "AACT",
+    "name": "AACT Freight Logistics Corp #10",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-AACT-2026",
+        "model": "PER_MILE",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 10.57,
+            "mile": 2.07
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 83.23,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 75.07,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 56.15,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 60.54,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 123.47,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "SEFL",
+    "name": "SEFL Freight Logistics Corp #11",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-SEFL-2026",
+        "model": "PER_CWT",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 15.56,
+            "mile": 1.95
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 86.97,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 81.57,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 56.38,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 70.94,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 112.51,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "CTII",
+    "name": "CTII Freight Logistics Corp #12",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-CTII-2026",
+        "model": "PER_MILE",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 10.57,
+            "mile": 2.29
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 94.54,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 62.95,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 51.12,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 62.12,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 141.81,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "DAFG",
+    "name": "DAFG Freight Logistics Corp #13",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-DAFG-2026",
+        "model": "PER_CWT",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 15.85,
+            "mile": 2.18
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 74.97,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 89.72,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 69.35,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 56.51,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 136.15,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "PITT",
+    "name": "PITT Freight Logistics Corp #14",
+    "terms_days": 30,
+    "rate_cards": [
+      {
+        "code": "RC-PITT-2026",
+        "model": "PER_CWT",
+        "min_charge": 85.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 11.06,
+            "mile": 1.96
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 87.28,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 74.34,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 55.97,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 64.73,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 133.86,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "CWCE",
+    "name": "CWCE Freight Logistics Corp #15",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-CWCE-2026",
+        "model": "PER_MILE",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 13.34,
+            "mile": 2.5
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 88.0,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 72.02,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 67.07,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 70.49,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 113.5,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "UPGF",
+    "name": "UPGF Freight Logistics Corp #16",
+    "terms_days": 30,
+    "rate_cards": [
+      {
+        "code": "RC-UPGF-2026",
+        "model": "PER_CWT",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 10.03,
+            "mile": 2.45
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 87.03,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 66.92,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 73.75,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 71.58,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 122.49,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "MTRC",
+    "name": "MTRC Freight Logistics Corp #17",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-MTRC-2026",
+        "model": "PER_MILE",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 11.26,
+            "mile": 2.01
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 94.03,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 61.19,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 61.54,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 63.1,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 122.23,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "AVER",
+    "name": "AVER Freight Logistics Corp #18",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-AVER-2026",
+        "model": "PER_CWT",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 11.99,
+            "mile": 1.91
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 91.43,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 72.84,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 50.41,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 68.53,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 145.0,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "CVLG",
+    "name": "CVLG Freight Logistics Corp #19",
+    "terms_days": 15,
+    "rate_cards": [
+      {
+        "code": "RC-CVLG-2026",
+        "model": "PER_CWT",
+        "min_charge": 75.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 10.91,
+            "mile": 2.72
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 71.01,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 85.47,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 62.65,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 66.34,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 129.22,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  },
+  {
+    "carrier_code": "WERN",
+    "name": "WERN Freight Logistics Corp #20",
+    "terms_days": 45,
+    "rate_cards": [
+      {
+        "code": "RC-WERN-2026",
+        "model": "PER_MILE",
+        "min_charge": 65.0,
+        "lanes": [
+          {
+            "origin": "ALL",
+            "dest": "ALL",
+            "cwt": 11.87,
+            "mile": 2.03
+          }
+        ]
+      }
+    ],
+    "accessorial_rules": [
+      {
+        "code": "LIFTGATE",
+        "rate_type": "FLAT",
+        "unit_rate": 68.62,
+        "free_time": 0
+      },
+      {
+        "code": "DETENTION",
+        "rate_type": "PER_HOUR",
+        "unit_rate": 78.62,
+        "free_time": 120
+      },
+      {
+        "code": "RESIDENTIAL",
+        "rate_type": "FLAT",
+        "unit_rate": 63.96,
+        "free_time": 0
+      },
+      {
+        "code": "INSIDE_DELIVERY",
+        "rate_type": "FLAT",
+        "unit_rate": 77.61,
+        "free_time": 0
+      },
+      {
+        "code": "HAZMAT",
+        "rate_type": "FLAT",
+        "unit_rate": 110.67,
+        "free_time": 0
+      },
+      {
+        "code": "APPOINTMENT",
+        "rate_type": "FLAT",
+        "unit_rate": 35.0,
+        "free_time": 0
+      }
+    ]
+  }
+]
