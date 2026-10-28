@@ -1,81 +1,131 @@
 from datetime import datetime, date
-from sqlalchemy import Column, Integer, String, Float, Boolean, Date, DateTime, ForeignKey
+from sqlalchemy import Column, String, Float, Boolean, Date, DateTime, ForeignKey, CheckConstraint, Integer, UniqueConstraint, Enum as SAEnum
 from sqlalchemy.orm import relationship
 from backend.app.core.database import Base
+from backend.app.models.enums import (
+    ShipmentStatus, ShipmentLegStatus, ServiceLevel, MeasurementType, MeasurementSource
+)
 
 class Shipment(Base):
+    """
+    Physical shipment transportation event.
+    PK format: SHP-2026-000001
+    """
     __tablename__ = "shipments"
 
-    id = Column(Integer, primary_key=True, index=True)
-    bol_number = Column(String(50), unique=True, index=True, nullable=False) # Bill of Lading
-    carrier_id = Column(Integer, ForeignKey("carriers.id"), nullable=False, index=True)
-    origin_zip = Column(String(10), nullable=False)
-    origin_city = Column(String(50), nullable=False)
-    origin_state = Column(String(10), nullable=False)
-    destination_zip = Column(String(10), nullable=False)
-    destination_city = Column(String(50), nullable=False)
-    destination_state = Column(String(10), nullable=False)
-    pickup_date = Column(Date, nullable=False)
-    delivery_date = Column(Date, nullable=False)
-    distance_miles = Column(Float, default=250.0)
-    current_fuel_index = Column(Float, default=3.85) # Diesel price at shipment time
-    service_level = Column(String(20), default="STANDARD") # STANDARD, EXPEDITED
-    dock_type = Column(String(30), default="STANDARD_DOCK") # STANDARD_DOCK, RESIDENTIAL, GROUND_LEVEL
-    status = Column(String(20), default="DELIVERED") # BOOKED, IN_TRANSIT, DELIVERED, CANCELLED
-    created_at = Column(DateTime, default=datetime.utcnow)
+    shipment_id = Column(String(30), primary_key=True, index=True)
+    carrier_id = Column(String(30), ForeignKey("carriers.carrier_id"), nullable=False, index=True)
+    lane_id = Column(String(30), ForeignKey("lanes.lane_id"), nullable=False, index=True)
+    service_level = Column(SAEnum(ServiceLevel), nullable=False, default=ServiceLevel.STANDARD, index=True)
+    ship_date = Column(Date, nullable=False, index=True)
+    delivery_due_date = Column(Date, nullable=False)
+    delivered_at = Column(DateTime, nullable=True)
+    
+    # Dimensions and Weights (Metric)
+    actual_length_cm = Column(Float, nullable=False)
+    actual_width_cm = Column(Float, nullable=False)
+    actual_height_cm = Column(Float, nullable=False)
+    actual_weight_kg = Column(Float, nullable=False)
+    declared_weight_kg = Column(Float, nullable=False)
+    chargeable_weight_kg = Column(Float, nullable=False)
+    
+    currency = Column(String(3), nullable=False, default="USD")
+    shipment_status = Column(SAEnum(ShipmentStatus), nullable=False, default=ShipmentStatus.BOOKED, index=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    __table_args__ = (
+        CheckConstraint("actual_length_cm > 0", name="chk_shipment_positive_length"),
+        CheckConstraint("actual_width_cm > 0", name="chk_shipment_positive_width"),
+        CheckConstraint("actual_height_cm > 0", name="chk_shipment_positive_height"),
+        CheckConstraint("actual_weight_kg > 0", name="chk_shipment_positive_act_weight"),
+        CheckConstraint("declared_weight_kg > 0", name="chk_shipment_positive_dec_weight"),
+        CheckConstraint("chargeable_weight_kg > 0", name="chk_shipment_positive_chg_weight"),
+        CheckConstraint("ship_date <= delivery_due_date", name="chk_shipment_valid_dates"),
+    )
 
     # Relationships
     carrier = relationship("Carrier", back_populates="shipments")
+    lane = relationship("Lane", back_populates="shipments")
+    shipment_legs = relationship("ShipmentLeg", back_populates="shipment", cascade="all, delete-orphan", order_by="ShipmentLeg.leg_sequence")
     weight_measurements = relationship("WeightMeasurement", back_populates="shipment", cascade="all, delete-orphan")
-    accessorial_events = relationship("AccessorialEvent", back_populates="shipment", cascade="all, delete-orphan")
-    delivery_record = relationship("DeliveryRecord", back_populates="shipment", uselist=False, cascade="all, delete-orphan")
-    invoices = relationship("InvoiceHeader", back_populates="shipment")
+    shipment_accessorials = relationship("ShipmentAccessorial", back_populates="shipment", cascade="all, delete-orphan")
+    delivery_evidence = relationship("DeliveryEvidence", back_populates="shipment", uselist=False, cascade="all, delete-orphan")
+    invoices = relationship("FreightInvoice", back_populates="shipment")
+    audit_exceptions = relationship("AuditException", back_populates="shipment")
+
+
+class ShipmentLeg(Base):
+    """
+    Sub-movement segments of a shipment.
+    PK format: LEG-SHP-2026-000001-01
+    """
+    __tablename__ = "shipment_legs"
+
+    shipment_leg_id = Column(String(40), primary_key=True, index=True)
+    shipment_id = Column(String(30), ForeignKey("shipments.shipment_id", ondelete="CASCADE"), nullable=False, index=True)
+    leg_sequence = Column(Integer, nullable=False)
+    origin_location_code = Column(String(20), nullable=False)
+    destination_location_code = Column(String(20), nullable=False)
+    departure_at = Column(DateTime, nullable=True)
+    arrival_at = Column(DateTime, nullable=True)
+    leg_status = Column(SAEnum(ShipmentLegStatus), nullable=False, default=ShipmentLegStatus.PENDING)
+
+    __table_args__ = (
+        UniqueConstraint("shipment_id", "leg_sequence", name="uq_shipment_leg_sequence"),
+        CheckConstraint("leg_sequence >= 1", name="chk_leg_sequence_positive"),
+        CheckConstraint("(departure_at IS NULL OR arrival_at IS NULL) OR (departure_at <= arrival_at)", name="chk_leg_valid_timestamps"),
+    )
+
+    shipment = relationship("Shipment", back_populates="shipment_legs")
 
 
 class WeightMeasurement(Base):
+    """
+    Weight measurement certificates and scale readings.
+    PK format: WM-SHP-2026-000001-01
+    """
     __tablename__ = "weight_measurements"
 
-    id = Column(Integer, primary_key=True, index=True)
-    shipment_id = Column(Integer, ForeignKey("shipments.id", ondelete="CASCADE"), nullable=False, index=True)
-    measurement_type = Column(String(30), default="ORIGIN_SCALE") # ORIGIN_SCALE, CARRIER_REWEIGH, DIMENSIONAL
-    gross_weight_lbs = Column(Float, nullable=False)
-    length_in = Column(Float, default=48.0)
-    width_in = Column(Float, default=40.0)
-    height_in = Column(Float, default=48.0)
-    dim_factor = Column(Float, default=139.0) # standard freight dim factor cu in / lb
-    billable_weight_lbs = Column(Float, nullable=False)
-    certified = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    weight_measurement_id = Column(String(40), primary_key=True, index=True)
+    shipment_id = Column(String(30), ForeignKey("shipments.shipment_id", ondelete="CASCADE"), nullable=False, index=True)
+    measurement_type = Column(SAEnum(MeasurementType), nullable=False, default=MeasurementType.ORIGIN_SCALE)
+    length_cm = Column(Float, nullable=True)
+    width_cm = Column(Float, nullable=True)
+    height_cm = Column(Float, nullable=True)
+    weight_kg = Column(Float, nullable=False)
+    measured_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    source = Column(SAEnum(MeasurementSource), nullable=False, default=MeasurementSource.CARRIER)
+    is_accepted = Column(Boolean, nullable=False, default=True)
+
+    __table_args__ = (
+        CheckConstraint("weight_kg > 0", name="chk_wm_positive_weight"),
+        CheckConstraint("(length_cm IS NULL) OR (length_cm > 0)", name="chk_wm_positive_length"),
+        CheckConstraint("(width_cm IS NULL) OR (width_cm > 0)", name="chk_wm_positive_width"),
+        CheckConstraint("(height_cm IS NULL) OR (height_cm > 0)", name="chk_wm_positive_height"),
+    )
 
     shipment = relationship("Shipment", back_populates="weight_measurements")
 
 
-class AccessorialEvent(Base):
-    __tablename__ = "accessorial_events"
+class DeliveryEvidence(Base):
+    """
+    Destination Delivery Proof (POD) and physical facility evidence.
+    PK format: DEV-SHP-2026-000001
+    """
+    __tablename__ = "delivery_evidence"
 
-    id = Column(Integer, primary_key=True, index=True)
-    shipment_id = Column(Integer, ForeignKey("shipments.id", ondelete="CASCADE"), nullable=False, index=True)
-    code = Column(String(30), nullable=False) # LIFTGATE, DETENTION, RESIDENTIAL, etc.
-    quantity_or_duration = Column(Float, default=1.0) # E.g. hours or units
-    proof_document_ref = Column(String(100), nullable=True) # e.g. BOL-POD-SIGNED, GPS-IN-GATE
-    authorized = Column(Boolean, default=True)
-    notes = Column(String(200), nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-
-    shipment = relationship("Shipment", back_populates="accessorial_events")
-
-
-class DeliveryRecord(Base):
-    __tablename__ = "delivery_records"
-
-    id = Column(Integer, primary_key=True, index=True)
-    shipment_id = Column(Integer, ForeignKey("shipments.id", ondelete="CASCADE"), nullable=False, index=True)
+    delivery_evidence_id = Column(String(40), primary_key=True, index=True)
+    shipment_id = Column(String(30), ForeignKey("shipments.shipment_id", ondelete="CASCADE"), unique=True, nullable=False, index=True)
     delivered_at = Column(DateTime, nullable=False)
     recipient_name = Column(String(100), nullable=False)
     signed_pod_ref = Column(String(100), nullable=True)
-    facility_dock_type = Column(String(50), default="STANDARD_DOCK") # STANDARD_DOCK, GROUND_LEVEL, RESIDENTIAL
-    liftgate_actually_used = Column(Boolean, default=False)
-    detention_minutes_recorded = Column(Integer, default=0) # ELD/GPS dwell time
-    created_at = Column(DateTime, default=datetime.utcnow)
+    facility_dock_type = Column(String(50), nullable=False, default="STANDARD_DOCK") # STANDARD_DOCK, GROUND_LEVEL, RESIDENTIAL
+    liftgate_actually_used = Column(Boolean, nullable=False, default=False)
+    detention_minutes_recorded = Column(Integer, nullable=False, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
-    shipment = relationship("Shipment", back_populates="delivery_record")
+    __table_args__ = (
+        CheckConstraint("detention_minutes_recorded >= 0", name="chk_dev_nonnegative_detention"),
+    )
+
+    shipment = relationship("Shipment", back_populates="delivery_evidence")

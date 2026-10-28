@@ -1,26 +1,37 @@
 from datetime import datetime, date
-from sqlalchemy import Column, Integer, String, Float, Date, DateTime, ForeignKey, Text
+from sqlalchemy import Column, String, Float, Date, DateTime, ForeignKey, CheckConstraint, Enum as SAEnum
 from sqlalchemy.orm import relationship
 from backend.app.core.database import Base
+from backend.app.models.enums import (
+    CreditNoteApprovalStatus, CreditNoteReconciliationStatus
+)
 
 class CreditNote(Base):
+    """
+    Carrier credit note issued to settle disputed invoice exceptions.
+    PK format: CN-2026-000001
+    """
     __tablename__ = "credit_notes"
 
-    id = Column(Integer, primary_key=True, index=True)
+    credit_note_id = Column(String(40), primary_key=True, index=True)
+    exception_id = Column(String(40), ForeignKey("audit_exceptions.exception_id", ondelete="SET NULL"), nullable=True, index=True)
+    invoice_id = Column(String(40), ForeignKey("freight_invoices.invoice_id", ondelete="CASCADE"), nullable=False, index=True)
+    carrier_id = Column(String(30), ForeignKey("carriers.carrier_id"), nullable=False, index=True)
+
     credit_note_number = Column(String(50), unique=True, index=True, nullable=False)
-    carrier_id = Column(Integer, ForeignKey("carriers.id"), nullable=False, index=True)
-    original_invoice_id = Column(Integer, ForeignKey("invoices.id"), nullable=False, index=True)
-    issue_date = Column(Date, nullable=False)
+    issue_date = Column(Date, nullable=False, index=True)
+    currency = Column(String(3), nullable=False, default="USD")
     credit_amount = Column(Float, nullable=False)
-    applied_amount = Column(Float, default=0.0)
-    remaining_balance = Column(Float, nullable=False)
-    
-    # Status: UNAPPLIED, PARTIALLY_APPLIED, FULLY_APPLIED, REJECTED
-    status = Column(String(30), default="UNAPPLIED", index=True)
-    reason_code = Column(String(50), nullable=False) # RATE_CORRECTION, WEIGHT_ADJUSTMENT, ACCESSORIAL_REFUND
-    rejection_reason = Column(Text, nullable=True) # E.g. "Amount exceeds original invoice dispute balance"
-    created_at = Column(DateTime, default=datetime.utcnow)
+
+    approval_status = Column(SAEnum(CreditNoteApprovalStatus), nullable=False, default=CreditNoteApprovalStatus.PENDING_APPROVAL)
+    reconciliation_status = Column(SAEnum(CreditNoteReconciliationStatus), nullable=False, default=CreditNoteReconciliationStatus.UNAPPLIED, index=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    __table_args__ = (
+        CheckConstraint("credit_amount > 0", name="chk_credit_positive_amount"),
+    )
 
     # Relationships
+    audit_exception = relationship("AuditException", back_populates="credit_notes")
+    invoice = relationship("FreightInvoice", back_populates="credit_notes")
     carrier = relationship("Carrier", back_populates="credit_notes")
-    original_invoice = relationship("InvoiceHeader", back_populates="credit_notes")
