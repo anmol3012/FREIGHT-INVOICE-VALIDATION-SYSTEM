@@ -1,394 +1,565 @@
-import hashlib
+"""
+Comprehensive 20-Step Freight Invoice Calculation & Validation Engine.
+Performs deterministic line-level reconciliation, contract rate verification,
+evidence proof auditing, duplicate detection, exception creation,
+and explainable decision logging.
+"""
+
 import json
-from datetime import datetime
-from typing import List, Dict, Tuple, Optional
+from datetime import datetime, date, timedelta
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional, Tuple
 from sqlalchemy.orm import Session
-from backend.app.core.config import settings
-from backend.app.models.invoice import InvoiceHeader, InvoiceLine
-from backend.app.models.shipment import Shipment, WeightMeasurement, AccessorialEvent, DeliveryRecord
-from backend.app.models.rate_card import RateCard, RateLane, AccessorialRule
-from backend.app.models.exception import InvoiceException
+
+from backend.app.models.enums import (
+    InvoiceStatus, ValidationStatus, ExceptionType, ExceptionSeverity, ExceptionStatus,
+    CreditNoteApprovalStatus, CreditNoteReconciliationStatus, RateCardStatus
+)
+from backend.app.models.carrier import Carrier
+from backend.app.models.lane import Lane
+from backend.app.models.rate_card import RateCard
+from backend.app.models.shipment import Shipment, DeliveryEvidence
+from backend.app.models.invoice import FreightInvoice, InvoiceLine, InvoiceValidationRun
+from backend.app.models.audit_exception import AuditException
 from backend.app.models.credit_note import CreditNote
-from backend.app.models.audit import AuditEvent
-from backend.app.engine.calculator import FreightCalculator, CalculationResult
+from backend.app.models.audit import AuditEvent, EntityStatusHistory
+from backend.app.models.id_generator import (
+    generate_exception_id, generate_validation_run_id,
+    generate_audit_event_id, generate_status_history_id
+)
+from backend.app.engine.contract_selector import ContractSelector, RateCardSelectionResult
+from backend.app.engine.weight_service import WeightRatingService, WeightEvaluationResult
+from backend.app.engine.accessorial_service import AccessorialService, AccessorialLineAuditResult
+from backend.app.engine.duplicate_service import DuplicateDetectionService, DuplicateCheckResult
+from backend.app.engine.credit_note_service import CreditNoteService
 
-class InvoiceValidator:
-    """
-    Automated Freight Invoice Reconciliation & Audit Engine.
-    Executes line-level reconciliation, tolerance evaluation,
-    accessorial entitlement verification, and duplicate billing detection.
-    """
 
-    @staticmethod
-    def compute_invoice_fingerprint(carrier_id: int, bol_number: str, total_billed: float) -> str:
-        raw_str = f"{carrier_id}:{bol_number.strip().upper()}:{total_billed:.2f}"
-        return hashlib.sha256(raw_str.encode("utf-8")).hexdigest()
+def _get_max_counter(db: Session, model_col, prefix: str) -> int:
+    """Helper to safely determine highest zero-padded sequence ID in DB."""
+    rows = db.query(model_col).filter(model_col.like(f"{prefix}%")).all()
+    if not rows:
+        return 1
+    max_val = 0
+    for (val,) in rows:
+        if val:
+            try:
+                num = int(val.split("-")[-1])
+                if num > max_val:
+                    max_val = num
+            except (ValueError, IndexError):
+                pass
+    return max_val + 1
+
+
+@dataclass
+class InvoiceValidationSummary:
+    invoice_id: str
+    overall_verdict: str # "PASSED", "FAILED", "REVIEW_REQUIRED"
+    validation_status: ValidationStatus
+    invoice_status: InvoiceStatus
+    billed_total: float
+    expected_total: float
+    variance_amount: float # billed - expected
+    exceptions_raised_count: int
+    exception_ids: List[str] = field(default_factory=list)
+    line_results: List[Dict[str, Any]] = field(default_factory=list)
+    diagnostic_messages: List[str] = field(default_factory=list)
+
+
+class FreightInvoiceValidator:
+    """
+    Production-grade Freight Invoice Validation Engine implementing the 20-step workflow.
+    """
 
     @classmethod
-    def check_duplicate(cls, db: Session, invoice: InvoiceHeader) -> Optional[InvoiceHeader]:
-        """
-        Check for duplicate billing:
-        1. Identical fingerprint (same carrier, same BOL, same billed total) on an earlier invoice.
-        2. Or cross-invoice billing: earlier invoice with same carrier and BOL already validated/paid.
-        """
-        if not invoice.bol_number_billed:
-            return None
-
-        # Fingerprint match
-        fingerprint = invoice.fingerprint_hash or cls.compute_invoice_fingerprint(
-            invoice.carrier_id, invoice.bol_number_billed, invoice.total_billed_amount
-        )
-
-        match = db.query(InvoiceHeader).filter(
-            InvoiceHeader.id < invoice.id,
-            InvoiceHeader.carrier_id == invoice.carrier_id,
-            InvoiceHeader.bol_number_billed == invoice.bol_number_billed,
-            InvoiceHeader.fingerprint_hash == fingerprint
-        ).first()
-
-        if match:
-            return match
-
-        # Also check for repeat billing of the same BOL even with slightly altered amount
-        repeat = db.query(InvoiceHeader).filter(
-            InvoiceHeader.id < invoice.id,
-            InvoiceHeader.carrier_id == invoice.carrier_id,
-            InvoiceHeader.bol_number_billed == invoice.bol_number_billed,
-            InvoiceHeader.status.in_(["VALIDATED_MATCH", "EXCEPTION_APPROVED", "PAID"])
-        ).first()
-
-        return repeat
-
-    @classmethod
-    def validate_invoice(cls, db: Session, invoice_id: int, actor: str = "SYSTEM_AUDITOR") -> InvoiceHeader:
-        invoice = db.query(InvoiceHeader).filter(InvoiceHeader.id == invoice_id).first()
+    def validate_invoice(
+        cls,
+        db: Session,
+        invoice_id: str,
+        actor: str = "SYSTEM_AUDITOR",
+        tolerance_amount: float = 0.50
+    ) -> InvoiceValidationSummary:
+        invoice = db.query(FreightInvoice).filter(FreightInvoice.invoice_id == invoice_id).first()
         if not invoice:
-            raise ValueError(f"Invoice {invoice_id} not found")
+            raise ValueError(f"Freight invoice '{invoice_id}' not found.")
 
-        # 1. Check for Duplicate Billing
-        existing_dup = cls.check_duplicate(db, invoice)
-        if existing_dup:
-            invoice.is_duplicate = True
-            invoice.duplicate_of_invoice_id = existing_dup.id
-            invoice.status = "EXCEPTION_DISPUTED"
-            invoice.validation_status = "FAILED"
-            invoice.validated_at = datetime.utcnow()
-            
-            # Clear old exceptions
-            db.query(InvoiceException).filter(InvoiceException.invoice_id == invoice.id).delete()
+        diagnostics: List[str] = []
+        exceptions_to_create: List[Dict[str, Any]] = []
+        line_audit_results: List[Dict[str, Any]] = []
 
-            dup_exc = InvoiceException(
-                invoice_id=invoice.id,
-                category="DUPLICATE_BILLING",
-                severity="CRITICAL",
-                billed_amount=invoice.total_billed_amount,
-                expected_amount=0.0,
-                variance_amount=invoice.total_billed_amount,
-                status="DISPUTED",
-                root_cause_code="DUPLICATE_INVOICE_PRESENTED",
-                explanation=f"Duplicate invoice detected. Original invoice {existing_dup.invoice_number} already exists for BOL {invoice.bol_number_billed}."
-            )
-            db.add(dup_exc)
+        # -------------------------------------------------------------
+        # Step 1: Validate invoice structure and required fields
+        # -------------------------------------------------------------
+        lines: List[InvoiceLine] = sorted(invoice.invoice_lines, key=lambda l: l.line_number) if invoice.invoice_lines else []
+        if lines:
+            line_sum = round(sum(l.billed_amount for l in lines), 2)
+            if abs(line_sum - round(invoice.billed_total, 2)) > 0.05:
+                # Header does not reconcile with itemized lines
+                exceptions_to_create.append({
+                    "line_id": None,
+                    "type": ExceptionType.CALCULATION_ERROR,
+                    "severity": ExceptionSeverity.HIGH,
+                    "expected": line_sum,
+                    "billed": invoice.billed_total,
+                    "disputed": round(invoice.billed_total - line_sum, 2),
+                    "explanation": f"Header billed total (${invoice.billed_total:.2f}) does not match sum of itemized lines (${line_sum:.2f})."
+                })
+                diagnostics.append("Invoice line sum mismatch with header total.")
 
-            # Audit event
-            db.add(AuditEvent(
-                entity_type="INVOICE",
-                entity_id=str(invoice.id),
-                event_type="DUPLICATE_DETECTED",
-                actor=actor,
-                payload_json=json.dumps({"duplicate_of_invoice_number": existing_dup.invoice_number, "bol": invoice.bol_number_billed}),
-                notes=f"Flagged as duplicate of invoice {existing_dup.invoice_number}"
-            ))
+        # -------------------------------------------------------------
+        # Step 2: Resolve the carrier
+        # -------------------------------------------------------------
+        carrier = db.query(Carrier).filter(Carrier.carrier_id == invoice.carrier_id).first()
+        if not carrier:
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.CALCULATION_ERROR,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": f"Carrier '{invoice.carrier_id}' does not exist in master records."
+            })
+            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNRESOLVED_CARRIER")
 
-            db.commit()
-            db.refresh(invoice)
-            return invoice
+        # -------------------------------------------------------------
+        # Step 3: Resolve shipment reference (Scenario A Check)
+        # -------------------------------------------------------------
+        shipment = None
+        if invoice.shipment_id:
+            shipment = db.query(Shipment).filter(Shipment.shipment_id == invoice.shipment_id).first()
 
-        # 2. Retrieve operational shipment & contract rate cards
-        shipment = invoice.shipment
-        if not shipment and invoice.bol_number_billed:
-            shipment = db.query(Shipment).filter(Shipment.bol_number == invoice.bol_number_billed).first()
-
-        if not shipment:
-            # Unmatched shipment
-            invoice.status = "EXCEPTION_DISPUTED"
-            invoice.validation_status = "FAILED"
-            invoice.validated_at = datetime.utcnow()
-            db.add(InvoiceException(
-                invoice_id=invoice.id,
-                category="UNMATCHED_SHIPMENT",
-                severity="CRITICAL",
-                billed_amount=invoice.total_billed_amount,
-                expected_amount=0.0,
-                variance_amount=invoice.total_billed_amount,
-                status="OPEN",
-                root_cause_code="NO_MATCHING_BOL",
-                explanation=f"Billed BOL {invoice.bol_number_billed} does not correspond to any valid shipment record in the system."
-            ))
-            db.commit()
-            db.refresh(invoice)
-            return invoice
-
-        # Retrieve carrier active rate card
-        rate_card = db.query(RateCard).filter(
-            RateCard.carrier_id == invoice.carrier_id,
-            RateCard.status == "ACTIVE",
-            RateCard.effective_date <= invoice.invoice_date,
-            RateCard.expiration_date >= invoice.invoice_date
-        ).first()
-
-        # Retrieve rate lane matching origin/dest zip prefix
-        origin_prefix = shipment.origin_zip[:3] if shipment.origin_zip else "ALL"
-        dest_prefix = shipment.destination_zip[:3] if shipment.destination_zip else "ALL"
-
-        rate_lane = None
-        if rate_card:
-            rate_lane = db.query(RateLane).filter(
-                RateLane.rate_card_id == rate_card.id,
-                RateLane.origin_zip_prefix.in_([origin_prefix, "ALL"]),
-                RateLane.dest_zip_prefix.in_([dest_prefix, "ALL"])
+        # If shipment_id was null or not found, try lookup by raw_shipment_reference
+        if not shipment and invoice.raw_shipment_reference:
+            shipment = db.query(Shipment).filter(
+                Shipment.shipment_id == invoice.raw_shipment_reference
             ).first()
 
-        # Accessorial rules
-        accessorial_rules = db.query(AccessorialRule).filter(
-            AccessorialRule.carrier_id == invoice.carrier_id
-        ).all()
+        if not shipment:
+            # Scenario A: Unknown shipment reference!
+            invoice.reference_rejection_reason = "Raw shipment reference does not exist in master operational records"
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.UNMATCHED_SHIPMENT,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": f"Scenario A: Shipment reference '{invoice.raw_shipment_reference}' cannot be matched to any operational shipment record."
+            })
+            diagnostics.append(f"Shipment reference '{invoice.raw_shipment_reference}' is unknown.")
+            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNKNOWN_SHIPMENT_REF")
 
-        weight_measurement = db.query(WeightMeasurement).filter(
-            WeightMeasurement.shipment_id == shipment.id,
-            WeightMeasurement.certified == True
-        ).first()
+        # -------------------------------------------------------------
+        # Step 4: Verify carrier-shipment relationship
+        # -------------------------------------------------------------
+        if shipment.carrier_id != carrier.carrier_id:
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.UNMATCHED_SHIPMENT,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": f"Carrier mismatch: Invoice carrier {carrier.carrier_id} did not perform shipment {shipment.shipment_id} (assigned to {shipment.carrier_id})."
+            })
+            diagnostics.append("Carrier does not match shipment performer.")
 
-        delivery_record = db.query(DeliveryRecord).filter(
-            DeliveryRecord.shipment_id == shipment.id
-        ).first()
+        # -------------------------------------------------------------
+        # Step 5: Resolve the lane
+        # -------------------------------------------------------------
+        lane = db.query(Lane).filter(Lane.lane_id == shipment.lane_id).first()
+        if not lane:
+            diagnostics.append(f"Lane '{shipment.lane_id}' not found.")
 
-        accessorial_events = db.query(AccessorialEvent).filter(
-            AccessorialEvent.shipment_id == shipment.id
-        ).all()
-
-        # 3. Calculate Contractual Expected Charges
-        calc_result: CalculationResult = FreightCalculator.calculate_expected_charges(
-            shipment=shipment,
-            rate_card=rate_card,
-            rate_lane=rate_lane,
-            accessorial_rules=accessorial_rules,
-            weight_measurement=weight_measurement,
-            delivery_record=delivery_record,
-            accessorial_events=accessorial_events
+        # -------------------------------------------------------------
+        # Steps 6, 7, 8: Resolve rate card, effective dates & service level (Scenario B Check)
+        # -------------------------------------------------------------
+        contract_result: RateCardSelectionResult = ContractSelector.select_rate_card(
+            db=db,
+            carrier_id=carrier.carrier_id,
+            lane_id=shipment.lane_id,
+            service_level=shipment.service_level,
+            shipment_date=shipment.ship_date
         )
 
-        invoice.calculated_expected_amount = calc_result.total_expected_amount
-        invoice.total_variance_amount = round(invoice.total_billed_amount - calc_result.total_expected_amount, 2)
-        invoice.validated_at = datetime.utcnow()
+        rate_card = contract_result.rate_card
 
-        # Clear existing exceptions and re-evaluate lines
-        db.query(InvoiceException).filter(InvoiceException.invoice_id == invoice.id).delete()
+        if contract_result.status == "EXPIRED":
+            # Scenario B: Referenced / selected rate card has expired
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.BASE_RATE_MISMATCH,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": f"Scenario B: {contract_result.reason}"
+            })
+            diagnostics.append(contract_result.reason)
 
-        # Reconcile lines against expected breakdown
-        expected_items_map = {}
-        for item in calc_result.line_items:
-            expected_items_map[item.charge_code] = item
+        elif contract_result.status == "MISSING":
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.BASE_RATE_MISMATCH,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": contract_result.reason
+            })
+            diagnostics.append(contract_result.reason)
 
-        exceptions_to_raise: List[InvoiceException] = []
+        # -------------------------------------------------------------
+        # Steps 9, 10, 11, 12: Weight, tiers & base linehaul (Scenarios C & F Check)
+        # -------------------------------------------------------------
+        weight_result: WeightEvaluationResult = WeightRatingService.evaluate_shipment_weight(
+            shipment=shipment,
+            rate_card=rate_card
+        )
 
-        for line in invoice.lines:
-            code = (line.charge_code or "").upper()
-            if code in expected_items_map:
-                exp_item = expected_items_map[code]
-                line.expected_units = exp_item.expected_units
-                line.expected_rate = exp_item.expected_rate
-                line.expected_amount = exp_item.expected_amount
-                line.variance_amount = round(line.billed_amount - exp_item.expected_amount, 2)
+        expected_linehaul = weight_result.expected_linehaul_amount
 
-                line_var = abs(line.variance_amount)
-                if line_var <= settings.ABSOLUTE_TOLERANCE_USD:
-                    line.status = "MATCH"
-                    line.discrepancy_reason = None
+        # -------------------------------------------------------------
+        # Step 13, 14: Fuel surcharge, accessorials & delivery evidence (Scenario G Check)
+        # -------------------------------------------------------------
+        delivery_evidence = db.query(DeliveryEvidence).filter(
+            DeliveryEvidence.shipment_id == shipment.shipment_id
+        ).first()
+
+        expected_fsc = AccessorialService.calculate_fuel_surcharge(expected_linehaul, rate_card)
+
+        # -------------------------------------------------------------
+        # Step 15: Reconcile each invoice line
+        # -------------------------------------------------------------
+        total_calculated_expected = 0.0
+        seen_line_types = set()
+
+        for line in lines:
+            l_type = line.line_type.value if hasattr(line.line_type, "value") else str(line.line_type)
+            line_expected = 0.0
+            line_explanation = None
+
+            if l_type == "BASE_LINEHAUL":
+                line_expected = expected_linehaul
+
+                # Check weight discrepancy (Scenario F)
+                if abs(line.quantity - weight_result.chargeable_weight_kg) > 2.0:
+                    disputed_wt = round(line.billed_amount - line_expected, 2)
+                    if disputed_wt > tolerance_amount:
+                        exceptions_to_create.append({
+                            "line_id": line.invoice_line_id,
+                            "type": ExceptionType.WEIGHT_DISCREPANCY,
+                            "severity": ExceptionSeverity.HIGH,
+                            "expected": line_expected,
+                            "billed": line.billed_amount,
+                            "disputed": disputed_wt,
+                            "explanation": f"Scenario F: Dimensional/Scale weight discrepancy on line {line.line_number}. Billed on {line.quantity:.1f} kg, but certified chargeable weight is {weight_result.chargeable_weight_kg:.1f} kg."
+                        })
+
+                # Check tier misclassification (Scenario C)
+                elif weight_result.matched_tier and abs(line.unit_rate - weight_result.tier_rate_per_kg) > 0.005:
+                    disputed_rate = round(line.billed_amount - line_expected, 2)
+                    if disputed_rate > tolerance_amount:
+                        exceptions_to_create.append({
+                            "line_id": line.invoice_line_id,
+                            "type": ExceptionType.WEIGHT_DISCREPANCY,
+                            "severity": ExceptionSeverity.HIGH,
+                            "expected": line_expected,
+                            "billed": line.billed_amount,
+                            "disputed": disputed_rate,
+                            "explanation": f"Scenario C: Incorrect weight tier billed on line {line.line_number}. Applied rate ${line.unit_rate:.4f}/kg does not match contracted Tier {weight_result.tier_sequence} rate ${weight_result.tier_rate_per_kg:.4f}/kg."
+                        })
+
+                # General base rate variance
+                elif (line.billed_amount - line_expected) > tolerance_amount:
+                    disputed_amt = round(line.billed_amount - line_expected, 2)
+                    exceptions_to_create.append({
+                        "line_id": line.invoice_line_id,
+                        "type": ExceptionType.BASE_RATE_MISMATCH,
+                        "severity": ExceptionSeverity.HIGH,
+                        "expected": line_expected,
+                        "billed": line.billed_amount,
+                        "disputed": disputed_amt,
+                        "explanation": f"Base linehaul rate discrepancy on line {line.line_number}: Billed ${line.billed_amount:.2f} vs expected ${line_expected:.2f}."
+                    })
+
+            elif l_type == "FUEL_SURCHARGE":
+                if "FUEL_SURCHARGE" in seen_line_types:
+                    # Scenario D: Duplicate fuel surcharge line!
+                    line_expected = 0.0
+                    exceptions_to_create.append({
+                        "line_id": line.invoice_line_id,
+                        "type": ExceptionType.DUPLICATE_BILLING,
+                        "severity": ExceptionSeverity.CRITICAL,
+                        "expected": 0.0,
+                        "billed": line.billed_amount,
+                        "disputed": line.billed_amount,
+                        "explanation": f"Scenario D: Duplicate fuel surcharge billed on line {line.line_number} (${line.billed_amount:.2f})."
+                    })
                 else:
-                    line.status = "VARIANCE_DISCREPANCY"
-                    
-                    # Determine exact scenario root cause
-                    if line.charge_type == "LINEHAUL":
-                        # Check if weight discrepancy vs base rate mismatch
-                        if weight_measurement and abs(line.billed_units - calc_result.billable_weight_lbs / 100.0) > 0.5:
-                            category = "WEIGHT_DISCREPANCY"
-                            root_cause = "SCALE_WEIGHT_DISCREPANCY"
-                            reason = f"Billed {line.billed_units:.2f} CWT ({line.billed_units*100:.0f} lbs) exceeds certified scale/dim weight {calc_result.billable_weight_lbs:.0f} lbs."
-                        else:
-                            category = "BASE_RATE_MISMATCH"
-                            root_cause = "TARIFF_RATE_INFLATION"
-                            reason = f"Billed rate ${line.billed_rate:.2f} exceeds contracted rate ${exp_item.expected_rate:.2f} (variance: ${line.variance_amount:+.2f})."
-                    else:
-                        category = "BASE_RATE_MISMATCH"
-                        root_cause = "RATE_DISCREPANCY"
-                        reason = f"Variance of ${line.variance_amount:+.2f} on {line.description}."
+                    line_expected = expected_fsc
+                    if (line.billed_amount - line_expected) > tolerance_amount:
+                        exceptions_to_create.append({
+                            "line_id": line.invoice_line_id,
+                            "type": ExceptionType.CALCULATION_ERROR,
+                            "severity": ExceptionSeverity.MEDIUM,
+                            "expected": line_expected,
+                            "billed": line.billed_amount,
+                            "disputed": round(line.billed_amount - line_expected, 2),
+                            "explanation": f"Fuel surcharge calculation discrepancy on line {line.line_number}: Billed ${line.billed_amount:.2f} vs expected ${line_expected:.2f}."
+                        })
 
-                    line.discrepancy_reason = reason
-                    exceptions_to_raise.append(InvoiceException(
-                        invoice_id=invoice.id,
-                        invoice_line_id=line.id,
-                        category=category,
-                        severity="CRITICAL" if abs(line.variance_amount) > 25.0 else "WARNING",
-                        billed_amount=line.billed_amount,
-                        expected_amount=exp_item.expected_amount,
-                        variance_amount=line.variance_amount,
-                        status="OPEN",
-                        root_cause_code=root_cause,
-                        explanation=reason
-                    ))
-            else:
-                # Billed line has NO corresponding expected charge (Unauthorized Accessorial or extra fee)
-                line.expected_units = 0.0
-                line.expected_rate = 0.0
-                line.expected_amount = 0.0
-                line.variance_amount = round(line.billed_amount, 2)
-                line.status = "UNAUTHORIZED"
-
-                if line.charge_type == "ACCESSORIAL" or code in ["LIFTGATE", "DETENTION", "RESIDENTIAL", "INSIDE_DELIVERY"]:
-                    category = "UNAUTHORIZED_ACCESSORIAL"
-                    root_cause = "UNRENDERED_OR_UNAUTHORIZED_ACCESSORIAL"
-                    if code == "LIFTGATE":
-                        reason = "Liftgate fee billed, but delivery receipt confirms standard dock delivery with no liftgate used."
-                    elif code == "DETENTION":
-                        reason = f"Detention fee billed, but driver dwell time did not exceed contracted {settings.DETENTION_FREE_MINUTES} min free time."
-                    else:
-                        reason = f"Accessorial charge '{line.description}' was not authorized or verified by destination proof."
-                else:
-                    category = "BASE_RATE_MISMATCH"
-                    root_cause = "UNCONTRACTED_CHARGE"
-                    reason = f"Uncontracted charge '{line.description}' billed without contractual provision."
-
-                line.discrepancy_reason = reason
-                exceptions_to_raise.append(InvoiceException(
-                    invoice_id=invoice.id,
-                    invoice_line_id=line.id,
-                    category=category,
-                    severity="CRITICAL",
+            elif l_type == "ACCESSORIAL":
+                # Scenario G Check
+                acc_code = line.description.split()[0].upper()
+                audit_acc = AccessorialService.audit_accessorial_charge(
+                    db=db,
+                    accessorial_code=acc_code,
                     billed_amount=line.billed_amount,
-                    expected_amount=0.0,
-                    variance_amount=line.variance_amount,
-                    status="OPEN",
-                    root_cause_code=root_cause,
-                    explanation=reason
-                ))
+                    billed_quantity=line.quantity,
+                    shipment=shipment,
+                    delivery_evidence=delivery_evidence,
+                    rate_card=rate_card,
+                    linehaul_amount=expected_linehaul,
+                    chargeable_weight_kg=weight_result.chargeable_weight_kg
+                )
+                line_expected = audit_acc.expected_amount
 
-        # 4. Overall Invoice Header Evaluation
-        net_variance = abs(invoice.total_variance_amount)
-        pct_variance = (net_variance / max(1.0, calc_result.total_expected_amount))
+                if not audit_acc.is_valid and audit_acc.variance_amount > tolerance_amount:
+                    exceptions_to_create.append({
+                        "line_id": line.invoice_line_id,
+                        "type": ExceptionType.UNAUTHORIZED_ACCESSORIAL,
+                        "severity": ExceptionSeverity.HIGH,
+                        "expected": line_expected,
+                        "billed": line.billed_amount,
+                        "disputed": audit_acc.variance_amount,
+                        "explanation": f"Scenario G: {audit_acc.discrepancy_reason}"
+                    })
 
-        if len(exceptions_to_raise) == 0 and (net_variance <= settings.ABSOLUTE_TOLERANCE_USD or pct_variance <= settings.PERCENTAGE_TOLERANCE):
-            invoice.status = "VALIDATED_MATCH"
-            invoice.validation_status = "PASSED"
-            invoice.reconciliation_notes = f"Audit passed successfully. Billed ${invoice.total_billed_amount:.2f} matched expected ${calc_result.total_expected_amount:.2f} within tolerance."
-        else:
-            invoice.status = "EXCEPTION_DISPUTED"
-            invoice.validation_status = "FAILED"
-            invoice.reconciliation_notes = f"Audit failed with {len(exceptions_to_raise)} line discrepancy(s). Total variance: ${invoice.total_variance_amount:+.2f}."
-            for exc in exceptions_to_raise:
-                db.add(exc)
+            # Update line reconciliation fields
+            line_var = round(line.billed_amount - line_expected, 2)
+            line.expected_amount = line_expected
+            line.variance_amount = line_var
+            total_calculated_expected += line_expected
+            seen_line_types.add(l_type)
+
+            line_audit_results.append({
+                "line_id": line.invoice_line_id,
+                "line_number": line.line_number,
+                "line_type": l_type,
+                "billed_amount": line.billed_amount,
+                "expected_amount": line_expected,
+                "variance_amount": line_var
+            })
+
+        # -------------------------------------------------------------
+        # Step 16: Reconcile invoice total
+        # -------------------------------------------------------------
+        total_calculated_expected = round(total_calculated_expected, 2)
+        total_variance = round(invoice.billed_total - total_calculated_expected, 2)
+        invoice.expected_total = total_calculated_expected
+        invoice.variance_amount = total_variance
+
+        # -------------------------------------------------------------
+        # Step 17: Duplicate billing detection (Scenario H & Line D)
+        # -------------------------------------------------------------
+        dup_result: DuplicateCheckResult = DuplicateDetectionService.check_invoice_duplicate(db, invoice)
+        if dup_result.is_duplicate:
+            exceptions_to_create.append({
+                "line_id": None,
+                "type": ExceptionType.DUPLICATE_BILLING,
+                "severity": ExceptionSeverity.CRITICAL,
+                "expected": 0.0,
+                "billed": invoice.billed_total,
+                "disputed": invoice.billed_total,
+                "explanation": f"Scenario H: {dup_result.explanation}"
+            })
+            diagnostics.append(dup_result.explanation)
+
+        # -------------------------------------------------------------
+        # Step 18: Create explainable exceptions
+        # -------------------------------------------------------------
+        created_exception_ids = []
+        # Clear previous open exceptions for this invoice to prevent duplicate tickets on re-audit
+        db.query(AuditException).filter(
+            AuditException.invoice_id == invoice.invoice_id,
+            AuditException.exception_status.in_([ExceptionStatus.OPEN, ExceptionStatus.UNDER_REVIEW])
+        ).delete()
+        db.flush()
+
+        base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+        for idx, exc_data in enumerate(exceptions_to_create, start=base_counter):
+            exc_id = generate_exception_id(idx)
+            exc = AuditException(
+                exception_id=exc_id,
+                invoice_id=invoice.invoice_id,
+                invoice_line_id=exc_data.get("line_id"),
+                shipment_id=shipment.shipment_id if shipment else None,
+                exception_type=exc_data["type"],
+                severity=exc_data["severity"],
+                expected_amount=exc_data["expected"],
+                billed_amount=exc_data["billed"],
+                disputed_amount=exc_data["disputed"],
+                currency=invoice.currency,
+                explanation=exc_data["explanation"],
+                evidence_json=json.dumps({
+                    "raw_shipment_ref": invoice.raw_shipment_reference,
+                    "carrier_id": carrier.carrier_id,
+                    "billed_total": invoice.billed_total,
+                    "calculated_expected": total_calculated_expected
+                }),
+                exception_status=ExceptionStatus.OPEN,
+                detected_at=datetime.utcnow()
+            )
+            db.add(exc)
+            created_exception_ids.append(exc_id)
+
+        # -------------------------------------------------------------
+        # Step 19: Validate linked credit notes (Scenario E Check)
+        # -------------------------------------------------------------
+        linked_credit_notes = db.query(CreditNote).filter(
+            CreditNote.invoice_id == invoice.invoice_id
+        ).all()
+        for cn in linked_credit_notes:
+            cn_audit = CreditNoteService.validate_credit_note(db, cn.credit_note_id)
+            if not cn_audit.is_valid:
+                diagnostics.append(cn_audit.explanation)
+
+        # -------------------------------------------------------------
+        # Step 20: Store validation result and audit events
+        # -------------------------------------------------------------
+        has_exceptions = len(exceptions_to_create) > 0
+        overall_verdict = "FAILED" if has_exceptions else "PASSED"
+        invoice.validation_status = ValidationStatus.FAILED if has_exceptions else ValidationStatus.PASSED
+        invoice.invoice_status = InvoiceStatus.EXCEPTION_DISPUTED if has_exceptions else InvoiceStatus.VALIDATED_MATCH
+
+        vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+        vrun = InvoiceValidationRun(
+            validation_run_id=generate_validation_run_id(vrun_count),
+            invoice_id=invoice.invoice_id,
+            run_at=datetime.utcnow(),
+            actor=actor,
+            rules_applied_count=20,
+            exceptions_detected_count=len(exceptions_to_create),
+            summary_verdict=overall_verdict,
+            details_json=json.dumps({
+                "verdict": overall_verdict,
+                "exceptions_count": len(exceptions_to_create),
+                "billed_total": invoice.billed_total,
+                "expected_total": total_calculated_expected,
+                "variance": total_variance,
+                "diagnostics": diagnostics
+            })
+        )
+        db.add(vrun)
 
         # Audit Event log
+        ev_count = _get_max_counter(db, AuditEvent.event_id, "AUD-2026-")
         db.add(AuditEvent(
-            entity_type="INVOICE",
-            entity_id=str(invoice.id),
-            event_type="VALIDATION_RUN",
+            event_id=generate_audit_event_id(ev_count),
+            entity_type="FreightInvoice",
+            entity_id=invoice.invoice_id,
+            event_type="VALIDATION_EXECUTED",
             actor=actor,
             payload_json=json.dumps({
-                "billed": invoice.total_billed_amount,
-                "expected": calc_result.total_expected_amount,
-                "variance": invoice.total_variance_amount,
-                "exceptions_count": len(exceptions_to_raise),
-                "status": invoice.status
+                "verdict": overall_verdict,
+                "exceptions_raised": len(exceptions_to_create),
+                "variance": total_variance
             }),
-            notes=invoice.reconciliation_notes
+            notes=f"Audit completed: {overall_verdict} (Variance: ${total_variance:,.2f})",
+            timestamp=datetime.utcnow()
         ))
 
         db.commit()
-        db.refresh(invoice)
-        return invoice
+
+        return InvoiceValidationSummary(
+            invoice_id=invoice.invoice_id,
+            overall_verdict=overall_verdict,
+            validation_status=invoice.validation_status,
+            invoice_status=invoice.invoice_status,
+            billed_total=invoice.billed_total,
+            expected_total=total_calculated_expected,
+            variance_amount=total_variance,
+            exceptions_raised_count=len(exceptions_to_create),
+            exception_ids=created_exception_ids,
+            line_results=line_audit_results,
+            diagnostic_messages=diagnostics
+        )
 
     @classmethod
-    def validate_credit_note(cls, db: Session, credit_note_id: int, actor: str = "SYSTEM_AUDITOR") -> CreditNote:
-        """
-        Scenario 5 Validation: Validate credit notes against parent invoices.
-        Rules:
-        - Parent invoice must exist and belong to the same carrier.
-        - Credit amount must be strictly > 0 and <= original invoice variance / dispute balance.
-        - Credit note must not be duplicate.
-        """
-        cn = db.query(CreditNote).filter(CreditNote.id == credit_note_id).first()
-        if not cn:
-            raise ValueError(f"Credit note {credit_note_id} not found")
+    def _finalize_failure(
+        cls,
+        db: Session,
+        invoice: FreightInvoice,
+        exceptions: List[Dict[str, Any]],
+        diagnostics: List[str],
+        actor: str,
+        reason_code: str
+    ) -> InvoiceValidationSummary:
+        invoice.validation_status = ValidationStatus.FAILED
+        invoice.invoice_status = InvoiceStatus.EXCEPTION_DISPUTED
+        invoice.expected_total = 0.0
+        invoice.variance_amount = invoice.billed_total
 
-        parent_inv = db.query(InvoiceHeader).filter(InvoiceHeader.id == cn.original_invoice_id).first()
+        # Clear existing open exceptions
+        db.query(AuditException).filter(
+            AuditException.invoice_id == invoice.invoice_id,
+            AuditException.exception_status == ExceptionStatus.OPEN
+        ).delete()
+        db.flush()
 
-        if not parent_inv:
-            cn.status = "REJECTED"
-            cn.rejection_reason = "Parent invoice reference does not exist in the system."
-            db.commit()
-            return cn
+        created_ids = []
+        base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+        for idx, exc_data in enumerate(exceptions, start=base_counter):
+            exc_id = generate_exception_id(idx)
+            exc = AuditException(
+                exception_id=exc_id,
+                invoice_id=invoice.invoice_id,
+                invoice_line_id=exc_data.get("line_id"),
+                shipment_id=None,
+                exception_type=exc_data["type"],
+                severity=exc_data["severity"],
+                expected_amount=exc_data["expected"],
+                billed_amount=exc_data["billed"],
+                disputed_amount=exc_data["disputed"],
+                currency=invoice.currency,
+                explanation=exc_data["explanation"],
+                evidence_json=json.dumps({"reason_code": reason_code, "raw_ref": invoice.raw_shipment_reference}),
+                exception_status=ExceptionStatus.OPEN,
+                detected_at=datetime.utcnow()
+            )
+            db.add(exc)
+            created_ids.append(exc_id)
 
-        if parent_inv.carrier_id != cn.carrier_id:
-            cn.status = "REJECTED"
-            cn.rejection_reason = "Carrier mismatch between credit note and parent invoice."
-            db.commit()
-            return cn
-
-        if cn.credit_amount <= 0:
-            cn.status = "REJECTED"
-            cn.rejection_reason = "Credit note amount must be greater than zero."
-            db.commit()
-            return cn
-
-        # Check maximum allowable credit (cannot exceed parent invoice variance)
-        max_allowable = max(0.0, parent_inv.total_variance_amount)
-        if round(cn.credit_amount, 2) > round(max_allowable + 1.0, 2): # allow $1 penny tolerance
-            cn.status = "REJECTED"
-            cn.rejection_reason = f"Credit note amount (${cn.credit_amount:.2f}) exceeds allowable dispute variance (${max_allowable:.2f})."
-            
-            # Also record an audit exception
-            db.add(InvoiceException(
-                invoice_id=parent_inv.id,
-                category="INVALID_CREDIT_NOTE",
-                severity="CRITICAL",
-                billed_amount=cn.credit_amount,
-                expected_amount=max_allowable,
-                variance_amount=cn.credit_amount - max_allowable,
-                status="DISPUTED",
-                root_cause_code="EXCESSIVE_CREDIT_NOTE",
-                explanation=cn.rejection_reason
-            ))
-            db.commit()
-            return cn
-
-        # Valid credit note: apply to invoice
-        cn.status = "FULLY_APPLIED"
-        cn.applied_amount = cn.credit_amount
-        cn.remaining_balance = 0.0
-        cn.rejection_reason = None
-
-        # Update parent invoice
-        parent_inv.status = "EXCEPTION_APPROVED"
-        parent_inv.reconciliation_notes = (parent_inv.reconciliation_notes or "") + f" [Resolved by Credit Note {cn.credit_note_number} for ${cn.credit_amount:.2f}]"
-
-        # Resolve open exceptions on invoice
-        for exc in parent_inv.exceptions:
-            if exc.status == "OPEN":
-                exc.status = "AUTO_RESOLVED"
-                exc.resolved_by = "CREDIT_NOTE_RECONCILIATION"
-                exc.resolution_notes = f"Cleared by credit note {cn.credit_note_number}"
-                exc.resolved_at = datetime.utcnow()
-
-        db.add(AuditEvent(
-            entity_type="CREDIT_NOTE",
-            entity_id=str(cn.id),
-            event_type="CREDIT_NOTE_APPLIED",
+        vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+        db.add(InvoiceValidationRun(
+            validation_run_id=generate_validation_run_id(vrun_count),
+            invoice_id=invoice.invoice_id,
+            run_at=datetime.utcnow(),
             actor=actor,
-            payload_json=json.dumps({"credit_note_number": cn.credit_note_number, "amount": cn.credit_amount, "invoice_id": parent_inv.id}),
-            notes=f"Successfully reconciled with invoice {parent_inv.invoice_number}"
+            rules_applied_count=3,
+            exceptions_detected_count=len(exceptions),
+            summary_verdict="FAILED",
+            details_json=json.dumps({"failure_reason": reason_code, "diagnostics": diagnostics})
         ))
 
         db.commit()
-        db.refresh(cn)
-        return cn
+
+        return InvoiceValidationSummary(
+            invoice_id=invoice.invoice_id,
+            overall_verdict="FAILED",
+            validation_status=invoice.validation_status,
+            invoice_status=invoice.invoice_status,
+            billed_total=invoice.billed_total,
+            expected_total=0.0,
+            variance_amount=invoice.billed_total,
+            exceptions_raised_count=len(exceptions),
+            exception_ids=created_ids,
+            line_results=[],
+            diagnostic_messages=diagnostics
+        )
+
+
+# Backward compatibility alias
+InvoiceValidator = FreightInvoiceValidator
