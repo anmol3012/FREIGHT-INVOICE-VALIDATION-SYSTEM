@@ -5,9 +5,16 @@ import {
   Truck, Scale, ShieldCheck, DollarSign, Clock, FileCheck, CheckCircle
 } from 'lucide-react';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string) || (typeof window !== 'undefined' && window.location.port === '5173'
+const rawApiBase = (import.meta.env.VITE_API_BASE_URL as string) || (typeof window !== 'undefined' && window.location.port === '5173'
   ? 'http://127.0.0.1:8000/api'
   : '/api');
+
+// Normalize API base: remove trailing slashes and ensure it ends with /api
+let formattedApiBase = rawApiBase.replace(/\/+$/, '');
+if (!formattedApiBase.endsWith('/api') && !formattedApiBase.endsWith('/api/v1')) {
+  formattedApiBase = `${formattedApiBase}/api`;
+}
+const API_BASE = formattedApiBase;
 
 interface KPIs {
   total_invoices: number;
