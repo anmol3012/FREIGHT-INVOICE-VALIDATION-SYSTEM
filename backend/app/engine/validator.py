@@ -35,20 +35,14 @@ from backend.app.engine.credit_note_service import CreditNoteService
 
 
 def _get_max_counter(db: Session, model_col, prefix: str) -> int:
-    """Helper to safely determine highest zero-padded sequence ID in DB."""
-    rows = db.query(model_col).filter(model_col.like(f"{prefix}%")).all()
-    if not rows:
+    """Helper to safely determine highest zero-padded sequence ID in DB in O(1) indexed time."""
+    last_val = db.query(model_col).filter(model_col.like(f"{prefix}%")).order_by(model_col.desc()).first()
+    if not last_val or not last_val[0]:
         return 1
-    max_val = 0
-    for (val,) in rows:
-        if val:
-            try:
-                num = int(val.split("-")[-1])
-                if num > max_val:
-                    max_val = num
-            except (ValueError, IndexError):
-                pass
-    return max_val + 1
+    try:
+        return int(str(last_val[0]).split("-")[-1]) + 1
+    except (ValueError, IndexError):
+        return 1
 
 
 @dataclass
@@ -77,7 +71,9 @@ class FreightInvoiceValidator:
         db: Session,
         invoice_id: str,
         actor: str = "SYSTEM_AUDITOR",
-        tolerance_amount: float = 0.50
+        tolerance_amount: float = 0.50,
+        commit: bool = True,
+        counters: Optional[Dict[str, int]] = None
     ) -> InvoiceValidationSummary:
         invoice = db.query(FreightInvoice).filter(FreightInvoice.invoice_id == invoice_id).first()
         if not invoice:
@@ -120,7 +116,7 @@ class FreightInvoiceValidator:
                 "disputed": invoice.billed_total,
                 "explanation": f"Carrier '{invoice.carrier_id}' does not exist in master records."
             })
-            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNRESOLVED_CARRIER")
+            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNRESOLVED_CARRIER", commit=commit, counters=counters)
 
         # -------------------------------------------------------------
         # Step 3: Resolve shipment reference (Scenario A Check)
@@ -148,7 +144,7 @@ class FreightInvoiceValidator:
                 "explanation": f"Scenario A: Shipment reference '{invoice.raw_shipment_reference}' cannot be matched to any operational shipment record."
             })
             diagnostics.append(f"Shipment reference '{invoice.raw_shipment_reference}' is unknown.")
-            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNKNOWN_SHIPMENT_REF")
+            return cls._finalize_failure(db, invoice, exceptions_to_create, diagnostics, actor, "UNKNOWN_SHIPMENT_REF", commit=commit, counters=counters)
 
         # -------------------------------------------------------------
         # Step 4: Verify carrier-shipment relationship
@@ -404,7 +400,12 @@ class FreightInvoiceValidator:
         ).delete()
         db.flush()
 
-        base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+        if counters is not None:
+            base_counter = counters.get("fex", 1)
+            counters["fex"] = base_counter + len(exceptions_to_create)
+        else:
+            base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+
         for idx, exc_data in enumerate(exceptions_to_create, start=base_counter):
             exc_id = generate_exception_id(idx)
             exc = AuditException(
@@ -450,7 +451,12 @@ class FreightInvoiceValidator:
         invoice.validation_status = ValidationStatus.FAILED if has_exceptions else ValidationStatus.PASSED
         invoice.invoice_status = InvoiceStatus.EXCEPTION_DISPUTED if has_exceptions else InvoiceStatus.VALIDATED_MATCH
 
-        vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+        if counters is not None:
+            vrun_count = counters.get("vrun", 1)
+            counters["vrun"] = vrun_count + 1
+        else:
+            vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+
         vrun = InvoiceValidationRun(
             validation_run_id=generate_validation_run_id(vrun_count),
             invoice_id=invoice.invoice_id,
@@ -471,7 +477,12 @@ class FreightInvoiceValidator:
         db.add(vrun)
 
         # Audit Event log
-        ev_count = _get_max_counter(db, AuditEvent.event_id, "AUD-2026-")
+        if counters is not None:
+            ev_count = counters.get("aud", 1)
+            counters["aud"] = ev_count + 1
+        else:
+            ev_count = _get_max_counter(db, AuditEvent.event_id, "AUD-2026-")
+
         db.add(AuditEvent(
             event_id=generate_audit_event_id(ev_count),
             entity_type="FreightInvoice",
@@ -487,7 +498,10 @@ class FreightInvoiceValidator:
             timestamp=datetime.utcnow()
         ))
 
-        db.commit()
+        if commit:
+            db.commit()
+        else:
+            db.flush()
 
         return InvoiceValidationSummary(
             invoice_id=invoice.invoice_id,
@@ -511,7 +525,9 @@ class FreightInvoiceValidator:
         exceptions: List[Dict[str, Any]],
         diagnostics: List[str],
         actor: str,
-        reason_code: str
+        reason_code: str,
+        commit: bool = True,
+        counters: Optional[Dict[str, int]] = None
     ) -> InvoiceValidationSummary:
         invoice.validation_status = ValidationStatus.FAILED
         invoice.invoice_status = InvoiceStatus.EXCEPTION_DISPUTED
@@ -526,7 +542,12 @@ class FreightInvoiceValidator:
         db.flush()
 
         created_ids = []
-        base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+        if counters is not None:
+            base_counter = counters.get("fex", 1)
+            counters["fex"] = base_counter + len(exceptions)
+        else:
+            base_counter = _get_max_counter(db, AuditException.exception_id, "FEX-2026-")
+
         for idx, exc_data in enumerate(exceptions, start=base_counter):
             exc_id = generate_exception_id(idx)
             exc = AuditException(
@@ -548,7 +569,12 @@ class FreightInvoiceValidator:
             db.add(exc)
             created_ids.append(exc_id)
 
-        vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+        if counters is not None:
+            vrun_count = counters.get("vrun", 1)
+            counters["vrun"] = vrun_count + 1
+        else:
+            vrun_count = _get_max_counter(db, InvoiceValidationRun.validation_run_id, "VRUN-2026-")
+
         db.add(InvoiceValidationRun(
             validation_run_id=generate_validation_run_id(vrun_count),
             invoice_id=invoice.invoice_id,
@@ -560,7 +586,10 @@ class FreightInvoiceValidator:
             details_json=json.dumps({"failure_reason": reason_code, "diagnostics": diagnostics})
         ))
 
-        db.commit()
+        if commit:
+            db.commit()
+        else:
+            db.flush()
 
         return InvoiceValidationSummary(
             invoice_id=invoice.invoice_id,

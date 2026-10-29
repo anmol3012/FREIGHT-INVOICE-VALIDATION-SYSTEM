@@ -1,0 +1,70 @@
+{
+  "benchmark_timestamp": "2026-10-29T06:53:08.793877",
+  "profile": "full",
+  "seed": 20261022,
+  "database_size_mb": 70.68,
+  "timings": {
+    "generation_seconds": 30.47,
+    "validation_seconds": 267.74,
+    "total_runtime_seconds": 317.16
+  },
+  "row_counts": {
+    "carriers": 100,
+    "lanes": 250,
+    "accessorials": 8,
+    "rate_cards": 327,
+    "rate_tiers": 1308,
+    "shipments": 20000,
+    "shipment_legs": 20000,
+    "weight_measurements": 20000,
+    "shipment_accessorials": 10517,
+    "delivery_evidence": 20000,
+    "duplicate_invoice_groups": 750,
+    "freight_invoices": 15000,
+    "invoice_lines": 39394,
+    "invoice_validation_runs": 15000,
+    "audit_exceptions": 4500,
+    "credit_notes": 1394,
+    "ground_truth_labels": 15000,
+    "audit_events": 2,
+    "entity_status_history": 75
+  },
+  "validation_findings": {
+    "total_audited": 15000,
+    "passed_clean_match": 10501,
+    "discrepancies_flagged": 4499,
+    "total_disputed_usd": 3046715.21
+  },
+  "accuracy_metrics": {
+    "accuracy": 0.9999,
+    "precision": 1.0,
+    "recall": 0.9998,
+    "specificity": 1.0,
+    "f1_score": 0.9999
+  },
+  "confusion_matrix": {
+    "total_invoices_processed": 15000,
+    "valid_invoices": 10501,
+    "invoices_requiring_review": 4499,
+    "rejected_invoices": 0,
+    "total_detected_exceptions": 4499,
+    "unresolved_exceptions": 4499,
+    "duplicate_invoices_detected": 0,
+    "duplicate_surcharges_detected": 750,
+    "data_integrity_failures": 750,
+    "true_positives": 4499,
+    "false_positives": 0,
+    "true_negatives": 10500,
+    "false_negatives": 1
+  },
+  "financial_impact": {
+    "total_injected_overbilling_usd": 3054987.22,
+    "total_detected_overbilling_usd": 3046715.21,
+    "recovery_rate_pct": 99.7,
+    "total_approved_credit_usd": 451837.63,
+    "total_reconciled_credit_usd": 451837.63,
+    "total_rejected_credit_usd": 56250.0
+  },
+  "export_manifest": "data\\full_scale_exports\\manifest.json",
+  "export_checksums": "data\\full_scale_exports\\checksums.sha256"
+}

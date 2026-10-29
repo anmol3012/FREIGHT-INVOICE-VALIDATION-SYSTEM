@@ -349,6 +349,7 @@ class DeterministicDataGenerator:
         evidences = []
 
         acc_by_code = {a.accessorial_code: a for a in accessorials}
+        lane_map = {l.lane_id: l for l in lanes}
         carrier_rc_map: Dict[str, List[RateCard]] = {}
         for rc in rate_cards:
             carrier_rc_map.setdefault(rc.carrier_id, []).append(rc)
@@ -357,7 +358,7 @@ class DeterministicDataGenerator:
             carrier = carriers[(i - 1) % len(carriers)]
             c_cards = carrier_rc_map.get(carrier.carrier_id) or rate_cards
             assigned_card = c_cards[(i - 1) % len(c_cards)]
-            lane = assigned_card.lane or lanes[(i - 1) % len(lanes)]
+            lane = lane_map.get(assigned_card.lane_id) or lanes[(i - 1) % len(lanes)]
             ship_id = generate_shipment_id(i)
 
             ship_d = BASE_DATE + timedelta(days=self.rng.randint(5, 280))
@@ -482,6 +483,8 @@ class DeterministicDataGenerator:
 
             if i % 1000 == 0:
                 db.flush()
+            if i % 5000 == 0:
+                print(f"    ... movements: {i:,}/{count:,} shipments", flush=True)
 
         db.flush()
         return shipments, legs, weights, shipment_accs, evidences
@@ -509,6 +512,7 @@ class DeterministicDataGenerator:
         dup_groups = []
 
         # Index lookups
+        carrier_map = {c.carrier_id: c for c in carriers}
         evid_map = {e.shipment_id: e for e in evidences}
         acc_map = {}
         for sa in shipment_accs:
@@ -525,7 +529,7 @@ class DeterministicDataGenerator:
         for i in range(1, count + 1):
             issue_type = SCENARIO_CYCLE[(i - 1) % len(SCENARIO_CYCLE)]
             shipment = shipments[(i - 1) % len(shipments)]
-            carrier = shipment.carrier
+            carrier = carrier_map.get(shipment.carrier_id) or carriers[(i - 1) % len(carriers)]
 
             carrier_rcs = rc_map.get((carrier.carrier_id, shipment.lane_id), [])
             rate_card = carrier_rcs[0] if carrier_rcs else None
@@ -755,6 +759,8 @@ class DeterministicDataGenerator:
 
             if i % 1000 == 0:
                 db.flush()
+            if i % 5000 == 0:
+                print(f"    ... financials: {i:,}/{count:,} invoices", flush=True)
 
         db.flush()
         return invoices, lines, validation_runs, exceptions, credit_notes, ground_truths, dup_groups

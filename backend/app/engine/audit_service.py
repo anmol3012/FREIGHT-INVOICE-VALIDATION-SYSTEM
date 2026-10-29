@@ -28,20 +28,14 @@ from backend.app.models.id_generator import (
 
 
 def _get_max_counter(db: Session, model_col, prefix: str) -> int:
-    """Safely computes the next deterministic sequence number from DB records."""
-    rows = db.query(model_col).filter(model_col.like(f"{prefix}%")).all()
-    if not rows:
+    """Safely computes the next deterministic sequence number from DB records in O(1) indexed time."""
+    last_val = db.query(model_col).filter(model_col.like(f"{prefix}%")).order_by(model_col.desc()).first()
+    if not last_val or not last_val[0]:
         return 1
-    max_val = 0
-    for (val,) in rows:
-        if val:
-            try:
-                num = int(val.split("-")[-1])
-                if num > max_val:
-                    max_val = num
-            except (ValueError, IndexError):
-                pass
-    return max_val + 1
+    try:
+        return int(str(last_val[0]).split("-")[-1]) + 1
+    except (ValueError, IndexError):
+        return 1
 
 
 class AuditService:

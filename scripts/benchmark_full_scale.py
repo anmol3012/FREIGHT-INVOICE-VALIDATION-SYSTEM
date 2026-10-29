@@ -64,26 +64,34 @@ def run_full_scale_acceptance(db_path: str = "data/full_scale_benchmark.db", see
     t_start = time.time()
 
     # Step 1: Synthesis
-    print("\n[Step 1/4] Executing 17-step dependency generation pipeline...")
+    print("\n[Step 1/4] Executing 17-step dependency generation pipeline...", flush=True)
     t_gen_start = time.time()
     generator = DeterministicDataGenerator(profile_name="full", seed=seed)
     counts = generator.generate_all(db)
     t_gen_elapsed = round(time.time() - t_gen_start, 2)
-    print(f"Generation completed in {t_gen_elapsed}s.")
+    print(f"Generation completed in {t_gen_elapsed}s.", flush=True)
     for entity, count in sorted(counts.items()):
-        print(f"  - {entity}: {count:,}")
+        print(f"  - {entity}: {count:,}", flush=True)
 
     # Step 2: Full-Scale 20-Step Freight Audit
-    print("\n[Step 2/4] Executing 20-step contractual freight audit on all invoices...")
+    print("\n[Step 2/4] Executing 20-step contractual freight audit on all invoices...", flush=True)
     t_val_start = time.time()
     invoices = db.query(FreightInvoice).all()
     passed = 0
     failed = 0
     total_recovered = 0.0
 
-    # Batch commit every 1000 validations
+    counters = {
+        "vrun": counts.get("invoice_validation_runs", 0) + 1,
+        "aud": counts.get("audit_events", 0) + 1,
+        "fex": counts.get("audit_exceptions", 0) + 1,
+    }
+
+    # Batch commit every 2500 validations
     for idx, inv in enumerate(invoices, start=1):
-        summary = FreightInvoiceValidator.validate_invoice(db, inv.invoice_id)
+        summary = FreightInvoiceValidator.validate_invoice(
+            db, inv.invoice_id, commit=False, counters=counters
+        )
         if summary.overall_verdict == "PASSED":
             passed += 1
         else:
@@ -92,17 +100,17 @@ def run_full_scale_acceptance(db_path: str = "data/full_scale_benchmark.db", see
 
         if idx % 2500 == 0:
             db.commit()
-            print(f"  ... audited {idx:,}/{len(invoices):,} invoices (Passed: {passed:,}, Exceptions: {failed:,})")
+            print(f"  ... audited {idx:,}/{len(invoices):,} invoices (Passed: {passed:,}, Exceptions: {failed:,})", flush=True)
 
     db.commit()
     t_val_elapsed = round(time.time() - t_val_start, 2)
-    print(f"Audit completed in {t_val_elapsed}s ({round(len(invoices) / max(0.1, t_val_elapsed), 1)} invoices/sec).")
-    print(f"  Passed Match:        {passed:,} ({round(passed / len(invoices) * 100, 2)}%)")
-    print(f"  Exceptions Raised:   {failed:,} ({round(failed / len(invoices) * 100, 2)}%)")
-    print(f"  Disputed Recovered:  ${total_recovered:,.2f}")
+    print(f"Audit completed in {t_val_elapsed}s ({round(len(invoices) / max(0.1, t_val_elapsed), 1)} invoices/sec).", flush=True)
+    print(f"  Passed Match:        {passed:,} ({round(passed / len(invoices) * 100, 2)}%)", flush=True)
+    print(f"  Exceptions Raised:   {failed:,} ({round(failed / len(invoices) * 100, 2)}%)", flush=True)
+    print(f"  Disputed Recovered:  ${total_recovered:,.2f}", flush=True)
 
     # Step 3: Evaluation Against Independent Ground Truth
-    print("\n[Step 3/4] Evaluating detection accuracy against isolated ground-truth labels...")
+    print("\n[Step 3/4] Evaluating detection accuracy against isolated ground-truth labels...", flush=True)
     eval_res = AuditEvaluator.evaluate(db)
     m = eval_res["metrics"]
     s = eval_res["summary"]

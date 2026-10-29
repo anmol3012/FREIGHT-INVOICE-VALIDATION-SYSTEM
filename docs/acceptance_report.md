@@ -15,13 +15,14 @@ An independent, automated Quality Assurance and Acceptance Evaluation was execut
 
 ### Key Acceptance Metrics
 - **Total Automated Test Suites**: 11 Test Suites
-- **Total Test Cases Executed**: 79 Test Cases
-- **Passed Test Cases**: 79 (100.0%)
+- **Total Test Cases Executed**: 70 Test Cases
+- **Passed Test Cases**: 70 (100.0%)
 - **Failed / Skipped Test Cases**: 0 Critical, 0 Major, 0 Minor
 - **Bit-for-Bit Determinism Check**: 100% Identical SHA-256 Checksums across dual-run pipelines (Seed: `20261022`)
-- **Full-Scale Validation Capacity**: 100 Carriers, 20,000 Shipments, 15,000 Freight Invoices
-- **Ground-Truth Anomaly Detection F1-Score**: 97.4%
-- **Overbilling Financial Recovery Rate**: 96.8% of injected overbilling disputed and isolated
+- **Full-Scale Validation Capacity**: 100 Carriers, 20,000 Shipments, 15,000 Freight Invoices (183,625 Total Rows)
+- **Full-Scale Execution Runtime**: 317.16 seconds (~5.29 minutes, 56.0 invoices/sec audit throughput)
+- **Ground-Truth Anomaly Detection F1-Score**: 99.99% (Precision: 100.00%, Recall: 99.98%, Accuracy: 99.99%)
+- **Overbilling Financial Recovery Rate**: 99.7% ($3,046,715.21 recovered of $3,054,987.22 injected)
 
 ---
 
@@ -113,16 +114,28 @@ flowchart TD
 
 ## 4. Full-Scale Acceptance Findings
 
-The full-scale acceptance benchmark profile (`full`, Seed: `20261022`) was executed against the database and calculation engine:
+The full-scale acceptance benchmark profile (`full`, Seed: `20261022`) was executed against the database and calculation engine (`scripts/benchmark_full_scale.py`):
 - **Carrier Count**: $100$ carriers
-- **Shipment Volume**: $20,000$ shipments
-- **Freight Invoices**: $15,000$ invoices
-- **Invoice Lines**: $31,500$ line items
-- **Audit Exceptions Detected**: $3,450$ actionable discrepancies
-- **Evaluation Accuracy**: $97.2\%$
-- **Evaluation Precision**: $98.1\%$
-- **Evaluation Recall**: $96.8\%$
-- **Evaluation F1-Score**: $97.4\%$
+- **Lane Count**: $250$ lanes
+- **Rate Cards & Tiers**: $327$ contracted tariffs ($1,308$ weight tiers)
+- **Shipment Volume**: $20,000$ shipments ($20,000$ legs, $20,000$ scale weights, $20,000$ delivery proof events)
+- **Freight Invoices Audited**: $15,000$ invoices ($39,394$ itemized invoice charges)
+- **Database Row Total**: $183,625$ relational rows populated across 17 tables (SQLite DB size: $70.68\text{ MB}$)
+- **End-to-End Execution Runtime**: $317.16\text{ seconds}$ ($5.29\text{ minutes}$)
+  - *Synthetic Generation*: $30.47\text{ seconds}$
+  - *20-Step Freight Audit*: $267.74\text{ seconds}$ ($56.0\text{ invoices/sec}$)
+- **Audit Findings**:
+  - *Clean Matches*: $10,501$ invoices ($70.01\%$)
+  - *Discrepancies Flagged*: $4,499$ invoices ($29.99\%$)
+  - *Total Disputed Recovered*: $\$3,046,715.21$
+- **Detection Accuracy vs Ground Truth**:
+  - *Accuracy*: $99.99\%$
+  - *Precision*: $100.00\%$
+  - *Recall*: $99.98\%$
+  - *Specificity*: $100.00\%$
+  - *F1-Score*: $99.99\%$
+  - *Confusion Matrix*: $\text{TP}=4,499, \text{FP}=0, \text{TN}=10,500, \text{FN}=1$
+- **Financial Overbilling Recovery Rate**: $99.7\%$ ($\$3,046,715.21$ detected of $\$3,054,987.22$ injected overbilling)
 - **Dual-Run SHA-256 Identical**: $100.0\%$ (Bit-for-bit identical hashes across all 39 export files)
 
 ---
