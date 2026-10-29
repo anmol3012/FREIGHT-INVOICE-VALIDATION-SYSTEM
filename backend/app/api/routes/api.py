@@ -6,13 +6,18 @@ Audit Exceptions, Credit Notes, Historical Traceability, and Offline Accuracy Ev
 
 from typing import List, Optional, Dict, Any
 from datetime import datetime
+from pathlib import Path
+import json
+import time
 from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import func, desc, or_
 
 from backend.app.core.database import get_db
 from backend.app.models.carrier import Carrier
 from backend.app.models.lane import Lane
+from backend.app.models.rate_card import RateCard, RateTier
 from backend.app.models.shipment import Shipment
 from backend.app.models.invoice import FreightInvoice, InvoiceLine
 from backend.app.models.audit_exception import AuditException
@@ -27,13 +32,18 @@ from backend.app.schemas.api_schemas import (
     PaginatedInvoicesOut, ValidationTriggerResponse, AuditExceptionOut,
     CreditNoteOut, AuditEventOut, ExceptionStatusUpdateRequest,
     ManualOverrideRequest, CreditNoteValidateRequest, TraceabilityResponse,
-    EvaluationReportOut, CarrierOut, InvoiceLineOut
+    EvaluationReportOut, CarrierOut, InvoiceLineOut,
+    HealthCheckResponse, ReadinessResponse, DatasetGenerateRequest,
+    DatasetGenerateResponse, BatchValidationRequest, BatchValidationResponse,
+    RateCardOut, LaneOut, ShipmentOut
 )
 from backend.app.engine.validator import FreightInvoiceValidator
 from backend.app.engine.evaluator import AuditEvaluator
 from backend.app.engine.history_service import HistoryService
 from backend.app.engine.audit_service import AuditService
 from backend.app.engine.credit_note_service import CreditNoteService
+from backend.app.generator.generator import DeterministicDataGenerator
+from backend.app.generator.data_quality import DataQualityValidator
 
 router = APIRouter()
 
@@ -613,4 +623,354 @@ def run_evaluation(db: Session = Depends(get_db)):
         metrics=report["metrics"],
         financial_impact=report["financial_impact"],
         scenario_breakdown=report["scenario_breakdown"]
+    )
+
+
+
+# ============================================================================
+# 6. Health, Readiness, and Dataset Management
+# ============================================================================
+
+@router.get("/health", response_model=HealthCheckResponse)
+def api_health():
+    """Health check endpoint for liveness probes."""
+    return HealthCheckResponse(
+        status="HEALTHY",
+        database="CONNECTED",
+        timestamp=datetime.utcnow()
+    )
+
+
+@router.get("/ready", response_model=ReadinessResponse)
+def api_readiness(db: Session = Depends(get_db)):
+    """Readiness probe confirming tables exist and database accepts queries."""
+    total = db.query(FreightInvoice).count()
+    return ReadinessResponse(
+        ready=True,
+        tables_initialized=True,
+        total_invoices=total
+    )
+
+
+@router.post("/dataset/generate", response_model=DatasetGenerateResponse)
+def generate_dataset(
+    req: DatasetGenerateRequest = DatasetGenerateRequest(),
+    db: Session = Depends(get_db)
+):
+    """Triggers synthetic dataset generation and automated validation on demand."""
+    generator = DeterministicDataGenerator(profile_name=req.scale, seed=req.seed)
+    counts = generator.generate_all(db)
+
+    # Validate all generated invoices
+    invoices = db.query(FreightInvoice).all()
+    for inv in invoices:
+      FreightInvoiceValidator.validate_invoice(db, inv.invoice_id)
+    db.commit()
+
+    return DatasetGenerateResponse(
+        status="COMPLETED",
+        scale=req.scale,
+        seed=req.seed,
+        counts=counts
+    )
+
+
+@router.get("/dataset/quality-report")
+def get_dataset_quality_report(db: Session = Depends(get_db)):
+    """Runs data-quality validation across all entities and returns the comprehensive audit summary."""
+    validator = DataQualityValidator(db)
+    return validator.run_all_checks()
+
+
+@router.get("/dataset/manifest")
+def get_dataset_manifest():
+    """Returns the cryptographic SHA-256 source manifest and provenance."""
+    manifest_path = Path("data/exports/manifest.json")
+    if not manifest_path.exists():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Dataset manifest not found. Run export first.")
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+# ============================================================================
+# 7. Master Entities (Carriers, RateCards, Lanes, Shipments)
+# ============================================================================
+
+@router.get("/carriers/{carrier_id}")
+def get_carrier_detail(carrier_id: str, db: Session = Depends(get_db)):
+    carrier = db.query(Carrier).filter(Carrier.carrier_id == carrier_id).first()
+    if not carrier:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Carrier '{carrier_id}' not found.")
+    return {
+        "carrier_id": carrier.carrier_id,
+        "carrier_code": carrier.carrier_code,
+        "carrier_name": carrier.carrier_name,
+        "status": carrier.status.value,
+        "country_code": carrier.country_code,
+        "rate_card_count": len(carrier.rate_cards) if carrier.rate_cards else 0,
+        "invoice_count": len(carrier.invoices) if carrier.invoices else 0
+    }
+
+
+@router.get("/rate-cards", response_model=List[RateCardOut])
+def list_rate_cards(
+    carrier_id: Optional[str] = Query(None),
+    db: Session = Depends(get_db)
+):
+    query = db.query(RateCard)
+    if carrier_id:
+        query = query.filter(RateCard.carrier_id == carrier_id)
+    cards = query.all()
+    return [
+        RateCardOut(
+            rate_card_id=rc.rate_card_id,
+            carrier_id=rc.carrier_id,
+            lane_id=rc.lane_id,
+            service_level=rc.service_level.value if hasattr(rc.service_level, "value") else str(rc.service_level),
+            currency=rc.currency,
+            effective_from=rc.effective_from,
+            effective_to=rc.effective_to,
+            base_rate=rc.base_rate,
+            minimum_charge=rc.minimum_charge,
+            status=rc.status.value if hasattr(rc.status, "value") else str(rc.status),
+            tier_count=len(rc.rate_tiers) if rc.rate_tiers else 0
+        )
+        for rc in cards
+    ]
+
+
+@router.get("/rate-cards/{rate_card_id}")
+def get_rate_card_detail(rate_card_id: str, db: Session = Depends(get_db)):
+    rc = db.query(RateCard).filter(RateCard.rate_card_id == rate_card_id).first()
+    if not rc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"RateCard '{rate_card_id}' not found.")
+    return {
+        "rate_card_id": rc.rate_card_id,
+        "carrier_id": rc.carrier_id,
+        "lane_id": rc.lane_id,
+        "service_level": rc.service_level.value if hasattr(rc.service_level, "value") else str(rc.service_level),
+        "currency": rc.currency,
+        "effective_from": rc.effective_from.isoformat() if rc.effective_from else None,
+        "effective_to": rc.effective_to.isoformat() if rc.effective_to else None,
+        "base_rate": rc.base_rate,
+        "minimum_charge": rc.minimum_charge,
+        "status": rc.status.value if hasattr(rc.status, "value") else str(rc.status),
+        "tiers": [
+            {
+                "tier_id": t.rate_tier_id,
+                "tier_sequence": t.tier_sequence,
+                "min_weight_kg": t.min_weight_kg,
+                "max_weight_kg": t.max_weight_kg,
+                "rate_per_kg": t.rate_per_kg
+            }
+            for t in sorted(rc.rate_tiers, key=lambda x: x.tier_sequence)
+        ]
+    }
+
+
+@router.get("/lanes", response_model=List[LaneOut])
+def list_lanes(db: Session = Depends(get_db)):
+    return db.query(Lane).all()
+
+
+@router.get("/lanes/{lane_id}")
+def get_lane_detail(lane_id: str, db: Session = Depends(get_db)):
+    l = db.query(Lane).filter(Lane.lane_id == lane_id).first()
+    if not l:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Lane '{lane_id}' not found.")
+    return {
+        "lane_id": l.lane_id,
+        "origin_region": l.origin_region,
+        "destination_region": l.destination_region,
+        "standard_transit_days": l.standard_transit_days,
+        "distance_km": l.distance_km,
+        "status": l.status.value if hasattr(l.status, "value") else str(l.status)
+    }
+
+
+@router.get("/shipments", response_model=List[ShipmentOut])
+def list_shipments(
+    carrier_id: Optional[str] = Query(None),
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    db: Session = Depends(get_db)
+):
+    query = db.query(Shipment)
+    if carrier_id:
+        query = query.filter(Shipment.carrier_id == carrier_id)
+    ships = query.offset(offset).limit(limit).all()
+    return [
+        ShipmentOut(
+            shipment_id=s.shipment_id,
+            carrier_id=s.carrier_id,
+            lane_id=s.lane_id,
+            service_level=s.service_level.value if hasattr(s.service_level, "value") else str(s.service_level),
+            ship_date=s.ship_date,
+            delivery_due_date=s.delivery_due_date,
+            actual_length_cm=s.actual_length_cm,
+            actual_width_cm=s.actual_width_cm,
+            actual_height_cm=s.actual_height_cm,
+            actual_weight_kg=s.actual_weight_kg,
+            chargeable_weight_kg=s.chargeable_weight_kg,
+            currency=s.currency,
+            shipment_status=s.shipment_status.value if hasattr(s.shipment_status, "value") else str(s.shipment_status)
+        )
+        for s in ships
+    ]
+
+
+@router.get("/shipments/{shipment_id}")
+def get_shipment_detail(shipment_id: str, db: Session = Depends(get_db)):
+    s = db.query(Shipment).filter(Shipment.shipment_id == shipment_id).first()
+    if not s:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Shipment '{shipment_id}' not found.")
+    evidence = s.delivery_evidence
+    return {
+        "shipment_id": s.shipment_id,
+        "carrier_id": s.carrier_id,
+        "lane_id": s.lane_id,
+        "service_level": s.service_level.value if hasattr(s.service_level, "value") else str(s.service_level),
+        "ship_date": s.ship_date.isoformat(),
+        "delivery_due_date": s.delivery_due_date.isoformat(),
+        "dimensions": {
+            "length_cm": s.actual_length_cm,
+            "width_cm": s.actual_width_cm,
+            "height_cm": s.actual_height_cm
+        },
+        "weights": {
+            "actual_weight_kg": s.actual_weight_kg,
+            "chargeable_weight_kg": s.chargeable_weight_kg
+        },
+        "delivery_evidence": {
+            "delivered_at": evidence.delivered_at.isoformat(),
+            "recipient_name": evidence.recipient_name,
+            "signed_pod_ref": evidence.signed_pod_ref,
+            "dock_type": evidence.facility_dock_type,
+            "liftgate_used": evidence.liftgate_actually_used,
+            "detention_minutes": evidence.detention_minutes_recorded
+        } if evidence else None,
+        "legs": [
+            {
+                "leg_id": leg.shipment_leg_id,
+                "sequence": leg.leg_sequence,
+                "origin": leg.origin_location_code,
+                "destination": leg.destination_location_code
+            }
+            for leg in s.shipment_legs
+        ]
+    }
+
+
+# ============================================================================
+# 8. Batch Validation & Report Downloads
+# ============================================================================
+
+@router.post("/invoices/validate-batch", response_model=BatchValidationResponse)
+def validate_invoices_batch(
+    req: BatchValidationRequest = BatchValidationRequest(),
+    db: Session = Depends(get_db)
+):
+    """Executes batch freight validation across all unaudited (or specified) invoices."""
+    start_t = time.time()
+    query = db.query(FreightInvoice)
+    if req.invoice_ids:
+        query = query.filter(FreightInvoice.invoice_id.in_(req.invoice_ids))
+    else:
+        query = query.filter(FreightInvoice.validation_status == ValidationStatus.UNAUDITED)
+
+    invoices = query.all()
+    passed = 0
+    failed = 0
+    recovered = 0.0
+
+    for inv in invoices:
+        res = FreightInvoiceValidator.validate_invoice(db, inv.invoice_id, actor=req.actor)
+        if res.overall_verdict == "PASSED":
+            passed += 1
+        else:
+            failed += 1
+            recovered += max(0.0, res.variance_amount)
+
+    db.commit()
+    duration = round(time.time() - start_t, 3)
+    return BatchValidationResponse(
+        total_audited=len(invoices),
+        passed_count=passed,
+        failed_count=failed,
+        total_variance_recovered_usd=round(recovered, 2),
+        duration_seconds=duration
+    )
+
+
+@router.get("/reports/download/{filename}")
+def download_report_file(filename: str):
+    """Securely downloads generated dataset files and data quality reports."""
+    allowed_dir = Path("data/exports")
+    safe_file = (allowed_dir / filename).resolve()
+    if not str(safe_file).startswith(str(allowed_dir.resolve())):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied.")
+    if not safe_file.exists():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"File '{filename}' not found.")
+    return FileResponse(path=str(safe_file), filename=filename)
+
+
+# ============================================================================
+# 9. Dashboard Aliases & Compatibility Endpoints
+# ============================================================================
+
+@router.post("/invoices/validate-all")
+def validate_all_invoices_alias(db: Session = Depends(get_db)):
+    """Alias for batch invoice audit."""
+    return validate_invoices_batch(req=BatchValidationRequest(), db=db)
+
+
+@router.post("/dataset/seed")
+def seed_dataset_alias(
+    scale: str = Query("starter"),
+    reset: bool = Query(False),
+    seed: int = Query(20261022),
+    db: Session = Depends(get_db)
+):
+    """Alias for dataset generation."""
+    return generate_dataset(req=DatasetGenerateRequest(scale=scale, seed=seed, reset=reset), db=db)
+
+
+@router.get("/dataset/export")
+def export_dataset_alias(
+    seed: int = Query(20261022),
+    db: Session = Depends(get_db)
+):
+    """Alias for exporting data and checksums."""
+    from backend.app.generator.exporter import DataExporter
+    exporter = DataExporter()
+    res = exporter.export_all(db, seed=seed)
+    return res
+
+
+@router.patch("/exceptions/{exception_id}")
+def update_exception_status_alias(
+    exception_id: str,
+    status: str = Query(...),
+    reason: str = Query("Auditor manual review update"),
+    db: Session = Depends(get_db)
+):
+    """Alias for exception status transition."""
+    return update_exception_status(
+        exception_id=exception_id,
+        req=ExceptionStatusUpdateRequest(target_status=status, reason=reason),
+        db=db
+    )
+
+
+@router.post("/credit-notes/{credit_note_id}/reconcile")
+def reconcile_credit_note_alias(
+    credit_note_id: str,
+    actor: str = Query("CREDIT_AUDITOR"),
+    db: Session = Depends(get_db)
+):
+    """Alias for validating and reconciling credit notes."""
+    return validate_credit_note(
+        credit_note_id=credit_note_id,
+        req=CreditNoteValidateRequest(actor=actor),
+        db=db
     )

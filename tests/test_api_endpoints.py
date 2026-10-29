@@ -211,3 +211,99 @@ def test_api_evaluation_report(api_test_client):
     assert "summary" in data
     assert "financial_impact" in data
     assert "scenario_breakdown" in data
+
+
+def test_api_health_and_readiness(api_test_client):
+    client, _ = api_test_client
+    resp = client.get("/health")
+    assert resp.status_code == 200
+    assert resp.json()["status"] == "HEALTHY"
+
+    ready_resp = client.get("/ready")
+    assert ready_resp.status_code == 200
+    assert ready_resp.json()["ready"] is True
+
+    api_health = client.get("/api/health")
+    assert api_health.status_code == 200
+    assert api_health.json()["status"] == "HEALTHY"
+
+
+def test_api_rate_cards_and_lanes(api_test_client):
+    client, _ = api_test_client
+    rc_resp = client.get("/api/v1/rate-cards")
+    assert rc_resp.status_code == 200
+    cards = rc_resp.json()
+    assert isinstance(cards, list)
+    assert len(cards) > 0
+    assert "rate_card_id" in cards[0]
+    assert "base_rate" in cards[0]
+
+    first_rc_id = cards[0]["rate_card_id"]
+    rc_detail = client.get(f"/api/v1/rate-cards/{first_rc_id}")
+    assert rc_detail.status_code == 200
+    assert rc_detail.json()["rate_card_id"] == first_rc_id
+
+    lane_resp = client.get("/api/v1/lanes")
+    assert lane_resp.status_code == 200
+    lanes = lane_resp.json()
+    assert isinstance(lanes, list)
+    assert len(lanes) > 0
+    assert "lane_id" in lanes[0]
+
+
+def test_api_shipments(api_test_client):
+    client, _ = api_test_client
+    resp = client.get("/api/v1/shipments?limit=10")
+    assert resp.status_code == 200
+    ships = resp.json()
+    assert isinstance(ships, list)
+    assert len(ships) > 0
+    assert "shipment_id" in ships[0]
+    assert "chargeable_weight_kg" in ships[0]
+
+    first_shp_id = ships[0]["shipment_id"]
+    detail_resp = client.get(f"/api/v1/shipments/{first_shp_id}")
+    assert detail_resp.status_code == 200
+    shp_data = detail_resp.json()
+    assert shp_data["shipment_id"] == first_shp_id
+    assert "dimensions" in shp_data
+    assert "weights" in shp_data
+
+
+def test_api_batch_validation(api_test_client):
+    client, _ = api_test_client
+    resp = client.post("/api/v1/invoices/validate-batch", json={"actor": "TEST_RUNNER"})
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "total_audited" in data
+    assert "passed_count" in data
+    assert "failed_count" in data
+    assert "total_variance_recovered_usd" in data
+    assert "duration_seconds" in data
+
+
+def test_api_dataset_quality_and_manifest(api_test_client):
+    client, _ = api_test_client
+    q_resp = client.get("/api/v1/dataset/quality-report")
+    assert q_resp.status_code == 200
+    q_data = q_resp.json()
+    assert "dataset_status" in q_data
+    assert "stage_results" in q_data
+
+    m_resp = client.get("/api/v1/dataset/manifest")
+    assert m_resp.status_code == 200
+    m_data = m_resp.json()
+    assert "dataset_version" in m_data
+    assert "entities" in m_data
+
+
+def test_api_report_downloads(api_test_client):
+    client, _ = api_test_client
+    resp = client.get("/api/v1/reports/download/validation_summary.json")
+    assert resp.status_code == 200
+    assert len(resp.content) > 0
+
+    resp_m = client.get("/api/v1/reports/download/manifest.json")
+    assert resp_m.status_code == 200
+    assert len(resp_m.content) > 0
+

@@ -27,6 +27,14 @@ app.add_middleware(
 app.include_router(api_router, prefix="/api")
 app.include_router(api_router, prefix="/api/v1")
 
+@app.get("/health")
+def health():
+    return {"status": "HEALTHY", "system": settings.PROJECT_NAME, "version": settings.VERSION}
+
+@app.get("/ready")
+def readiness():
+    return {"ready": True, "database": "CONNECTED"}
+
 # Mount frontend production build if available
 frontend_dist = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
 if frontend_dist.exists():

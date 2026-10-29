@@ -193,3 +193,89 @@ class EvaluationReportOut(BaseModel):
     metrics: Dict[str, Any]
     financial_impact: Dict[str, Any]
     scenario_breakdown: Dict[str, Any]
+
+
+class HealthCheckResponse(BaseModel):
+    status: str
+    database: str
+    timestamp: datetime
+
+
+class ReadinessResponse(BaseModel):
+    ready: bool
+    tables_initialized: bool
+    total_invoices: int
+
+
+class DatasetGenerateRequest(BaseModel):
+    scale: str = "starter"
+    seed: int = 20261022
+    reset: bool = False
+
+
+class DatasetGenerateResponse(BaseModel):
+    status: str
+    scale: str
+    seed: int
+    counts: Dict[str, int]
+
+
+class BatchValidationRequest(BaseModel):
+    invoice_ids: Optional[List[str]] = None
+    actor: str = "BATCH_AUDITOR"
+
+
+class BatchValidationResponse(BaseModel):
+    total_audited: int
+    passed_count: int
+    failed_count: int
+    total_variance_recovered_usd: float
+    duration_seconds: float
+
+
+class RateCardOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    rate_card_id: str
+    carrier_id: str
+    lane_id: str
+    service_level: str
+    currency: str
+    effective_from: date
+    effective_to: Optional[date] = None
+    base_rate: float
+    minimum_charge: float
+    status: str
+    tier_count: int = 0
+
+
+class LaneOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    lane_id: str
+    origin_location_code: str
+    destination_location_code: str
+    origin_city: str
+    destination_city: str
+    origin_country: str
+    destination_country: str
+    distance_km: float
+    status: str
+
+
+class ShipmentOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    shipment_id: str
+    carrier_id: str
+    lane_id: str
+    service_level: str
+    ship_date: date
+    delivery_due_date: date
+    actual_length_cm: float
+    actual_width_cm: float
+    actual_height_cm: float
+    actual_weight_kg: float
+    chargeable_weight_kg: float
+    currency: str
+    shipment_status: str
