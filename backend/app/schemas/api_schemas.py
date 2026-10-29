@@ -122,11 +122,9 @@ class AuditEventOut(BaseModel):
     entity_id: str
     event_type: str
     actor: str
-    previous_state: Optional[str] = None
-    new_state: Optional[str] = None
-    reason: Optional[str] = None
+    notes: Optional[str] = None
     timestamp: datetime
-    metadata_json: Optional[str] = None
+    payload_json: Optional[str] = None
 
 
 class DashboardKPIs(BaseModel):
@@ -191,7 +189,7 @@ class TraceabilityResponse(BaseModel):
 
 class EvaluationReportOut(BaseModel):
     evaluated_at: datetime
+    summary: Dict[str, Any]
     metrics: Dict[str, Any]
-    confusion_matrix: Dict[str, int]
-    financial_metrics: Dict[str, float]
+    financial_impact: Dict[str, Any]
     scenario_breakdown: Dict[str, Any]

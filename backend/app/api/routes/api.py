@@ -5,6 +5,7 @@ Audit Exceptions, Credit Notes, Historical Traceability, and Offline Accuracy Ev
 """
 
 from typing import List, Optional, Dict, Any
+from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import func, desc, or_
@@ -26,7 +27,7 @@ from backend.app.schemas.api_schemas import (
     PaginatedInvoicesOut, ValidationTriggerResponse, AuditExceptionOut,
     CreditNoteOut, AuditEventOut, ExceptionStatusUpdateRequest,
     ManualOverrideRequest, CreditNoteValidateRequest, TraceabilityResponse,
-    EvaluationReportOut, CarrierOut
+    EvaluationReportOut, CarrierOut, InvoiceLineOut
 )
 from backend.app.engine.validator import FreightInvoiceValidator
 from backend.app.engine.evaluator import AuditEvaluator
@@ -343,18 +344,19 @@ def get_invoice_traceability(invoice_id: str, db: Session = Depends(get_db)):
     """Returns end-to-end lineage, evidence records, and lifecycle transitions for audit trail verification."""
     try:
         data = HistoryService.get_invoice_traceability(db, invoice_id)
+        inv_data = data["invoice"]
         return TraceabilityResponse(
-            invoice_id=data["invoice_id"],
-            invoice_number=data["invoice_number"],
-            carrier=data.get("carrier"),
+            invoice_id=inv_data["invoice_id"],
+            invoice_number=inv_data["invoice_number"],
+            carrier=inv_data.get("carrier"),
             shipment=data.get("shipment"),
             rate_card=data.get("rate_card"),
             weight_measurements=data.get("weight_measurements", []),
             delivery_evidence=data.get("delivery_evidence"),
-            invoice_lines=data.get("invoice_lines", []),
+            invoice_lines=data.get("lines", []),
             exceptions=data.get("exceptions", []),
             credit_notes=data.get("credit_notes", []),
-            status_history=data.get("status_history", []),
+            status_history=data.get("lifecycle_transitions", []),
             audit_events=data.get("audit_events", [])
         )
     except ValueError as e:
@@ -456,12 +458,19 @@ def record_manual_override(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Exception '{exception_id}' not found.")
 
     try:
+        old_status = exc.exception_status.value if hasattr(exc.exception_status, "value") else str(exc.exception_status)
+        exc.exception_status = ExceptionStatus.APPROVED_OVERRIDE
+        exc.resolved_at = datetime.utcnow()
+
         AuditService.record_manual_override(
             db=db,
-            exception=exc,
-            approved_amount=req.approved_amount,
-            reason=req.reason,
-            actor=req.actor
+            entity_type="AuditException",
+            entity_id=exc.exception_id,
+            actor=req.actor,
+            override_reason=req.reason,
+            previous_decision=old_status,
+            new_decision=ExceptionStatus.APPROVED_OVERRIDE.value,
+            financial_delta=req.approved_amount
         )
         db.commit()
         return {
@@ -580,11 +589,9 @@ def list_audit_events(
             entity_id=ev.entity_id,
             event_type=ev.event_type.value if hasattr(ev.event_type, "value") else str(ev.event_type),
             actor=ev.actor,
-            previous_state=ev.previous_state,
-            new_state=ev.new_state,
-            reason=ev.reason,
+            notes=ev.notes,
             timestamp=ev.timestamp,
-            metadata_json=ev.metadata_json
+            payload_json=ev.payload_json
         )
         for ev in events
     ]
@@ -601,9 +608,9 @@ def run_evaluation(db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=report["error"])
 
     return EvaluationReportOut(
-        evaluated_at=report["evaluated_at"],
+        evaluated_at=datetime.utcnow(),
+        summary=report["summary"],
         metrics=report["metrics"],
-        confusion_matrix=report["confusion_matrix"],
-        financial_metrics=report["financial_metrics"],
+        financial_impact=report["financial_impact"],
         scenario_breakdown=report["scenario_breakdown"]
     )

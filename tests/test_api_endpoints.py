@@ -11,6 +11,7 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from sqlalchemy.pool import StaticPool
 from backend.app.core.database import Base, get_db
 from backend.app.main import app
 from backend.app.generator.generator import SyntheticDataGenerator
@@ -20,34 +21,41 @@ from backend.app.engine.validator import InvoiceValidator
 @pytest.fixture(scope="module")
 def api_test_client():
     """Sets up an in-memory SQLite database seeded with starter generator profile."""
-    engine = create_engine("sqlite:///:memory:")
+    engine = create_engine(
+        "sqlite:///:memory:",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool
+    )
     Base.metadata.create_all(bind=engine)
-    TestingSessionLocal = sessionmaker(bind=engine)
-    db = TestingSessionLocal()
+    TestingSessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+    seed_db = TestingSessionLocal()
 
     # Generate test dataset
     generator = SyntheticDataGenerator(profile_name="test", seed=20261022)
-    generator.generate_all(db)
+    generator.generate_all(seed_db)
 
     # Validate all invoices
     from backend.app.models.invoice import FreightInvoice
-    for inv in db.query(FreightInvoice).all():
-        InvoiceValidator.validate_invoice(db, inv.invoice_id)
+    for inv in seed_db.query(FreightInvoice).all():
+        InvoiceValidator.validate_invoice(seed_db, inv.invoice_id)
+
+    seed_db.commit()
+    seed_db.close()
 
     # Dependency override
     def override_get_db():
+        session = TestingSessionLocal()
         try:
-            yield db
+            yield session
         finally:
-            pass
+            session.close()
 
     app.dependency_overrides[get_db] = override_get_db
     client = TestClient(app)
 
-    yield client, db
+    yield client, TestingSessionLocal
 
     app.dependency_overrides.clear()
-    db.close()
 
 
 def test_api_dashboard_kpis(api_test_client):
@@ -139,7 +147,7 @@ def test_api_invoice_traceability(api_test_client):
 
 def test_api_exceptions_workflow(api_test_client):
     client, db = api_test_client
-    resp = client.get("/api/v1/exceptions?limit=10")
+    resp = client.get("/api/v1/exceptions?exception_status=OPEN&limit=10")
     assert resp.status_code == 200
     exceptions = resp.json()
     assert isinstance(exceptions, list)
@@ -200,6 +208,6 @@ def test_api_evaluation_report(api_test_client):
     assert "precision" in data["metrics"]
     assert "recall" in data["metrics"]
     assert "f1_score" in data["metrics"]
-    assert "confusion_matrix" in data
-    assert "financial_metrics" in data
+    assert "summary" in data
+    assert "financial_impact" in data
     assert "scenario_breakdown" in data
