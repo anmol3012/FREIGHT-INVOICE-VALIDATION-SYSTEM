@@ -205,20 +205,25 @@ def main():
     p_srv.add_argument("--port", type=int, default=8000, help="Port number")
     p_srv.add_argument("--reload", action="store_true", help="Enable live auto-reload")
 
-    # seed
-    p_seed = subparsers.add_parser("seed", help="Generate synthetic logistics dataset")
-    p_seed.add_argument("--scale", choices=["test", "starter", "full"], default="starter", help="Dataset scale")
-    p_seed.add_argument("--seed", type=int, default=20261022, help="Random seed")
-    p_seed.add_argument("--reset", action="store_true", help="Reset database before seeding")
+    # migrate
+    subparsers.add_parser("migrate", help="Initialize or migrate database schema")
+
+    # seed / generate
+    for cmd_name in ["seed", "generate"]:
+        p_seed = subparsers.add_parser(cmd_name, help="Generate synthetic logistics dataset")
+        p_seed.add_argument("--scale", "--profile", dest="scale", choices=["test", "starter", "full"], default="starter", help="Dataset scale")
+        p_seed.add_argument("--seed", type=int, default=20261022, help="Random seed")
+        p_seed.add_argument("--reset", action="store_true", help="Reset database before seeding")
 
     # export
     p_exp = subparsers.add_parser("export", help="Export datasets to CSV, JSON, and SQL")
     p_exp.add_argument("--output-dir", default="data/exports", help="Export target directory")
     p_exp.add_argument("--seed", type=int, default=20261022, help="Seed value for manifest")
 
-    # validate
-    p_val = subparsers.add_parser("validate", help="Run 20-step validation engine on invoices")
-    p_val.add_argument("--invoice-id", help="Validate specific invoice ID (default: all)")
+    # validate / validate-all
+    for cmd_name in ["validate", "validate-all"]:
+        p_val = subparsers.add_parser(cmd_name, help="Run 20-step validation engine on invoices")
+        p_val.add_argument("--invoice-id", help="Validate specific invoice ID (default: all)")
 
     # evaluate
     subparsers.add_parser("evaluate", help="Evaluate audit detection accuracy against ground truth")
@@ -233,11 +238,14 @@ def main():
     p_rep.add_argument("--seed", type=int, default=20261022, help="Random seed")
 
     args = parser.parse_args()
-    if args.command == "seed":
+    if args.command == "migrate":
+        init_db(reset=False)
+        print("Database schema initialized and migrated successfully!")
+    elif args.command in ["seed", "generate"]:
         cmd_seed(args)
     elif args.command == "export":
         cmd_export(args)
-    elif args.command == "validate":
+    elif args.command in ["validate", "validate-all"]:
         cmd_validate(args)
     elif args.command == "evaluate":
         cmd_evaluate(args)

@@ -1,6 +1,6 @@
 {
   "dataset_status": "PASSED",
-  "audit_timestamp": "2026-10-29T05:12:30.589964",
+  "audit_timestamp": "2026-10-29T07:16:20.542098",
   "unintentional_defects_count": 0,
   "intentional_anomalies_count": 10,
   "record_counts": {
@@ -16,16 +16,16 @@
     "FreightInvoices": 200,
     "InvoiceLines": 516,
     "DuplicateInvoiceGroups": 10,
-    "InvoiceValidationRuns": 600,
+    "InvoiceValidationRuns": 400,
     "AuditExceptions": 60,
     "CreditNotes": 18,
-    "AuditEvents": 399,
-    "EntityStatusHistory": 92,
+    "AuditEvents": 192,
+    "EntityStatusHistory": 75,
     "GroundTruthLabels": 200
   },
   "stage_results": {
     "primary_keys": {
-      "records_checked": 3496,
+      "records_checked": 3072,
       "null_pks": 0,
       "duplicate_pks": 0,
       "pattern_mismatches": 0,

@@ -33,8 +33,8 @@
       ],
       "entity": "audit_events",
       "format": "csv",
-      "row_count": 399,
-      "sha256": "8a60e93ab732b5cb34d8d13cef3f865d2d08bffb6cd3ccf1bcdb6bc7c1e8bbfb"
+      "row_count": 192,
+      "sha256": "ed86b9b36d7d6de7f951e2828172816d4e4a3e1833a4a06b25b04e96dc7e29a4"
     },
     "csv/audit_exceptions.csv": {
       "columns": [
@@ -57,7 +57,7 @@
       "entity": "audit_exceptions",
       "format": "csv",
       "row_count": 60,
-      "sha256": "6073b37250fdabb82e2de909488d8a3c61e73b33b854718dfd74587380fb1bd8"
+      "sha256": "0d6c5b260f709ff434d4a8973a364d3d5d9a3fba6648d526a3c47352d915bb36"
     },
     "csv/carriers.csv": {
       "columns": [
@@ -91,7 +91,7 @@
       "entity": "credit_notes",
       "format": "csv",
       "row_count": 18,
-      "sha256": "7dfb372c4a6e62273d5eaf8596183b86a953c627a81ced8f7ee95259e6348cae"
+      "sha256": "f5fa0f47d17198bf3a08e13cd8b2da06aa753dd1f79333aeed9a6e28a94a1220"
     },
     "csv/delivery_evidence.csv": {
       "columns": [
@@ -137,8 +137,8 @@
       ],
       "entity": "entity_status_history",
       "format": "csv",
-      "row_count": 92,
-      "sha256": "49977e158fe7a6eb2d839dd52548f707632e359ab3907ed062097b2ca1035cc1"
+      "row_count": 75,
+      "sha256": "5ce15c0476cea5a6354c959e4ee7dc8dcf5288bd26754dfaf576a2366292770f"
     },
     "csv/freight_invoices.csv": {
       "columns": [
@@ -228,8 +228,8 @@
       ],
       "entity": "invoice_validation_runs",
       "format": "csv",
-      "row_count": 600,
-      "sha256": "68e9d4d21be8e85a1b9d36939d5f04d265f05dcfe664065e62b76979d49c8596"
+      "row_count": 400,
+      "sha256": "4bc2d0b88fb4f241af4f3b47cb2f67e5b902205f1b847fc09e47440fe49134ee"
     },
     "csv/lanes.csv": {
       "columns": [
@@ -366,14 +366,14 @@
     "json/audit_events.json": {
       "entity": "audit_events",
       "format": "json",
-      "row_count": 399,
-      "sha256": "083445da405e6074701c6cfeeb0f00371e1a5fdb227e644503471e85ae0bea2f"
+      "row_count": 192,
+      "sha256": "289879391a0b3b8d320c79cdbe4a24d465491c3c89a5ea3288c4fe0f442f6d52"
     },
     "json/audit_exceptions.json": {
       "entity": "audit_exceptions",
       "format": "json",
       "row_count": 60,
-      "sha256": "4e45a283aa2be62d6abc76957a208e4e1a4af6a2c341b7cffa37f33fcba5a282"
+      "sha256": "c11789ec50848bd2e3bd1dcee41bc5989fe1c816aa488942f4dd36d5e9919daf"
     },
     "json/carriers.json": {
       "entity": "carriers",
@@ -385,7 +385,7 @@
       "entity": "credit_notes",
       "format": "json",
       "row_count": 18,
-      "sha256": "1176d04725e23ef2acef92ad349131fea7d8300cff699c288e05ef7afbc25ff0"
+      "sha256": "73b8d3f622233f266a713005d4fe9c2c9a8bfc33300b692484623c6cd415011d"
     },
     "json/delivery_evidence.json": {
       "entity": "delivery_evidence",
@@ -402,8 +402,8 @@
     "json/entity_status_history.json": {
       "entity": "entity_status_history",
       "format": "json",
-      "row_count": 92,
-      "sha256": "828e5f777a6c860e3b2600efab6fd451091a1f4a867f31e7d4b9e7ee41917b13"
+      "row_count": 75,
+      "sha256": "669835ad8a23b4e25b57cbaf4c063b1a66ac21d8aa2cb3511b5db7b581ff027b"
     },
     "json/freight_invoices.json": {
       "entity": "freight_invoices",
@@ -426,8 +426,8 @@
     "json/invoice_validation_runs.json": {
       "entity": "invoice_validation_runs",
       "format": "json",
-      "row_count": 600,
-      "sha256": "bf33ce67c3147659a5860d57d3dbd7b156e0c9222c176de030fc4b1bc5acc515"
+      "row_count": 400,
+      "sha256": "4989cb67f13021d25a33e9e1d51dc537a41a5d0c427895dc926f79cde39d3bfd"
     },
     "json/lanes.json": {
       "entity": "lanes",
@@ -474,7 +474,7 @@
     "sql/seed_data.sql": {
       "entity": "ALL",
       "format": "sql",
-      "sha256": "1f99642f0341c1d948dd6fb32679c176d1d0352f84d93b3ccadc7554014fdf47"
+      "sha256": "5e044097b80566b3cec22062ad6496ac4ffb0fcb9794a965e9feadef50e2b45a"
     }
   },
   "exported_at": "2026-01-01T08:00:00Z",

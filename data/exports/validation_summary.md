@@ -1,6 +1,6 @@
 # Data-Quality and Reproducibility Validation Report
 
-**Execution Timestamp**: `2026-10-29T05:12:30.589964`  
+**Execution Timestamp**: `2026-10-29T07:16:20.542098`  
 **Overall Status**: `PASSED`  
 **Unintentional Data Defects**: `0`  
 **Intentional Negative-Test Anomalies**: `10`  
@@ -23,18 +23,18 @@
 | FreightInvoices | **200** |
 | InvoiceLines | **516** |
 | DuplicateInvoiceGroups | **10** |
-| InvoiceValidationRuns | **600** |
+| InvoiceValidationRuns | **400** |
 | AuditExceptions | **60** |
 | CreditNotes | **18** |
-| AuditEvents | **399** |
-| EntityStatusHistory | **92** |
+| AuditEvents | **192** |
+| EntityStatusHistory | **75** |
 | GroundTruthLabels | **200** |
 
 ## 2. Data-Quality Stage Results
 
 | Audit Stage | Status | Findings / Metrics |
 | :--- | :--- | :--- |
-| **Primary Keys** | `PASSED` | records_checked: 3496, null_pks: 0, duplicate_pks: 0, pattern_mismatches: 0 |
+| **Primary Keys** | `PASSED` | records_checked: 3072, null_pks: 0, duplicate_pks: 0, pattern_mismatches: 0 |
 | **Foreign Keys** | `PASSED` | unintentional_dangling_references: 0, intentional_unmatched_references: 10 |
 | **Allowed Values** | `PASSED` | invalid_enums_count: 0 |
 | **Date Rules** | `PASSED` | chronological_date_errors: 0 |

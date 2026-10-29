@@ -27,7 +27,7 @@
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.480636"
+    "timestamp": "2026-10-29T07:15:57.238315"
   },
   {
     "actor": "SYSTEM_AUDITOR",
@@ -37,7 +37,7 @@
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.521487"
+    "timestamp": "2026-10-29T07:15:57.263954"
   },
   {
     "actor": "SYSTEM_AUDITOR",
@@ -47,7 +47,7 @@
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.556697"
+    "timestamp": "2026-10-29T07:15:57.298940"
   },
   {
     "actor": "SYSTEM_AUDITOR",
@@ -57,7 +57,7 @@
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: FAILED (Variance: $117.59)",
     "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 117.59}",
-    "timestamp": "2026-10-29T02:30:58.587309"
+    "timestamp": "2026-10-29T07:15:57.329622"
   },
   {
     "actor": "SYSTEM_AUDITOR",
@@ -67,3926 +67,1856 @@
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.619197"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000001",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000008",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-ESTE-20260002 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 262.49, \"credit_note_number\": \"CN-ESTE-20260002\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:30:58.655377"
+    "timestamp": "2026-10-29T07:15:57.359802"
   },
   {
     "actor": "SYSTEM_AUDITOR",
     "entity_id": "FINV-2026-000007",
     "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000009",
+    "event_id": "AUD-2026-000008",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: FAILED (Variance: $262.49)",
     "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 262.49}",
-    "timestamp": "2026-10-29T02:30:58.663121"
+    "timestamp": "2026-10-29T07:15:57.389536"
   },
   {
     "actor": "SYSTEM_AUDITOR",
     "entity_id": "FINV-2026-000008",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000009",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.405727"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000009",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000010",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.684756"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000009",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000011",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.706687"
+    "timestamp": "2026-10-29T07:15:57.419022"
   },
   {
     "actor": "SYSTEM_AUDITOR",
     "entity_id": "FINV-2026-000010",
     "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000012",
+    "event_id": "AUD-2026-000011",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: FAILED (Variance: $378.90)",
     "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 378.9}",
-    "timestamp": "2026-10-29T02:30:58.731055"
+    "timestamp": "2026-10-29T07:15:57.430846"
   },
   {
     "actor": "SYSTEM_AUDITOR",
     "entity_id": "FINV-2026-000011",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000012",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.446884"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000012",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000013",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.754666"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000002",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000014",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260003 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260003\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:30:58.781227"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000012",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000015",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.784260"
+    "timestamp": "2026-10-29T07:15:57.463537"
   },
   {
     "actor": "SYSTEM_AUDITOR",
     "entity_id": "FINV-2026-000013",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000014",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.480071"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000014",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000015",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $96.76)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 96.76}",
+    "timestamp": "2026-10-29T07:15:57.495696"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000015",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000016",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.811100"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000003",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000017",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-PITT-20260004 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 96.76, \"credit_note_number\": \"CN-PITT-20260004\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:30:58.839633"
+    "timestamp": "2026-10-29T07:15:57.512023"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000014",
+    "entity_id": "FINV-2026-000016",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000017",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.529522"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000017",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000018",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $96.76)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 96.76}",
-    "timestamp": "2026-10-29T02:30:58.844031"
+    "notes": "Audit completed: FAILED (Variance: $10.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 10.0}",
+    "timestamp": "2026-10-29T07:15:57.545277"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000015",
+    "entity_id": "FINV-2026-000018",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000019",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.868884"
+    "timestamp": "2026-10-29T07:15:57.557828"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000016",
+    "entity_id": "FINV-2026-000019",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000020",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.896432"
+    "timestamp": "2026-10-29T07:15:57.571561"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000017",
+    "entity_id": "FINV-2026-000020",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000021",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $10.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 10.0}",
-    "timestamp": "2026-10-29T02:30:58.923482"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.581408"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000018",
+    "entity_id": "FINV-2026-000021",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000022",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.952507"
+    "timestamp": "2026-10-29T07:15:57.593426"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000019",
+    "entity_id": "FINV-2026-000022",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000023",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.973110"
+    "timestamp": "2026-10-29T07:15:57.606377"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000020",
+    "entity_id": "FINV-2026-000024",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000024",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:58.998449"
+    "timestamp": "2026-10-29T07:15:57.624613"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000021",
+    "entity_id": "FINV-2026-000025",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000025",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.028169"
+    "notes": "Audit completed: FAILED (Variance: $424.13)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 424.13}",
+    "timestamp": "2026-10-29T07:15:57.639148"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000022",
+    "entity_id": "FINV-2026-000026",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000026",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.056593"
+    "timestamp": "2026-10-29T07:15:57.654973"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000024",
+    "entity_id": "FINV-2026-000027",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000027",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.093296"
+    "notes": "Audit completed: FAILED (Variance: $261.57)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 261.57}",
+    "timestamp": "2026-10-29T07:15:57.670530"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000025",
+    "entity_id": "FINV-2026-000028",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000028",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $424.13)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 424.13}",
-    "timestamp": "2026-10-29T02:30:59.121327"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.686452"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000026",
+    "entity_id": "FINV-2026-000029",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000029",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.143512"
+    "timestamp": "2026-10-29T07:15:57.706872"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000027",
+    "entity_id": "FINV-2026-000030",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000030",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $261.57)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 261.57}",
-    "timestamp": "2026-10-29T02:30:59.168567"
+    "notes": "Audit completed: FAILED (Variance: $550.29)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 550.29}",
+    "timestamp": "2026-10-29T07:15:57.718803"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000028",
+    "entity_id": "FINV-2026-000031",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000031",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.189482"
+    "timestamp": "2026-10-29T07:15:57.729335"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000029",
+    "entity_id": "FINV-2026-000032",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000032",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.218153"
+    "timestamp": "2026-10-29T07:15:57.741867"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000030",
+    "entity_id": "FINV-2026-000033",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000033",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $550.29)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 550.29}",
-    "timestamp": "2026-10-29T02:30:59.240186"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.752385"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000031",
+    "entity_id": "FINV-2026-000034",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000034",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.269853"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000004",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000035",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260005 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260005\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:30:59.295048"
+    "notes": "Audit completed: FAILED (Variance: $247.75)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 247.75}",
+    "timestamp": "2026-10-29T07:15:57.763257"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000032",
+    "entity_id": "FINV-2026-000035",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000035",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.775586"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000036",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000036",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.301774"
+    "timestamp": "2026-10-29T07:15:57.787165"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000033",
+    "entity_id": "FINV-2026-000037",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000037",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.323087"
+    "notes": "Audit completed: FAILED (Variance: $85.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
+    "timestamp": "2026-10-29T07:15:57.798541"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000034",
+    "entity_id": "FINV-2026-000038",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000038",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $247.75)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 247.75}",
-    "timestamp": "2026-10-29T02:30:59.349682"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.810510"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000035",
+    "entity_id": "FINV-2026-000039",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000039",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.367619"
+    "timestamp": "2026-10-29T07:15:57.821335"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000036",
+    "entity_id": "FINV-2026-000040",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000040",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.389012"
+    "timestamp": "2026-10-29T07:15:57.831911"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000037",
+    "entity_id": "FINV-2026-000041",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000041",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $85.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
-    "timestamp": "2026-10-29T02:30:59.419481"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.849595"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000038",
+    "entity_id": "FINV-2026-000042",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000042",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.440844"
+    "timestamp": "2026-10-29T07:15:57.865135"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000039",
+    "entity_id": "FINV-2026-000044",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000043",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.463494"
+    "timestamp": "2026-10-29T07:15:57.891694"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000040",
+    "entity_id": "FINV-2026-000045",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000044",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.484457"
+    "notes": "Audit completed: FAILED (Variance: $102.54)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 102.54}",
+    "timestamp": "2026-10-29T07:15:57.908298"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000041",
+    "entity_id": "FINV-2026-000046",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000045",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.509857"
+    "timestamp": "2026-10-29T07:15:57.923128"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000042",
+    "entity_id": "FINV-2026-000047",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000046",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.536653"
+    "notes": "Audit completed: FAILED (Variance: $80.36)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 80.36}",
+    "timestamp": "2026-10-29T07:15:57.937265"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000044",
+    "entity_id": "FINV-2026-000048",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000047",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.568748"
+    "timestamp": "2026-10-29T07:15:57.949881"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000045",
+    "entity_id": "FINV-2026-000049",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000048",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $102.54)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 102.54}",
-    "timestamp": "2026-10-29T02:30:59.592751"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.961170"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000046",
+    "entity_id": "FINV-2026-000050",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000049",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.617325"
+    "notes": "Audit completed: FAILED (Variance: $491.53)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 491.53}",
+    "timestamp": "2026-10-29T07:15:57.976451"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000047",
+    "entity_id": "FINV-2026-000051",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000050",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $80.36)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 80.36}",
-    "timestamp": "2026-10-29T02:30:59.633944"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:57.988331"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000048",
+    "entity_id": "FINV-2026-000052",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000051",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.665444"
+    "timestamp": "2026-10-29T07:15:57.999871"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000049",
+    "entity_id": "FINV-2026-000053",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000052",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.688628"
+    "timestamp": "2026-10-29T07:15:58.012700"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000050",
+    "entity_id": "FINV-2026-000054",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000053",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $491.53)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 491.53}",
-    "timestamp": "2026-10-29T02:30:59.710784"
+    "notes": "Audit completed: FAILED (Variance: $1,183.75)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1183.75}",
+    "timestamp": "2026-10-29T07:15:58.025224"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000051",
+    "entity_id": "FINV-2026-000055",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000054",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.732981"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000005",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000055",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260006 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260006\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:30:59.753128"
+    "timestamp": "2026-10-29T07:15:58.037328"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000052",
+    "entity_id": "FINV-2026-000056",
     "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000056",
+    "event_id": "AUD-2026-000055",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.753128"
+    "timestamp": "2026-10-29T07:15:58.049460"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000053",
+    "entity_id": "FINV-2026-000057",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000056",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $150.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
+    "timestamp": "2026-10-29T07:15:58.061212"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000058",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000057",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.783861"
+    "timestamp": "2026-10-29T07:15:58.073428"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000054",
+    "entity_id": "FINV-2026-000059",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000058",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,183.75)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1183.75}",
-    "timestamp": "2026-10-29T02:30:59.810213"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.084976"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000055",
+    "entity_id": "FINV-2026-000060",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000059",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.835413"
+    "timestamp": "2026-10-29T07:15:58.096519"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000056",
+    "entity_id": "FINV-2026-000061",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000060",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.858880"
+    "timestamp": "2026-10-29T07:15:58.109095"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000057",
+    "entity_id": "FINV-2026-000062",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000061",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:30:59.887813"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.121786"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000058",
+    "entity_id": "FINV-2026-000064",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000062",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.910884"
+    "timestamp": "2026-10-29T07:15:58.145569"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000059",
+    "entity_id": "FINV-2026-000065",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000063",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.937909"
+    "notes": "Audit completed: FAILED (Variance: $437.51)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 437.51}",
+    "timestamp": "2026-10-29T07:15:58.162830"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000060",
+    "entity_id": "FINV-2026-000066",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000064",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:30:59.967507"
+    "timestamp": "2026-10-29T07:15:58.280098"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000061",
+    "entity_id": "FINV-2026-000067",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000065",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.003046"
+    "notes": "Audit completed: FAILED (Variance: $174.29)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 174.29}",
+    "timestamp": "2026-10-29T07:15:58.389431"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000062",
+    "entity_id": "FINV-2026-000068",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000066",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.034210"
+    "timestamp": "2026-10-29T07:15:58.406411"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000064",
+    "entity_id": "FINV-2026-000069",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000067",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.073615"
+    "timestamp": "2026-10-29T07:15:58.421577"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000065",
+    "entity_id": "FINV-2026-000070",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000068",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $437.51)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 437.51}",
-    "timestamp": "2026-10-29T02:31:00.179892"
+    "notes": "Audit completed: FAILED (Variance: $75.18)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.18}",
+    "timestamp": "2026-10-29T07:15:58.441534"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000066",
+    "entity_id": "FINV-2026-000071",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000069",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.211693"
+    "timestamp": "2026-10-29T07:15:58.455781"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000067",
+    "entity_id": "FINV-2026-000072",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000070",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $174.29)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 174.29}",
-    "timestamp": "2026-10-29T02:31:00.239223"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.472046"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000068",
+    "entity_id": "FINV-2026-000073",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000071",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.267437"
+    "timestamp": "2026-10-29T07:15:58.488838"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000069",
+    "entity_id": "FINV-2026-000074",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000072",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.293989"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000007",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000073",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-AACT-20260008 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.18, \"credit_note_number\": \"CN-AACT-20260008\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:00.317523"
+    "notes": "Audit completed: FAILED (Variance: $182.25)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 182.25}",
+    "timestamp": "2026-10-29T07:15:58.508352"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000070",
+    "entity_id": "FINV-2026-000075",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000073",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.531323"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000076",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000074",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.18)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.18}",
-    "timestamp": "2026-10-29T02:31:00.325876"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.551807"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000071",
+    "entity_id": "FINV-2026-000077",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000075",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.351826"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000008",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000076",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260009 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260009\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:00.373931"
+    "notes": "Audit completed: FAILED (Variance: $75.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
+    "timestamp": "2026-10-29T07:15:58.564890"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000072",
+    "entity_id": "FINV-2026-000078",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000076",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.577983"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000079",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000077",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.385085"
+    "timestamp": "2026-10-29T07:15:58.592037"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000073",
+    "entity_id": "FINV-2026-000080",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000078",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.412567"
+    "timestamp": "2026-10-29T07:15:58.607907"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000074",
+    "entity_id": "FINV-2026-000081",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000079",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $182.25)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 182.25}",
-    "timestamp": "2026-10-29T02:31:00.440144"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.622815"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000075",
+    "entity_id": "FINV-2026-000082",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000080",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.468468"
+    "timestamp": "2026-10-29T07:15:58.640996"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000076",
+    "entity_id": "FINV-2026-000084",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000081",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.496626"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000009",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000082",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-MTRC-20260010 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-MTRC-20260010\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:00.528663"
+    "timestamp": "2026-10-29T07:15:58.665173"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000077",
+    "entity_id": "FINV-2026-000085",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000082",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $601.04)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 601.04}",
+    "timestamp": "2026-10-29T07:15:58.680092"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000086",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000083",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:31:00.539338"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.698422"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000078",
+    "entity_id": "FINV-2026-000087",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000084",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.568650"
+    "notes": "Audit completed: FAILED (Variance: $420.63)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 420.63}",
+    "timestamp": "2026-10-29T07:15:58.714733"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000079",
+    "entity_id": "FINV-2026-000088",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000085",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.595190"
+    "timestamp": "2026-10-29T07:15:58.729604"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000080",
+    "entity_id": "FINV-2026-000089",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000086",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.622501"
+    "timestamp": "2026-10-29T07:15:58.742643"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000081",
+    "entity_id": "FINV-2026-000090",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000087",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.648385"
+    "notes": "Audit completed: FAILED (Variance: $481.48)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 481.48}",
+    "timestamp": "2026-10-29T07:15:58.755778"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000082",
+    "entity_id": "FINV-2026-000091",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000088",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.675754"
+    "timestamp": "2026-10-29T07:15:58.772099"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000084",
+    "entity_id": "FINV-2026-000092",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000089",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.711170"
+    "timestamp": "2026-10-29T07:15:58.786862"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000085",
+    "entity_id": "FINV-2026-000093",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000090",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $601.04)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 601.04}",
-    "timestamp": "2026-10-29T02:31:00.734710"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.797816"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000086",
+    "entity_id": "FINV-2026-000094",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000091",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.759100"
+    "notes": "Audit completed: FAILED (Variance: $465.41)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 465.41}",
+    "timestamp": "2026-10-29T07:15:58.817868"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000087",
+    "entity_id": "FINV-2026-000095",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000092",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $420.63)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 420.63}",
-    "timestamp": "2026-10-29T02:31:00.784594"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.831431"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000088",
+    "entity_id": "FINV-2026-000096",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000093",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.809639"
+    "timestamp": "2026-10-29T07:15:58.852476"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000089",
+    "entity_id": "FINV-2026-000097",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000094",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.833828"
+    "notes": "Audit completed: FAILED (Variance: $85.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
+    "timestamp": "2026-10-29T07:15:58.872048"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000090",
+    "entity_id": "FINV-2026-000098",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000095",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $481.48)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 481.48}",
-    "timestamp": "2026-10-29T02:31:00.859332"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.891332"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000091",
+    "entity_id": "FINV-2026-000099",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000096",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.884993"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000010",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000097",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260011 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260011\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:00.912711"
+    "timestamp": "2026-10-29T07:15:58.914345"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000092",
+    "entity_id": "FINV-2026-000100",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000097",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:58.932487"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000101",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000098",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.917429"
+    "timestamp": "2026-10-29T07:15:58.960041"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000093",
+    "entity_id": "FINV-2026-000102",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000099",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.944464"
+    "timestamp": "2026-10-29T07:15:58.976975"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000094",
+    "entity_id": "FINV-2026-000104",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000100",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $465.41)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 465.41}",
-    "timestamp": "2026-10-29T02:31:00.968047"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.006230"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000095",
+    "entity_id": "FINV-2026-000105",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000101",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:00.989386"
+    "notes": "Audit completed: FAILED (Variance: $336.71)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 336.71}",
+    "timestamp": "2026-10-29T07:15:59.023851"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000096",
+    "entity_id": "FINV-2026-000106",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000102",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.017180"
+    "timestamp": "2026-10-29T07:15:59.043166"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000097",
+    "entity_id": "FINV-2026-000107",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000103",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $85.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
-    "timestamp": "2026-10-29T02:31:01.044649"
+    "notes": "Audit completed: FAILED (Variance: $244.76)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 244.76}",
+    "timestamp": "2026-10-29T07:15:59.061395"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000098",
+    "entity_id": "FINV-2026-000108",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000104",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.069881"
+    "timestamp": "2026-10-29T07:15:59.080685"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000099",
+    "entity_id": "FINV-2026-000109",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000105",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.084501"
+    "timestamp": "2026-10-29T07:15:59.095328"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000100",
+    "entity_id": "FINV-2026-000110",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000106",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.113664"
+    "notes": "Audit completed: FAILED (Variance: $223.40)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 223.4}",
+    "timestamp": "2026-10-29T07:15:59.109991"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000101",
+    "entity_id": "FINV-2026-000111",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000107",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.136551"
+    "timestamp": "2026-10-29T07:15:59.127782"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000102",
+    "entity_id": "FINV-2026-000112",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000108",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.155893"
+    "timestamp": "2026-10-29T07:15:59.141989"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000104",
+    "entity_id": "FINV-2026-000113",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000109",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.192252"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000011",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000110",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-ABFS-20260012 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 336.71, \"credit_note_number\": \"CN-ABFS-20260012\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:01.217098"
+    "timestamp": "2026-10-29T07:15:59.155410"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000105",
+    "entity_id": "FINV-2026-000114",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000110",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $1,886.32)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1886.32}",
+    "timestamp": "2026-10-29T07:15:59.173257"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000115",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000111",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $336.71)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 336.71}",
-    "timestamp": "2026-10-29T02:31:01.224227"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.186921"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000106",
+    "entity_id": "FINV-2026-000116",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000112",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.249139"
+    "timestamp": "2026-10-29T07:15:59.198537"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000107",
+    "entity_id": "FINV-2026-000117",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000113",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $244.76)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 244.76}",
-    "timestamp": "2026-10-29T02:31:01.267061"
+    "notes": "Audit completed: FAILED (Variance: $75.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
+    "timestamp": "2026-10-29T07:15:59.221668"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000108",
+    "entity_id": "FINV-2026-000118",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000114",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.294787"
+    "timestamp": "2026-10-29T07:15:59.241329"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000109",
+    "entity_id": "FINV-2026-000119",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000115",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.318002"
+    "timestamp": "2026-10-29T07:15:59.275081"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000110",
+    "entity_id": "FINV-2026-000120",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000116",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $223.40)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 223.4}",
-    "timestamp": "2026-10-29T02:31:01.339180"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.292722"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000111",
+    "entity_id": "FINV-2026-000121",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000117",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.366750"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000012",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000118",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260013 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260013\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:01.387950"
+    "timestamp": "2026-10-29T07:15:59.310088"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000112",
+    "entity_id": "FINV-2026-000122",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000118",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.324615"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000124",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000119",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.393648"
+    "timestamp": "2026-10-29T07:15:59.353995"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000113",
+    "entity_id": "FINV-2026-000125",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000120",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.416973"
+    "notes": "Audit completed: FAILED (Variance: $497.07)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 497.07}",
+    "timestamp": "2026-10-29T07:15:59.364726"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000114",
+    "entity_id": "FINV-2026-000126",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000121",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,886.32)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1886.32}",
-    "timestamp": "2026-10-29T02:31:01.456427"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.382577"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000115",
+    "entity_id": "FINV-2026-000127",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000122",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.478239"
+    "notes": "Audit completed: FAILED (Variance: $246.88)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 246.88}",
+    "timestamp": "2026-10-29T07:15:59.397795"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000116",
+    "entity_id": "FINV-2026-000128",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000123",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.510131"
+    "timestamp": "2026-10-29T07:15:59.415538"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000117",
+    "entity_id": "FINV-2026-000129",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000124",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:31:01.533501"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.614705"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000118",
+    "entity_id": "FINV-2026-000130",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000125",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.560792"
+    "notes": "Audit completed: FAILED (Variance: $211.62)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.62}",
+    "timestamp": "2026-10-29T07:15:59.631376"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000119",
+    "entity_id": "FINV-2026-000131",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000126",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.585117"
+    "timestamp": "2026-10-29T07:15:59.645380"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000120",
+    "entity_id": "FINV-2026-000132",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000127",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.609351"
+    "timestamp": "2026-10-29T07:15:59.660139"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000121",
+    "entity_id": "FINV-2026-000133",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000128",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.638194"
+    "timestamp": "2026-10-29T07:15:59.674928"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000122",
+    "entity_id": "FINV-2026-000134",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000129",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.664793"
+    "notes": "Audit completed: FAILED (Variance: $1,196.36)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1196.36}",
+    "timestamp": "2026-10-29T07:15:59.688365"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000124",
+    "entity_id": "FINV-2026-000135",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000130",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.717394"
+    "timestamp": "2026-10-29T07:15:59.702664"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000125",
+    "entity_id": "FINV-2026-000136",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000131",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $497.07)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 497.07}",
-    "timestamp": "2026-10-29T02:31:01.742312"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.714505"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000126",
+    "entity_id": "FINV-2026-000137",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000132",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.767248"
+    "notes": "Audit completed: FAILED (Variance: $150.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
+    "timestamp": "2026-10-29T07:15:59.730446"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000127",
+    "entity_id": "FINV-2026-000138",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000133",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $246.88)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 246.88}",
-    "timestamp": "2026-10-29T02:31:01.792596"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.744253"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000128",
+    "entity_id": "FINV-2026-000139",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000134",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.819202"
+    "timestamp": "2026-10-29T07:15:59.760900"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000129",
+    "entity_id": "FINV-2026-000140",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000135",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.843738"
+    "timestamp": "2026-10-29T07:15:59.778655"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000130",
+    "entity_id": "FINV-2026-000141",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000136",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $211.62)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.62}",
-    "timestamp": "2026-10-29T02:31:01.873182"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:15:59.789518"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000131",
+    "entity_id": "FINV-2026-000142",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000137",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.898074"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000013",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000138",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260014 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260014\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:01.926033"
+    "timestamp": "2026-10-29T07:15:59.803586"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000132",
+    "entity_id": "FINV-2026-000144",
     "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000139",
+    "event_id": "AUD-2026-000138",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.931467"
+    "timestamp": "2026-10-29T07:15:59.822892"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000133",
+    "entity_id": "FINV-2026-000145",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000139",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $449.46)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 449.46}",
+    "timestamp": "2026-10-29T07:15:59.834075"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000146",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000140",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:01.958227"
+    "timestamp": "2026-10-29T07:15:59.848381"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000134",
+    "entity_id": "FINV-2026-000147",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000141",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,196.36)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1196.36}",
-    "timestamp": "2026-10-29T02:31:01.989925"
+    "notes": "Audit completed: FAILED (Variance: $266.60)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 266.6}",
+    "timestamp": "2026-10-29T07:15:59.863931"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000135",
+    "entity_id": "FINV-2026-000148",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000142",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.016555"
+    "timestamp": "2026-10-29T07:15:59.879303"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000136",
+    "entity_id": "FINV-2026-000149",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000143",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.043303"
+    "timestamp": "2026-10-29T07:15:59.893422"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000137",
+    "entity_id": "FINV-2026-000150",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000144",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:31:02.070696"
+    "notes": "Audit completed: FAILED (Variance: $39.88)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 39.88}",
+    "timestamp": "2026-10-29T07:15:59.910026"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000138",
+    "entity_id": "FINV-2026-000151",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000145",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.093418"
+    "timestamp": "2026-10-29T07:15:59.926101"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000139",
+    "entity_id": "FINV-2026-000152",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000146",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.122271"
+    "timestamp": "2026-10-29T07:15:59.942421"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000140",
+    "entity_id": "FINV-2026-000153",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000147",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.150335"
+    "timestamp": "2026-10-29T07:15:59.956178"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000141",
+    "entity_id": "FINV-2026-000154",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000148",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.175843"
+    "notes": "Audit completed: FAILED (Variance: $48.84)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 48.84}",
+    "timestamp": "2026-10-29T07:15:59.972262"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000142",
+    "entity_id": "FINV-2026-000155",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000149",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.202727"
+    "timestamp": "2026-10-29T07:15:59.985098"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000144",
+    "entity_id": "FINV-2026-000156",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000150",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.243550"
+    "timestamp": "2026-10-29T07:15:59.996965"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000145",
+    "entity_id": "FINV-2026-000157",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000151",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $449.46)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 449.46}",
-    "timestamp": "2026-10-29T02:31:02.273173"
+    "notes": "Audit completed: FAILED (Variance: $110.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 110.0}",
+    "timestamp": "2026-10-29T07:16:00.022414"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000146",
+    "entity_id": "FINV-2026-000158",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000152",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.301096"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000014",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000153",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-ESTE-20260015 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 266.6, \"credit_note_number\": \"CN-ESTE-20260015\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:02.325840"
+    "timestamp": "2026-10-29T07:16:00.045254"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000147",
+    "entity_id": "FINV-2026-000159",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000153",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.065607"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000160",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000154",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $266.60)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 266.6}",
-    "timestamp": "2026-10-29T02:31:02.331227"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.084165"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000148",
+    "entity_id": "FINV-2026-000161",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000155",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.359422"
+    "timestamp": "2026-10-29T07:16:00.106796"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000149",
+    "entity_id": "FINV-2026-000162",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000156",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.383619"
+    "timestamp": "2026-10-29T07:16:00.125123"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000150",
+    "entity_id": "FINV-2026-000164",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000157",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $39.88)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 39.88}",
-    "timestamp": "2026-10-29T02:31:02.408981"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.156634"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000151",
+    "entity_id": "FINV-2026-000165",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000158",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.437227"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000015",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000159",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260016 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260016\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:02.461672"
+    "notes": "Audit completed: FAILED (Variance: $567.92)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 567.92}",
+    "timestamp": "2026-10-29T07:16:00.179515"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000152",
+    "entity_id": "FINV-2026-000166",
     "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000160",
+    "event_id": "AUD-2026-000159",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.466612"
+    "timestamp": "2026-10-29T07:16:00.201071"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000153",
+    "entity_id": "FINV-2026-000167",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000160",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: FAILED (Variance: $126.90)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 126.9}",
+    "timestamp": "2026-10-29T07:16:00.219568"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000168",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000161",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.493547"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000016",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000162",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-PITT-20260017 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 48.84, \"credit_note_number\": \"CN-PITT-20260017\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:02.520571"
+    "timestamp": "2026-10-29T07:16:00.238756"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000154",
+    "entity_id": "FINV-2026-000169",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000162",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.254703"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000170",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000163",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $48.84)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 48.84}",
-    "timestamp": "2026-10-29T02:31:02.523224"
+    "notes": "Audit completed: FAILED (Variance: $277.04)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 277.04}",
+    "timestamp": "2026-10-29T07:16:00.275086"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000155",
+    "entity_id": "FINV-2026-000171",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000164",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.555229"
+    "timestamp": "2026-10-29T07:16:00.294523"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000156",
+    "entity_id": "FINV-2026-000172",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000165",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.583292"
+    "timestamp": "2026-10-29T07:16:00.311468"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000157",
+    "entity_id": "FINV-2026-000173",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000166",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $110.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 110.0}",
-    "timestamp": "2026-10-29T02:31:02.610060"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.327687"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000158",
+    "entity_id": "FINV-2026-000174",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000167",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.640254"
+    "notes": "Audit completed: FAILED (Variance: $1,097.64)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1097.64}",
+    "timestamp": "2026-10-29T07:16:00.343819"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000159",
+    "entity_id": "FINV-2026-000175",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000168",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.667545"
+    "timestamp": "2026-10-29T07:16:00.359419"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000160",
+    "entity_id": "FINV-2026-000176",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000169",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.692022"
+    "timestamp": "2026-10-29T07:16:00.376788"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000161",
+    "entity_id": "FINV-2026-000177",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000170",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.719330"
+    "notes": "Audit completed: FAILED (Variance: $150.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
+    "timestamp": "2026-10-29T07:16:00.399397"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000162",
+    "entity_id": "FINV-2026-000178",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000171",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.742803"
+    "timestamp": "2026-10-29T07:16:00.421513"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000164",
+    "entity_id": "FINV-2026-000179",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000172",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.786603"
+    "timestamp": "2026-10-29T07:16:00.441017"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000165",
+    "entity_id": "FINV-2026-000180",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000173",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $567.92)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 567.92}",
-    "timestamp": "2026-10-29T02:31:02.811534"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.465053"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000166",
+    "entity_id": "FINV-2026-000181",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000174",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.840267"
+    "timestamp": "2026-10-29T07:16:00.484824"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000167",
+    "entity_id": "FINV-2026-000182",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000175",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $126.90)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 126.9}",
-    "timestamp": "2026-10-29T02:31:02.867325"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.501460"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000168",
+    "entity_id": "FINV-2026-000184",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000176",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.892881"
+    "timestamp": "2026-10-29T07:16:00.529201"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000169",
+    "entity_id": "FINV-2026-000185",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000177",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.919534"
+    "notes": "Audit completed: FAILED (Variance: $211.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.0}",
+    "timestamp": "2026-10-29T07:16:00.548017"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000170",
+    "entity_id": "FINV-2026-000186",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000178",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $277.04)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 277.04}",
-    "timestamp": "2026-10-29T02:31:02.941094"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.563992"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000171",
+    "entity_id": "FINV-2026-000187",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000179",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.973598"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000017",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000180",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260018 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260018\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:02.994528"
+    "notes": "Audit completed: FAILED (Variance: $405.01)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 405.01}",
+    "timestamp": "2026-10-29T07:16:00.584346"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000172",
+    "entity_id": "FINV-2026-000188",
+    "entity_type": "FreightInvoice",
+    "event_id": "AUD-2026-000180",
+    "event_type": "VALIDATION_EXECUTED",
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.597846"
+  },
+  {
+    "actor": "SYSTEM_AUDITOR",
+    "entity_id": "FINV-2026-000189",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000181",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:02.999872"
+    "timestamp": "2026-10-29T07:16:00.618787"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000173",
+    "entity_id": "FINV-2026-000190",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000182",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.016913"
+    "notes": "Audit completed: FAILED (Variance: $332.57)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 332.57}",
+    "timestamp": "2026-10-29T07:16:00.635324"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000174",
+    "entity_id": "FINV-2026-000191",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000183",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,097.64)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1097.64}",
-    "timestamp": "2026-10-29T02:31:03.047777"
+    "notes": "Audit completed: PASSED (Variance: $0.00)",
+    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
+    "timestamp": "2026-10-29T07:16:00.653678"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000175",
+    "entity_id": "FINV-2026-000192",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000184",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.067655"
+    "timestamp": "2026-10-29T07:16:00.678464"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000176",
+    "entity_id": "FINV-2026-000193",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000185",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.091209"
+    "timestamp": "2026-10-29T07:16:00.697170"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000177",
+    "entity_id": "FINV-2026-000194",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000186",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:31:03.116037"
+    "notes": "Audit completed: FAILED (Variance: $1,032.82)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1032.82}",
+    "timestamp": "2026-10-29T07:16:00.714574"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000178",
+    "entity_id": "FINV-2026-000195",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000187",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.133218"
+    "timestamp": "2026-10-29T07:16:00.734801"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000179",
+    "entity_id": "FINV-2026-000196",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000188",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.159632"
+    "timestamp": "2026-10-29T07:16:00.754318"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000180",
+    "entity_id": "FINV-2026-000197",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000189",
     "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.180961"
+    "notes": "Audit completed: FAILED (Variance: $75.00)",
+    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
+    "timestamp": "2026-10-29T07:16:00.772583"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000181",
+    "entity_id": "FINV-2026-000198",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000190",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.199748"
+    "timestamp": "2026-10-29T07:16:00.788270"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000182",
+    "entity_id": "FINV-2026-000199",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000191",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.227291"
+    "timestamp": "2026-10-29T07:16:00.805957"
   },
   {
     "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000184",
+    "entity_id": "FINV-2026-000200",
     "entity_type": "FreightInvoice",
     "event_id": "AUD-2026-000192",
     "event_type": "VALIDATION_EXECUTED",
     "notes": "Audit completed: PASSED (Variance: $0.00)",
     "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.316403"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000185",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000193",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $211.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.0}",
-    "timestamp": "2026-10-29T02:31:03.346458"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000186",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000194",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.369119"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000187",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000195",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $405.01)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 405.01}",
-    "timestamp": "2026-10-29T02:31:03.400120"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000188",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000196",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.427600"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000189",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000197",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.452635"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000190",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000198",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $332.57)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 332.57}",
-    "timestamp": "2026-10-29T02:31:03.474352"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000191",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000199",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.506334"
-  },
-  {
-    "actor": "CREDIT_AUDITOR",
-    "entity_id": "CN-2026-000018",
-    "entity_type": "CreditNote",
-    "event_id": "AUD-2026-000200",
-    "event_type": "CREDIT_NOTE_REJECTED",
-    "notes": "Credit Note CN-CTII-20260019 reconciliation: REJECTED",
-    "payload_json": "{\"credit_amount\": 75.0, \"credit_note_number\": \"CN-CTII-20260019\", \"from_status\": \"REJECTED\", \"reason\": \"No matching open audit exception found for this credit note.\", \"to_status\": \"REJECTED\"}",
-    "timestamp": "2026-10-29T02:31:03.527822"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000192",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000201",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.533220"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000193",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000202",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.557760"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000194",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000203",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,032.82)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1032.82}",
-    "timestamp": "2026-10-29T02:31:03.582856"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000195",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000204",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.608975"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000196",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000205",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.639992"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000197",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000206",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:31:03.667681"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000198",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000207",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.691933"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000199",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000208",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.721221"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000200",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000209",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:31:03.741707"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000001",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000210",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.138235"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000002",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000211",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.197382"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000004",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000212",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.235214"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000005",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000213",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $117.59)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 117.59}",
-    "timestamp": "2026-10-29T02:32:28.266286"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000006",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000214",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.295693"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000007",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000215",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $262.49)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 262.49}",
-    "timestamp": "2026-10-29T02:32:28.323017"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000008",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000216",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.347741"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000009",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000217",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.368879"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000010",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000218",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $378.90)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 378.9}",
-    "timestamp": "2026-10-29T02:32:28.398560"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000011",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000219",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.425368"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000012",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000220",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.450763"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000013",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000221",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.475435"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000014",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000222",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $96.76)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 96.76}",
-    "timestamp": "2026-10-29T02:32:28.500853"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000015",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000223",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.524776"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000016",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000224",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.546271"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000017",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000225",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $10.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 10.0}",
-    "timestamp": "2026-10-29T02:32:28.576886"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000018",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000226",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.602321"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000019",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000227",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.628981"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000020",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000228",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.650226"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000021",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000229",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.674894"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000022",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000230",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.695234"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000024",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000231",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.735764"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000025",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000232",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $424.13)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 424.13}",
-    "timestamp": "2026-10-29T02:32:28.758765"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000026",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000233",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.783679"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000027",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000234",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $261.57)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 261.57}",
-    "timestamp": "2026-10-29T02:32:28.807193"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000028",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000235",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.824862"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000029",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000236",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.853138"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000030",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000237",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $550.29)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 550.29}",
-    "timestamp": "2026-10-29T02:32:28.875781"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000031",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000238",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.897974"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000032",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000239",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.918649"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000033",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000240",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:28.945312"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000034",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000241",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $247.75)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 247.75}",
-    "timestamp": "2026-10-29T02:32:28.972492"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000035",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000242",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.002262"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000036",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000243",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.022851"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000037",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000244",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $85.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
-    "timestamp": "2026-10-29T02:32:29.047191"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000038",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000245",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.074426"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000039",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000246",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.098656"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000040",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000247",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.131336"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000041",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000248",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.164380"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000042",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000249",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.197310"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000044",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000250",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.241378"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000045",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000251",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $102.54)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 102.54}",
-    "timestamp": "2026-10-29T02:32:29.274652"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000046",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000252",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.301027"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000047",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000253",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $80.36)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 80.36}",
-    "timestamp": "2026-10-29T02:32:29.333323"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000048",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000254",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.364973"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000049",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000255",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.397942"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000050",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000256",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $491.53)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 491.53}",
-    "timestamp": "2026-10-29T02:32:29.431320"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000051",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000257",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.465577"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000052",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000258",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.493159"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000053",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000259",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.519109"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000054",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000260",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,183.75)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1183.75}",
-    "timestamp": "2026-10-29T02:32:29.547277"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000055",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000261",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.572679"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000056",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000262",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.597311"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000057",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000263",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:32:29.622520"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000058",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000264",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.648369"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000059",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000265",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.666405"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000060",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000266",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.695921"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000061",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000267",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.718768"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000062",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000268",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.749406"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000064",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000269",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.782700"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000065",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000270",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $437.51)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 437.51}",
-    "timestamp": "2026-10-29T02:32:29.817933"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000066",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000271",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.844907"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000067",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000272",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $174.29)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 174.29}",
-    "timestamp": "2026-10-29T02:32:29.868033"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000068",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000273",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.891320"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000069",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000274",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:29.917118"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000070",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000275",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.18)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.18}",
-    "timestamp": "2026-10-29T02:32:29.945993"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000071",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000276",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.028757"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000072",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000277",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.050765"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000073",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000278",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.079999"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000074",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000279",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $182.25)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 182.25}",
-    "timestamp": "2026-10-29T02:32:30.105871"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000075",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000280",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.134105"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000076",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000281",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.160439"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000077",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000282",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:32:30.189578"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000078",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000283",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.216759"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000079",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000284",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.241307"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000080",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000285",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.267196"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000081",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000286",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.293314"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000082",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000287",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.324285"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000084",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000288",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.365080"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000085",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000289",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $601.04)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 601.04}",
-    "timestamp": "2026-10-29T02:32:30.383449"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000086",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000290",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.410662"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000087",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000291",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $420.63)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 420.63}",
-    "timestamp": "2026-10-29T02:32:30.434051"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000088",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000292",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.456613"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000089",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000293",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.474302"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000090",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000294",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $481.48)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 481.48}",
-    "timestamp": "2026-10-29T02:32:30.500092"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000091",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000295",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.524496"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000092",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000296",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.542026"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000093",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000297",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.570391"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000094",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000298",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $465.41)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 465.41}",
-    "timestamp": "2026-10-29T02:32:30.590784"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000095",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000299",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.613373"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000096",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000300",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.636138"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000097",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000301",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $85.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 85.0}",
-    "timestamp": "2026-10-29T02:32:30.658049"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000098",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000302",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.685927"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000099",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000303",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.710736"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000100",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000304",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.730260"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000101",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000305",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.753020"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000102",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000306",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.774047"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000104",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000307",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.816013"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000105",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000308",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $336.71)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 336.71}",
-    "timestamp": "2026-10-29T02:32:30.840688"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000106",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000309",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.868962"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000107",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000310",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $244.76)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 244.76}",
-    "timestamp": "2026-10-29T02:32:30.894121"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000108",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000311",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.918988"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000109",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000312",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.944850"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000110",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000313",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $223.40)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 223.4}",
-    "timestamp": "2026-10-29T02:32:30.967044"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000111",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000314",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:30.999089"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000112",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000315",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.030449"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000113",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000316",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.058719"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000114",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000317",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,886.32)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1886.32}",
-    "timestamp": "2026-10-29T02:32:31.084209"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000115",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000318",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.109968"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000116",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000319",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.136077"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000117",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000320",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:32:31.164579"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000118",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000321",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.189393"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000119",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000322",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.218101"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000120",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000323",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.246708"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000121",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000324",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.272087"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000122",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000325",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.344445"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000124",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000326",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.381650"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000125",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000327",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $497.07)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 497.07}",
-    "timestamp": "2026-10-29T02:32:31.407817"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000126",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000328",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.438796"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000127",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000329",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $246.88)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 246.88}",
-    "timestamp": "2026-10-29T02:32:31.463521"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000128",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000330",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.483911"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000129",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000331",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.513015"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000130",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000332",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $211.62)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.62}",
-    "timestamp": "2026-10-29T02:32:31.541272"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000131",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000333",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.564223"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000132",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000334",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.594955"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000133",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000335",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.617974"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000134",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000336",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,196.36)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1196.36}",
-    "timestamp": "2026-10-29T02:32:31.649358"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000135",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000337",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.681448"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000136",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000338",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.707380"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000137",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000339",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:32:31.741569"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000138",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000340",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.765408"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000139",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000341",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.796687"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000140",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000342",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.824082"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000141",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000343",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.847863"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000142",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000344",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.879594"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000144",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000345",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.923734"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000145",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000346",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $449.46)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 449.46}",
-    "timestamp": "2026-10-29T02:32:31.950101"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000146",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000347",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:31.977925"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000147",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000348",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $266.60)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 266.6}",
-    "timestamp": "2026-10-29T02:32:32.002073"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000148",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000349",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.032102"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000149",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000350",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.057384"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000150",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000351",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $39.88)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 39.88}",
-    "timestamp": "2026-10-29T02:32:32.086203"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000151",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000352",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.110313"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000152",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000353",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.138882"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000153",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000354",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.166039"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000154",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000355",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $48.84)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 48.84}",
-    "timestamp": "2026-10-29T02:32:32.196293"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000155",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000356",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.221916"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000156",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000357",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.252018"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000157",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000358",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $110.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 110.0}",
-    "timestamp": "2026-10-29T02:32:32.278353"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000158",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000359",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.309522"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000159",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000360",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.332752"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000160",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000361",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.355076"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000161",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000362",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.374328"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000162",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000363",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.405166"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000164",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000364",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.445932"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000165",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000365",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $567.92)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 567.92}",
-    "timestamp": "2026-10-29T02:32:32.471727"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000166",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000366",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.490947"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000167",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000367",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $126.90)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 126.9}",
-    "timestamp": "2026-10-29T02:32:32.518127"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000168",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000368",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.549514"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000169",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000369",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.580140"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000170",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000370",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $277.04)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 277.04}",
-    "timestamp": "2026-10-29T02:32:32.609656"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000171",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000371",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.647971"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000172",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000372",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.666719"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000173",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000373",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.690443"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000174",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000374",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,097.64)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1097.64}",
-    "timestamp": "2026-10-29T02:32:32.707333"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000175",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000375",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.727575"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000176",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000376",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.753679"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000177",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000377",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $150.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 150.0}",
-    "timestamp": "2026-10-29T02:32:32.773626"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000178",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000378",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.795469"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000179",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000379",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.815786"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000180",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000380",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.838596"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000181",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000381",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.859173"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000182",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000382",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.879594"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000184",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000383",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.934105"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000185",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000384",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $211.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 211.0}",
-    "timestamp": "2026-10-29T02:32:32.963294"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000186",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000385",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:32.992231"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000187",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000386",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $405.01)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 405.01}",
-    "timestamp": "2026-10-29T02:32:33.020283"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000188",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000387",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.051046"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000189",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000388",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.079683"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000190",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000389",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $332.57)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 332.57}",
-    "timestamp": "2026-10-29T02:32:33.100189"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000191",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000390",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.130807"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000192",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000391",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.156899"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000193",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000392",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.182074"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000194",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000393",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $1,032.82)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 1032.82}",
-    "timestamp": "2026-10-29T02:32:33.208046"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000195",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000394",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.232654"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000196",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000395",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.258770"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000197",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000396",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: FAILED (Variance: $75.00)",
-    "payload_json": "{\"verdict\": \"FAILED\", \"exceptions_raised\": 1, \"variance\": 75.0}",
-    "timestamp": "2026-10-29T02:32:33.282885"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000198",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000397",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.309519"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000199",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000398",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.333059"
-  },
-  {
-    "actor": "SYSTEM_AUDITOR",
-    "entity_id": "FINV-2026-000200",
-    "entity_type": "FreightInvoice",
-    "event_id": "AUD-2026-000399",
-    "event_type": "VALIDATION_EXECUTED",
-    "notes": "Audit completed: PASSED (Variance: $0.00)",
-    "payload_json": "{\"verdict\": \"PASSED\", \"exceptions_raised\": 0, \"variance\": 0.0}",
-    "timestamp": "2026-10-29T02:32:33.362220"
+    "timestamp": "2026-10-29T07:16:00.822489"
   }
 ]

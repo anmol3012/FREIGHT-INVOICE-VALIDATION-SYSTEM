@@ -74,20 +74,3 @@ HIST-2026-000072,AuditException,FEX-2026-000022,NONE,OPEN,Variance identified by
 HIST-2026-000073,AuditException,FEX-2026-000023,NONE,OPEN,Variance identified by audit engine,AUDIT_ENGINE,2026-09-07T02:00:00
 HIST-2026-000074,AuditException,FEX-2026-000024,NONE,OPEN,Variance identified by audit engine,AUDIT_ENGINE,2026-09-19T02:00:00
 HIST-2026-000075,AuditException,FEX-2026-000025,NONE,OPEN,Variance identified by audit engine,AUDIT_ENGINE,2026-04-21T02:00:00
-HIST-2026-000076,CreditNote,CN-2026-000001,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:30:58.651913
-HIST-2026-000077,CreditNote,CN-2026-000002,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:30:58.781227
-HIST-2026-000078,CreditNote,CN-2026-000003,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:30:58.839633
-HIST-2026-000079,CreditNote,CN-2026-000004,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:30:59.295048
-HIST-2026-000080,CreditNote,CN-2026-000005,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:30:59.753128
-HIST-2026-000081,CreditNote,CN-2026-000007,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:00.317523
-HIST-2026-000082,CreditNote,CN-2026-000008,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:00.373931
-HIST-2026-000083,CreditNote,CN-2026-000009,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:00.528663
-HIST-2026-000084,CreditNote,CN-2026-000010,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:00.912711
-HIST-2026-000085,CreditNote,CN-2026-000011,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:01.217098
-HIST-2026-000086,CreditNote,CN-2026-000012,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:01.387950
-HIST-2026-000087,CreditNote,CN-2026-000013,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:01.926033
-HIST-2026-000088,CreditNote,CN-2026-000014,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:02.325457
-HIST-2026-000089,CreditNote,CN-2026-000015,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:02.461672
-HIST-2026-000090,CreditNote,CN-2026-000016,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:02.520571
-HIST-2026-000091,CreditNote,CN-2026-000017,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:02.994528
-HIST-2026-000092,CreditNote,CN-2026-000018,REJECTED,REJECTED,No matching open audit exception found for this credit note.,CREDIT_AUDITOR,2026-10-29T02:31:03.527822
