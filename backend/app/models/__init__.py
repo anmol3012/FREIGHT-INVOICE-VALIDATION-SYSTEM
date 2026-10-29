@@ -4,7 +4,8 @@ from backend.app.models.enums import (
     ShipmentLegStatus, MeasurementType, MeasurementSource, ChargeMethod,
     AccessorialStatus, InvoiceStatus, ValidationStatus, InvoiceLineType,
     ExceptionType, ExceptionSeverity, ExceptionStatus,
-    CreditNoteApprovalStatus, CreditNoteReconciliationStatus
+    CreditNoteApprovalStatus, CreditNoteReconciliationStatus,
+    AuditEventType
 )
 from backend.app.models.carrier import Carrier
 from backend.app.models.lane import Lane

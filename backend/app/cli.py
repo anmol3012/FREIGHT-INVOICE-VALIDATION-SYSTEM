@@ -5,8 +5,10 @@ from backend.app.core.database import SessionLocal, engine, Base
 from backend.app.core.config import settings
 from backend.app.generator.generator import DeterministicDataGenerator
 from backend.app.generator.exporter import DataExporter
+from backend.app.generator.ground_truth_exporter import GroundTruthExporter
 from backend.app.engine.validator import FreightInvoiceValidator
 from backend.app.engine.credit_note_service import CreditNoteService
+from backend.app.engine.evaluator import AuditEvaluator
 from backend.app.models.invoice import FreightInvoice
 from backend.app.models.credit_note import CreditNote
 
@@ -47,6 +49,62 @@ def cmd_export(args):
         print(f"Checksum manifest written to: {res['checksums_file']}")
         for f, h in sorted(res['file_checksums'].items()):
             print(f"  {f}: {h[:16]}...")
+
+        # Export isolated ground truth dataset
+        gt_exporter = GroundTruthExporter(output_dir="data/exports/ground_truth")
+        gt_res = gt_exporter.export(db)
+        print(f"\nGround Truth Dataset exported to: {gt_res['output_directory']}")
+        print(f"  CSV:  {gt_res['csv_file']}")
+        print(f"  JSON: {gt_res['json_file']} ({gt_res['total_records']} labels)")
+    finally:
+        db.close()
+
+def cmd_evaluate(args):
+    init_db(reset=False)
+    db = SessionLocal()
+    try:
+        res = AuditEvaluator.evaluate(db)
+        if "error" in res:
+            print(f"Evaluation Error: {res['error']}")
+            return
+
+        s = res["summary"]
+        m = res["metrics"]
+        f = res["financial_impact"]
+
+        print("\n==================== AUDIT DETECTION EVALUATION ====================")
+        print(f"Total Invoices Processed:   {s['total_invoices_processed']}")
+        print(f"Valid Invoices (Match):     {s['valid_invoices']}")
+        print(f"Invoices Requiring Review:  {s['invoices_requiring_review']}")
+        print(f"Rejected Invoices:          {s['rejected_invoices']}")
+        print("--------------------------------------------------------------------")
+        print(f"True Positives (TP):        {s['true_positives']}")
+        print(f"False Positives (FP):       {s['false_positives']}")
+        print(f"True Negatives (TN):        {s['true_negatives']}")
+        print(f"False Negatives (FN):       {s['false_negatives']}")
+        print("--------------------------------------------------------------------")
+        print(f"Accuracy:                   {m['accuracy']:.4f}")
+        print(f"Precision:                  {m['precision']:.4f}")
+        print(f"Recall (Sensitivity):       {m['recall']:.4f}")
+        print(f"Specificity:                {m['specificity']:.4f}")
+        print(f"F1-Score:                   {m['f1_score']:.4f}")
+        print("--------------------------------------------------------------------")
+        print(f"Total Detected Exceptions:  {s['total_detected_exceptions']}")
+        print(f"Unresolved Exceptions:      {s['unresolved_exceptions']}")
+        print(f"Duplicate Invoices Detected: {s['duplicate_invoices_detected']}")
+        print(f"Duplicate Surcharges (FSC): {s['duplicate_surcharges_detected']}")
+        print(f"Data-Integrity Failures:    {s['data_integrity_failures']}")
+        print("--------------------------------------------------------------------")
+        print(f"Injected Overbilling:       ${f['total_injected_overbilling_usd']:,.2f}")
+        print(f"Detected Overbilling:       ${f['total_detected_overbilling_usd']:,.2f} ({f['recovery_rate_pct']}%)")
+        print(f"Approved Credit Value:      ${f['total_approved_credit_usd']:,.2f}")
+        print(f"Reconciled Credit Value:    ${f['total_reconciled_credit_usd']:,.2f}")
+        print(f"Rejected Credit Value:      ${f['total_rejected_credit_usd']:,.2f}")
+        print("====================================================================\n")
+
+        print("--- Negative Scenario Breakdown ---")
+        for scen, sc_data in res["scenario_breakdown"].items():
+            print(f"  [{scen}]: {sc_data['detected']}/{sc_data['total_injected']} detected ({sc_data['detection_rate_pct']}%) | Missed: {sc_data['missed']} | Injected: ${sc_data['injected_variance']:,.2f}")
     finally:
         db.close()
 
@@ -128,6 +186,9 @@ def main():
     p_val = subparsers.add_parser("validate", help="Run 20-step validation engine on invoices")
     p_val.add_argument("--invoice-id", help="Validate specific invoice ID (default: all)")
 
+    # evaluate
+    subparsers.add_parser("evaluate", help="Evaluate audit detection accuracy against ground truth")
+
     args = parser.parse_args()
     if args.command == "seed":
         cmd_seed(args)
@@ -135,6 +196,8 @@ def main():
         cmd_export(args)
     elif args.command == "validate":
         cmd_validate(args)
+    elif args.command == "evaluate":
+        cmd_evaluate(args)
     elif args.command == "serve":
         cmd_serve(args)
     else:

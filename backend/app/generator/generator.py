@@ -149,7 +149,7 @@ class DeterministicDataGenerator:
 
         # 6, 7, 8, 9, 10. Shipments, Legs, Weight Measurements, Accessorials, Delivery Evidence
         (shipments, legs, weights, shipment_accs, evidences) = self._generate_shipments_and_movements(
-            db, carriers, lanes, accessorials, n_shipments
+            db, carriers, lanes, accessorials, rate_cards, n_shipments
         )
         counts["shipments"] = len(shipments)
         counts["shipment_legs"] = len(legs)
@@ -339,6 +339,7 @@ class DeterministicDataGenerator:
         carriers: List[Carrier],
         lanes: List[Lane],
         accessorials: List[Accessorial],
+        rate_cards: List[RateCard],
         count: int
     ) -> Tuple[List[Shipment], List[ShipmentLeg], List[WeightMeasurement], List[ShipmentAccessorial], List[DeliveryEvidence]]:
         shipments = []
@@ -348,10 +349,15 @@ class DeterministicDataGenerator:
         evidences = []
 
         acc_by_code = {a.accessorial_code: a for a in accessorials}
+        carrier_rc_map: Dict[str, List[RateCard]] = {}
+        for rc in rate_cards:
+            carrier_rc_map.setdefault(rc.carrier_id, []).append(rc)
 
         for i in range(1, count + 1):
             carrier = carriers[(i - 1) % len(carriers)]
-            lane = lanes[(i - 1) % len(lanes)]
+            c_cards = carrier_rc_map.get(carrier.carrier_id) or rate_cards
+            assigned_card = c_cards[(i - 1) % len(c_cards)]
+            lane = assigned_card.lane or lanes[(i - 1) % len(lanes)]
             ship_id = generate_shipment_id(i)
 
             ship_d = BASE_DATE + timedelta(days=self.rng.randint(5, 280))

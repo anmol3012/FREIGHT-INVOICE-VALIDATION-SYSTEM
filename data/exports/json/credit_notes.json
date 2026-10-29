@@ -1,16 +1,16 @@
 [
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000007",
     "created_at": "2026-04-02T00:00:00",
     "credit_amount": 13.6,
     "credit_note_id": "CN-2026-000001",
     "credit_note_number": "CN-ESTE-20260002",
     "currency": "USD",
-    "exception_id": "FEX-2026-000003",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000007",
     "issue_date": "2026-04-02",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -26,17 +26,17 @@
     "reconciliation_status": "REJECTED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000014",
     "created_at": "2026-05-22T00:00:00",
     "credit_amount": 34.0,
     "credit_note_id": "CN-2026-000003",
     "credit_note_number": "CN-PITT-20260004",
     "currency": "USD",
-    "exception_id": "FEX-2026-000005",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000014",
     "issue_date": "2026-05-22",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -72,23 +72,23 @@
     "credit_note_id": "CN-2026-000006",
     "credit_note_number": "CN-KNIG-20260007",
     "currency": "USD",
-    "exception_id": "FEX-2026-000019",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000063",
     "issue_date": "2026-04-21",
     "reconciliation_status": "FULLY_APPLIED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000010",
     "created_at": "2026-08-29T00:00:00",
     "credit_amount": 11.9,
     "credit_note_id": "CN-2026-000007",
     "credit_note_number": "CN-AACT-20260008",
     "currency": "USD",
-    "exception_id": "FEX-2026-000022",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000070",
     "issue_date": "2026-08-29",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -104,17 +104,17 @@
     "reconciliation_status": "REJECTED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000017",
     "created_at": "2026-10-03T00:00:00",
     "credit_amount": 75.0,
     "credit_note_id": "CN-2026-000009",
     "credit_note_number": "CN-MTRC-20260010",
     "currency": "USD",
-    "exception_id": "FEX-2026-000024",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000077",
     "issue_date": "2026-10-03",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -130,17 +130,17 @@
     "reconciliation_status": "REJECTED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000005",
     "created_at": "2026-07-10T00:00:00",
     "credit_amount": 22.1,
     "credit_note_id": "CN-2026-000011",
     "credit_note_number": "CN-ABFS-20260012",
     "currency": "USD",
-    "exception_id": "FEX-2026-000032",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000105",
     "issue_date": "2026-07-10",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -169,17 +169,17 @@
     "reconciliation_status": "REJECTED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000007",
     "created_at": "2026-10-01T00:00:00",
     "credit_amount": 23.8,
     "credit_note_id": "CN-2026-000014",
     "credit_note_number": "CN-ESTE-20260015",
     "currency": "USD",
-    "exception_id": "FEX-2026-000045",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000147",
     "issue_date": "2026-10-01",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",
@@ -195,17 +195,17 @@
     "reconciliation_status": "REJECTED"
   },
   {
-    "approval_status": "APPROVED",
+    "approval_status": "REJECTED",
     "carrier_id": "CAR-000014",
     "created_at": "2026-09-02T00:00:00",
     "credit_amount": 42.5,
     "credit_note_id": "CN-2026-000016",
     "credit_note_number": "CN-PITT-20260017",
     "currency": "USD",
-    "exception_id": "FEX-2026-000047",
+    "exception_id": null,
     "invoice_id": "FINV-2026-000154",
     "issue_date": "2026-09-02",
-    "reconciliation_status": "FULLY_APPLIED"
+    "reconciliation_status": "REJECTED"
   },
   {
     "approval_status": "REJECTED",

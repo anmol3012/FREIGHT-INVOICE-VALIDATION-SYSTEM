@@ -312,7 +312,23 @@ class FreightInvoiceValidator:
 
             elif l_type == "ACCESSORIAL":
                 # Scenario G Check
-                acc_code = line.description.split()[0].upper()
+                acc_code = None
+                if line.accessorial:
+                    acc_code = line.accessorial.accessorial_code.upper()
+                elif line.accessorial_id:
+                    acc_rec = db.query(Accessorial).filter(Accessorial.accessorial_id == line.accessorial_id).first()
+                    if acc_rec:
+                        acc_code = acc_rec.accessorial_code.upper()
+
+                if not acc_code:
+                    desc_upper = (line.description or "").upper()
+                    for known in ["LIFTGATE", "DETENTION", "RESIDENTIAL", "INSIDE_DELIVERY", "HAZMAT", "APPOINTMENT", "RECONSIGNMENT", "STORAGE"]:
+                        if known in desc_upper:
+                            acc_code = known
+                            break
+                    if not acc_code:
+                        acc_code = line.description.split()[0].upper()
+
                 audit_acc = AccessorialService.audit_accessorial_charge(
                     db=db,
                     accessorial_code=acc_code,
