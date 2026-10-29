@@ -65,6 +65,6 @@
     "total_reconciled_credit_usd": 451837.63,
     "total_rejected_credit_usd": 56250.0
   },
-  "export_manifest": "data\\full_scale_exports\\manifest.json",
-  "export_checksums": "data\\full_scale_exports\\checksums.sha256"
+  "export_manifest": "data/full_scale_exports/manifest.json",
+  "export_checksums": "data/full_scale_exports/checksums.sha256"
 }
