@@ -24,6 +24,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY backend/ ./backend/
 COPY pytest.ini ./
 
+RUN mkdir -p /app/data /app/data/exports
+
 # Copy compiled frontend from builder
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 

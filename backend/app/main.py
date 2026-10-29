@@ -9,6 +9,18 @@ from backend.app.api.routes.api import router as api_router
 # Ensure tables created
 Base.metadata.create_all(bind=engine)
 
+# Auto-seed starter dataset on first deployment if database is completely empty
+try:
+    from backend.app.core.database import SessionLocal
+    from backend.app.models.carrier import Carrier
+    with SessionLocal() as db:
+        if db.query(Carrier).count() == 0:
+            from backend.app.generator.generator import DeterministicDataGenerator
+            generator = DeterministicDataGenerator(profile_name="starter", seed=20261022)
+            generator.generate_all(db)
+except Exception:
+    pass
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
