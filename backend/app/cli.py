@@ -189,9 +189,11 @@ def cmd_verify_reproducibility(args):
 
 def cmd_serve(args):
     import uvicorn
+    import os
     init_db(reset=False)
-    host = args.host or "127.0.0.1"
-    port = args.port or 8000
+    env_port = int(os.environ.get("PORT", 8000))
+    host = args.host or os.environ.get("HOST", "0.0.0.0")
+    port = args.port if args.port != 8000 else env_port
     print(f"Starting Freight Invoice Validation System server on http://{host}:{port} ...")
     uvicorn.run("backend.app.main:app", host=host, port=port, reload=args.reload)
 
