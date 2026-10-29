@@ -1,320 +1,609 @@
-from typing import List, Optional
-from fastapi import APIRouter, Depends, HTTPException, Query
+"""
+FastAPI REST API Routes for Freight Invoice Validation System (Phase 5).
+Provides endpoints for Dashboard KPIs, Invoices, Validation Execution,
+Audit Exceptions, Credit Notes, Historical Traceability, and Offline Accuracy Evaluation.
+"""
+
+from typing import List, Optional, Dict, Any
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
-from sqlalchemy import func
+from sqlalchemy import func, desc, or_
 
 from backend.app.core.database import get_db
-from backend.app.core.config import settings
 from backend.app.models.carrier import Carrier
+from backend.app.models.lane import Lane
 from backend.app.models.shipment import Shipment
-from backend.app.models.invoice import InvoiceHeader, InvoiceLine
-from backend.app.models.exception import InvoiceException
+from backend.app.models.invoice import FreightInvoice, InvoiceLine
+from backend.app.models.audit_exception import AuditException
 from backend.app.models.credit_note import CreditNote
-from backend.app.models.audit import AuditEvent
-from backend.app.schemas.api_schemas import (
-    InvoiceHeaderOut, InvoiceExceptionOut, CreditNoteOut, AuditEventOut, DashboardKPIs
+from backend.app.models.audit import AuditEvent, EntityStatusHistory
+from backend.app.models.enums import (
+    InvoiceStatus, ValidationStatus, ExceptionStatus, ExceptionSeverity,
+    CreditNoteApprovalStatus, CreditNoteReconciliationStatus
 )
-from backend.app.engine.validator import InvoiceValidator
+from backend.app.schemas.api_schemas import (
+    DashboardKPIs, FreightInvoiceSummaryOut, FreightInvoiceDetailOut,
+    PaginatedInvoicesOut, ValidationTriggerResponse, AuditExceptionOut,
+    CreditNoteOut, AuditEventOut, ExceptionStatusUpdateRequest,
+    ManualOverrideRequest, CreditNoteValidateRequest, TraceabilityResponse,
+    EvaluationReportOut, CarrierOut
+)
+from backend.app.engine.validator import FreightInvoiceValidator
 from backend.app.engine.evaluator import AuditEvaluator
-from backend.app.generator.generator import SyntheticDataGenerator
-from backend.app.generator.exporter import DataExporter
+from backend.app.engine.history_service import HistoryService
+from backend.app.engine.audit_service import AuditService
+from backend.app.engine.credit_note_service import CreditNoteService
 
 router = APIRouter()
 
+
+# ============================================================================
+# 1. Dashboard KPIs & Carrier Endpoints
+# ============================================================================
+
 @router.get("/dashboard/kpis", response_model=DashboardKPIs)
 def get_dashboard_kpis(db: Session = Depends(get_db)):
-    total_inv = db.query(InvoiceHeader).count()
-    matched = db.query(InvoiceHeader).filter(InvoiceHeader.status == "VALIDATED_MATCH").count()
-    disputed = db.query(InvoiceHeader).filter(InvoiceHeader.status.in_(["EXCEPTION_DISPUTED", "REJECTED"])).count()
-    paid = db.query(InvoiceHeader).filter(InvoiceHeader.status == "PAID").count()
-    
-    total_billed = db.query(func.sum(InvoiceHeader.total_billed_amount)).scalar() or 0.0
-    total_expected = db.query(func.sum(InvoiceHeader.calculated_expected_amount)).scalar() or 0.0
-    
+    """Computes real-time executive KPIs from operational invoice and exception stores."""
+    total_invoices = db.query(FreightInvoice).count()
+    validated_match = db.query(FreightInvoice).filter(
+        FreightInvoice.validation_status == ValidationStatus.PASSED
+    ).count()
+    exception_disputed = db.query(FreightInvoice).filter(
+        FreightInvoice.validation_status == ValidationStatus.FAILED
+    ).count()
+    pending_audit = db.query(FreightInvoice).filter(
+        FreightInvoice.validation_status == ValidationStatus.UNAUDITED
+    ).count()
+    paid_count = db.query(FreightInvoice).filter(
+        FreightInvoice.invoice_status == InvoiceStatus.PAID
+    ).count()
+    rejected_count = db.query(FreightInvoice).filter(
+        FreightInvoice.invoice_status == InvoiceStatus.REJECTED
+    ).count()
+
+    total_billed = db.query(func.sum(FreightInvoice.billed_total)).scalar() or 0.0
+    total_expected = db.query(func.sum(FreightInvoice.expected_total)).scalar() or 0.0
+
     # Overbilling detected (discrepancy recovery)
-    variance_sum = db.query(func.sum(InvoiceHeader.total_variance_amount)).filter(InvoiceHeader.total_variance_amount > 0).scalar() or 0.0
+    variance_sum = db.query(func.sum(FreightInvoice.variance_amount)).filter(
+        FreightInvoice.variance_amount > 0
+    ).scalar() or 0.0
 
-    match_rate = round((matched / max(1, total_inv)) * 100.0, 1)
+    match_rate = round((validated_match / max(1, total_invoices)) * 100.0, 1)
 
-    # Categories breakdown
-    exc_cats = db.query(InvoiceException.category, func.count(InvoiceException.id)).group_by(InvoiceException.category).all()
-    categories_dict = {cat: count for cat, count in exc_cats}
+    # Categories breakdown from AuditException
+    exc_cats = db.query(
+        AuditException.exception_type,
+        func.count(AuditException.exception_id)
+    ).group_by(AuditException.exception_type).all()
+    categories_dict = {
+        (cat.value if hasattr(cat, "value") else str(cat)): count
+        for cat, count in exc_cats
+    }
 
-    # Status breakdown
-    statuses = db.query(InvoiceHeader.status, func.count(InvoiceHeader.id)).group_by(InvoiceHeader.status).all()
-    status_dict = {st: count for st, count in statuses}
+    # Invoices by Status
+    statuses = db.query(
+        FreightInvoice.invoice_status,
+        func.count(FreightInvoice.invoice_id)
+    ).group_by(FreightInvoice.invoice_status).all()
+    status_dict = {
+        (st.value if hasattr(st, "value") else str(st)): count
+        for st, count in statuses
+    }
+
+    # Top carriers by volume
+    top_carriers_query = db.query(
+        Carrier.carrier_id,
+        Carrier.carrier_code,
+        Carrier.carrier_name,
+        func.count(FreightInvoice.invoice_id).label("invoice_count"),
+        func.sum(FreightInvoice.billed_total).label("total_billed"),
+        func.sum(FreightInvoice.variance_amount).label("total_variance")
+    ).join(FreightInvoice, Carrier.carrier_id == FreightInvoice.carrier_id)\
+     .group_by(Carrier.carrier_id)\
+     .order_by(desc("total_billed"))\
+     .limit(5).all()
+
+    top_carriers = [
+        {
+            "carrier_id": c_id,
+            "carrier_code": code,
+            "carrier_name": name,
+            "invoice_count": inv_cnt,
+            "total_billed": round(billed or 0.0, 2),
+            "total_variance": round(var or 0.0, 2)
+        }
+        for c_id, code, name, inv_cnt, billed, var in top_carriers_query
+    ]
 
     return DashboardKPIs(
-        total_invoices=total_inv,
-        validated_match_count=matched,
-        exception_disputed_count=disputed,
-        paid_count=paid,
+        total_invoices=total_invoices,
+        validated_match_count=validated_match,
+        exception_disputed_count=exception_disputed,
+        pending_audit_count=pending_audit,
+        paid_count=paid_count,
+        rejected_count=rejected_count,
         match_rate_pct=match_rate,
         total_billed_usd=round(total_billed, 2),
         total_expected_usd=round(total_expected, 2),
         total_variance_recovered_usd=round(variance_sum, 2),
         exceptions_by_category=categories_dict,
-        invoices_by_status=status_dict
+        invoices_by_status=status_dict,
+        top_carriers=top_carriers
     )
 
-@router.get("/invoices")
+
+@router.get("/carriers", response_model=List[CarrierOut])
+def list_carriers(db: Session = Depends(get_db)):
+    """Returns active carriers for filtering and directory lookup."""
+    return db.query(Carrier).order_by(Carrier.carrier_name).all()
+
+
+# ============================================================================
+# 2. Invoices & Validation Endpoints
+# ============================================================================
+
+@router.get("/invoices", response_model=PaginatedInvoicesOut)
 def list_invoices(
-    db: Session = Depends(get_db),
-    status: Optional[str] = None,
-    validation_status: Optional[str] = None,
-    is_duplicate: Optional[bool] = None,
-    search: Optional[str] = None,
-    limit: int = Query(50, ge=1, le=500),
-    offset: int = Query(0, ge=0)
-):
-    query = db.query(InvoiceHeader)
-    if status:
-        query = query.filter(InvoiceHeader.status == status)
-    if validation_status:
-        query = query.filter(InvoiceHeader.validation_status == validation_status)
-    if is_duplicate is not None:
-        query = query.filter(InvoiceHeader.is_duplicate == is_duplicate)
-    if search:
-        search_fmt = f"%{search.strip()}%"
-        query = query.filter(
-            (InvoiceHeader.invoice_number.ilike(search_fmt)) |
-            (InvoiceHeader.bol_number_billed.ilike(search_fmt))
-        )
-
-    total_count = query.count()
-    invoices = query.order_by(InvoiceHeader.id.desc()).offset(offset).limit(limit).all()
-
-    # Hydrate carrier code & name
-    res = []
-    for inv in invoices:
-        inv_dict = {
-            "id": inv.id,
-            "invoice_number": inv.invoice_number,
-            "carrier_id": inv.carrier_id,
-            "carrier_code": inv.carrier.carrier_code if inv.carrier else "",
-            "carrier_name": inv.carrier.name if inv.carrier else "",
-            "shipment_id": inv.shipment_id,
-            "bol_number_billed": inv.bol_number_billed,
-            "invoice_date": inv.invoice_date,
-            "due_date": inv.due_date,
-            "currency": inv.currency,
-            "total_billed_amount": inv.total_billed_amount,
-            "calculated_expected_amount": inv.calculated_expected_amount,
-            "total_variance_amount": inv.total_variance_amount,
-            "status": inv.status,
-            "validation_status": inv.validation_status,
-            "is_duplicate": inv.is_duplicate,
-            "duplicate_of_invoice_id": inv.duplicate_of_invoice_id,
-            "reconciliation_notes": inv.reconciliation_notes,
-            "created_at": inv.created_at,
-            "validated_at": inv.validated_at,
-            "lines_count": len(inv.lines),
-            "exceptions_count": len(inv.exceptions)
-        }
-        res.append(inv_dict)
-
-    return {"total": total_count, "items": res, "limit": limit, "offset": offset}
-
-@router.get("/invoices/{invoice_id}")
-def get_invoice_detail(invoice_id: int, db: Session = Depends(get_db)):
-    inv = db.query(InvoiceHeader).filter(InvoiceHeader.id == invoice_id).first()
-    if not inv:
-        raise HTTPException(status_code=404, detail="Invoice not found")
-
-    lines_out = []
-    for l in inv.lines:
-        lines_out.append({
-            "id": l.id,
-            "line_number": l.line_number,
-            "charge_type": l.charge_type,
-            "charge_code": l.charge_code,
-            "description": l.description,
-            "billed_units": l.billed_units,
-            "billed_rate": l.billed_rate,
-            "billed_amount": l.billed_amount,
-            "expected_units": l.expected_units,
-            "expected_rate": l.expected_rate,
-            "expected_amount": l.expected_amount,
-            "variance_amount": l.variance_amount,
-            "status": l.status,
-            "discrepancy_reason": l.discrepancy_reason
-        })
-
-    exceptions_out = []
-    for e in inv.exceptions:
-        exceptions_out.append({
-            "id": e.id,
-            "category": e.category,
-            "severity": e.severity,
-            "billed_amount": e.billed_amount,
-            "expected_amount": e.expected_amount,
-            "variance_amount": e.variance_amount,
-            "status": e.status,
-            "root_cause_code": e.root_cause_code,
-            "explanation": e.explanation,
-            "resolved_by": e.resolved_by,
-            "resolution_notes": e.resolution_notes
-        })
-
-    shipment_data = None
-    if inv.shipment:
-        s = inv.shipment
-        wm = s.weight_measurements[0] if s.weight_measurements else None
-        dr = s.delivery_record
-        shipment_data = {
-            "id": s.id,
-            "bol_number": s.bol_number,
-            "origin": f"{s.origin_city}, {s.origin_state} ({s.origin_zip})",
-            "destination": f"{s.destination_city}, {s.destination_state} ({s.destination_zip})",
-            "distance_miles": s.distance_miles,
-            "pickup_date": str(s.pickup_date),
-            "delivery_date": str(s.delivery_date),
-            "dock_type": s.dock_type,
-            "gross_weight_lbs": wm.gross_weight_lbs if wm else None,
-            "billable_weight_lbs": wm.billable_weight_lbs if wm else None,
-            "liftgate_actually_used": dr.liftgate_actually_used if dr else False,
-            "dwell_minutes_recorded": dr.detention_minutes_recorded if dr else 0
-        }
-
-    return {
-        "id": inv.id,
-        "invoice_number": inv.invoice_number,
-        "carrier_code": inv.carrier.carrier_code if inv.carrier else "",
-        "carrier_name": inv.carrier.name if inv.carrier else "",
-        "bol_number_billed": inv.bol_number_billed,
-        "invoice_date": inv.invoice_date,
-        "due_date": inv.due_date,
-        "currency": inv.currency,
-        "total_billed_amount": inv.total_billed_amount,
-        "calculated_expected_amount": inv.calculated_expected_amount,
-        "total_variance_amount": inv.total_variance_amount,
-        "status": inv.status,
-        "validation_status": inv.validation_status,
-        "is_duplicate": inv.is_duplicate,
-        "duplicate_of_invoice_id": inv.duplicate_of_invoice_id,
-        "reconciliation_notes": inv.reconciliation_notes,
-        "created_at": inv.created_at,
-        "validated_at": inv.validated_at,
-        "shipment": shipment_data,
-        "lines": lines_out,
-        "exceptions": exceptions_out
-    }
-
-@router.post("/invoices/{invoice_id}/validate")
-def validate_single_invoice(invoice_id: int, db: Session = Depends(get_db)):
-    try:
-        updated = InvoiceValidator.validate_invoice(db, invoice_id, actor="OPERATOR_API")
-        return {"success": True, "invoice_id": updated.id, "status": updated.status, "validation_status": updated.validation_status}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-@router.post("/invoices/validate-all")
-def validate_all_invoices(db: Session = Depends(get_db)):
-    invoices = db.query(InvoiceHeader).all()
-    passed = 0
-    failed = 0
-    for inv in invoices:
-        v = InvoiceValidator.validate_invoice(db, inv.id, actor="BATCH_AUDITOR")
-        if v.validation_status == "PASSED":
-            passed += 1
-        else:
-            failed += 1
-    return {"total_audited": len(invoices), "passed": passed, "discrepancies_raised": failed}
-
-@router.get("/exceptions", response_model=List[InvoiceExceptionOut])
-def list_exceptions(
-    db: Session = Depends(get_db),
-    status: Optional[str] = None,
-    category: Optional[str] = None,
-    limit: int = Query(100, ge=1, le=500)
-):
-    query = db.query(InvoiceException)
-    if status:
-        query = query.filter(InvoiceException.status == status)
-    if category:
-        query = query.filter(InvoiceException.category == category)
-    return query.order_by(InvoiceException.id.desc()).limit(limit).all()
-
-@router.patch("/exceptions/{exception_id}")
-def update_exception_status(
-    exception_id: int,
-    status: str = Query(..., pattern="^(OPEN|UNDER_REVIEW|APPROVED_OVERRIDE|DISPUTED|AUTO_RESOLVED)$"),
-    resolution_notes: Optional[str] = None,
+    carrier_id: Optional[str] = Query(None, description="Filter by carrier ID"),
+    invoice_status: Optional[str] = Query(None, description="Filter by invoice status"),
+    validation_status: Optional[str] = Query(None, description="Filter by validation status"),
+    search: Optional[str] = Query(None, description="Search invoice number or shipment reference"),
+    page: int = Query(1, ge=1, description="Page number"),
+    page_size: int = Query(25, ge=1, le=200, description="Items per page"),
     db: Session = Depends(get_db)
 ):
-    exc = db.query(InvoiceException).filter(InvoiceException.id == exception_id).first()
-    if not exc:
-        raise HTTPException(status_code=404, detail="Exception not found")
+    """Lists freight invoices with filtering, full-text search, and pagination."""
+    query = db.query(FreightInvoice)
 
-    exc.status = status
-    exc.resolution_notes = resolution_notes
-    exc.resolved_by = "OPERATOR_DASHBOARD"
-    exc.resolved_at = func.now()
+    if carrier_id:
+        query = query.filter(FreightInvoice.carrier_id == carrier_id)
+    if invoice_status:
+        query = query.filter(FreightInvoice.invoice_status == invoice_status)
+    if validation_status:
+        query = query.filter(FreightInvoice.validation_status == validation_status)
+    if search:
+        search_pattern = f"%{search.strip()}%"
+        query = query.filter(
+            or_(
+                FreightInvoice.invoice_number.ilike(search_pattern),
+                FreightInvoice.raw_shipment_reference.ilike(search_pattern)
+            )
+        )
 
-    # If approved override, check if all exceptions on invoice are cleared
-    inv = exc.invoice
-    if status == "APPROVED_OVERRIDE":
-        all_cleared = all(e.status in ["APPROVED_OVERRIDE", "AUTO_RESOLVED"] for e in inv.exceptions)
-        if all_cleared:
-            inv.status = "EXCEPTION_APPROVED"
-            inv.reconciliation_notes = (inv.reconciliation_notes or "") + " [Exceptions approved by operator override]"
-    elif status == "DISPUTED":
-        inv.status = "EXCEPTION_DISPUTED"
+    total = query.count()
+    offset = (page - 1) * page_size
+    invoices = query.order_by(desc(FreightInvoice.invoice_date))\
+                    .offset(offset)\
+                    .limit(page_size)\
+                    .all()
 
-    db.commit()
-    return {"success": True, "exception_id": exc.id, "status": exc.status}
+    items = []
+    for inv in invoices:
+        carrier = inv.carrier
+        items.append(
+            FreightInvoiceSummaryOut(
+                invoice_id=inv.invoice_id,
+                carrier_id=inv.carrier_id,
+                carrier_code=carrier.carrier_code if carrier else None,
+                carrier_name=carrier.carrier_name if carrier else None,
+                shipment_id=inv.shipment_id,
+                raw_shipment_reference=inv.raw_shipment_reference,
+                invoice_number=inv.invoice_number,
+                invoice_date=inv.invoice_date,
+                service_period_start=inv.service_period_start,
+                service_period_end=inv.service_period_end,
+                due_date=inv.due_date,
+                currency=inv.currency,
+                billed_total=round(inv.billed_total, 2),
+                expected_total=round(inv.expected_total, 2),
+                variance_amount=round(inv.variance_amount, 2),
+                invoice_status=inv.invoice_status.value if hasattr(inv.invoice_status, "value") else str(inv.invoice_status),
+                validation_status=inv.validation_status.value if hasattr(inv.validation_status, "value") else str(inv.validation_status),
+                duplicate_group_id=inv.duplicate_group_id,
+                fingerprint_hash=inv.fingerprint_hash,
+                exception_count=len(inv.audit_exceptions) if inv.audit_exceptions else 0,
+                created_at=inv.created_at
+            )
+        )
 
-@router.get("/credit-notes")
-def list_credit_notes(db: Session = Depends(get_db)):
-    cns = db.query(CreditNote).order_by(CreditNote.id.desc()).all()
-    res = []
-    for cn in cns:
-        res.append({
-            "id": cn.id,
-            "credit_note_number": cn.credit_note_number,
-            "carrier_id": cn.carrier_id,
-            "carrier_code": cn.carrier.carrier_code if cn.carrier else "",
-            "original_invoice_id": cn.original_invoice_id,
-            "original_invoice_number": cn.original_invoice.invoice_number if cn.original_invoice else "",
-            "issue_date": str(cn.issue_date),
-            "credit_amount": cn.credit_amount,
-            "applied_amount": cn.applied_amount,
-            "remaining_balance": cn.remaining_balance,
-            "status": cn.status,
-            "reason_code": cn.reason_code,
-            "rejection_reason": cn.rejection_reason
-        })
-    return res
+    return PaginatedInvoicesOut(
+        total=total,
+        page=page,
+        page_size=page_size,
+        items=items
+    )
 
-@router.post("/credit-notes/{credit_note_id}/reconcile")
-def reconcile_credit_note(credit_note_id: int, db: Session = Depends(get_db)):
+
+@router.get("/invoices/{invoice_id}", response_model=FreightInvoiceDetailOut)
+def get_invoice_detail(invoice_id: str, db: Session = Depends(get_db)):
+    """Retrieves full invoice details including lines, detected exceptions, and credit notes."""
+    inv = db.query(FreightInvoice).filter(FreightInvoice.invoice_id == invoice_id).first()
+    if not inv:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Invoice '{invoice_id}' not found.")
+
+    carrier = inv.carrier
+
+    lines_out = [
+        InvoiceLineOut(
+            invoice_line_id=line.invoice_line_id,
+            invoice_id=line.invoice_id,
+            line_number=line.line_number,
+            line_type=line.line_type.value if hasattr(line.line_type, "value") else str(line.line_type),
+            accessorial_id=line.accessorial_id,
+            description=line.description,
+            quantity=line.quantity,
+            unit_of_measure=line.unit_of_measure,
+            unit_rate=line.unit_rate,
+            billed_amount=round(line.billed_amount, 2),
+            expected_amount=round(line.expected_amount, 2),
+            variance_amount=round(line.variance_amount, 2),
+            evidence_reference=line.evidence_reference,
+            source_reference=line.source_reference,
+            created_at=line.created_at
+        )
+        for line in sorted(inv.invoice_lines, key=lambda l: l.line_number)
+    ]
+
+    exceptions_out = [
+        AuditExceptionOut(
+            exception_id=exc.exception_id,
+            invoice_id=exc.invoice_id,
+            invoice_line_id=exc.invoice_line_id,
+            shipment_id=exc.shipment_id,
+            exception_type=exc.exception_type.value if hasattr(exc.exception_type, "value") else str(exc.exception_type),
+            severity=exc.severity.value if hasattr(exc.severity, "value") else str(exc.severity),
+            expected_amount=round(exc.expected_amount, 2),
+            billed_amount=round(exc.billed_amount, 2),
+            disputed_amount=round(exc.disputed_amount, 2),
+            currency=exc.currency,
+            explanation=exc.explanation,
+            evidence_json=exc.evidence_json,
+            exception_status=exc.exception_status.value if hasattr(exc.exception_status, "value") else str(exc.exception_status),
+            detected_at=exc.detected_at,
+            resolved_at=exc.resolved_at
+        )
+        for exc in inv.audit_exceptions
+    ]
+
+    credit_notes_out = [
+        CreditNoteOut(
+            credit_note_id=cn.credit_note_id,
+            credit_note_number=cn.credit_note_number,
+            carrier_id=cn.carrier_id,
+            invoice_id=cn.invoice_id,
+            exception_id=cn.exception_id,
+            issue_date=cn.issue_date,
+            currency=cn.currency,
+            credit_amount=round(cn.credit_amount, 2),
+            approval_status=cn.approval_status.value if hasattr(cn.approval_status, "value") else str(cn.approval_status),
+            reconciliation_status=cn.reconciliation_status.value if hasattr(cn.reconciliation_status, "value") else str(cn.reconciliation_status),
+            created_at=cn.created_at
+        )
+        for cn in inv.credit_notes
+    ]
+
+    return FreightInvoiceDetailOut(
+        invoice_id=inv.invoice_id,
+        carrier_id=inv.carrier_id,
+        carrier_code=carrier.carrier_code if carrier else None,
+        carrier_name=carrier.carrier_name if carrier else None,
+        shipment_id=inv.shipment_id,
+        raw_shipment_reference=inv.raw_shipment_reference,
+        invoice_number=inv.invoice_number,
+        invoice_date=inv.invoice_date,
+        service_period_start=inv.service_period_start,
+        service_period_end=inv.service_period_end,
+        due_date=inv.due_date,
+        currency=inv.currency,
+        billed_total=round(inv.billed_total, 2),
+        expected_total=round(inv.expected_total, 2),
+        variance_amount=round(inv.variance_amount, 2),
+        invoice_status=inv.invoice_status.value if hasattr(inv.invoice_status, "value") else str(inv.invoice_status),
+        validation_status=inv.validation_status.value if hasattr(inv.validation_status, "value") else str(inv.validation_status),
+        duplicate_group_id=inv.duplicate_group_id,
+        fingerprint_hash=inv.fingerprint_hash,
+        exception_count=len(exceptions_out),
+        created_at=inv.created_at,
+        lines=lines_out,
+        exceptions=exceptions_out,
+        credit_notes=credit_notes_out
+    )
+
+
+@router.post("/invoices/{invoice_id}/validate", response_model=ValidationTriggerResponse)
+def trigger_invoice_validation(
+    invoice_id: str,
+    actor: str = Query("API_USER", description="Actor triggering validation"),
+    db: Session = Depends(get_db)
+):
+    """Executes the 20-step Freight Calculation and Validation Engine on the given invoice."""
     try:
-        cn = InvoiceValidator.validate_credit_note(db, credit_note_id, actor="OPERATOR_API")
-        return {"success": True, "credit_note_id": cn.id, "status": cn.status, "rejection_reason": cn.rejection_reason}
+        summary = FreightInvoiceValidator.validate_invoice(db, invoice_id, actor=actor)
+        return ValidationTriggerResponse(
+            invoice_id=summary.invoice_id,
+            overall_verdict=summary.overall_verdict,
+            validation_status=summary.validation_status.value if hasattr(summary.validation_status, "value") else str(summary.validation_status),
+            invoice_status=summary.invoice_status.value if hasattr(summary.invoice_status, "value") else str(summary.invoice_status),
+            billed_total=round(summary.billed_total, 2),
+            expected_total=round(summary.expected_total, 2),
+            variance_amount=round(summary.variance_amount, 2),
+            exceptions_raised_count=summary.exceptions_raised_count,
+            exception_ids=summary.exception_ids,
+            diagnostic_messages=summary.diagnostic_messages
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Validation failed: {str(e)}")
 
-@router.get("/evaluation")
-def run_evaluation(db: Session = Depends(get_db)):
-    return AuditEvaluator.evaluate(db)
+
+@router.get("/invoices/{invoice_id}/traceability", response_model=TraceabilityResponse)
+def get_invoice_traceability(invoice_id: str, db: Session = Depends(get_db)):
+    """Returns end-to-end lineage, evidence records, and lifecycle transitions for audit trail verification."""
+    try:
+        data = HistoryService.get_invoice_traceability(db, invoice_id)
+        return TraceabilityResponse(
+            invoice_id=data["invoice_id"],
+            invoice_number=data["invoice_number"],
+            carrier=data.get("carrier"),
+            shipment=data.get("shipment"),
+            rate_card=data.get("rate_card"),
+            weight_measurements=data.get("weight_measurements", []),
+            delivery_evidence=data.get("delivery_evidence"),
+            invoice_lines=data.get("invoice_lines", []),
+            exceptions=data.get("exceptions", []),
+            credit_notes=data.get("credit_notes", []),
+            status_history=data.get("status_history", []),
+            audit_events=data.get("audit_events", [])
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+
+
+# ============================================================================
+# 3. Exceptions & Workflow Management
+# ============================================================================
+
+@router.get("/exceptions", response_model=List[AuditExceptionOut])
+def list_exceptions(
+    invoice_id: Optional[str] = Query(None, description="Filter by invoice ID"),
+    exception_status: Optional[str] = Query(None, description="Filter by exception status"),
+    severity: Optional[str] = Query(None, description="Filter by severity"),
+    exception_type: Optional[str] = Query(None, description="Filter by exception type"),
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    db: Session = Depends(get_db)
+):
+    """Lists actionable audit exceptions with flexible filtering."""
+    query = db.query(AuditException)
+
+    if invoice_id:
+        query = query.filter(AuditException.invoice_id == invoice_id)
+    if exception_status:
+        query = query.filter(AuditException.exception_status == exception_status)
+    if severity:
+        query = query.filter(AuditException.severity == severity)
+    if exception_type:
+        query = query.filter(AuditException.exception_type == exception_type)
+
+    exceptions = query.order_by(desc(AuditException.detected_at))\
+                      .offset(offset)\
+                      .limit(limit)\
+                      .all()
+
+    return [
+        AuditExceptionOut(
+            exception_id=exc.exception_id,
+            invoice_id=exc.invoice_id,
+            invoice_line_id=exc.invoice_line_id,
+            shipment_id=exc.shipment_id,
+            exception_type=exc.exception_type.value if hasattr(exc.exception_type, "value") else str(exc.exception_type),
+            severity=exc.severity.value if hasattr(exc.severity, "value") else str(exc.severity),
+            expected_amount=round(exc.expected_amount, 2),
+            billed_amount=round(exc.billed_amount, 2),
+            disputed_amount=round(exc.disputed_amount, 2),
+            currency=exc.currency,
+            explanation=exc.explanation,
+            evidence_json=exc.evidence_json,
+            exception_status=exc.exception_status.value if hasattr(exc.exception_status, "value") else str(exc.exception_status),
+            detected_at=exc.detected_at,
+            resolved_at=exc.resolved_at
+        )
+        for exc in exceptions
+    ]
+
+
+@router.patch("/exceptions/{exception_id}/status")
+def update_exception_status(
+    exception_id: str,
+    req: ExceptionStatusUpdateRequest,
+    db: Session = Depends(get_db)
+):
+    """Transitions an exception through lifecycle states (e.g. UNDER_REVIEW, APPROVED, REJECTED, RESOLVED)."""
+    exc = db.query(AuditException).filter(AuditException.exception_id == exception_id).first()
+    if not exc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Exception '{exception_id}' not found.")
+
+    try:
+        target_enum = ExceptionStatus(req.target_status)
+        AuditService.transition_exception(
+            db=db,
+            exception=exc,
+            target_status=target_enum,
+            reason=req.reason,
+            actor=req.actor
+        )
+        db.commit()
+        return {
+            "exception_id": exc.exception_id,
+            "new_status": exc.exception_status.value,
+            "resolved_at": exc.resolved_at
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
+@router.post("/exceptions/{exception_id}/override")
+def record_manual_override(
+    exception_id: str,
+    req: ManualOverrideRequest,
+    db: Session = Depends(get_db)
+):
+    """Records an authorized manual override on a disputed variance."""
+    exc = db.query(AuditException).filter(AuditException.exception_id == exception_id).first()
+    if not exc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Exception '{exception_id}' not found.")
+
+    try:
+        AuditService.record_manual_override(
+            db=db,
+            exception=exc,
+            approved_amount=req.approved_amount,
+            reason=req.reason,
+            actor=req.actor
+        )
+        db.commit()
+        return {
+            "exception_id": exc.exception_id,
+            "approved_amount": req.approved_amount,
+            "status": exc.exception_status.value
+        }
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+
+
+# ============================================================================
+# 4. Credit Notes Endpoints
+# ============================================================================
+
+@router.get("/credit-notes", response_model=List[CreditNoteOut])
+def list_credit_notes(
+    carrier_id: Optional[str] = Query(None, description="Filter by carrier ID"),
+    invoice_id: Optional[str] = Query(None, description="Filter by invoice ID"),
+    reconciliation_status: Optional[str] = Query(None, description="Filter by reconciliation status"),
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    db: Session = Depends(get_db)
+):
+    """Lists carrier credit notes with reconciliation and approval tracking."""
+    query = db.query(CreditNote)
+
+    if carrier_id:
+        query = query.filter(CreditNote.carrier_id == carrier_id)
+    if invoice_id:
+        query = query.filter(CreditNote.invoice_id == invoice_id)
+    if reconciliation_status:
+        query = query.filter(CreditNote.reconciliation_status == reconciliation_status)
+
+    cns = query.order_by(desc(CreditNote.issue_date))\
+               .offset(offset)\
+               .limit(limit)\
+               .all()
+
+    return [
+        CreditNoteOut(
+            credit_note_id=cn.credit_note_id,
+            credit_note_number=cn.credit_note_number,
+            carrier_id=cn.carrier_id,
+            invoice_id=cn.invoice_id,
+            exception_id=cn.exception_id,
+            issue_date=cn.issue_date,
+            currency=cn.currency,
+            credit_amount=round(cn.credit_amount, 2),
+            approval_status=cn.approval_status.value if hasattr(cn.approval_status, "value") else str(cn.approval_status),
+            reconciliation_status=cn.reconciliation_status.value if hasattr(cn.reconciliation_status, "value") else str(cn.reconciliation_status),
+            created_at=cn.created_at
+        )
+        for cn in cns
+    ]
+
+
+@router.post("/credit-notes/{credit_note_id}/validate")
+def validate_credit_note(
+    credit_note_id: str,
+    req: CreditNoteValidateRequest = CreditNoteValidateRequest(),
+    db: Session = Depends(get_db)
+):
+    """Validates and reconciles credit note against remaining disputed balance (Scenario E enforcement)."""
+    try:
+        res = CreditNoteService.validate_credit_note(db, credit_note_id=credit_note_id, actor=req.actor)
+        db.commit()
+        return {
+            "credit_note_id": res.credit_note_id,
+            "credit_note_number": res.credit_note_number,
+            "is_valid": res.is_valid,
+            "approval_status": res.approval_status.value,
+            "reconciliation_status": res.reconciliation_status.value,
+            "credit_amount": res.credit_amount,
+            "approved_disputed_balance": res.approved_disputed_balance,
+            "remaining_balance_after_credit": res.remaining_balance_after_credit,
+            "excess_amount": res.excess_amount,
+            "explanation": res.explanation
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+
+
+# ============================================================================
+# 5. Audit Events & Offline Accuracy Evaluation
+# ============================================================================
 
 @router.get("/audit-events", response_model=List[AuditEventOut])
-def list_audit_events(db: Session = Depends(get_db), limit: int = Query(50, ge=1, le=200)):
-    return db.query(AuditEvent).order_by(AuditEvent.id.desc()).limit(limit).all()
+def list_audit_events(
+    entity_type: Optional[str] = Query(None, description="Filter by entity type"),
+    entity_id: Optional[str] = Query(None, description="Filter by entity ID"),
+    actor: Optional[str] = Query(None, description="Filter by actor"),
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    db: Session = Depends(get_db)
+):
+    """Queries immutable, append-only audit trail events."""
+    query = db.query(AuditEvent)
 
-@router.post("/dataset/seed")
-def trigger_seed(scale: str = "starter", reset: bool = True, db: Session = Depends(get_db)):
-    from backend.app.cli import init_db
-    init_db(reset=reset)
-    num_c = settings.FULL_CARRIERS if scale == "full" else settings.STARTER_CARRIERS
-    num_s = settings.FULL_SHIPMENTS if scale == "full" else settings.STARTER_SHIPMENTS
-    num_i = settings.FULL_INVOICES if scale == "full" else settings.STARTER_INVOICES
-    
-    gen = SyntheticDataGenerator(seed=settings.DEFAULT_RANDOM_SEED)
-    counts = gen.generate_all(db, num_carriers=num_c, num_shipments=num_s, num_invoices=num_i)
-    return {"message": "Dataset generated successfully", "counts": counts}
+    if entity_type:
+        query = query.filter(AuditEvent.entity_type == entity_type)
+    if entity_id:
+        query = query.filter(AuditEvent.entity_id == entity_id)
+    if actor:
+        query = query.filter(AuditEvent.actor == actor)
 
-@router.get("/dataset/export")
-def trigger_export(db: Session = Depends(get_db)):
-    exporter = DataExporter()
-    return exporter.export_all(db)
+    events = query.order_by(desc(AuditEvent.timestamp))\
+                  .offset(offset)\
+                  .limit(limit)\
+                  .all()
+
+    return [
+        AuditEventOut(
+            event_id=ev.event_id,
+            entity_type=ev.entity_type,
+            entity_id=ev.entity_id,
+            event_type=ev.event_type.value if hasattr(ev.event_type, "value") else str(ev.event_type),
+            actor=ev.actor,
+            previous_state=ev.previous_state,
+            new_state=ev.new_state,
+            reason=ev.reason,
+            timestamp=ev.timestamp,
+            metadata_json=ev.metadata_json
+        )
+        for ev in events
+    ]
+
+
+@router.get("/evaluation", response_model=EvaluationReportOut)
+def run_evaluation(db: Session = Depends(get_db)):
+    """
+    Executes offline audit accuracy evaluation comparing operational validation
+    outcomes against independently stored ground-truth anomaly labels.
+    """
+    report = AuditEvaluator.evaluate(db)
+    if "error" in report:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=report["error"])
+
+    return EvaluationReportOut(
+        evaluated_at=report["evaluated_at"],
+        metrics=report["metrics"],
+        confusion_matrix=report["confusion_matrix"],
+        financial_metrics=report["financial_metrics"],
+        scenario_breakdown=report["scenario_breakdown"]
+    )

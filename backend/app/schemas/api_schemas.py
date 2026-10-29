@@ -1,117 +1,197 @@
+"""
+Pydantic API Schemas for Freight Invoice Validation System (Phase 5).
+Maps full relational data models and business workflows to REST API responses and requests.
+"""
+
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, ConfigDict
 from datetime import date, datetime
 
+
 class CarrierOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
+    carrier_id: str
     carrier_code: str
-    name: str
-    tax_id: str
-    payment_terms_days: int
+    carrier_name: str
     status: str
-    contact_email: Optional[str] = None
+    country_code: str
+    created_at: datetime
+
 
 class InvoiceLineOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
+    invoice_line_id: str
+    invoice_id: str
     line_number: int
-    charge_type: str
-    charge_code: Optional[str] = None
+    line_type: str
+    accessorial_id: Optional[str] = None
     description: str
-    billed_units: float
-    billed_rate: float
+    quantity: float
+    unit_of_measure: str
+    unit_rate: float
     billed_amount: float
-    expected_units: float
-    expected_rate: float
     expected_amount: float
     variance_amount: float
-    status: str
-    discrepancy_reason: Optional[str] = None
+    evidence_reference: Optional[str] = None
+    source_reference: Optional[str] = None
+    created_at: datetime
 
-class InvoiceExceptionOut(BaseModel):
+
+class AuditExceptionOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
-    invoice_id: int
-    invoice_line_id: Optional[int] = None
-    category: str
+    exception_id: str
+    invoice_id: str
+    invoice_line_id: Optional[str] = None
+    shipment_id: Optional[str] = None
+    exception_type: str
     severity: str
-    billed_amount: float
     expected_amount: float
-    variance_amount: float
-    status: str
-    root_cause_code: str
+    billed_amount: float
+    disputed_amount: float
+    currency: str
     explanation: str
-    resolved_by: Optional[str] = None
-    resolution_notes: Optional[str] = None
-    created_at: datetime
+    evidence_json: Optional[str] = None
+    exception_status: str
+    detected_at: datetime
     resolved_at: Optional[datetime] = None
 
-class InvoiceHeaderOut(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
-    id: int
-    invoice_number: str
-    carrier_id: int
-    carrier_code: Optional[str] = None
-    carrier_name: Optional[str] = None
-    shipment_id: Optional[int] = None
-    bol_number_billed: str
-    invoice_date: date
-    due_date: date
-    currency: str
-    total_billed_amount: float
-    calculated_expected_amount: float
-    total_variance_amount: float
-    status: str
-    validation_status: str
-    is_duplicate: bool
-    duplicate_of_invoice_id: Optional[int] = None
-    reconciliation_notes: Optional[str] = None
-    created_at: datetime
-    validated_at: Optional[datetime] = None
-    lines: List[InvoiceLineOut] = []
-    exceptions: List[InvoiceExceptionOut] = []
 
 class CreditNoteOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
+    credit_note_id: str
     credit_note_number: str
-    carrier_id: int
-    original_invoice_id: int
-    original_invoice_number: Optional[str] = None
+    carrier_id: str
+    invoice_id: str
+    exception_id: Optional[str] = None
     issue_date: date
+    currency: str
     credit_amount: float
-    applied_amount: float
-    remaining_balance: float
-    status: str
-    reason_code: str
-    rejection_reason: Optional[str] = None
+    approval_status: str
+    reconciliation_status: str
+    created_at: datetime
+
+
+class FreightInvoiceSummaryOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    invoice_id: str
+    carrier_id: str
+    carrier_code: Optional[str] = None
+    carrier_name: Optional[str] = None
+    shipment_id: Optional[str] = None
+    raw_shipment_reference: str
+    invoice_number: str
+    invoice_date: date
+    service_period_start: date
+    service_period_end: date
+    due_date: date
+    currency: str
+    billed_total: float
+    expected_total: float
+    variance_amount: float
+    invoice_status: str
+    validation_status: str
+    duplicate_group_id: Optional[str] = None
+    fingerprint_hash: Optional[str] = None
+    exception_count: int = 0
+    created_at: datetime
+
+
+class FreightInvoiceDetailOut(FreightInvoiceSummaryOut):
+    lines: List[InvoiceLineOut] = []
+    exceptions: List[AuditExceptionOut] = []
+    credit_notes: List[CreditNoteOut] = []
+
+
+class PaginatedInvoicesOut(BaseModel):
+    total: int
+    page: int
+    page_size: int
+    items: List[FreightInvoiceSummaryOut]
+
 
 class AuditEventOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
+    event_id: str
     entity_type: str
     entity_id: str
     event_type: str
     actor: str
-    payload_json: Optional[str] = None
-    notes: Optional[str] = None
+    previous_state: Optional[str] = None
+    new_state: Optional[str] = None
+    reason: Optional[str] = None
     timestamp: datetime
+    metadata_json: Optional[str] = None
+
 
 class DashboardKPIs(BaseModel):
     total_invoices: int
     validated_match_count: int
     exception_disputed_count: int
+    pending_audit_count: int
     paid_count: int
+    rejected_count: int
     match_rate_pct: float
     total_billed_usd: float
     total_expected_usd: float
     total_variance_recovered_usd: float
     exceptions_by_category: Dict[str, int]
     invoices_by_status: Dict[str, int]
+    top_carriers: List[Dict[str, Any]] = []
+
+
+class ValidationTriggerResponse(BaseModel):
+    invoice_id: str
+    overall_verdict: str
+    validation_status: str
+    invoice_status: str
+    billed_total: float
+    expected_total: float
+    variance_amount: float
+    exceptions_raised_count: int
+    exception_ids: List[str]
+    diagnostic_messages: List[str]
+
+
+class ExceptionStatusUpdateRequest(BaseModel):
+    target_status: str
+    reason: str
+    actor: str = "AUDIT_OFFICER"
+
+
+class ManualOverrideRequest(BaseModel):
+    approved_amount: float
+    reason: str
+    actor: str = "COMPLIANCE_LEAD"
+
+
+class CreditNoteValidateRequest(BaseModel):
+    actor: str = "CREDIT_AUDITOR"
+
+
+class TraceabilityResponse(BaseModel):
+    invoice_id: str
+    invoice_number: str
+    carrier: Optional[Dict[str, Any]] = None
+    shipment: Optional[Dict[str, Any]] = None
+    rate_card: Optional[Dict[str, Any]] = None
+    weight_measurements: List[Dict[str, Any]] = []
+    delivery_evidence: Optional[Dict[str, Any]] = None
+    invoice_lines: List[Dict[str, Any]] = []
+    exceptions: List[Dict[str, Any]] = []
+    credit_notes: List[Dict[str, Any]] = []
+    status_history: List[Dict[str, Any]] = []
+    audit_events: List[Dict[str, Any]] = []
+
+
+class EvaluationReportOut(BaseModel):
+    evaluated_at: datetime
+    metrics: Dict[str, Any]
+    confusion_matrix: Dict[str, int]
+    financial_metrics: Dict[str, float]
+    scenario_breakdown: Dict[str, Any]
