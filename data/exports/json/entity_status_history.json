@@ -1,6 +1,6 @@
 [
   {
-    "changed_at": "2026-07-23T00:00:00",
+    "changed_at": "2026-07-25T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000001",
     "entity_name": "FreightInvoice",
@@ -10,7 +10,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-07-28T00:00:00",
+    "changed_at": "2026-07-27T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000002",
     "entity_name": "FreightInvoice",
@@ -20,7 +20,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-04-08T00:00:00",
+    "changed_at": "2026-04-07T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000003",
     "entity_name": "FreightInvoice",
@@ -30,7 +30,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-01T00:00:00",
+    "changed_at": "2026-05-04T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000004",
     "entity_name": "FreightInvoice",
@@ -50,7 +50,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-06-24T00:00:00",
+    "changed_at": "2026-06-22T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000006",
     "entity_name": "FreightInvoice",
@@ -60,7 +60,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-03-19T00:00:00",
+    "changed_at": "2026-03-21T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000007",
     "entity_name": "FreightInvoice",
@@ -70,7 +70,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-08-05T00:00:00",
+    "changed_at": "2026-08-09T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000008",
     "entity_name": "FreightInvoice",
@@ -100,7 +100,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-08-09T00:00:00",
+    "changed_at": "2026-08-06T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000011",
     "entity_name": "FreightInvoice",
@@ -110,7 +110,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-10T00:00:00",
+    "changed_at": "2026-05-09T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000012",
     "entity_name": "FreightInvoice",
@@ -120,7 +120,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-30T00:00:00",
+    "changed_at": "2026-06-02T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000013",
     "entity_name": "FreightInvoice",
@@ -130,7 +130,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-08T00:00:00",
+    "changed_at": "2026-05-07T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000014",
     "entity_name": "FreightInvoice",
@@ -150,7 +150,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-09-23T00:00:00",
+    "changed_at": "2026-09-21T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000016",
     "entity_name": "FreightInvoice",
@@ -160,7 +160,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-06-19T00:00:00",
+    "changed_at": "2026-06-18T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000017",
     "entity_name": "FreightInvoice",
@@ -180,7 +180,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-01-19T00:00:00",
+    "changed_at": "2026-01-20T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000019",
     "entity_name": "FreightInvoice",
@@ -210,7 +210,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-02-02T00:00:00",
+    "changed_at": "2026-02-05T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000022",
     "entity_name": "FreightInvoice",
@@ -220,7 +220,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-01-21T00:00:00",
+    "changed_at": "2026-01-23T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000023",
     "entity_name": "FreightInvoice",
@@ -230,7 +230,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-25T00:00:00",
+    "changed_at": "2026-05-27T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000024",
     "entity_name": "FreightInvoice",
@@ -240,7 +240,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-06-09T00:00:00",
+    "changed_at": "2026-06-10T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000025",
     "entity_name": "FreightInvoice",
@@ -250,7 +250,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-09-15T00:00:00",
+    "changed_at": "2026-09-14T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000026",
     "entity_name": "FreightInvoice",
@@ -260,7 +260,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-04-18T00:00:00",
+    "changed_at": "2026-04-19T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000027",
     "entity_name": "FreightInvoice",
@@ -270,7 +270,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-03-03T00:00:00",
+    "changed_at": "2026-03-04T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000028",
     "entity_name": "FreightInvoice",
@@ -300,7 +300,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-02-15T00:00:00",
+    "changed_at": "2026-02-12T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000031",
     "entity_name": "FreightInvoice",
@@ -340,7 +340,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-06-08T00:00:00",
+    "changed_at": "2026-06-06T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000035",
     "entity_name": "FreightInvoice",
@@ -350,7 +350,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-04-11T00:00:00",
+    "changed_at": "2026-04-10T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000036",
     "entity_name": "FreightInvoice",
@@ -360,7 +360,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-08-12T00:00:00",
+    "changed_at": "2026-08-13T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000037",
     "entity_name": "FreightInvoice",
@@ -380,7 +380,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-01-25T00:00:00",
+    "changed_at": "2026-01-26T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000039",
     "entity_name": "FreightInvoice",
@@ -390,7 +390,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-10-09T00:00:00",
+    "changed_at": "2026-10-12T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000040",
     "entity_name": "FreightInvoice",
@@ -400,7 +400,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-01-16T00:00:00",
+    "changed_at": "2026-01-17T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000041",
     "entity_name": "FreightInvoice",
@@ -410,7 +410,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-09-14T00:00:00",
+    "changed_at": "2026-09-16T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000042",
     "entity_name": "FreightInvoice",
@@ -430,7 +430,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-09-15T00:00:00",
+    "changed_at": "2026-09-17T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000044",
     "entity_name": "FreightInvoice",
@@ -440,7 +440,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-07-26T00:00:00",
+    "changed_at": "2026-07-27T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000045",
     "entity_name": "FreightInvoice",
@@ -450,7 +450,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-05-04T00:00:00",
+    "changed_at": "2026-05-05T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000046",
     "entity_name": "FreightInvoice",
@@ -460,7 +460,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-01-17T00:00:00",
+    "changed_at": "2026-01-15T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000047",
     "entity_name": "FreightInvoice",
@@ -470,7 +470,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-07-15T00:00:00",
+    "changed_at": "2026-07-16T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000048",
     "entity_name": "FreightInvoice",
@@ -490,7 +490,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-06-04T00:00:00",
+    "changed_at": "2026-06-03T00:00:00",
     "changed_by": "INGESTION_PIPELINE",
     "entity_id": "FINV-2026-000050",
     "entity_name": "FreightInvoice",
@@ -500,7 +500,7 @@
     "transition_reason": "Initial invoice submission and audit ingestion"
   },
   {
-    "changed_at": "2026-04-08T02:00:00",
+    "changed_at": "2026-04-07T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000001",
     "entity_name": "AuditException",
@@ -520,7 +520,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-03-19T02:00:00",
+    "changed_at": "2026-03-21T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000003",
     "entity_name": "AuditException",
@@ -540,7 +540,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-05-08T02:00:00",
+    "changed_at": "2026-05-07T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000005",
     "entity_name": "AuditException",
@@ -550,7 +550,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-06-19T02:00:00",
+    "changed_at": "2026-06-18T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000006",
     "entity_name": "AuditException",
@@ -560,7 +560,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-01-21T02:00:00",
+    "changed_at": "2026-01-23T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000007",
     "entity_name": "AuditException",
@@ -570,7 +570,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-06-09T02:00:00",
+    "changed_at": "2026-06-10T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000008",
     "entity_name": "AuditException",
@@ -580,7 +580,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-04-18T02:00:00",
+    "changed_at": "2026-04-19T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000009",
     "entity_name": "AuditException",
@@ -610,7 +610,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-08-12T02:00:00",
+    "changed_at": "2026-08-13T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000012",
     "entity_name": "AuditException",
@@ -630,7 +630,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-07-26T02:00:00",
+    "changed_at": "2026-07-27T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000014",
     "entity_name": "AuditException",
@@ -640,7 +640,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-01-17T02:00:00",
+    "changed_at": "2026-01-15T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000015",
     "entity_name": "AuditException",
@@ -650,7 +650,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-06-04T02:00:00",
+    "changed_at": "2026-06-03T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000016",
     "entity_name": "AuditException",
@@ -660,7 +660,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-01-24T02:00:00",
+    "changed_at": "2026-01-26T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000017",
     "entity_name": "AuditException",
@@ -680,7 +680,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-04-07T02:00:00",
+    "changed_at": "2026-04-08T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000019",
     "entity_name": "AuditException",
@@ -690,7 +690,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-06-26T02:00:00",
+    "changed_at": "2026-06-24T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000020",
     "entity_name": "AuditException",
@@ -700,7 +700,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-09-08T02:00:00",
+    "changed_at": "2026-09-10T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000021",
     "entity_name": "AuditException",
@@ -720,7 +720,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-09-08T02:00:00",
+    "changed_at": "2026-09-07T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000023",
     "entity_name": "AuditException",
@@ -740,7 +740,7 @@
     "transition_reason": "Variance identified by audit engine"
   },
   {
-    "changed_at": "2026-04-19T02:00:00",
+    "changed_at": "2026-04-21T02:00:00",
     "changed_by": "AUDIT_ENGINE",
     "entity_id": "FEX-2026-000025",
     "entity_name": "AuditException",
@@ -748,5 +748,175 @@
     "history_id": "HIST-2026-000075",
     "to_status": "OPEN",
     "transition_reason": "Variance identified by audit engine"
+  },
+  {
+    "changed_at": "2026-10-29T02:30:58.651913",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000001",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000076",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:30:58.781227",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000002",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000077",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:30:58.839633",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000003",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000078",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:30:59.295048",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000004",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000079",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:30:59.753128",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000005",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000080",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:00.317523",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000007",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000081",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:00.373931",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000008",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000082",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:00.528663",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000009",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000083",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:00.912711",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000010",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000084",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:01.217098",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000011",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000085",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:01.387950",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000012",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000086",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:01.926033",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000013",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000087",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:02.325457",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000014",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000088",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:02.461672",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000015",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000089",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:02.520571",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000016",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000090",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:02.994528",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000017",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000091",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
+  },
+  {
+    "changed_at": "2026-10-29T02:31:03.527822",
+    "changed_by": "CREDIT_AUDITOR",
+    "entity_id": "CN-2026-000018",
+    "entity_name": "CreditNote",
+    "from_status": "REJECTED",
+    "history_id": "HIST-2026-000092",
+    "to_status": "REJECTED",
+    "transition_reason": "No matching open audit exception found for this credit note."
   }
 ]

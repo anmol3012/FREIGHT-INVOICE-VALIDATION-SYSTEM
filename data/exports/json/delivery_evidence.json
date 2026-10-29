@@ -1,7 +1,7 @@
 [
   {
-    "created_at": "2026-07-17T11:09:00",
-    "delivered_at": "2026-07-17T10:54:00",
+    "created_at": "2026-07-19T11:09:00",
+    "delivered_at": "2026-07-19T10:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000001",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -11,8 +11,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000001"
   },
   {
-    "created_at": "2026-07-22T11:22:00",
-    "delivered_at": "2026-07-22T11:07:00",
+    "created_at": "2026-07-21T11:22:00",
+    "delivered_at": "2026-07-21T11:07:00",
     "delivery_evidence_id": "DEV-SHP-2026-000002",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -22,8 +22,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000002"
   },
   {
-    "created_at": "2026-04-04T11:18:00",
-    "delivered_at": "2026-04-04T11:03:00",
+    "created_at": "2026-04-03T11:18:00",
+    "delivered_at": "2026-04-03T11:03:00",
     "delivery_evidence_id": "DEV-SHP-2026-000003",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -33,8 +33,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000003"
   },
   {
-    "created_at": "2026-04-26T13:53:00",
-    "delivered_at": "2026-04-26T13:38:00",
+    "created_at": "2026-04-29T13:53:00",
+    "delivered_at": "2026-04-29T13:38:00",
     "delivery_evidence_id": "DEV-SHP-2026-000004",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -55,8 +55,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000005"
   },
   {
-    "created_at": "2026-06-21T14:25:00",
-    "delivered_at": "2026-06-21T14:10:00",
+    "created_at": "2026-06-19T14:25:00",
+    "delivered_at": "2026-06-19T14:10:00",
     "delivery_evidence_id": "DEV-SHP-2026-000006",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -66,8 +66,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000006"
   },
   {
-    "created_at": "2026-03-12T11:34:00",
-    "delivered_at": "2026-03-12T11:19:00",
+    "created_at": "2026-03-14T11:34:00",
+    "delivered_at": "2026-03-14T11:19:00",
     "delivery_evidence_id": "DEV-SHP-2026-000007",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -77,8 +77,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000007"
   },
   {
-    "created_at": "2026-08-03T14:57:00",
-    "delivered_at": "2026-08-03T14:42:00",
+    "created_at": "2026-08-07T14:57:00",
+    "delivered_at": "2026-08-07T14:42:00",
     "delivery_evidence_id": "DEV-SHP-2026-000008",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -110,8 +110,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000010"
   },
   {
-    "created_at": "2026-08-04T15:48:00",
-    "delivered_at": "2026-08-04T15:33:00",
+    "created_at": "2026-08-01T15:48:00",
+    "delivered_at": "2026-08-01T15:33:00",
     "delivery_evidence_id": "DEV-SHP-2026-000011",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -121,8 +121,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000011"
   },
   {
-    "created_at": "2026-05-05T14:40:00",
-    "delivered_at": "2026-05-05T14:25:00",
+    "created_at": "2026-05-04T14:40:00",
+    "delivered_at": "2026-05-04T14:25:00",
     "delivery_evidence_id": "DEV-SHP-2026-000012",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -132,8 +132,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000012"
   },
   {
-    "created_at": "2026-05-25T15:52:00",
-    "delivered_at": "2026-05-25T15:37:00",
+    "created_at": "2026-05-28T15:52:00",
+    "delivered_at": "2026-05-28T15:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000013",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -143,8 +143,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000013"
   },
   {
-    "created_at": "2026-05-01T16:17:00",
-    "delivered_at": "2026-05-01T16:02:00",
+    "created_at": "2026-04-30T16:17:00",
+    "delivered_at": "2026-04-30T16:02:00",
     "delivery_evidence_id": "DEV-SHP-2026-000014",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -165,8 +165,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000015"
   },
   {
-    "created_at": "2026-09-17T11:41:00",
-    "delivered_at": "2026-09-17T11:26:00",
+    "created_at": "2026-09-15T11:41:00",
+    "delivered_at": "2026-09-15T11:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000016",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -176,8 +176,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000016"
   },
   {
-    "created_at": "2026-06-17T11:14:00",
-    "delivered_at": "2026-06-17T10:59:00",
+    "created_at": "2026-06-16T11:14:00",
+    "delivered_at": "2026-06-16T10:59:00",
     "delivery_evidence_id": "DEV-SHP-2026-000017",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "RESIDENTIAL",
@@ -198,8 +198,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000018"
   },
   {
-    "created_at": "2026-01-12T14:28:00",
-    "delivered_at": "2026-01-12T14:13:00",
+    "created_at": "2026-01-13T14:28:00",
+    "delivered_at": "2026-01-13T14:13:00",
     "delivery_evidence_id": "DEV-SHP-2026-000019",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -231,8 +231,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000021"
   },
   {
-    "created_at": "2026-01-29T12:03:00",
-    "delivered_at": "2026-01-29T11:48:00",
+    "created_at": "2026-02-01T12:03:00",
+    "delivered_at": "2026-02-01T11:48:00",
     "delivery_evidence_id": "DEV-SHP-2026-000022",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "RESIDENTIAL",
@@ -242,8 +242,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000022"
   },
   {
-    "created_at": "2026-01-17T17:01:00",
-    "delivered_at": "2026-01-17T16:46:00",
+    "created_at": "2026-01-19T17:01:00",
+    "delivered_at": "2026-01-19T16:46:00",
     "delivery_evidence_id": "DEV-SHP-2026-000023",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -253,8 +253,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000023"
   },
   {
-    "created_at": "2026-05-20T13:20:00",
-    "delivered_at": "2026-05-20T13:05:00",
+    "created_at": "2026-05-22T13:20:00",
+    "delivered_at": "2026-05-22T13:05:00",
     "delivery_evidence_id": "DEV-SHP-2026-000024",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -264,8 +264,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000024"
   },
   {
-    "created_at": "2026-06-06T16:07:00",
-    "delivered_at": "2026-06-06T15:52:00",
+    "created_at": "2026-06-07T16:07:00",
+    "delivered_at": "2026-06-07T15:52:00",
     "delivery_evidence_id": "DEV-SHP-2026-000025",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -275,8 +275,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000025"
   },
   {
-    "created_at": "2026-09-09T13:07:00",
-    "delivered_at": "2026-09-09T12:52:00",
+    "created_at": "2026-09-08T13:07:00",
+    "delivered_at": "2026-09-08T12:52:00",
     "delivery_evidence_id": "DEV-SHP-2026-000026",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -286,8 +286,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000026"
   },
   {
-    "created_at": "2026-04-14T11:23:00",
-    "delivered_at": "2026-04-14T11:08:00",
+    "created_at": "2026-04-15T11:23:00",
+    "delivered_at": "2026-04-15T11:08:00",
     "delivery_evidence_id": "DEV-SHP-2026-000027",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -297,8 +297,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000027"
   },
   {
-    "created_at": "2026-03-01T09:36:00",
-    "delivered_at": "2026-03-01T09:21:00",
+    "created_at": "2026-03-02T09:36:00",
+    "delivered_at": "2026-03-02T09:21:00",
     "delivery_evidence_id": "DEV-SHP-2026-000028",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -330,8 +330,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000030"
   },
   {
-    "created_at": "2026-02-11T15:25:00",
-    "delivered_at": "2026-02-11T15:10:00",
+    "created_at": "2026-02-08T15:25:00",
+    "delivered_at": "2026-02-08T15:10:00",
     "delivery_evidence_id": "DEV-SHP-2026-000031",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -374,8 +374,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000034"
   },
   {
-    "created_at": "2026-06-06T11:22:00",
-    "delivered_at": "2026-06-06T11:07:00",
+    "created_at": "2026-06-04T11:22:00",
+    "delivered_at": "2026-06-04T11:07:00",
     "delivery_evidence_id": "DEV-SHP-2026-000035",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -385,8 +385,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000035"
   },
   {
-    "created_at": "2026-04-07T13:59:00",
-    "delivered_at": "2026-04-07T13:44:00",
+    "created_at": "2026-04-06T13:59:00",
+    "delivered_at": "2026-04-06T13:44:00",
     "delivery_evidence_id": "DEV-SHP-2026-000036",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -396,8 +396,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000036"
   },
   {
-    "created_at": "2026-08-05T11:59:00",
-    "delivered_at": "2026-08-05T11:44:00",
+    "created_at": "2026-08-06T11:59:00",
+    "delivered_at": "2026-08-06T11:44:00",
     "delivery_evidence_id": "DEV-SHP-2026-000037",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -418,8 +418,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000038"
   },
   {
-    "created_at": "2026-01-20T09:39:00",
-    "delivered_at": "2026-01-20T09:24:00",
+    "created_at": "2026-01-21T09:39:00",
+    "delivered_at": "2026-01-21T09:24:00",
     "delivery_evidence_id": "DEV-SHP-2026-000039",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -429,8 +429,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000039"
   },
   {
-    "created_at": "2026-10-05T10:39:00",
-    "delivered_at": "2026-10-05T10:24:00",
+    "created_at": "2026-10-08T10:39:00",
+    "delivered_at": "2026-10-08T10:24:00",
     "delivery_evidence_id": "DEV-SHP-2026-000040",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -440,8 +440,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000040"
   },
   {
-    "created_at": "2026-01-11T18:03:00",
-    "delivered_at": "2026-01-11T17:48:00",
+    "created_at": "2026-01-12T18:03:00",
+    "delivered_at": "2026-01-12T17:48:00",
     "delivery_evidence_id": "DEV-SHP-2026-000041",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -451,8 +451,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000041"
   },
   {
-    "created_at": "2026-09-10T14:42:00",
-    "delivered_at": "2026-09-10T14:27:00",
+    "created_at": "2026-09-12T14:42:00",
+    "delivered_at": "2026-09-12T14:27:00",
     "delivery_evidence_id": "DEV-SHP-2026-000042",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "RESIDENTIAL",
@@ -473,8 +473,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000043"
   },
   {
-    "created_at": "2026-09-08T12:53:00",
-    "delivered_at": "2026-09-08T12:38:00",
+    "created_at": "2026-09-10T12:53:00",
+    "delivered_at": "2026-09-10T12:38:00",
     "delivery_evidence_id": "DEV-SHP-2026-000044",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -484,8 +484,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000044"
   },
   {
-    "created_at": "2026-07-24T12:35:00",
-    "delivered_at": "2026-07-24T12:20:00",
+    "created_at": "2026-07-25T12:35:00",
+    "delivered_at": "2026-07-25T12:20:00",
     "delivery_evidence_id": "DEV-SHP-2026-000045",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -495,8 +495,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000045"
   },
   {
-    "created_at": "2026-04-30T15:29:00",
-    "delivered_at": "2026-04-30T15:14:00",
+    "created_at": "2026-05-01T15:29:00",
+    "delivered_at": "2026-05-01T15:14:00",
     "delivery_evidence_id": "DEV-SHP-2026-000046",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -506,8 +506,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000046"
   },
   {
-    "created_at": "2026-01-10T12:54:00",
-    "delivered_at": "2026-01-10T12:39:00",
+    "created_at": "2026-01-08T12:54:00",
+    "delivered_at": "2026-01-08T12:39:00",
     "delivery_evidence_id": "DEV-SHP-2026-000047",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "GROUND_LEVEL",
@@ -517,8 +517,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000047"
   },
   {
-    "created_at": "2026-07-09T15:42:00",
-    "delivered_at": "2026-07-09T15:27:00",
+    "created_at": "2026-07-10T15:42:00",
+    "delivered_at": "2026-07-10T15:27:00",
     "delivery_evidence_id": "DEV-SHP-2026-000048",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -539,8 +539,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000049"
   },
   {
-    "created_at": "2026-05-30T13:53:00",
-    "delivered_at": "2026-05-30T13:38:00",
+    "created_at": "2026-05-29T13:53:00",
+    "delivered_at": "2026-05-29T13:38:00",
     "delivery_evidence_id": "DEV-SHP-2026-000050",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -550,8 +550,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000050"
   },
   {
-    "created_at": "2026-03-28T14:29:00",
-    "delivered_at": "2026-03-28T14:14:00",
+    "created_at": "2026-03-25T14:29:00",
+    "delivered_at": "2026-03-25T14:14:00",
     "delivery_evidence_id": "DEV-SHP-2026-000051",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -561,8 +561,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000051"
   },
   {
-    "created_at": "2026-09-05T14:50:00",
-    "delivered_at": "2026-09-05T14:35:00",
+    "created_at": "2026-09-06T14:50:00",
+    "delivered_at": "2026-09-06T14:35:00",
     "delivery_evidence_id": "DEV-SHP-2026-000052",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -572,8 +572,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000052"
   },
   {
-    "created_at": "2026-05-30T10:13:00",
-    "delivered_at": "2026-05-30T09:58:00",
+    "created_at": "2026-06-01T10:13:00",
+    "delivered_at": "2026-06-01T09:58:00",
     "delivery_evidence_id": "DEV-SHP-2026-000053",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -583,8 +583,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000053"
   },
   {
-    "created_at": "2026-01-18T15:46:00",
-    "delivered_at": "2026-01-18T15:31:00",
+    "created_at": "2026-01-20T15:46:00",
+    "delivered_at": "2026-01-20T15:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000054",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -594,8 +594,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000054"
   },
   {
-    "created_at": "2026-03-26T12:21:00",
-    "delivered_at": "2026-03-26T12:06:00",
+    "created_at": "2026-03-27T12:21:00",
+    "delivered_at": "2026-03-27T12:06:00",
     "delivery_evidence_id": "DEV-SHP-2026-000055",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -605,8 +605,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000055"
   },
   {
-    "created_at": "2026-03-23T14:30:00",
-    "delivered_at": "2026-03-23T14:15:00",
+    "created_at": "2026-03-21T14:30:00",
+    "delivered_at": "2026-03-21T14:15:00",
     "delivery_evidence_id": "DEV-SHP-2026-000056",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -649,8 +649,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000059"
   },
   {
-    "created_at": "2026-06-19T12:23:00",
-    "delivered_at": "2026-06-19T12:08:00",
+    "created_at": "2026-06-22T12:23:00",
+    "delivered_at": "2026-06-22T12:08:00",
     "delivery_evidence_id": "DEV-SHP-2026-000060",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -682,8 +682,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000062"
   },
   {
-    "created_at": "2026-04-03T14:43:00",
-    "delivered_at": "2026-04-03T14:28:00",
+    "created_at": "2026-04-04T14:43:00",
+    "delivered_at": "2026-04-04T14:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000063",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -693,8 +693,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000063"
   },
   {
-    "created_at": "2026-02-19T17:08:00",
-    "delivered_at": "2026-02-19T16:53:00",
+    "created_at": "2026-02-22T17:08:00",
+    "delivered_at": "2026-02-22T16:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000064",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -704,8 +704,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000064"
   },
   {
-    "created_at": "2026-06-20T14:41:00",
-    "delivered_at": "2026-06-20T14:26:00",
+    "created_at": "2026-06-18T14:41:00",
+    "delivered_at": "2026-06-18T14:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000065",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -715,8 +715,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000065"
   },
   {
-    "created_at": "2026-04-13T13:09:00",
-    "delivered_at": "2026-04-13T12:54:00",
+    "created_at": "2026-04-11T13:09:00",
+    "delivered_at": "2026-04-11T12:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000066",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -726,8 +726,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000066"
   },
   {
-    "created_at": "2026-09-03T15:27:00",
-    "delivered_at": "2026-09-03T15:12:00",
+    "created_at": "2026-09-05T15:27:00",
+    "delivered_at": "2026-09-05T15:12:00",
     "delivery_evidence_id": "DEV-SHP-2026-000067",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -737,8 +737,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000067"
   },
   {
-    "created_at": "2026-02-15T12:42:00",
-    "delivered_at": "2026-02-15T12:27:00",
+    "created_at": "2026-02-18T12:42:00",
+    "delivered_at": "2026-02-18T12:27:00",
     "delivery_evidence_id": "DEV-SHP-2026-000068",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -748,8 +748,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000068"
   },
   {
-    "created_at": "2026-03-16T10:12:00",
-    "delivered_at": "2026-03-16T09:57:00",
+    "created_at": "2026-03-15T10:12:00",
+    "delivered_at": "2026-03-15T09:57:00",
     "delivery_evidence_id": "DEV-SHP-2026-000069",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -770,8 +770,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000070"
   },
   {
-    "created_at": "2026-03-25T10:19:00",
-    "delivered_at": "2026-03-25T10:04:00",
+    "created_at": "2026-03-23T10:19:00",
+    "delivered_at": "2026-03-23T10:04:00",
     "delivery_evidence_id": "DEV-SHP-2026-000071",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -781,8 +781,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000071"
   },
   {
-    "created_at": "2026-10-01T09:20:00",
-    "delivered_at": "2026-10-01T09:05:00",
+    "created_at": "2026-10-02T09:20:00",
+    "delivered_at": "2026-10-02T09:05:00",
     "delivery_evidence_id": "DEV-SHP-2026-000072",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -803,8 +803,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000073"
   },
   {
-    "created_at": "2026-09-02T18:06:00",
-    "delivered_at": "2026-09-02T17:51:00",
+    "created_at": "2026-09-01T18:06:00",
+    "delivered_at": "2026-09-01T17:51:00",
     "delivery_evidence_id": "DEV-SHP-2026-000074",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -825,8 +825,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000075"
   },
   {
-    "created_at": "2026-10-03T14:25:00",
-    "delivered_at": "2026-10-03T14:10:00",
+    "created_at": "2026-10-01T14:25:00",
+    "delivered_at": "2026-10-01T14:10:00",
     "delivery_evidence_id": "DEV-SHP-2026-000076",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "RESIDENTIAL",
@@ -847,8 +847,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000077"
   },
   {
-    "created_at": "2026-04-14T11:29:00",
-    "delivered_at": "2026-04-14T11:14:00",
+    "created_at": "2026-04-12T11:29:00",
+    "delivered_at": "2026-04-12T11:14:00",
     "delivery_evidence_id": "DEV-SHP-2026-000078",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -869,8 +869,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000079"
   },
   {
-    "created_at": "2026-01-22T13:28:00",
-    "delivered_at": "2026-01-22T13:13:00",
+    "created_at": "2026-01-23T13:28:00",
+    "delivered_at": "2026-01-23T13:13:00",
     "delivery_evidence_id": "DEV-SHP-2026-000080",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -880,8 +880,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000080"
   },
   {
-    "created_at": "2026-06-12T11:23:00",
-    "delivered_at": "2026-06-12T11:08:00",
+    "created_at": "2026-06-13T11:23:00",
+    "delivered_at": "2026-06-13T11:08:00",
     "delivery_evidence_id": "DEV-SHP-2026-000081",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -891,8 +891,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000081"
   },
   {
-    "created_at": "2026-01-23T14:59:00",
-    "delivered_at": "2026-01-23T14:44:00",
+    "created_at": "2026-01-25T14:59:00",
+    "delivered_at": "2026-01-25T14:44:00",
     "delivery_evidence_id": "DEV-SHP-2026-000082",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "GROUND_LEVEL",
@@ -902,8 +902,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000082"
   },
   {
-    "created_at": "2026-04-16T13:52:00",
-    "delivered_at": "2026-04-16T13:37:00",
+    "created_at": "2026-04-18T13:52:00",
+    "delivered_at": "2026-04-18T13:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000083",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -913,8 +913,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000083"
   },
   {
-    "created_at": "2026-04-22T12:13:00",
-    "delivered_at": "2026-04-22T11:58:00",
+    "created_at": "2026-04-24T12:13:00",
+    "delivered_at": "2026-04-24T11:58:00",
     "delivery_evidence_id": "DEV-SHP-2026-000084",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -924,8 +924,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000084"
   },
   {
-    "created_at": "2026-05-09T17:08:00",
-    "delivered_at": "2026-05-09T16:53:00",
+    "created_at": "2026-05-10T17:08:00",
+    "delivered_at": "2026-05-10T16:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000085",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -946,8 +946,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000086"
   },
   {
-    "created_at": "2026-03-06T14:00:00",
-    "delivered_at": "2026-03-06T13:45:00",
+    "created_at": "2026-03-07T14:00:00",
+    "delivered_at": "2026-03-07T13:45:00",
     "delivery_evidence_id": "DEV-SHP-2026-000087",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -957,8 +957,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000087"
   },
   {
-    "created_at": "2026-07-16T12:43:00",
-    "delivered_at": "2026-07-16T12:28:00",
+    "created_at": "2026-07-18T12:43:00",
+    "delivered_at": "2026-07-18T12:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000088",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -979,8 +979,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000089"
   },
   {
-    "created_at": "2026-01-12T12:10:00",
-    "delivered_at": "2026-01-12T11:55:00",
+    "created_at": "2026-01-11T12:10:00",
+    "delivered_at": "2026-01-11T11:55:00",
     "delivery_evidence_id": "DEV-SHP-2026-000090",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1001,8 +1001,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000091"
   },
   {
-    "created_at": "2026-08-11T16:48:00",
-    "delivered_at": "2026-08-11T16:33:00",
+    "created_at": "2026-08-09T16:48:00",
+    "delivered_at": "2026-08-09T16:33:00",
     "delivery_evidence_id": "DEV-SHP-2026-000092",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1023,8 +1023,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000093"
   },
   {
-    "created_at": "2026-05-11T11:03:00",
-    "delivered_at": "2026-05-11T10:48:00",
+    "created_at": "2026-05-13T11:03:00",
+    "delivered_at": "2026-05-13T10:48:00",
     "delivery_evidence_id": "DEV-SHP-2026-000094",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1034,8 +1034,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000094"
   },
   {
-    "created_at": "2026-02-06T13:18:00",
-    "delivered_at": "2026-02-06T13:03:00",
+    "created_at": "2026-02-05T13:18:00",
+    "delivered_at": "2026-02-05T13:03:00",
     "delivery_evidence_id": "DEV-SHP-2026-000095",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1045,8 +1045,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000095"
   },
   {
-    "created_at": "2026-07-31T12:41:00",
-    "delivered_at": "2026-07-31T12:26:00",
+    "created_at": "2026-07-29T12:41:00",
+    "delivered_at": "2026-07-29T12:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000096",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1056,8 +1056,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000096"
   },
   {
-    "created_at": "2026-09-16T15:57:00",
-    "delivered_at": "2026-09-16T15:42:00",
+    "created_at": "2026-09-17T15:57:00",
+    "delivered_at": "2026-09-17T15:42:00",
     "delivery_evidence_id": "DEV-SHP-2026-000097",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1067,8 +1067,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000097"
   },
   {
-    "created_at": "2026-05-22T11:37:00",
-    "delivered_at": "2026-05-22T11:22:00",
+    "created_at": "2026-05-23T11:37:00",
+    "delivered_at": "2026-05-23T11:22:00",
     "delivery_evidence_id": "DEV-SHP-2026-000098",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1078,8 +1078,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000098"
   },
   {
-    "created_at": "2026-03-18T09:45:00",
-    "delivered_at": "2026-03-18T09:30:00",
+    "created_at": "2026-03-19T09:45:00",
+    "delivered_at": "2026-03-19T09:30:00",
     "delivery_evidence_id": "DEV-SHP-2026-000099",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "RESIDENTIAL",
@@ -1089,8 +1089,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000099"
   },
   {
-    "created_at": "2026-01-15T16:46:00",
-    "delivered_at": "2026-01-15T16:31:00",
+    "created_at": "2026-01-19T16:46:00",
+    "delivered_at": "2026-01-19T16:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000100",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1111,8 +1111,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000101"
   },
   {
-    "created_at": "2026-06-29T17:21:00",
-    "delivered_at": "2026-06-29T17:06:00",
+    "created_at": "2026-06-30T17:21:00",
+    "delivered_at": "2026-06-30T17:06:00",
     "delivery_evidence_id": "DEV-SHP-2026-000102",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1122,8 +1122,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000102"
   },
   {
-    "created_at": "2026-04-02T10:41:00",
-    "delivered_at": "2026-04-02T10:26:00",
+    "created_at": "2026-04-03T10:41:00",
+    "delivered_at": "2026-04-03T10:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000103",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1133,8 +1133,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000103"
   },
   {
-    "created_at": "2026-07-04T15:09:00",
-    "delivered_at": "2026-07-04T14:54:00",
+    "created_at": "2026-07-05T15:09:00",
+    "delivered_at": "2026-07-05T14:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000104",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1144,8 +1144,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000104"
   },
   {
-    "created_at": "2026-06-24T17:50:00",
-    "delivered_at": "2026-06-24T17:35:00",
+    "created_at": "2026-06-25T17:50:00",
+    "delivered_at": "2026-06-25T17:35:00",
     "delivery_evidence_id": "DEV-SHP-2026-000105",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1155,8 +1155,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000105"
   },
   {
-    "created_at": "2026-04-26T09:49:00",
-    "delivered_at": "2026-04-26T09:34:00",
+    "created_at": "2026-04-25T09:49:00",
+    "delivered_at": "2026-04-25T09:34:00",
     "delivery_evidence_id": "DEV-SHP-2026-000106",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1166,8 +1166,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000106"
   },
   {
-    "created_at": "2026-06-03T14:50:00",
-    "delivered_at": "2026-06-03T14:35:00",
+    "created_at": "2026-06-02T14:50:00",
+    "delivered_at": "2026-06-02T14:35:00",
     "delivery_evidence_id": "DEV-SHP-2026-000107",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1177,8 +1177,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000107"
   },
   {
-    "created_at": "2026-01-17T16:31:00",
-    "delivered_at": "2026-01-17T16:16:00",
+    "created_at": "2026-01-20T16:31:00",
+    "delivered_at": "2026-01-20T16:16:00",
     "delivery_evidence_id": "DEV-SHP-2026-000108",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1199,8 +1199,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000109"
   },
   {
-    "created_at": "2026-09-28T17:37:00",
-    "delivered_at": "2026-09-28T17:22:00",
+    "created_at": "2026-09-24T17:37:00",
+    "delivered_at": "2026-09-24T17:22:00",
     "delivery_evidence_id": "DEV-SHP-2026-000110",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1210,8 +1210,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000110"
   },
   {
-    "created_at": "2026-09-16T17:30:00",
-    "delivered_at": "2026-09-16T17:15:00",
+    "created_at": "2026-09-13T17:30:00",
+    "delivered_at": "2026-09-13T17:15:00",
     "delivery_evidence_id": "DEV-SHP-2026-000111",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1221,8 +1221,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000111"
   },
   {
-    "created_at": "2026-01-30T16:08:00",
-    "delivered_at": "2026-01-30T15:53:00",
+    "created_at": "2026-02-01T16:08:00",
+    "delivered_at": "2026-02-01T15:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000112",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1232,8 +1232,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000112"
   },
   {
-    "created_at": "2026-01-08T17:49:00",
-    "delivered_at": "2026-01-08T17:34:00",
+    "created_at": "2026-01-11T17:49:00",
+    "delivered_at": "2026-01-11T17:34:00",
     "delivery_evidence_id": "DEV-SHP-2026-000113",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1243,8 +1243,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000113"
   },
   {
-    "created_at": "2026-09-08T15:59:00",
-    "delivered_at": "2026-09-08T15:44:00",
+    "created_at": "2026-09-10T15:59:00",
+    "delivered_at": "2026-09-10T15:44:00",
     "delivery_evidence_id": "DEV-SHP-2026-000114",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1265,8 +1265,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000115"
   },
   {
-    "created_at": "2026-02-16T14:01:00",
-    "delivered_at": "2026-02-16T13:46:00",
+    "created_at": "2026-02-14T14:01:00",
+    "delivered_at": "2026-02-14T13:46:00",
     "delivery_evidence_id": "DEV-SHP-2026-000116",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -1276,8 +1276,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000116"
   },
   {
-    "created_at": "2026-04-09T17:06:00",
-    "delivered_at": "2026-04-09T16:51:00",
+    "created_at": "2026-04-10T17:06:00",
+    "delivered_at": "2026-04-10T16:51:00",
     "delivery_evidence_id": "DEV-SHP-2026-000117",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1287,8 +1287,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000117"
   },
   {
-    "created_at": "2026-06-28T16:27:00",
-    "delivered_at": "2026-06-28T16:12:00",
+    "created_at": "2026-06-25T16:27:00",
+    "delivered_at": "2026-06-25T16:12:00",
     "delivery_evidence_id": "DEV-SHP-2026-000118",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1298,8 +1298,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000118"
   },
   {
-    "created_at": "2026-08-07T14:38:00",
-    "delivered_at": "2026-08-07T14:23:00",
+    "created_at": "2026-08-08T14:38:00",
+    "delivered_at": "2026-08-08T14:23:00",
     "delivery_evidence_id": "DEV-SHP-2026-000119",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1309,8 +1309,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000119"
   },
   {
-    "created_at": "2026-05-16T14:13:00",
-    "delivered_at": "2026-05-16T13:58:00",
+    "created_at": "2026-05-19T14:13:00",
+    "delivered_at": "2026-05-19T13:58:00",
     "delivery_evidence_id": "DEV-SHP-2026-000120",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1331,8 +1331,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000121"
   },
   {
-    "created_at": "2026-08-05T18:08:00",
-    "delivered_at": "2026-08-05T17:53:00",
+    "created_at": "2026-08-06T18:08:00",
+    "delivered_at": "2026-08-06T17:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000122",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1342,8 +1342,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000122"
   },
   {
-    "created_at": "2026-05-11T18:08:00",
-    "delivered_at": "2026-05-11T17:53:00",
+    "created_at": "2026-05-10T18:08:00",
+    "delivered_at": "2026-05-10T17:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000123",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1353,8 +1353,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000123"
   },
   {
-    "created_at": "2026-03-02T13:17:00",
-    "delivered_at": "2026-03-02T13:02:00",
+    "created_at": "2026-03-03T13:17:00",
+    "delivered_at": "2026-03-03T13:02:00",
     "delivery_evidence_id": "DEV-SHP-2026-000124",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "RESIDENTIAL",
@@ -1364,8 +1364,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000124"
   },
   {
-    "created_at": "2026-06-29T10:36:00",
-    "delivered_at": "2026-06-29T10:21:00",
+    "created_at": "2026-06-28T10:36:00",
+    "delivered_at": "2026-06-28T10:21:00",
     "delivery_evidence_id": "DEV-SHP-2026-000125",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1375,8 +1375,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000125"
   },
   {
-    "created_at": "2026-01-18T12:08:00",
-    "delivered_at": "2026-01-18T11:53:00",
+    "created_at": "2026-01-17T12:08:00",
+    "delivered_at": "2026-01-17T11:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000126",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1386,8 +1386,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000126"
   },
   {
-    "created_at": "2026-02-24T17:13:00",
-    "delivered_at": "2026-02-24T16:58:00",
+    "created_at": "2026-02-25T17:13:00",
+    "delivered_at": "2026-02-25T16:58:00",
     "delivery_evidence_id": "DEV-SHP-2026-000127",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1397,8 +1397,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000127"
   },
   {
-    "created_at": "2026-05-16T12:50:00",
-    "delivered_at": "2026-05-16T12:35:00",
+    "created_at": "2026-05-20T12:50:00",
+    "delivered_at": "2026-05-20T12:35:00",
     "delivery_evidence_id": "DEV-SHP-2026-000128",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1408,8 +1408,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000128"
   },
   {
-    "created_at": "2026-03-07T10:09:00",
-    "delivered_at": "2026-03-07T09:54:00",
+    "created_at": "2026-03-06T10:09:00",
+    "delivered_at": "2026-03-06T09:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000129",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1430,8 +1430,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000130"
   },
   {
-    "created_at": "2026-02-07T15:09:00",
-    "delivered_at": "2026-02-07T14:54:00",
+    "created_at": "2026-02-06T15:09:00",
+    "delivered_at": "2026-02-06T14:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000131",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1452,8 +1452,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000132"
   },
   {
-    "created_at": "2026-07-15T16:56:00",
-    "delivered_at": "2026-07-15T16:41:00",
+    "created_at": "2026-07-16T16:56:00",
+    "delivered_at": "2026-07-16T16:41:00",
     "delivery_evidence_id": "DEV-SHP-2026-000133",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1496,8 +1496,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000136"
   },
   {
-    "created_at": "2026-05-22T11:35:00",
-    "delivered_at": "2026-05-22T11:20:00",
+    "created_at": "2026-05-20T11:35:00",
+    "delivered_at": "2026-05-20T11:20:00",
     "delivery_evidence_id": "DEV-SHP-2026-000137",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "RESIDENTIAL",
@@ -1507,8 +1507,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000137"
   },
   {
-    "created_at": "2026-01-16T16:22:00",
-    "delivered_at": "2026-01-16T16:07:00",
+    "created_at": "2026-01-14T16:22:00",
+    "delivered_at": "2026-01-14T16:07:00",
     "delivery_evidence_id": "DEV-SHP-2026-000138",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1518,8 +1518,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000138"
   },
   {
-    "created_at": "2026-05-25T11:59:00",
-    "delivered_at": "2026-05-25T11:44:00",
+    "created_at": "2026-05-27T11:59:00",
+    "delivered_at": "2026-05-27T11:44:00",
     "delivery_evidence_id": "DEV-SHP-2026-000139",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1529,8 +1529,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000139"
   },
   {
-    "created_at": "2026-03-30T16:30:00",
-    "delivered_at": "2026-03-30T16:15:00",
+    "created_at": "2026-04-01T16:30:00",
+    "delivered_at": "2026-04-01T16:15:00",
     "delivery_evidence_id": "DEV-SHP-2026-000140",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1551,8 +1551,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000141"
   },
   {
-    "created_at": "2026-08-04T16:00:00",
-    "delivered_at": "2026-08-04T15:45:00",
+    "created_at": "2026-08-06T16:00:00",
+    "delivered_at": "2026-08-06T15:45:00",
     "delivery_evidence_id": "DEV-SHP-2026-000142",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1562,8 +1562,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000142"
   },
   {
-    "created_at": "2026-03-24T13:11:00",
-    "delivered_at": "2026-03-24T12:56:00",
+    "created_at": "2026-03-26T13:11:00",
+    "delivered_at": "2026-03-26T12:56:00",
     "delivery_evidence_id": "DEV-SHP-2026-000143",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "RESIDENTIAL",
@@ -1573,8 +1573,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000143"
   },
   {
-    "created_at": "2026-09-25T16:40:00",
-    "delivered_at": "2026-09-25T16:25:00",
+    "created_at": "2026-09-28T16:40:00",
+    "delivered_at": "2026-09-28T16:25:00",
     "delivery_evidence_id": "DEV-SHP-2026-000144",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1584,8 +1584,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000144"
   },
   {
-    "created_at": "2026-06-07T12:43:00",
-    "delivered_at": "2026-06-07T12:28:00",
+    "created_at": "2026-06-09T12:43:00",
+    "delivered_at": "2026-06-09T12:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000145",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1595,8 +1595,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000145"
   },
   {
-    "created_at": "2026-08-24T18:01:00",
-    "delivered_at": "2026-08-24T17:46:00",
+    "created_at": "2026-08-23T18:01:00",
+    "delivered_at": "2026-08-23T17:46:00",
     "delivery_evidence_id": "DEV-SHP-2026-000146",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1617,8 +1617,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000147"
   },
   {
-    "created_at": "2026-09-13T10:39:00",
-    "delivered_at": "2026-09-13T10:24:00",
+    "created_at": "2026-09-16T10:39:00",
+    "delivered_at": "2026-09-16T10:24:00",
     "delivery_evidence_id": "DEV-SHP-2026-000148",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1628,8 +1628,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000148"
   },
   {
-    "created_at": "2026-09-28T15:38:00",
-    "delivered_at": "2026-09-28T15:23:00",
+    "created_at": "2026-09-27T15:38:00",
+    "delivered_at": "2026-09-27T15:23:00",
     "delivery_evidence_id": "DEV-SHP-2026-000149",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1639,8 +1639,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000149"
   },
   {
-    "created_at": "2026-03-10T11:48:00",
-    "delivered_at": "2026-03-10T11:33:00",
+    "created_at": "2026-03-09T11:48:00",
+    "delivered_at": "2026-03-09T11:33:00",
     "delivery_evidence_id": "DEV-SHP-2026-000150",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1650,8 +1650,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000150"
   },
   {
-    "created_at": "2026-05-15T12:08:00",
-    "delivered_at": "2026-05-15T11:53:00",
+    "created_at": "2026-05-12T12:08:00",
+    "delivered_at": "2026-05-12T11:53:00",
     "delivery_evidence_id": "DEV-SHP-2026-000151",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1661,8 +1661,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000151"
   },
   {
-    "created_at": "2026-08-03T12:35:00",
-    "delivered_at": "2026-08-03T12:20:00",
+    "created_at": "2026-08-02T12:35:00",
+    "delivered_at": "2026-08-02T12:20:00",
     "delivery_evidence_id": "DEV-SHP-2026-000152",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1672,8 +1672,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000152"
   },
   {
-    "created_at": "2026-06-24T11:16:00",
-    "delivered_at": "2026-06-24T11:01:00",
+    "created_at": "2026-06-27T11:16:00",
+    "delivered_at": "2026-06-27T11:01:00",
     "delivery_evidence_id": "DEV-SHP-2026-000153",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1683,8 +1683,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000153"
   },
   {
-    "created_at": "2026-08-16T09:41:00",
-    "delivered_at": "2026-08-16T09:26:00",
+    "created_at": "2026-08-18T09:41:00",
+    "delivered_at": "2026-08-18T09:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000154",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1694,8 +1694,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000154"
   },
   {
-    "created_at": "2026-03-13T11:17:00",
-    "delivered_at": "2026-03-13T11:02:00",
+    "created_at": "2026-03-10T11:17:00",
+    "delivered_at": "2026-03-10T11:02:00",
     "delivery_evidence_id": "DEV-SHP-2026-000155",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1705,8 +1705,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000155"
   },
   {
-    "created_at": "2026-10-10T17:18:00",
-    "delivered_at": "2026-10-10T17:03:00",
+    "created_at": "2026-10-08T17:18:00",
+    "delivered_at": "2026-10-08T17:03:00",
     "delivery_evidence_id": "DEV-SHP-2026-000156",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1716,8 +1716,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000156"
   },
   {
-    "created_at": "2026-09-19T16:52:00",
-    "delivered_at": "2026-09-19T16:37:00",
+    "created_at": "2026-09-21T16:52:00",
+    "delivered_at": "2026-09-21T16:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000157",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1727,8 +1727,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000157"
   },
   {
-    "created_at": "2026-01-25T10:02:00",
-    "delivered_at": "2026-01-25T09:47:00",
+    "created_at": "2026-01-26T10:02:00",
+    "delivered_at": "2026-01-26T09:47:00",
     "delivery_evidence_id": "DEV-SHP-2026-000158",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "RESIDENTIAL",
@@ -1738,8 +1738,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000158"
   },
   {
-    "created_at": "2026-01-21T17:04:00",
-    "delivered_at": "2026-01-21T16:49:00",
+    "created_at": "2026-01-22T17:04:00",
+    "delivered_at": "2026-01-22T16:49:00",
     "delivery_evidence_id": "DEV-SHP-2026-000159",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1749,8 +1749,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000159"
   },
   {
-    "created_at": "2026-06-01T12:10:00",
-    "delivered_at": "2026-06-01T11:55:00",
+    "created_at": "2026-06-04T12:10:00",
+    "delivered_at": "2026-06-04T11:55:00",
     "delivery_evidence_id": "DEV-SHP-2026-000160",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1771,8 +1771,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000161"
   },
   {
-    "created_at": "2026-08-10T10:42:00",
-    "delivered_at": "2026-08-10T10:27:00",
+    "created_at": "2026-08-12T10:42:00",
+    "delivered_at": "2026-08-12T10:27:00",
     "delivery_evidence_id": "DEV-SHP-2026-000162",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1782,8 +1782,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000162"
   },
   {
-    "created_at": "2026-09-26T13:31:00",
-    "delivered_at": "2026-09-26T13:16:00",
+    "created_at": "2026-09-25T13:31:00",
+    "delivered_at": "2026-09-25T13:16:00",
     "delivery_evidence_id": "DEV-SHP-2026-000163",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1793,8 +1793,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000163"
   },
   {
-    "created_at": "2026-09-15T10:09:00",
-    "delivered_at": "2026-09-15T09:54:00",
+    "created_at": "2026-09-17T10:09:00",
+    "delivered_at": "2026-09-17T09:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000164",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "RESIDENTIAL",
@@ -1804,8 +1804,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000164"
   },
   {
-    "created_at": "2026-01-18T17:51:00",
-    "delivered_at": "2026-01-18T17:36:00",
+    "created_at": "2026-01-20T17:51:00",
+    "delivered_at": "2026-01-20T17:36:00",
     "delivery_evidence_id": "DEV-SHP-2026-000165",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1815,8 +1815,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000165"
   },
   {
-    "created_at": "2026-04-21T16:43:00",
-    "delivered_at": "2026-04-21T16:28:00",
+    "created_at": "2026-04-20T16:43:00",
+    "delivered_at": "2026-04-20T16:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000166",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1837,8 +1837,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000167"
   },
   {
-    "created_at": "2026-02-28T11:43:00",
-    "delivered_at": "2026-02-28T11:28:00",
+    "created_at": "2026-03-01T11:43:00",
+    "delivered_at": "2026-03-01T11:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000168",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1848,8 +1848,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000168"
   },
   {
-    "created_at": "2026-05-28T16:43:00",
-    "delivered_at": "2026-05-28T16:28:00",
+    "created_at": "2026-05-27T16:43:00",
+    "delivered_at": "2026-05-27T16:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000169",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1859,8 +1859,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000169"
   },
   {
-    "created_at": "2026-04-18T18:02:00",
-    "delivered_at": "2026-04-18T17:47:00",
+    "created_at": "2026-04-16T18:02:00",
+    "delivered_at": "2026-04-16T17:47:00",
     "delivery_evidence_id": "DEV-SHP-2026-000170",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -1870,8 +1870,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000170"
   },
   {
-    "created_at": "2026-03-22T17:15:00",
-    "delivered_at": "2026-03-22T17:00:00",
+    "created_at": "2026-03-20T17:15:00",
+    "delivered_at": "2026-03-20T17:00:00",
     "delivery_evidence_id": "DEV-SHP-2026-000171",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1881,8 +1881,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000171"
   },
   {
-    "created_at": "2026-03-08T16:12:00",
-    "delivered_at": "2026-03-08T15:57:00",
+    "created_at": "2026-03-09T16:12:00",
+    "delivered_at": "2026-03-09T15:57:00",
     "delivery_evidence_id": "DEV-SHP-2026-000172",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1892,8 +1892,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000172"
   },
   {
-    "created_at": "2026-09-22T16:52:00",
-    "delivered_at": "2026-09-22T16:37:00",
+    "created_at": "2026-09-24T16:52:00",
+    "delivered_at": "2026-09-24T16:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000173",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1903,8 +1903,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000173"
   },
   {
-    "created_at": "2026-07-14T11:03:00",
-    "delivered_at": "2026-07-14T10:48:00",
+    "created_at": "2026-07-16T11:03:00",
+    "delivered_at": "2026-07-16T10:48:00",
     "delivery_evidence_id": "DEV-SHP-2026-000174",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1925,8 +1925,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000175"
   },
   {
-    "created_at": "2026-03-07T12:14:00",
-    "delivered_at": "2026-03-07T11:59:00",
+    "created_at": "2026-03-06T12:14:00",
+    "delivered_at": "2026-03-06T11:59:00",
     "delivery_evidence_id": "DEV-SHP-2026-000176",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1936,8 +1936,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000176"
   },
   {
-    "created_at": "2026-02-16T09:47:00",
-    "delivered_at": "2026-02-16T09:32:00",
+    "created_at": "2026-02-17T09:47:00",
+    "delivered_at": "2026-02-17T09:32:00",
     "delivery_evidence_id": "DEV-SHP-2026-000177",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1947,8 +1947,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000177"
   },
   {
-    "created_at": "2026-08-12T12:23:00",
-    "delivered_at": "2026-08-12T12:08:00",
+    "created_at": "2026-08-10T12:23:00",
+    "delivered_at": "2026-08-10T12:08:00",
     "delivery_evidence_id": "DEV-SHP-2026-000178",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1958,8 +1958,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000178"
   },
   {
-    "created_at": "2026-05-05T13:58:00",
-    "delivered_at": "2026-05-05T13:43:00",
+    "created_at": "2026-05-06T13:58:00",
+    "delivered_at": "2026-05-06T13:43:00",
     "delivery_evidence_id": "DEV-SHP-2026-000179",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1969,8 +1969,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000179"
   },
   {
-    "created_at": "2026-09-24T12:18:00",
-    "delivered_at": "2026-09-24T12:03:00",
+    "created_at": "2026-09-27T12:18:00",
+    "delivered_at": "2026-09-27T12:03:00",
     "delivery_evidence_id": "DEV-SHP-2026-000180",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1980,8 +1980,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000180"
   },
   {
-    "created_at": "2026-05-05T10:47:00",
-    "delivered_at": "2026-05-05T10:32:00",
+    "created_at": "2026-05-07T10:47:00",
+    "delivered_at": "2026-05-07T10:32:00",
     "delivery_evidence_id": "DEV-SHP-2026-000181",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -1991,8 +1991,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000181"
   },
   {
-    "created_at": "2026-03-15T15:28:00",
-    "delivered_at": "2026-03-15T15:13:00",
+    "created_at": "2026-03-14T15:28:00",
+    "delivered_at": "2026-03-14T15:13:00",
     "delivery_evidence_id": "DEV-SHP-2026-000182",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2002,8 +2002,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000182"
   },
   {
-    "created_at": "2026-07-21T10:33:00",
-    "delivered_at": "2026-07-21T10:18:00",
+    "created_at": "2026-07-20T10:33:00",
+    "delivered_at": "2026-07-20T10:18:00",
     "delivery_evidence_id": "DEV-SHP-2026-000183",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2013,8 +2013,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000183"
   },
   {
-    "created_at": "2026-08-27T12:50:00",
-    "delivered_at": "2026-08-27T12:35:00",
+    "created_at": "2026-08-29T12:50:00",
+    "delivered_at": "2026-08-29T12:35:00",
     "delivery_evidence_id": "DEV-SHP-2026-000184",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2035,8 +2035,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000185"
   },
   {
-    "created_at": "2026-08-22T12:52:00",
-    "delivered_at": "2026-08-22T12:37:00",
+    "created_at": "2026-08-20T12:52:00",
+    "delivered_at": "2026-08-20T12:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000186",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2046,8 +2046,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000186"
   },
   {
-    "created_at": "2026-04-27T14:12:00",
-    "delivered_at": "2026-04-27T13:57:00",
+    "created_at": "2026-04-29T14:12:00",
+    "delivered_at": "2026-04-29T13:57:00",
     "delivery_evidence_id": "DEV-SHP-2026-000187",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -2057,8 +2057,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000187"
   },
   {
-    "created_at": "2026-05-16T10:24:00",
-    "delivered_at": "2026-05-16T10:09:00",
+    "created_at": "2026-05-20T10:24:00",
+    "delivered_at": "2026-05-20T10:09:00",
     "delivery_evidence_id": "DEV-SHP-2026-000188",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2090,8 +2090,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000190"
   },
   {
-    "created_at": "2026-02-01T13:52:00",
-    "delivered_at": "2026-02-01T13:37:00",
+    "created_at": "2026-01-29T13:52:00",
+    "delivered_at": "2026-01-29T13:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000191",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2101,8 +2101,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000191"
   },
   {
-    "created_at": "2026-01-10T15:27:00",
-    "delivered_at": "2026-01-10T15:12:00",
+    "created_at": "2026-01-09T15:27:00",
+    "delivered_at": "2026-01-09T15:12:00",
     "delivery_evidence_id": "DEV-SHP-2026-000192",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2112,8 +2112,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000192"
   },
   {
-    "created_at": "2026-02-15T12:47:00",
-    "delivered_at": "2026-02-15T12:32:00",
+    "created_at": "2026-02-17T12:47:00",
+    "delivered_at": "2026-02-17T12:32:00",
     "delivery_evidence_id": "DEV-SHP-2026-000193",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2123,8 +2123,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000193"
   },
   {
-    "created_at": "2026-09-10T15:54:00",
-    "delivered_at": "2026-09-10T15:39:00",
+    "created_at": "2026-09-08T15:54:00",
+    "delivered_at": "2026-09-08T15:39:00",
     "delivery_evidence_id": "DEV-SHP-2026-000194",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2145,8 +2145,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000195"
   },
   {
-    "created_at": "2026-05-15T12:42:00",
-    "delivered_at": "2026-05-15T12:27:00",
+    "created_at": "2026-05-13T12:42:00",
+    "delivered_at": "2026-05-13T12:27:00",
     "delivery_evidence_id": "DEV-SHP-2026-000196",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2156,8 +2156,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000196"
   },
   {
-    "created_at": "2026-01-23T09:30:00",
-    "delivered_at": "2026-01-23T09:15:00",
+    "created_at": "2026-01-22T09:30:00",
+    "delivered_at": "2026-01-22T09:15:00",
     "delivery_evidence_id": "DEV-SHP-2026-000197",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2178,8 +2178,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000198"
   },
   {
-    "created_at": "2026-02-09T17:16:00",
-    "delivered_at": "2026-02-09T17:01:00",
+    "created_at": "2026-02-10T17:16:00",
+    "delivered_at": "2026-02-10T17:01:00",
     "delivery_evidence_id": "DEV-SHP-2026-000199",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2211,8 +2211,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000201"
   },
   {
-    "created_at": "2026-09-14T13:36:00",
-    "delivered_at": "2026-09-14T13:21:00",
+    "created_at": "2026-09-16T13:36:00",
+    "delivered_at": "2026-09-16T13:21:00",
     "delivery_evidence_id": "DEV-SHP-2026-000202",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2222,8 +2222,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000202"
   },
   {
-    "created_at": "2026-09-16T09:28:00",
-    "delivered_at": "2026-09-16T09:13:00",
+    "created_at": "2026-09-17T09:28:00",
+    "delivered_at": "2026-09-17T09:13:00",
     "delivery_evidence_id": "DEV-SHP-2026-000203",
     "detention_minutes_recorded": 120,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2233,8 +2233,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000203"
   },
   {
-    "created_at": "2026-05-26T14:11:00",
-    "delivered_at": "2026-05-26T13:56:00",
+    "created_at": "2026-05-28T14:11:00",
+    "delivered_at": "2026-05-28T13:56:00",
     "delivery_evidence_id": "DEV-SHP-2026-000204",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2244,8 +2244,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000204"
   },
   {
-    "created_at": "2026-09-18T09:51:00",
-    "delivered_at": "2026-09-18T09:36:00",
+    "created_at": "2026-09-19T09:51:00",
+    "delivered_at": "2026-09-19T09:36:00",
     "delivery_evidence_id": "DEV-SHP-2026-000205",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2255,8 +2255,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000205"
   },
   {
-    "created_at": "2026-06-18T17:40:00",
-    "delivered_at": "2026-06-18T17:25:00",
+    "created_at": "2026-06-17T17:40:00",
+    "delivered_at": "2026-06-17T17:25:00",
     "delivery_evidence_id": "DEV-SHP-2026-000206",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2266,8 +2266,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000206"
   },
   {
-    "created_at": "2026-07-08T09:16:00",
-    "delivered_at": "2026-07-08T09:01:00",
+    "created_at": "2026-07-10T09:16:00",
+    "delivered_at": "2026-07-10T09:01:00",
     "delivery_evidence_id": "DEV-SHP-2026-000207",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2277,8 +2277,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000207"
   },
   {
-    "created_at": "2026-09-25T17:24:00",
-    "delivered_at": "2026-09-25T17:09:00",
+    "created_at": "2026-09-26T17:24:00",
+    "delivered_at": "2026-09-26T17:09:00",
     "delivery_evidence_id": "DEV-SHP-2026-000208",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2310,8 +2310,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000210"
   },
   {
-    "created_at": "2026-06-18T10:46:00",
-    "delivered_at": "2026-06-18T10:31:00",
+    "created_at": "2026-06-15T10:46:00",
+    "delivered_at": "2026-06-15T10:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000211",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2354,8 +2354,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000214"
   },
   {
-    "created_at": "2026-08-26T14:32:00",
-    "delivered_at": "2026-08-26T14:17:00",
+    "created_at": "2026-08-24T14:32:00",
+    "delivered_at": "2026-08-24T14:17:00",
     "delivery_evidence_id": "DEV-SHP-2026-000215",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2365,8 +2365,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000215"
   },
   {
-    "created_at": "2026-03-05T10:00:00",
-    "delivered_at": "2026-03-05T09:45:00",
+    "created_at": "2026-03-04T10:00:00",
+    "delivered_at": "2026-03-04T09:45:00",
     "delivery_evidence_id": "DEV-SHP-2026-000216",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2376,8 +2376,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000216"
   },
   {
-    "created_at": "2026-06-29T11:41:00",
-    "delivered_at": "2026-06-29T11:26:00",
+    "created_at": "2026-06-30T11:41:00",
+    "delivered_at": "2026-06-30T11:26:00",
     "delivery_evidence_id": "DEV-SHP-2026-000217",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2387,8 +2387,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000217"
   },
   {
-    "created_at": "2026-02-16T12:28:00",
-    "delivered_at": "2026-02-16T12:13:00",
+    "created_at": "2026-02-17T12:28:00",
+    "delivered_at": "2026-02-17T12:13:00",
     "delivery_evidence_id": "DEV-SHP-2026-000218",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2398,8 +2398,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000218"
   },
   {
-    "created_at": "2026-07-19T14:23:00",
-    "delivered_at": "2026-07-19T14:08:00",
+    "created_at": "2026-07-20T14:23:00",
+    "delivered_at": "2026-07-20T14:08:00",
     "delivery_evidence_id": "DEV-SHP-2026-000219",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2409,8 +2409,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000219"
   },
   {
-    "created_at": "2026-08-17T13:30:00",
-    "delivered_at": "2026-08-17T13:15:00",
+    "created_at": "2026-08-20T13:30:00",
+    "delivered_at": "2026-08-20T13:15:00",
     "delivery_evidence_id": "DEV-SHP-2026-000220",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2420,8 +2420,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000220"
   },
   {
-    "created_at": "2026-06-22T15:16:00",
-    "delivered_at": "2026-06-22T15:01:00",
+    "created_at": "2026-06-23T15:16:00",
+    "delivered_at": "2026-06-23T15:01:00",
     "delivery_evidence_id": "DEV-SHP-2026-000221",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2431,8 +2431,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000221"
   },
   {
-    "created_at": "2026-04-05T13:45:00",
-    "delivered_at": "2026-04-05T13:30:00",
+    "created_at": "2026-04-07T13:45:00",
+    "delivered_at": "2026-04-07T13:30:00",
     "delivery_evidence_id": "DEV-SHP-2026-000222",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2453,8 +2453,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000223"
   },
   {
-    "created_at": "2026-08-02T14:02:00",
-    "delivered_at": "2026-08-02T13:47:00",
+    "created_at": "2026-08-04T14:02:00",
+    "delivered_at": "2026-08-04T13:47:00",
     "delivery_evidence_id": "DEV-SHP-2026-000224",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2464,8 +2464,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000224"
   },
   {
-    "created_at": "2026-04-29T12:46:00",
-    "delivered_at": "2026-04-29T12:31:00",
+    "created_at": "2026-04-30T12:46:00",
+    "delivered_at": "2026-04-30T12:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000225",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2475,8 +2475,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000225"
   },
   {
-    "created_at": "2026-05-26T11:35:00",
-    "delivered_at": "2026-05-26T11:20:00",
+    "created_at": "2026-05-27T11:35:00",
+    "delivered_at": "2026-05-27T11:20:00",
     "delivery_evidence_id": "DEV-SHP-2026-000226",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2486,8 +2486,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000226"
   },
   {
-    "created_at": "2026-04-08T09:17:00",
-    "delivered_at": "2026-04-08T09:02:00",
+    "created_at": "2026-04-06T09:17:00",
+    "delivered_at": "2026-04-06T09:02:00",
     "delivery_evidence_id": "DEV-SHP-2026-000227",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2497,8 +2497,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000227"
   },
   {
-    "created_at": "2026-01-12T11:13:00",
-    "delivered_at": "2026-01-12T10:58:00",
+    "created_at": "2026-01-13T11:13:00",
+    "delivered_at": "2026-01-13T10:58:00",
     "delivery_evidence_id": "DEV-SHP-2026-000228",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2519,8 +2519,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000229"
   },
   {
-    "created_at": "2026-03-08T16:43:00",
-    "delivered_at": "2026-03-08T16:28:00",
+    "created_at": "2026-03-07T16:43:00",
+    "delivered_at": "2026-03-07T16:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000230",
     "detention_minutes_recorded": 15,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2530,8 +2530,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000230"
   },
   {
-    "created_at": "2026-01-16T12:24:00",
-    "delivered_at": "2026-01-16T12:09:00",
+    "created_at": "2026-01-14T12:24:00",
+    "delivered_at": "2026-01-14T12:09:00",
     "delivery_evidence_id": "DEV-SHP-2026-000231",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2541,8 +2541,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000231"
   },
   {
-    "created_at": "2026-03-02T14:26:00",
-    "delivered_at": "2026-03-02T14:11:00",
+    "created_at": "2026-03-03T14:26:00",
+    "delivered_at": "2026-03-03T14:11:00",
     "delivery_evidence_id": "DEV-SHP-2026-000232",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2552,8 +2552,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000232"
   },
   {
-    "created_at": "2026-01-13T09:46:00",
-    "delivered_at": "2026-01-13T09:31:00",
+    "created_at": "2026-01-15T09:46:00",
+    "delivered_at": "2026-01-15T09:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000233",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2563,8 +2563,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000233"
   },
   {
-    "created_at": "2026-09-08T10:43:00",
-    "delivered_at": "2026-09-08T10:28:00",
+    "created_at": "2026-09-11T10:43:00",
+    "delivered_at": "2026-09-11T10:28:00",
     "delivery_evidence_id": "DEV-SHP-2026-000234",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2574,8 +2574,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000234"
   },
   {
-    "created_at": "2026-09-02T17:05:00",
-    "delivered_at": "2026-09-02T16:50:00",
+    "created_at": "2026-09-03T17:05:00",
+    "delivered_at": "2026-09-03T16:50:00",
     "delivery_evidence_id": "DEV-SHP-2026-000235",
     "detention_minutes_recorded": 180,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2585,8 +2585,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000235"
   },
   {
-    "created_at": "2026-02-19T13:05:00",
-    "delivered_at": "2026-02-19T12:50:00",
+    "created_at": "2026-02-17T13:05:00",
+    "delivered_at": "2026-02-17T12:50:00",
     "delivery_evidence_id": "DEV-SHP-2026-000236",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2629,8 +2629,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000239"
   },
   {
-    "created_at": "2026-03-04T16:27:00",
-    "delivered_at": "2026-03-04T16:12:00",
+    "created_at": "2026-03-07T16:27:00",
+    "delivered_at": "2026-03-07T16:12:00",
     "delivery_evidence_id": "DEV-SHP-2026-000240",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2662,8 +2662,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000242"
   },
   {
-    "created_at": "2026-01-10T17:32:00",
-    "delivered_at": "2026-01-10T17:17:00",
+    "created_at": "2026-01-11T17:32:00",
+    "delivered_at": "2026-01-11T17:17:00",
     "delivery_evidence_id": "DEV-SHP-2026-000243",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2673,8 +2673,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000243"
   },
   {
-    "created_at": "2026-06-08T12:58:00",
-    "delivered_at": "2026-06-08T12:43:00",
+    "created_at": "2026-06-10T12:58:00",
+    "delivered_at": "2026-06-10T12:43:00",
     "delivery_evidence_id": "DEV-SHP-2026-000244",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2684,8 +2684,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000244"
   },
   {
-    "created_at": "2026-07-01T10:54:00",
-    "delivered_at": "2026-07-01T10:39:00",
+    "created_at": "2026-06-29T10:54:00",
+    "delivered_at": "2026-06-29T10:39:00",
     "delivery_evidence_id": "DEV-SHP-2026-000245",
     "detention_minutes_recorded": 30,
     "facility_dock_type": "STANDARD_DOCK",
@@ -2695,8 +2695,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000245"
   },
   {
-    "created_at": "2026-06-17T17:53:00",
-    "delivered_at": "2026-06-17T17:38:00",
+    "created_at": "2026-06-15T17:53:00",
+    "delivered_at": "2026-06-15T17:38:00",
     "delivery_evidence_id": "DEV-SHP-2026-000246",
     "detention_minutes_recorded": 45,
     "facility_dock_type": "RESIDENTIAL",
@@ -2706,8 +2706,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000246"
   },
   {
-    "created_at": "2026-07-22T17:09:00",
-    "delivered_at": "2026-07-22T16:54:00",
+    "created_at": "2026-07-24T17:09:00",
+    "delivered_at": "2026-07-24T16:54:00",
     "delivery_evidence_id": "DEV-SHP-2026-000247",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "RESIDENTIAL",
@@ -2717,8 +2717,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000247"
   },
   {
-    "created_at": "2026-05-21T11:52:00",
-    "delivered_at": "2026-05-21T11:37:00",
+    "created_at": "2026-05-24T11:52:00",
+    "delivered_at": "2026-05-24T11:37:00",
     "delivery_evidence_id": "DEV-SHP-2026-000248",
     "detention_minutes_recorded": 0,
     "facility_dock_type": "GROUND_LEVEL",
@@ -2739,8 +2739,8 @@
     "signed_pod_ref": "POD-SIG-SHP-2026-000249"
   },
   {
-    "created_at": "2026-01-21T15:46:00",
-    "delivered_at": "2026-01-21T15:31:00",
+    "created_at": "2026-01-20T15:46:00",
+    "delivered_at": "2026-01-20T15:31:00",
     "delivery_evidence_id": "DEV-SHP-2026-000250",
     "detention_minutes_recorded": 150,
     "facility_dock_type": "STANDARD_DOCK",

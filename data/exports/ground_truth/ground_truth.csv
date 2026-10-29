@@ -1,18 +1,18 @@
 ground_truth_id,affected_entity_type,affected_entity_id,issue_type,expected_decision,expected_exception_type,expected_variance_amount,anomaly_injection_id,scenario_description
 GTL-2026-000001,FreightInvoice,FINV-2026-000001,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000002,FreightInvoice,FINV-2026-000002,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000003,FreightInvoice,FINV-2026-000003,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000003,Nonexistent external shipment reference staged on invoice
+GTL-2026-000003,FreightInvoice,FINV-2026-000003,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,1568.33,ANOM-2026-000003,Nonexistent external shipment reference staged on invoice
 GTL-2026-000004,FreightInvoice,FINV-2026-000004,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000005,FreightInvoice,FINV-2026-000005,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,25.5,ANOM-2026-000005,Linehaul tariff schedule expired before shipment date
+GTL-2026-000005,FreightInvoice,FINV-2026-000005,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,117.59,ANOM-2026-000005,Linehaul tariff schedule expired before shipment date
 GTL-2026-000006,FreightInvoice,FINV-2026-000006,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000007,FreightInvoice,FINV-2026-000007,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,13.6,ANOM-2026-000007,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000007,FreightInvoice,FINV-2026-000007,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,262.49,ANOM-2026-000007,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000008,FreightInvoice,FINV-2026-000008,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000009,FreightInvoice,FINV-2026-000009,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000010,FreightInvoice,FINV-2026-000010,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000010,Secondary duplicate fuel surcharge assessed
+GTL-2026-000010,FreightInvoice,FINV-2026-000010,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,378.9,ANOM-2026-000010,Secondary duplicate fuel surcharge assessed
 GTL-2026-000011,FreightInvoice,FINV-2026-000011,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000012,FreightInvoice,FINV-2026-000012,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000013,FreightInvoice,FINV-2026-000013,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000014,FreightInvoice,FINV-2026-000014,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,34.0,ANOM-2026-000014,Volumetric density calculation discrepancy
+GTL-2026-000014,FreightInvoice,FINV-2026-000014,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,96.76,ANOM-2026-000014,Volumetric density calculation discrepancy
 GTL-2026-000015,FreightInvoice,FINV-2026-000015,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000016,FreightInvoice,FINV-2026-000016,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000017,FreightInvoice,FINV-2026-000017,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,85.0,ANOM-2026-000017,Accessorial billed without required operational proof
@@ -21,18 +21,18 @@ GTL-2026-000019,FreightInvoice,FINV-2026-000019,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000020,FreightInvoice,FINV-2026-000020,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000021,FreightInvoice,FINV-2026-000021,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000022,FreightInvoice,FINV-2026-000022,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000023,FreightInvoice,FINV-2026-000023,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000023,Nonexistent external shipment reference staged on invoice
+GTL-2026-000023,FreightInvoice,FINV-2026-000023,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,3012.24,ANOM-2026-000023,Nonexistent external shipment reference staged on invoice
 GTL-2026-000024,FreightInvoice,FINV-2026-000024,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000025,FreightInvoice,FINV-2026-000025,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,21.25,ANOM-2026-000025,Linehaul tariff schedule expired before shipment date
+GTL-2026-000025,FreightInvoice,FINV-2026-000025,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,424.13,ANOM-2026-000025,Linehaul tariff schedule expired before shipment date
 GTL-2026-000026,FreightInvoice,FINV-2026-000026,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000027,FreightInvoice,FINV-2026-000027,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,19.55,ANOM-2026-000027,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000027,FreightInvoice,FINV-2026-000027,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,261.57,ANOM-2026-000027,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000028,FreightInvoice,FINV-2026-000028,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000029,FreightInvoice,FINV-2026-000029,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000030,FreightInvoice,FINV-2026-000030,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000030,Secondary duplicate fuel surcharge assessed
+GTL-2026-000030,FreightInvoice,FINV-2026-000030,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,550.29,ANOM-2026-000030,Secondary duplicate fuel surcharge assessed
 GTL-2026-000031,FreightInvoice,FINV-2026-000031,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000032,FreightInvoice,FINV-2026-000032,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000033,FreightInvoice,FINV-2026-000033,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000034,FreightInvoice,FINV-2026-000034,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,51.0,ANOM-2026-000034,Volumetric density calculation discrepancy
+GTL-2026-000034,FreightInvoice,FINV-2026-000034,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,247.75,ANOM-2026-000034,Volumetric density calculation discrepancy
 GTL-2026-000035,FreightInvoice,FINV-2026-000035,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000036,FreightInvoice,FINV-2026-000036,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000037,FreightInvoice,FINV-2026-000037,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,85.0,ANOM-2026-000037,Accessorial billed without required operational proof
@@ -41,18 +41,18 @@ GTL-2026-000039,FreightInvoice,FINV-2026-000039,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000040,FreightInvoice,FINV-2026-000040,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000041,FreightInvoice,FINV-2026-000041,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000042,FreightInvoice,FINV-2026-000042,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000043,FreightInvoice,FINV-2026-000043,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000043,Nonexistent external shipment reference staged on invoice
+GTL-2026-000043,FreightInvoice,FINV-2026-000043,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,3039.74,ANOM-2026-000043,Nonexistent external shipment reference staged on invoice
 GTL-2026-000044,FreightInvoice,FINV-2026-000044,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000045,FreightInvoice,FINV-2026-000045,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,25.5,ANOM-2026-000045,Linehaul tariff schedule expired before shipment date
+GTL-2026-000045,FreightInvoice,FINV-2026-000045,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,102.54,ANOM-2026-000045,Linehaul tariff schedule expired before shipment date
 GTL-2026-000046,FreightInvoice,FINV-2026-000046,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000047,FreightInvoice,FINV-2026-000047,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,23.8,ANOM-2026-000047,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000047,FreightInvoice,FINV-2026-000047,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,80.36,ANOM-2026-000047,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000048,FreightInvoice,FINV-2026-000048,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000049,FreightInvoice,FINV-2026-000049,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000050,FreightInvoice,FINV-2026-000050,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000050,Secondary duplicate fuel surcharge assessed
+GTL-2026-000050,FreightInvoice,FINV-2026-000050,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,491.53,ANOM-2026-000050,Secondary duplicate fuel surcharge assessed
 GTL-2026-000051,FreightInvoice,FINV-2026-000051,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000052,FreightInvoice,FINV-2026-000052,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000053,FreightInvoice,FINV-2026-000053,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000054,FreightInvoice,FINV-2026-000054,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,34.0,ANOM-2026-000054,Volumetric density calculation discrepancy
+GTL-2026-000054,FreightInvoice,FINV-2026-000054,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,1183.75,ANOM-2026-000054,Volumetric density calculation discrepancy
 GTL-2026-000055,FreightInvoice,FINV-2026-000055,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000056,FreightInvoice,FINV-2026-000056,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000057,FreightInvoice,FINV-2026-000057,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,150.0,ANOM-2026-000057,Accessorial billed without required operational proof
@@ -61,18 +61,18 @@ GTL-2026-000059,FreightInvoice,FINV-2026-000059,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000060,FreightInvoice,FINV-2026-000060,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000061,FreightInvoice,FINV-2026-000061,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000062,FreightInvoice,FINV-2026-000062,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000063,FreightInvoice,FINV-2026-000063,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000063,Nonexistent external shipment reference staged on invoice
+GTL-2026-000063,FreightInvoice,FINV-2026-000063,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,3068.0,ANOM-2026-000063,Nonexistent external shipment reference staged on invoice
 GTL-2026-000064,FreightInvoice,FINV-2026-000064,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000065,FreightInvoice,FINV-2026-000065,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,21.25,ANOM-2026-000065,Linehaul tariff schedule expired before shipment date
+GTL-2026-000065,FreightInvoice,FINV-2026-000065,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,437.51,ANOM-2026-000065,Linehaul tariff schedule expired before shipment date
 GTL-2026-000066,FreightInvoice,FINV-2026-000066,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000067,FreightInvoice,FINV-2026-000067,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,22.95,ANOM-2026-000067,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000067,FreightInvoice,FINV-2026-000067,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,174.29,ANOM-2026-000067,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000068,FreightInvoice,FINV-2026-000068,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000069,FreightInvoice,FINV-2026-000069,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000070,FreightInvoice,FINV-2026-000070,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000070,Secondary duplicate fuel surcharge assessed
+GTL-2026-000070,FreightInvoice,FINV-2026-000070,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,75.18,ANOM-2026-000070,Secondary duplicate fuel surcharge assessed
 GTL-2026-000071,FreightInvoice,FINV-2026-000071,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000072,FreightInvoice,FINV-2026-000072,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000073,FreightInvoice,FINV-2026-000073,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000074,FreightInvoice,FINV-2026-000074,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,34.0,ANOM-2026-000074,Volumetric density calculation discrepancy
+GTL-2026-000074,FreightInvoice,FINV-2026-000074,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,182.25,ANOM-2026-000074,Volumetric density calculation discrepancy
 GTL-2026-000075,FreightInvoice,FINV-2026-000075,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000076,FreightInvoice,FINV-2026-000076,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000077,FreightInvoice,FINV-2026-000077,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,75.0,ANOM-2026-000077,Accessorial billed without required operational proof
@@ -81,18 +81,18 @@ GTL-2026-000079,FreightInvoice,FINV-2026-000079,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000080,FreightInvoice,FINV-2026-000080,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000081,FreightInvoice,FINV-2026-000081,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000082,FreightInvoice,FINV-2026-000082,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000083,FreightInvoice,FINV-2026-000083,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000083,Nonexistent external shipment reference staged on invoice
+GTL-2026-000083,FreightInvoice,FINV-2026-000083,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,684.6,ANOM-2026-000083,Nonexistent external shipment reference staged on invoice
 GTL-2026-000084,FreightInvoice,FINV-2026-000084,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000085,FreightInvoice,FINV-2026-000085,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,25.5,ANOM-2026-000085,Linehaul tariff schedule expired before shipment date
+GTL-2026-000085,FreightInvoice,FINV-2026-000085,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,601.04,ANOM-2026-000085,Linehaul tariff schedule expired before shipment date
 GTL-2026-000086,FreightInvoice,FINV-2026-000086,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000087,FreightInvoice,FINV-2026-000087,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,18.7,ANOM-2026-000087,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000087,FreightInvoice,FINV-2026-000087,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,420.63,ANOM-2026-000087,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000088,FreightInvoice,FINV-2026-000088,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000089,FreightInvoice,FINV-2026-000089,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000090,FreightInvoice,FINV-2026-000090,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000090,Secondary duplicate fuel surcharge assessed
+GTL-2026-000090,FreightInvoice,FINV-2026-000090,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,481.48,ANOM-2026-000090,Secondary duplicate fuel surcharge assessed
 GTL-2026-000091,FreightInvoice,FINV-2026-000091,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000092,FreightInvoice,FINV-2026-000092,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000093,FreightInvoice,FINV-2026-000093,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000094,FreightInvoice,FINV-2026-000094,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,34.0,ANOM-2026-000094,Volumetric density calculation discrepancy
+GTL-2026-000094,FreightInvoice,FINV-2026-000094,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,465.41,ANOM-2026-000094,Volumetric density calculation discrepancy
 GTL-2026-000095,FreightInvoice,FINV-2026-000095,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000096,FreightInvoice,FINV-2026-000096,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000097,FreightInvoice,FINV-2026-000097,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,85.0,ANOM-2026-000097,Accessorial billed without required operational proof
@@ -101,18 +101,18 @@ GTL-2026-000099,FreightInvoice,FINV-2026-000099,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000100,FreightInvoice,FINV-2026-000100,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000101,FreightInvoice,FINV-2026-000101,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000102,FreightInvoice,FINV-2026-000102,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000103,FreightInvoice,FINV-2026-000103,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,171.9,ANOM-2026-000103,Nonexistent external shipment reference staged on invoice
+GTL-2026-000103,FreightInvoice,FINV-2026-000103,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,1573.36,ANOM-2026-000103,Nonexistent external shipment reference staged on invoice
 GTL-2026-000104,FreightInvoice,FINV-2026-000104,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000105,FreightInvoice,FINV-2026-000105,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,22.1,ANOM-2026-000105,Linehaul tariff schedule expired before shipment date
+GTL-2026-000105,FreightInvoice,FINV-2026-000105,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,336.71,ANOM-2026-000105,Linehaul tariff schedule expired before shipment date
 GTL-2026-000106,FreightInvoice,FINV-2026-000106,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000107,FreightInvoice,FINV-2026-000107,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,18.7,ANOM-2026-000107,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000107,FreightInvoice,FINV-2026-000107,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,244.76,ANOM-2026-000107,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000108,FreightInvoice,FINV-2026-000108,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000109,FreightInvoice,FINV-2026-000109,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000110,FreightInvoice,FINV-2026-000110,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000110,Secondary duplicate fuel surcharge assessed
+GTL-2026-000110,FreightInvoice,FINV-2026-000110,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,223.4,ANOM-2026-000110,Secondary duplicate fuel surcharge assessed
 GTL-2026-000111,FreightInvoice,FINV-2026-000111,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000112,FreightInvoice,FINV-2026-000112,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000113,FreightInvoice,FINV-2026-000113,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000114,FreightInvoice,FINV-2026-000114,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,51.0,ANOM-2026-000114,Volumetric density calculation discrepancy
+GTL-2026-000114,FreightInvoice,FINV-2026-000114,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,1886.32,ANOM-2026-000114,Volumetric density calculation discrepancy
 GTL-2026-000115,FreightInvoice,FINV-2026-000115,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000116,FreightInvoice,FINV-2026-000116,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000117,FreightInvoice,FINV-2026-000117,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,75.0,ANOM-2026-000117,Accessorial billed without required operational proof
@@ -121,18 +121,18 @@ GTL-2026-000119,FreightInvoice,FINV-2026-000119,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000120,FreightInvoice,FINV-2026-000120,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000121,FreightInvoice,FINV-2026-000121,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000122,FreightInvoice,FINV-2026-000122,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000123,FreightInvoice,FINV-2026-000123,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,96.9,ANOM-2026-000123,Nonexistent external shipment reference staged on invoice
+GTL-2026-000123,FreightInvoice,FINV-2026-000123,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,1406.79,ANOM-2026-000123,Nonexistent external shipment reference staged on invoice
 GTL-2026-000124,FreightInvoice,FINV-2026-000124,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000125,FreightInvoice,FINV-2026-000125,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,24.65,ANOM-2026-000125,Linehaul tariff schedule expired before shipment date
+GTL-2026-000125,FreightInvoice,FINV-2026-000125,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,497.07,ANOM-2026-000125,Linehaul tariff schedule expired before shipment date
 GTL-2026-000126,FreightInvoice,FINV-2026-000126,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000127,FreightInvoice,FINV-2026-000127,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,14.45,ANOM-2026-000127,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000127,FreightInvoice,FINV-2026-000127,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,246.88,ANOM-2026-000127,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000128,FreightInvoice,FINV-2026-000128,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000129,FreightInvoice,FINV-2026-000129,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000130,FreightInvoice,FINV-2026-000130,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000130,Secondary duplicate fuel surcharge assessed
+GTL-2026-000130,FreightInvoice,FINV-2026-000130,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,211.62,ANOM-2026-000130,Secondary duplicate fuel surcharge assessed
 GTL-2026-000131,FreightInvoice,FINV-2026-000131,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000132,FreightInvoice,FINV-2026-000132,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000133,FreightInvoice,FINV-2026-000133,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000134,FreightInvoice,FINV-2026-000134,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,42.5,ANOM-2026-000134,Volumetric density calculation discrepancy
+GTL-2026-000134,FreightInvoice,FINV-2026-000134,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,1196.36,ANOM-2026-000134,Volumetric density calculation discrepancy
 GTL-2026-000135,FreightInvoice,FINV-2026-000135,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000136,FreightInvoice,FINV-2026-000136,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000137,FreightInvoice,FINV-2026-000137,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,150.0,ANOM-2026-000137,Accessorial billed without required operational proof
@@ -141,18 +141,18 @@ GTL-2026-000139,FreightInvoice,FINV-2026-000139,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000140,FreightInvoice,FINV-2026-000140,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000141,FreightInvoice,FINV-2026-000141,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000142,FreightInvoice,FINV-2026-000142,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000143,FreightInvoice,FINV-2026-000143,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,211.9,ANOM-2026-000143,Nonexistent external shipment reference staged on invoice
+GTL-2026-000143,FreightInvoice,FINV-2026-000143,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,2554.49,ANOM-2026-000143,Nonexistent external shipment reference staged on invoice
 GTL-2026-000144,FreightInvoice,FINV-2026-000144,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000145,FreightInvoice,FINV-2026-000145,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,27.2,ANOM-2026-000145,Linehaul tariff schedule expired before shipment date
+GTL-2026-000145,FreightInvoice,FINV-2026-000145,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,449.46,ANOM-2026-000145,Linehaul tariff schedule expired before shipment date
 GTL-2026-000146,FreightInvoice,FINV-2026-000146,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000147,FreightInvoice,FINV-2026-000147,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,23.8,ANOM-2026-000147,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000147,FreightInvoice,FINV-2026-000147,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,266.6,ANOM-2026-000147,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000148,FreightInvoice,FINV-2026-000148,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000149,FreightInvoice,FINV-2026-000149,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000150,FreightInvoice,FINV-2026-000150,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000150,Secondary duplicate fuel surcharge assessed
+GTL-2026-000150,FreightInvoice,FINV-2026-000150,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,39.88,ANOM-2026-000150,Secondary duplicate fuel surcharge assessed
 GTL-2026-000151,FreightInvoice,FINV-2026-000151,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000152,FreightInvoice,FINV-2026-000152,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000153,FreightInvoice,FINV-2026-000153,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000154,FreightInvoice,FINV-2026-000154,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,42.5,ANOM-2026-000154,Volumetric density calculation discrepancy
+GTL-2026-000154,FreightInvoice,FINV-2026-000154,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,48.84,ANOM-2026-000154,Volumetric density calculation discrepancy
 GTL-2026-000155,FreightInvoice,FINV-2026-000155,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000156,FreightInvoice,FINV-2026-000156,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000157,FreightInvoice,FINV-2026-000157,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,150.0,ANOM-2026-000157,Accessorial billed without required operational proof
@@ -161,18 +161,18 @@ GTL-2026-000159,FreightInvoice,FINV-2026-000159,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000160,FreightInvoice,FINV-2026-000160,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000161,FreightInvoice,FINV-2026-000161,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000162,FreightInvoice,FINV-2026-000162,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000163,FreightInvoice,FINV-2026-000163,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,3079.36,ANOM-2026-000163,Nonexistent external shipment reference staged on invoice
+GTL-2026-000163,FreightInvoice,FINV-2026-000163,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,3136.88,ANOM-2026-000163,Nonexistent external shipment reference staged on invoice
 GTL-2026-000164,FreightInvoice,FINV-2026-000164,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000165,FreightInvoice,FINV-2026-000165,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,28.9,ANOM-2026-000165,Linehaul tariff schedule expired before shipment date
+GTL-2026-000165,FreightInvoice,FINV-2026-000165,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,567.92,ANOM-2026-000165,Linehaul tariff schedule expired before shipment date
 GTL-2026-000166,FreightInvoice,FINV-2026-000166,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000167,FreightInvoice,FINV-2026-000167,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,23.8,ANOM-2026-000167,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000167,FreightInvoice,FINV-2026-000167,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,126.9,ANOM-2026-000167,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000168,FreightInvoice,FINV-2026-000168,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000169,FreightInvoice,FINV-2026-000169,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000170,FreightInvoice,FINV-2026-000170,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000170,Secondary duplicate fuel surcharge assessed
+GTL-2026-000170,FreightInvoice,FINV-2026-000170,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,277.04,ANOM-2026-000170,Secondary duplicate fuel surcharge assessed
 GTL-2026-000171,FreightInvoice,FINV-2026-000171,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000172,FreightInvoice,FINV-2026-000172,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000173,FreightInvoice,FINV-2026-000173,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000174,FreightInvoice,FINV-2026-000174,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,34.0,ANOM-2026-000174,Volumetric density calculation discrepancy
+GTL-2026-000174,FreightInvoice,FINV-2026-000174,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,1097.64,ANOM-2026-000174,Volumetric density calculation discrepancy
 GTL-2026-000175,FreightInvoice,FINV-2026-000175,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000176,FreightInvoice,FINV-2026-000176,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000177,FreightInvoice,FINV-2026-000177,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,150.0,ANOM-2026-000177,Accessorial billed without required operational proof
@@ -181,18 +181,18 @@ GTL-2026-000179,FreightInvoice,FINV-2026-000179,DUPLICATE_INVOICE,PASS,DUPLICATE
 GTL-2026-000180,FreightInvoice,FINV-2026-000180,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000181,FreightInvoice,FINV-2026-000181,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000182,FreightInvoice,FINV-2026-000182,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000183,FreightInvoice,FINV-2026-000183,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,176.9,ANOM-2026-000183,Nonexistent external shipment reference staged on invoice
+GTL-2026-000183,FreightInvoice,FINV-2026-000183,UNKNOWN_SHIPMENT_REF,FAIL,UNMATCHED_SHIPMENT,2883.77,ANOM-2026-000183,Nonexistent external shipment reference staged on invoice
 GTL-2026-000184,FreightInvoice,FINV-2026-000184,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000185,FreightInvoice,FINV-2026-000185,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,17.85,ANOM-2026-000185,Linehaul tariff schedule expired before shipment date
+GTL-2026-000185,FreightInvoice,FINV-2026-000185,EXPIRED_RATE_CARD,FAIL,BASE_RATE_MISMATCH,211.0,ANOM-2026-000185,Linehaul tariff schedule expired before shipment date
 GTL-2026-000186,FreightInvoice,FINV-2026-000186,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000187,FreightInvoice,FINV-2026-000187,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,23.8,ANOM-2026-000187,Shipment misclassified into wrong weight tier pricing
+GTL-2026-000187,FreightInvoice,FINV-2026-000187,INCORRECT_WEIGHT_TIER,FAIL,WEIGHT_DISCREPANCY,405.01,ANOM-2026-000187,Shipment misclassified into wrong weight tier pricing
 GTL-2026-000188,FreightInvoice,FINV-2026-000188,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000189,FreightInvoice,FINV-2026-000189,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000190,FreightInvoice,FINV-2026-000190,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,11.9,ANOM-2026-000190,Secondary duplicate fuel surcharge assessed
+GTL-2026-000190,FreightInvoice,FINV-2026-000190,DUPLICATE_FUEL_SURCHARGE,FAIL,DUPLICATE_BILLING,332.57,ANOM-2026-000190,Secondary duplicate fuel surcharge assessed
 GTL-2026-000191,FreightInvoice,FINV-2026-000191,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000192,FreightInvoice,FINV-2026-000192,EXCESSIVE_CREDIT_NOTE,PASS,INVALID_CREDIT_NOTE,0.0,NONE,Credit note amount exceeds approved dispute limit
 GTL-2026-000193,FreightInvoice,FINV-2026-000193,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
-GTL-2026-000194,FreightInvoice,FINV-2026-000194,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,42.5,ANOM-2026-000194,Volumetric density calculation discrepancy
+GTL-2026-000194,FreightInvoice,FINV-2026-000194,DIMENSIONAL_WEIGHT_DISCREPANCY,FAIL,WEIGHT_DISCREPANCY,1032.82,ANOM-2026-000194,Volumetric density calculation discrepancy
 GTL-2026-000195,FreightInvoice,FINV-2026-000195,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000196,FreightInvoice,FINV-2026-000196,NORMAL,PASS,NONE,0.0,NONE,Clean baseline invoice matching contract
 GTL-2026-000197,FreightInvoice,FINV-2026-000197,UNAUTHORIZED_ACCESSORIAL,FAIL,UNAUTHORIZED_ACCESSORIAL,75.0,ANOM-2026-000197,Accessorial billed without required operational proof

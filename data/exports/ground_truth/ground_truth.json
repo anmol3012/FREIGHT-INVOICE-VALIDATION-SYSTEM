@@ -27,7 +27,7 @@
     "anomaly_injection_id": "ANOM-2026-000003",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 1568.33,
     "ground_truth_id": "GTL-2026-000003",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -49,7 +49,7 @@
     "anomaly_injection_id": "ANOM-2026-000005",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 25.5,
+    "expected_variance_amount": 117.59,
     "ground_truth_id": "GTL-2026-000005",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -71,7 +71,7 @@
     "anomaly_injection_id": "ANOM-2026-000007",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 13.6,
+    "expected_variance_amount": 262.49,
     "ground_truth_id": "GTL-2026-000007",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -104,7 +104,7 @@
     "anomaly_injection_id": "ANOM-2026-000010",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 378.9,
     "ground_truth_id": "GTL-2026-000010",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -148,7 +148,7 @@
     "anomaly_injection_id": "ANOM-2026-000014",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 34.0,
+    "expected_variance_amount": 96.76,
     "ground_truth_id": "GTL-2026-000014",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -247,7 +247,7 @@
     "anomaly_injection_id": "ANOM-2026-000023",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 3012.24,
     "ground_truth_id": "GTL-2026-000023",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -269,7 +269,7 @@
     "anomaly_injection_id": "ANOM-2026-000025",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 21.25,
+    "expected_variance_amount": 424.13,
     "ground_truth_id": "GTL-2026-000025",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -291,7 +291,7 @@
     "anomaly_injection_id": "ANOM-2026-000027",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 19.55,
+    "expected_variance_amount": 261.57,
     "ground_truth_id": "GTL-2026-000027",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -324,7 +324,7 @@
     "anomaly_injection_id": "ANOM-2026-000030",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 550.29,
     "ground_truth_id": "GTL-2026-000030",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -368,7 +368,7 @@
     "anomaly_injection_id": "ANOM-2026-000034",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 51.0,
+    "expected_variance_amount": 247.75,
     "ground_truth_id": "GTL-2026-000034",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -467,7 +467,7 @@
     "anomaly_injection_id": "ANOM-2026-000043",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 3039.74,
     "ground_truth_id": "GTL-2026-000043",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -489,7 +489,7 @@
     "anomaly_injection_id": "ANOM-2026-000045",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 25.5,
+    "expected_variance_amount": 102.54,
     "ground_truth_id": "GTL-2026-000045",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -511,7 +511,7 @@
     "anomaly_injection_id": "ANOM-2026-000047",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 23.8,
+    "expected_variance_amount": 80.36,
     "ground_truth_id": "GTL-2026-000047",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -544,7 +544,7 @@
     "anomaly_injection_id": "ANOM-2026-000050",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 491.53,
     "ground_truth_id": "GTL-2026-000050",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -588,7 +588,7 @@
     "anomaly_injection_id": "ANOM-2026-000054",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 34.0,
+    "expected_variance_amount": 1183.75,
     "ground_truth_id": "GTL-2026-000054",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -687,7 +687,7 @@
     "anomaly_injection_id": "ANOM-2026-000063",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 3068.0,
     "ground_truth_id": "GTL-2026-000063",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -709,7 +709,7 @@
     "anomaly_injection_id": "ANOM-2026-000065",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 21.25,
+    "expected_variance_amount": 437.51,
     "ground_truth_id": "GTL-2026-000065",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -731,7 +731,7 @@
     "anomaly_injection_id": "ANOM-2026-000067",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 22.95,
+    "expected_variance_amount": 174.29,
     "ground_truth_id": "GTL-2026-000067",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -764,7 +764,7 @@
     "anomaly_injection_id": "ANOM-2026-000070",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 75.18,
     "ground_truth_id": "GTL-2026-000070",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -808,7 +808,7 @@
     "anomaly_injection_id": "ANOM-2026-000074",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 34.0,
+    "expected_variance_amount": 182.25,
     "ground_truth_id": "GTL-2026-000074",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -907,7 +907,7 @@
     "anomaly_injection_id": "ANOM-2026-000083",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 684.6,
     "ground_truth_id": "GTL-2026-000083",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -929,7 +929,7 @@
     "anomaly_injection_id": "ANOM-2026-000085",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 25.5,
+    "expected_variance_amount": 601.04,
     "ground_truth_id": "GTL-2026-000085",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -951,7 +951,7 @@
     "anomaly_injection_id": "ANOM-2026-000087",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 18.7,
+    "expected_variance_amount": 420.63,
     "ground_truth_id": "GTL-2026-000087",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -984,7 +984,7 @@
     "anomaly_injection_id": "ANOM-2026-000090",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 481.48,
     "ground_truth_id": "GTL-2026-000090",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -1028,7 +1028,7 @@
     "anomaly_injection_id": "ANOM-2026-000094",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 34.0,
+    "expected_variance_amount": 465.41,
     "ground_truth_id": "GTL-2026-000094",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -1127,7 +1127,7 @@
     "anomaly_injection_id": "ANOM-2026-000103",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 171.9,
+    "expected_variance_amount": 1573.36,
     "ground_truth_id": "GTL-2026-000103",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -1149,7 +1149,7 @@
     "anomaly_injection_id": "ANOM-2026-000105",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 22.1,
+    "expected_variance_amount": 336.71,
     "ground_truth_id": "GTL-2026-000105",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -1171,7 +1171,7 @@
     "anomaly_injection_id": "ANOM-2026-000107",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 18.7,
+    "expected_variance_amount": 244.76,
     "ground_truth_id": "GTL-2026-000107",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -1204,7 +1204,7 @@
     "anomaly_injection_id": "ANOM-2026-000110",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 223.4,
     "ground_truth_id": "GTL-2026-000110",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -1248,7 +1248,7 @@
     "anomaly_injection_id": "ANOM-2026-000114",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 51.0,
+    "expected_variance_amount": 1886.32,
     "ground_truth_id": "GTL-2026-000114",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -1347,7 +1347,7 @@
     "anomaly_injection_id": "ANOM-2026-000123",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 96.9,
+    "expected_variance_amount": 1406.79,
     "ground_truth_id": "GTL-2026-000123",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -1369,7 +1369,7 @@
     "anomaly_injection_id": "ANOM-2026-000125",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 24.65,
+    "expected_variance_amount": 497.07,
     "ground_truth_id": "GTL-2026-000125",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -1391,7 +1391,7 @@
     "anomaly_injection_id": "ANOM-2026-000127",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 14.45,
+    "expected_variance_amount": 246.88,
     "ground_truth_id": "GTL-2026-000127",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -1424,7 +1424,7 @@
     "anomaly_injection_id": "ANOM-2026-000130",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 211.62,
     "ground_truth_id": "GTL-2026-000130",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -1468,7 +1468,7 @@
     "anomaly_injection_id": "ANOM-2026-000134",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 42.5,
+    "expected_variance_amount": 1196.36,
     "ground_truth_id": "GTL-2026-000134",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -1567,7 +1567,7 @@
     "anomaly_injection_id": "ANOM-2026-000143",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 211.9,
+    "expected_variance_amount": 2554.49,
     "ground_truth_id": "GTL-2026-000143",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -1589,7 +1589,7 @@
     "anomaly_injection_id": "ANOM-2026-000145",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 27.2,
+    "expected_variance_amount": 449.46,
     "ground_truth_id": "GTL-2026-000145",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -1611,7 +1611,7 @@
     "anomaly_injection_id": "ANOM-2026-000147",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 23.8,
+    "expected_variance_amount": 266.6,
     "ground_truth_id": "GTL-2026-000147",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -1644,7 +1644,7 @@
     "anomaly_injection_id": "ANOM-2026-000150",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 39.88,
     "ground_truth_id": "GTL-2026-000150",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -1688,7 +1688,7 @@
     "anomaly_injection_id": "ANOM-2026-000154",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 42.5,
+    "expected_variance_amount": 48.84,
     "ground_truth_id": "GTL-2026-000154",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -1787,7 +1787,7 @@
     "anomaly_injection_id": "ANOM-2026-000163",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 3079.36,
+    "expected_variance_amount": 3136.88,
     "ground_truth_id": "GTL-2026-000163",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -1809,7 +1809,7 @@
     "anomaly_injection_id": "ANOM-2026-000165",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 28.9,
+    "expected_variance_amount": 567.92,
     "ground_truth_id": "GTL-2026-000165",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -1831,7 +1831,7 @@
     "anomaly_injection_id": "ANOM-2026-000167",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 23.8,
+    "expected_variance_amount": 126.9,
     "ground_truth_id": "GTL-2026-000167",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -1864,7 +1864,7 @@
     "anomaly_injection_id": "ANOM-2026-000170",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 277.04,
     "ground_truth_id": "GTL-2026-000170",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -1908,7 +1908,7 @@
     "anomaly_injection_id": "ANOM-2026-000174",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 34.0,
+    "expected_variance_amount": 1097.64,
     "ground_truth_id": "GTL-2026-000174",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"
@@ -2007,7 +2007,7 @@
     "anomaly_injection_id": "ANOM-2026-000183",
     "expected_decision": "FAIL",
     "expected_exception_type": "UNMATCHED_SHIPMENT",
-    "expected_variance_amount": 176.9,
+    "expected_variance_amount": 2883.77,
     "ground_truth_id": "GTL-2026-000183",
     "issue_type": "UNKNOWN_SHIPMENT_REF",
     "scenario_description": "Nonexistent external shipment reference staged on invoice"
@@ -2029,7 +2029,7 @@
     "anomaly_injection_id": "ANOM-2026-000185",
     "expected_decision": "FAIL",
     "expected_exception_type": "BASE_RATE_MISMATCH",
-    "expected_variance_amount": 17.85,
+    "expected_variance_amount": 211.0,
     "ground_truth_id": "GTL-2026-000185",
     "issue_type": "EXPIRED_RATE_CARD",
     "scenario_description": "Linehaul tariff schedule expired before shipment date"
@@ -2051,7 +2051,7 @@
     "anomaly_injection_id": "ANOM-2026-000187",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 23.8,
+    "expected_variance_amount": 405.01,
     "ground_truth_id": "GTL-2026-000187",
     "issue_type": "INCORRECT_WEIGHT_TIER",
     "scenario_description": "Shipment misclassified into wrong weight tier pricing"
@@ -2084,7 +2084,7 @@
     "anomaly_injection_id": "ANOM-2026-000190",
     "expected_decision": "FAIL",
     "expected_exception_type": "DUPLICATE_BILLING",
-    "expected_variance_amount": 11.9,
+    "expected_variance_amount": 332.57,
     "ground_truth_id": "GTL-2026-000190",
     "issue_type": "DUPLICATE_FUEL_SURCHARGE",
     "scenario_description": "Secondary duplicate fuel surcharge assessed"
@@ -2128,7 +2128,7 @@
     "anomaly_injection_id": "ANOM-2026-000194",
     "expected_decision": "FAIL",
     "expected_exception_type": "WEIGHT_DISCREPANCY",
-    "expected_variance_amount": 42.5,
+    "expected_variance_amount": 1032.82,
     "ground_truth_id": "GTL-2026-000194",
     "issue_type": "DIMENSIONAL_WEIGHT_DISCREPANCY",
     "scenario_description": "Volumetric density calculation discrepancy"

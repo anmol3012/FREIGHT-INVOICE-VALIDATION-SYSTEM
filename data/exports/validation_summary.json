@@ -1,0 +1,138 @@
+{
+  "dataset_status": "PASSED",
+  "audit_timestamp": "2026-10-29T05:12:30.589964",
+  "unintentional_defects_count": 0,
+  "intentional_anomalies_count": 10,
+  "record_counts": {
+    "Carriers": 20,
+    "Lanes": 45,
+    "Accessorials": 6,
+    "RateCards": 66,
+    "RateTiers": 264,
+    "Shipments": 250,
+    "ShipmentLegs": 250,
+    "WeightMeasurements": 250,
+    "DeliveryEvidence": 250,
+    "FreightInvoices": 200,
+    "InvoiceLines": 516,
+    "DuplicateInvoiceGroups": 10,
+    "InvoiceValidationRuns": 600,
+    "AuditExceptions": 60,
+    "CreditNotes": 18,
+    "AuditEvents": 399,
+    "EntityStatusHistory": 92,
+    "GroundTruthLabels": 200
+  },
+  "stage_results": {
+    "primary_keys": {
+      "records_checked": 3496,
+      "null_pks": 0,
+      "duplicate_pks": 0,
+      "pattern_mismatches": 0,
+      "status": "PASSED"
+    },
+    "foreign_keys": {
+      "unintentional_dangling_references": 0,
+      "intentional_unmatched_references": 10,
+      "status": "PASSED"
+    },
+    "allowed_values": {
+      "invalid_enums_count": 0,
+      "status": "PASSED"
+    },
+    "date_rules": {
+      "chronological_date_errors": 0,
+      "status": "PASSED"
+    },
+    "arithmetic_reconciliation": {
+      "arithmetic_defects_count": 0,
+      "status": "PASSED"
+    },
+    "duplicate_checks": {
+      "duplicate_invoice_number_violations": 0,
+      "duplicate_clusters_detected": 10,
+      "status": "PASSED"
+    },
+    "lifecycle_state_machine": {
+      "lifecycle_defects_count": 0,
+      "status": "PASSED"
+    },
+    "ground_truth_coverage": {
+      "total_ground_truth_labels": 200,
+      "clean_invoices_labelled": 140,
+      "anomalies_labelled": 60,
+      "anomalies_by_scenario": {
+        "UNKNOWN_SHIPMENT_REF": 10,
+        "EXPIRED_RATE_CARD": 10,
+        "INCORRECT_WEIGHT_TIER": 10,
+        "DUPLICATE_FUEL_SURCHARGE": 10,
+        "DIMENSIONAL_WEIGHT_DISCREPANCY": 10,
+        "UNAUTHORIZED_ACCESSORIAL": 10
+      },
+      "status": "PASSED"
+    }
+  },
+  "violations": [],
+  "intentional_test_anomalies": [
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000003",
+      "raw_reference": "SHP-UNKNOWN-910061",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000023",
+      "raw_reference": "SHP-UNKNOWN-891630",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000043",
+      "raw_reference": "SHP-UNKNOWN-988450",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000063",
+      "raw_reference": "SHP-UNKNOWN-708212",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000083",
+      "raw_reference": "SHP-UNKNOWN-875525",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000103",
+      "raw_reference": "SHP-UNKNOWN-864479",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000123",
+      "raw_reference": "SHP-UNKNOWN-761906",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000143",
+      "raw_reference": "SHP-UNKNOWN-869478",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000163",
+      "raw_reference": "SHP-UNKNOWN-879895",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    },
+    {
+      "scenario": "SCENARIO_A_UNKNOWN_SHIPMENT",
+      "invoice_id": "FINV-2026-000183",
+      "raw_reference": "SHP-UNKNOWN-861614",
+      "rejection_reason": "Raw shipment reference does not exist in master operational records"
+    }
+  ]
+}

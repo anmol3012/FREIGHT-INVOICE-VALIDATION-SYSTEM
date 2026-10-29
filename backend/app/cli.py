@@ -6,6 +6,8 @@ from backend.app.core.config import settings
 from backend.app.generator.generator import DeterministicDataGenerator
 from backend.app.generator.exporter import DataExporter
 from backend.app.generator.ground_truth_exporter import GroundTruthExporter
+from backend.app.generator.data_quality import DataQualityValidator
+from backend.app.generator.reproducibility import ReproducibilityVerifier
 from backend.app.engine.validator import FreightInvoiceValidator
 from backend.app.engine.credit_note_service import CreditNoteService
 from backend.app.engine.evaluator import AuditEvaluator
@@ -153,6 +155,38 @@ def cmd_validate(args):
     finally:
         db.close()
 
+def cmd_check_quality(args):
+    init_db(reset=False)
+    db = SessionLocal()
+    try:
+        print("Running Comprehensive Data-Quality Audit across all entities...")
+        validator = DataQualityValidator(db)
+        res = validator.export_reports(output_dir=args.output_dir or "data/exports")
+        summary = validator.run_all_checks()
+        print(f"\n--- Data Quality Audit Result: [{summary['dataset_status']}] ---")
+        print(f"  Unintentional Defects: {summary['unintentional_defects_count']}")
+        print(f"  Intentional Test Anomalies: {summary['intentional_anomalies_count']}")
+        print(f"  JSON Summary: {res['json_summary']}")
+        print(f"  Markdown Report: {res['markdown_summary']}")
+        print(f"  Docs Report: {res['documentation_report']}")
+    finally:
+        db.close()
+
+def cmd_verify_reproducibility(args):
+    scale = args.scale or "starter"
+    seed = args.seed if args.seed is not None else 20261022
+    print(f"Running Dual-Run Reproducibility Verification [Scale: {scale}, Seed: {seed}]...")
+    res = ReproducibilityVerifier.verify(profile_name=scale, seed=seed)
+    print(f"\n--- Reproducibility Result: [{'100% REPRODUCIBLE (PASS)' if res['reproducible'] else 'FAILED'}] ---")
+    print(f"  Entities Compared: {res['entities_compared']}")
+    print(f"  Files Compared:    {res['files_compared']}")
+    print(f"  Hash Mismatches:   {res['mismatches_count']}")
+    if not res["reproducible"]:
+        for m in res["mismatches"]:
+            print(f"    - {m}")
+    else:
+        print("  All CSV, JSON, and SQL exports are bit-for-bit identical across dual runs!")
+
 def cmd_serve(args):
     import uvicorn
     init_db(reset=False)
@@ -189,6 +223,15 @@ def main():
     # evaluate
     subparsers.add_parser("evaluate", help="Evaluate audit detection accuracy against ground truth")
 
+    # check-quality
+    p_qual = subparsers.add_parser("check-quality", help="Run comprehensive data-quality checks")
+    p_qual.add_argument("--output-dir", default="data/exports", help="Export target directory")
+
+    # verify-reproducibility
+    p_rep = subparsers.add_parser("verify-reproducibility", help="Run dual-run reproducibility test")
+    p_rep.add_argument("--scale", choices=["test", "starter", "full"], default="starter", help="Dataset scale")
+    p_rep.add_argument("--seed", type=int, default=20261022, help="Random seed")
+
     args = parser.parse_args()
     if args.command == "seed":
         cmd_seed(args)
@@ -198,6 +241,10 @@ def main():
         cmd_validate(args)
     elif args.command == "evaluate":
         cmd_evaluate(args)
+    elif args.command == "check-quality":
+        cmd_check_quality(args)
+    elif args.command == "verify-reproducibility":
+        cmd_verify_reproducibility(args)
     elif args.command == "serve":
         cmd_serve(args)
     else:

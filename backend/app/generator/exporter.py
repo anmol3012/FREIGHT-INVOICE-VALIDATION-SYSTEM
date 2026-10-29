@@ -106,7 +106,16 @@ class DataExporter:
         # 4. Write manifest.json
         manifest_path = self.output_dir / "manifest.json"
         manifest_doc = {
+            "dataset_version": "1.0.0",
+            "generator_version": "1.0.0",
+            "schema_version": "1.0.0",
             "seed": seed,
+            "generation_method": "deterministic_pseudo_random_dependency_pipeline",
+            "external_source_provenance": {
+                "logistics_hubs": "Public domain IATA/DOT US major metropolitan freight hubs (ORD, DFW, ATL, JFK, LAX, etc.)",
+                "license": "Public domain / synthetic logistics taxonomy",
+                "attribution": "Synthetically generated freight contracts, measurements, and billing ledgers"
+            },
             "exported_at": "2026-01-01T08:00:00Z", # Deterministic epoch for reproducible hash
             "total_files": len(checksums),
             "entities": manifest_entries
