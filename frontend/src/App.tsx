@@ -5,9 +5,9 @@ import {
   Truck, Scale, ShieldCheck, DollarSign, Clock, FileCheck, CheckCircle
 } from 'lucide-react';
 
-const API_BASE = typeof window !== 'undefined' && window.location.port === '5173'
+const API_BASE = (import.meta.env.VITE_API_BASE_URL as string) || (typeof window !== 'undefined' && window.location.port === '5173'
   ? 'http://127.0.0.1:8000/api'
-  : '/api';
+  : '/api');
 
 interface KPIs {
   total_invoices: number;
