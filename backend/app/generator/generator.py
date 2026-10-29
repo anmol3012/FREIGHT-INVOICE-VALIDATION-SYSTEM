@@ -480,6 +480,9 @@ class DeterministicDataGenerator:
                 db.add(sa)
                 shipment_accs.append(sa)
 
+            if i % 1000 == 0:
+                db.flush()
+
         db.flush()
         return shipments, legs, weights, shipment_accs, evidences
 
@@ -749,6 +752,9 @@ class DeterministicDataGenerator:
             )
             db.add(gt)
             ground_truths.append(gt)
+
+            if i % 1000 == 0:
+                db.flush()
 
         db.flush()
         return invoices, lines, validation_runs, exceptions, credit_notes, ground_truths, dup_groups

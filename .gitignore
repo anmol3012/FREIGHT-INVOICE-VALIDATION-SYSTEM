@@ -20,6 +20,7 @@ build/
 *.db-wal
 *.db-shm
 freight_validation.db*
+data/full_scale_exports/
 .env
 
 # Node.js & Frontend

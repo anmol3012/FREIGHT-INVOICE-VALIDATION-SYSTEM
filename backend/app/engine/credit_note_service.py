@@ -210,7 +210,7 @@ class CreditNoteService:
         # 5. Check remaining balance limit (Scenario E: Excessive Credit Note Check)
         remaining_balance = cls.calculate_remaining_balance(db, exception)
 
-        if cn.credit_amount > remaining_balance + 0.05: # tolerance
+        if round(cn.credit_amount, 2) > round(remaining_balance, 2):
             excess = round(cn.credit_amount - remaining_balance, 2)
             cn.approval_status = CreditNoteApprovalStatus.REJECTED
             cn.reconciliation_status = CreditNoteReconciliationStatus.REJECTED
